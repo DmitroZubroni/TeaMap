@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root {
+    height: 100%;
+    margin: 0;
+  }
+
+  body {
+    @apply font-body bg-ink text-porcelain antialiased;
+  }
+
+  ::selection {
+    background: #C08A34;
+    color: #1C2A22;
+  }
+
+  /* keep MapLibre's own attribution/controls legible against our custom style */
+  .maplibregl-ctrl-attrib {
+    @apply !bg-porcelain/80 !text-ink !text-[11px] !font-body;
+  }
+  .maplibregl-ctrl-attrib a {
+    @apply !text-ink;
+  }
+  .maplibregl-ctrl-bottom-right,
+  .maplibregl-ctrl-bottom-left {
+    z-index: 10;
+  }
+  .maplibregl-canvas {
+    outline: none;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: #C08A34;
+    border-radius: 999px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+@keyframes pin-in {
+  from { transform: scale(0.4); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.animate-pin-in {
+  animation: pin-in 260ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes panel-in {
+  from { transform: translateX(24px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+.animate-panel-in {
+  animation: panel-in 320ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}

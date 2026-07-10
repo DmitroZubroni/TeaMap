@@ -1,0 +1,11 @@
+[
+  { "id": "white", "name": "Белый чай" },
+  { "id": "green", "name": "Зелёный чай" },
+  { "id": "yellow", "name": "Жёлтый чай" },
+  { "id": "oolong_light", "name": "Светлый улун" },
+  { "id": "oolong_dark", "name": "Тёмный улун" },
+  { "id": "red", "name": "Красный чай" },
+  { "id": "dark_sheng", "name": "Тёмный чай — шэн пуэр" },
+  { "id": "dark_shu", "name": "Тёмный чай — шу пуэр" },
+  { "id": "dark_other", "name": "Тёмный чай — прочий хэйча" }
+]

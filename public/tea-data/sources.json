@@ -1,0 +1,6 @@
+[
+  { "id": "artoftea", "name": "Art of Tea (Чаёк мой чай)", "url": "https://artoftea.ru" },
+  { "id": "moychay", "name": "Мойчай", "url": "https://moychay.ru" },
+  { "id": "wiki", "name": "Wikipedia", "url": "https://wikipedia.org" },
+  { "id": "wikimedia", "name": "Wikimedia Commons", "url": "https://commons.wikimedia.org" }
+]

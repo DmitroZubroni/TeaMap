@@ -1,0 +1,10 @@
+[
+  { "id": "china", "name": "Китай", "icon": "🇨🇳", "teaCount": 10 },
+  { "id": "india", "name": "Индия", "icon": "🇮🇳", "teaCount": 0 },
+  { "id": "sri_lanka", "name": "Шри-Ланка", "icon": "🇱🇰", "teaCount": 0 },
+  { "id": "vietnam", "name": "Вьетнам", "icon": "🇻🇳", "teaCount": 0 },
+  { "id": "thailand", "name": "Таиланд", "icon": "🇹🇭", "teaCount": 0 },
+  { "id": "russia", "name": "Россия", "icon": "🇷🇺", "teaCount": 0 },
+  { "id": "taiwan", "name": "Тайвань", "icon": "🇹🇼", "teaCount": 0 },
+  { "id": "japan", "name": "Япония", "icon": "🇯🇵", "teaCount": 0 }
+]

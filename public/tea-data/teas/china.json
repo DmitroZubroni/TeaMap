@@ -1,0 +1,389 @@
+[
+  {
+    "id": "da_hong_pao",
+    "name": "Да Хун Пао",
+    "country": "china",
+    "category": "oolong_dark",
+    "lat": 27.7546,
+    "lng": 117.9647,
+    "region": "Уишань"
+  },
+  {
+    "id": "tie_guan_yin",
+    "name": "Те Гуань Инь",
+    "country": "china",
+    "category": "oolong_light",
+    "lat": 25.0692,
+    "lng": 117.9847,
+    "region": "Аньси"
+  },
+  {
+    "id": "long_jing",
+    "name": "Лунцзин",
+    "country": "china",
+    "category": "green",
+    "lat": 30.2168,
+    "lng": 120.1358,
+    "region": "Сиху, Ханчжоу"
+  },
+  {
+    "id": "bi_luo_chun",
+    "name": "Билочунь",
+    "country": "china",
+    "category": "green",
+    "lat": 31.477,
+    "lng": 120.409,
+    "region": "Дуншань, озеро Тайху"
+  },
+  {
+    "id": "jin_jun_mei",
+    "name": "Цзинь Цзюнь Мэй",
+    "country": "china",
+    "category": "red",
+    "lat": 27.8206,
+    "lng": 117.6742,
+    "region": "Тунму, Уишань"
+  },
+  {
+    "id": "yiwu_sheng_puer",
+    "name": "Шэн пуэр (Иу)",
+    "country": "china",
+    "category": "dark_sheng",
+    "lat": 22.1167,
+    "lng": 101.4667,
+    "region": "Иу, Сишуанбаньна"
+  },
+  {
+    "id": "menghai_shu_puer",
+    "name": "Шу пуэр (Мэнхай)",
+    "country": "china",
+    "category": "dark_shu",
+    "lat": 21.9583,
+    "lng": 100.4547,
+    "region": "Мэнхай, Сишуанбаньна"
+  },
+  {
+    "id": "bai_hao_yin_zhen",
+    "name": "Бай Хао Инь Чжэнь",
+    "country": "china",
+    "category": "white",
+    "lat": 27.3319,
+    "lng": 120.2131,
+    "region": "Фудин"
+  },
+  {
+    "id": "junshan_yinzhen",
+    "name": "Цзюньшань Иньчжэнь",
+    "country": "china",
+    "category": "yellow",
+    "lat": 29.3897,
+    "lng": 112.9308,
+    "region": "остров Цзюньшань, озеро Дунтин"
+  },
+  {
+    "id": "mi_lan_xiang",
+    "name": "Ми Лань Сян (Дань Цун)",
+    "country": "china",
+    "category": "oolong_dark",
+    "lat": 23.6987,
+    "lng": 116.6169,
+    "region": "гора Феникс, Чаочжоу"
+  },
+  {
+    "id": "shui_xian",
+    "name": "Шуй Сянь",
+    "country": "china",
+    "category": "oolong_dark",
+    "lat": 27.7546,
+    "lng": 117.9647,
+    "region": "Уишань"
+  },
+  {
+    "id": "lao_cong_shui_xian",
+    "name": "Лао Цун Шуй Сянь",
+    "country": "china",
+    "category": "oolong_dark",
+    "lat": 27.7546,
+    "lng": 117.9647,
+    "region": "Уишань, Ланьгу"
+  },
+  {
+    "id": "rou_gui",
+    "name": "Жоу Гуй",
+    "country": "china",
+    "category": "oolong_dark",
+    "lat": 27.7546,
+    "lng": 117.9647,
+    "region": "Уишань, Няошидянь"
+  },
+  {
+    "id": "tie_luo_han",
+    "name": "Те Ло Хань",
+    "country": "china",
+    "category": "oolong_dark",
+    "lat": 27.7546,
+    "lng": 117.9647,
+    "region": "Уишань, Хуэйюань"
+  },
+  {
+    "id": "bai_ji_guan",
+    "name": "Бай Цзи Гуань",
+    "country": "china",
+    "category": "oolong_dark",
+    "lat": 27.7546,
+    "lng": 117.9647,
+    "region": "Уишань, Хуэйюань"
+  },
+  {
+    "id": "shui_jin_gui",
+    "name": "Шуй Цзинь Гуй",
+    "country": "china",
+    "category": "oolong_dark",
+    "lat": 27.7546,
+    "lng": 117.9647,
+    "region": "Уишань, Ню Лань Кэн"
+  },
+  {
+    "id": "qi_lan",
+    "name": "Ци Лань",
+    "country": "china",
+    "category": "oolong_dark",
+    "lat": 27.7546,
+    "lng": 117.9647,
+    "region": "Уишань"
+  },
+  {
+    "id": "ban_tian_yao",
+    "name": "Бань Тянь Яо",
+    "country": "china",
+    "category": "oolong_dark",
+    "lat": 27.7546,
+    "lng": 117.9647,
+    "region": "Уишань, Гуйдун"
+  },
+  {
+    "id": "ya_shi_xiang",
+    "name": "Я Ши Сян",
+    "country": "china",
+    "category": "oolong_dark",
+    "lat": 23.6987,
+    "lng": 116.6169,
+    "region": "гора Феникс, Чаочжоу"
+  },
+  {
+    "id": "ba_xian",
+    "name": "Ба Сянь",
+    "country": "china",
+    "category": "oolong_dark",
+    "lat": 23.6987,
+    "lng": 116.6169,
+    "region": "гора Феникс, Чаочжоу"
+  },
+  {
+    "id": "xing_ren_xiang",
+    "name": "Син Жэнь Сян",
+    "country": "china",
+    "category": "oolong_dark",
+    "lat": 23.6987,
+    "lng": 116.6169,
+    "region": "гора Феникс, Чаочжоу"
+  },
+  {
+    "id": "zhi_lan_xiang",
+    "name": "Чжи Лань Сян",
+    "country": "china",
+    "category": "oolong_dark",
+    "lat": 23.6987,
+    "lng": 116.6169,
+    "region": "гора Феникс, Чаочжоу"
+  },
+  {
+    "id": "huang_zhi_xiang",
+    "name": "Хуан Чжи Сян",
+    "country": "china",
+    "category": "oolong_dark",
+    "lat": 23.6987,
+    "lng": 116.6169,
+    "region": "гора Феникс, Чаочжоу"
+  },
+  {
+    "id": "jiang_hua_xiang",
+    "name": "Цзян Хуа Сян",
+    "country": "china",
+    "category": "oolong_dark",
+    "lat": 23.6987,
+    "lng": 116.6169,
+    "region": "гора Феникс, Чаочжоу"
+  },
+  {
+    "id": "huangshan_maofeng",
+    "name": "Хуаншань Маофэн",
+    "country": "china",
+    "category": "green",
+    "lat": 30.1341,
+    "lng": 118.1663,
+    "region": "гора Хуаншань"
+  },
+  {
+    "id": "xinyang_maojian",
+    "name": "Синьян Маоцзянь",
+    "country": "china",
+    "category": "green",
+    "lat": 32.1475,
+    "lng": 114.0753,
+    "region": "горы Синьян"
+  },
+  {
+    "id": "lu_an_gua_pian",
+    "name": "Лю Ань Гуа Пянь",
+    "country": "china",
+    "category": "green",
+    "lat": 31.7514,
+    "lng": 115.9967,
+    "region": "горы Дабешань"
+  },
+  {
+    "id": "taiping_houkui",
+    "name": "Тайпин Хоукуй",
+    "country": "china",
+    "category": "green",
+    "lat": 30.4297,
+    "lng": 118.1256,
+    "region": "деревня Хоукэн"
+  },
+  {
+    "id": "anji_baicha",
+    "name": "Аньцзи Байча",
+    "country": "china",
+    "category": "green",
+    "lat": 30.6386,
+    "lng": 119.6819,
+    "region": "гора Ляньхуа"
+  },
+  {
+    "id": "zhu_ye_qing",
+    "name": "Чжу Е Цин",
+    "country": "china",
+    "category": "green",
+    "lat": 29.5946,
+    "lng": 103.3347,
+    "region": "гора Эмэй"
+  },
+  {
+    "id": "enshi_yulu",
+    "name": "Эньши Юйлу",
+    "country": "china",
+    "category": "green",
+    "lat": 30.3,
+    "lng": 109.4833,
+    "region": "уезд Эньши"
+  },
+  {
+    "id": "mengding_ganlu",
+    "name": "Мэндин Ганьлу",
+    "country": "china",
+    "category": "green",
+    "lat": 30.0989,
+    "lng": 103.0361,
+    "region": "гора Мэндин"
+  },
+  {
+    "id": "mengding_huangya",
+    "name": "Мэндин Хуанъя",
+    "country": "china",
+    "category": "yellow",
+    "lat": 30.0989,
+    "lng": 103.0361,
+    "region": "гора Мэндин"
+  },
+  {
+    "id": "huoshan_huangya",
+    "name": "Хошань Хуанъя",
+    "country": "china",
+    "category": "yellow",
+    "lat": 31.3944,
+    "lng": 116.33,
+    "region": "уезд Хошань"
+  },
+  {
+    "id": "weishan_maojian",
+    "name": "Вэйшань Маоцзянь",
+    "country": "china",
+    "category": "yellow",
+    "lat": 28.2597,
+    "lng": 112.1275,
+    "region": "гора Вэйшань"
+  },
+  {
+    "id": "bai_mu_dan",
+    "name": "Бай Му Дань",
+    "country": "china",
+    "category": "white",
+    "lat": 27.3319,
+    "lng": 120.2131,
+    "region": "Фудин"
+  },
+  {
+    "id": "shou_mei",
+    "name": "Шоу Мэй",
+    "country": "china",
+    "category": "white",
+    "lat": 27.3319,
+    "lng": 120.2131,
+    "region": "Фудин"
+  },
+  {
+    "id": "gong_mei",
+    "name": "Гун Мэй",
+    "country": "china",
+    "category": "white",
+    "lat": 27.3319,
+    "lng": 120.2131,
+    "region": "Фудин"
+  },
+  {
+    "id": "yue_guang_bai",
+    "name": "Юэ Гуан Бай",
+    "country": "china",
+    "category": "white",
+    "lat": 22.2064,
+    "lng": 100.0206,
+    "region": "горы Цзинмай"
+  },
+  {
+    "id": "huangjin_gui",
+    "name": "Хуанцзинь Гуй",
+    "country": "china",
+    "category": "oolong_light",
+    "lat": 25.0692,
+    "lng": 117.9847,
+    "region": "Аньси"
+  },
+  {
+    "id": "bao_zhong",
+    "name": "Бао Чжун",
+    "country": "china",
+    "category": "oolong_light",
+    "lat": 25.0692,
+    "lng": 117.9847,
+    "region": "Аньси"
+  },
+  {
+    "id": "ben_shan",
+    "name": "Бэнь Шань",
+    "country": "china",
+    "category": "oolong_light",
+    "lat": 25.0692,
+    "lng": 117.9847,
+    "region": "Аньси"
+  },
+  {
+    "id": "mao_xie",
+    "name": "Мао Се",
+    "country": "china",
+    "category": "oolong_light",
+    "lat": 25.0692,
+    "lng": 117.9847,
+    "region": "Аньси"
+  }
+]
