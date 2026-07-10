@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState, useCallback, forwardRef, useImperativeHandle } from 'react'
 import maplibregl from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
-import { buildTeaMapStyle } from '../lib/mapStyle'
+import { STYLE_URL, applyTeaPalette } from '../lib/mapStyle'
 import { getRegions, getTeaIndex } from '../lib/api'
 import { COUNTRY_CENTROIDS } from '../lib/countryMeta'
 import { createCountryPin, createRegionPin, createTeaPin } from '../lib/markers'
 
 const WORLD_MAX = 3.2
 const COUNTRY_MAX = 6.4
+const LOAD_TIMEOUT_MS = 12000
 
 const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onToast }, ref) {
   const containerRef = useRef(null)
@@ -17,6 +18,7 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
   const teaMarkersRef = useRef([])
 
   const [ready, setReady] = useState(false)
+  const [loadError, setLoadError] = useState(null)
   const [zoom, setZoom] = useState(1.8)
   const [selectedCountry, setSelectedCountry] = useState(null)
   const [selectedRegionName, setSelectedRegionName] = useState(null)
@@ -27,33 +29,52 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
 
   // --- init map once ---
   useEffect(() => {
-    let cancelled = false
-    ;(async () => {
-      const style = await buildTeaMapStyle()
-      if (cancelled) return
-      const map = new maplibregl.Map({
-        container: containerRef.current,
-        style,
-        center: [45, 25],
-        zoom: 1.8,
-        minZoom: 1.4,
-        maxZoom: 13,
-        attributionControl: { compact: true },
-      })
-      map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'bottom-right')
-      map.on('zoom', () => setZoom(map.getZoom()))
-      map.on('zoomend', () => {
-        if (map.getZoom() <= WORLD_MAX) {
-          setSelectedCountry(null)
-          setSelectedRegionName(null)
-        }
-      })
-      map.on('load', () => setReady(true))
-      mapRef.current = map
-    })()
+    const map = new maplibregl.Map({
+      container: containerRef.current,
+      style: STYLE_URL,
+      center: [45, 25],
+      zoom: 1.8,
+      minZoom: 1.4,
+      maxZoom: 13,
+      attributionControl: { compact: true },
+    })
+    mapRef.current = map
+
+    const timeout = setTimeout(() => {
+      setLoadError((prev) => prev ?? 'Карта долго не отвечает. Проверьте соединение и обновите страницу.')
+    }, LOAD_TIMEOUT_MS)
+
+    map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'bottom-right')
+    map.on('zoom', () => setZoom(map.getZoom()))
+    map.on('zoomend', () => {
+      if (map.getZoom() <= WORLD_MAX) {
+        setSelectedCountry(null)
+        setSelectedRegionName(null)
+      }
+    })
+    map.on('load', () => {
+      clearTimeout(timeout)
+      try {
+        applyTeaPalette(map)
+      } catch {
+        // If recoloring fails for any reason, fall back to the stock
+        // CARTO look rather than blocking the map from showing at all.
+      }
+      setReady(true)
+    })
+    map.on('error', (e) => {
+      console.error('Map error:', e?.error || e)
+      // Only block the UI for a failure before the map has ever finished
+      // loading — once it's up, isolated tile/glyph errors shouldn't nuke
+      // an otherwise-working map.
+      if (!map.loaded()) {
+        setLoadError((prev) => prev ?? 'Не удалось загрузить карту. Проверьте соединение и обновите страницу.')
+      }
+    })
+
     return () => {
-      cancelled = true
-      mapRef.current?.remove()
+      clearTimeout(timeout)
+      map.remove()
     }
   }, [])
 
@@ -148,7 +169,19 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
     },
   }))
 
-  return <div ref={containerRef} className="absolute inset-0" />
+  return (
+    <div className="absolute inset-0">
+      <div ref={containerRef} className="w-full h-full" />
+      {loadError && (
+        <div className="absolute inset-0 z-20 grid place-items-center bg-ink/90 px-6 text-center">
+          <div className="max-w-sm">
+            <p className="font-display text-xl text-porcelain mb-2">Карта не загрузилась</p>
+            <p className="text-porcelain/70 text-sm">{loadError}</p>
+          </div>
+        </div>
+      )}
+    </div>
+  )
 })
 
 export default MapView
