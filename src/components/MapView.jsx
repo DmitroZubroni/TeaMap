@@ -79,10 +79,25 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
     }
   }, [])
 
-  // --- notify parent of breadcrumb state ---
+  // --- defensively re-measure the container; guards against any stale
+  // size MapLibre may have captured before layout fully settled ---
   useEffect(() => {
-    onNav?.({ stage, country: selectedCountry, region: selectedRegionName })
-  }, [stage, selectedCountry, selectedRegionName]) // eslint-disable-line react-hooks/exhaustive-deps
+    if (!ready || !mapRef.current) return
+    const map = mapRef.current
+    map.resize()
+    const onResize = () => map.resize()
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [ready])
+  useEffect(() => {
+    onNav?.({
+      stage,
+      country: selectedCountry,
+      region: selectedRegionName,
+      regions: regionsData,
+      teas: teasData,
+    })
+  }, [stage, selectedCountry, selectedRegionName, teasData, regionsData]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const loadCountryData = useCallback(async (country) => {
     const [regions, teas] = await Promise.all([getRegions(country.id), getTeaIndex(country.id)])
@@ -176,15 +191,19 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
     if (stage === 'world' || !selectedCountry) return
 
     regionsData.forEach((region) => {
-      const el = createRegionPin({ name: region.name })
-      el.addEventListener('click', () => {
-        setSelectedRegionName(region.name)
-        mapRef.current.flyTo({ center: [region.lng, region.lat], zoom: Math.max(region.zoom, 8), duration: 900 })
-      })
-      const marker = new maplibregl.Marker({ element: el, anchor: 'bottom' })
-        .setLngLat([region.lng, region.lat])
-        .addTo(mapRef.current)
-      regionMarkersRef.current.push(marker)
+      try {
+        const el = createRegionPin({ name: region.name })
+        el.addEventListener('click', () => {
+          setSelectedRegionName(region.name)
+          mapRef.current.flyTo({ center: [region.lng, region.lat], zoom: Math.max(region.zoom, 8), duration: 900 })
+        })
+        const marker = new maplibregl.Marker({ element: el, anchor: 'bottom' })
+          .setLngLat([region.lng, region.lat])
+          .addTo(mapRef.current)
+        regionMarkersRef.current.push(marker)
+      } catch (err) {
+        console.error('Не удалось отрисовать метку региона', region, err)
+      }
     })
   }, [ready, stage, selectedCountry, regionsData])
 
@@ -196,13 +215,22 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
     if (stage === 'world' || !selectedCountry) return
 
     teasData.forEach((tea) => {
-      const el = createTeaPin({ name: tea.name, category: tea.category, labeled: labelsOn })
-      el.addEventListener('click', () => onSelectTea(selectedCountry.id, tea.id))
-      const marker = new maplibregl.Marker({ element: el, anchor: labelsOn ? 'left' : 'center' })
-        .setLngLat([tea.lng, tea.lat])
-        .addTo(mapRef.current)
-      teaMarkersRef.current.push(marker)
+      try {
+        const el = createTeaPin({ name: tea.name, category: tea.category, labeled: labelsOn })
+        el.addEventListener('click', () => onSelectTea(selectedCountry.id, tea.id))
+        const marker = new maplibregl.Marker({ element: el, anchor: labelsOn ? 'left' : 'center' })
+          .setLngLat([tea.lng, tea.lat])
+          .addTo(mapRef.current)
+        teaMarkersRef.current.push(marker)
+      } catch (err) {
+        console.error('Не удалось отрисовать точку чая', tea, err)
+      }
     })
+    console.info(`[tea-atlas] точек чая на карте: ${teaMarkersRef.current.length} / ${teasData.length}`)
+    if (teasData[0]) {
+      const p = mapRef.current.project([teasData[0].lng, teasData[0].lat])
+      console.info(`[tea-atlas] проекция первой точки (${teasData[0].name}):`, p, 'размер карты:', mapRef.current.getContainer().getBoundingClientRect())
+    }
   }, [ready, stage, selectedCountry, teasData, labelsOn, onSelectTea])
 
   useImperativeHandle(ref, () => ({
@@ -212,6 +240,11 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
     flyToCountryId(id) {
       const country = countries.find((c) => c.id === id)
       if (country) flyToCountry(country)
+    },
+    flyToRegion(region) {
+      if (!region || !mapRef.current) return
+      setSelectedRegionName(region.name)
+      mapRef.current.flyTo({ center: [region.lng, region.lat], zoom: Math.max(region.zoom, 8), duration: 900 })
     },
   }))
 

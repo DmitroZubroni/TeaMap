@@ -64,6 +64,69 @@ function CountryList({ countries, current, onPick }) {
   )
 }
 
+function RegionList({ regions, current, onPick }) {
+  if (!regions.length) return null
+  return (
+    <div className="flex flex-col gap-1">
+      {regions.map((r) => {
+        const isCurrent = current === r.name
+        return (
+          <button
+            key={r.id}
+            type="button"
+            onClick={() => onPick(r)}
+            className={[
+              'flex items-center gap-2 rounded-xl px-2 py-1.5 text-left transition-colors',
+              isCurrent ? 'bg-jade/20' : 'hover:bg-ink/5',
+            ].join(' ')}
+          >
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" className="shrink-0 text-jade">
+              <path d="M3 20L9 8L13 15L16 10L21 20H3Z" fill="currentColor" />
+            </svg>
+            <span className="text-[13px] text-ink flex-1 truncate">{r.name}</span>
+          </button>
+        )
+      })}
+    </div>
+  )
+}
+
+function TeaList({ teas, onPick }) {
+  if (!teas.length) return null
+  const groups = new Map()
+  for (const t of teas) {
+    const key = t.region || '—'
+    if (!groups.has(key)) groups.set(key, [])
+    groups.get(key).push(t)
+  }
+
+  return (
+    <div className="flex flex-col gap-3">
+      {[...groups.entries()].map(([region, items]) => (
+        <div key={region}>
+          <p className="text-[10px] text-ink-soft/50 uppercase tracking-wide mb-1 px-2">{region}</p>
+          <div className="flex flex-col gap-0.5">
+            {items.map((t) => (
+              <button
+                key={t.id}
+                type="button"
+                onClick={() => onPick(t)}
+                className="flex items-center gap-2 rounded-xl px-2 py-1.5 text-left hover:bg-ink/5 transition-colors"
+              >
+                <span
+                  className="w-2 h-2 rounded-full border border-ink/10 shrink-0"
+                  style={{ backgroundColor: categoryColor(t.category) }}
+                />
+                <span className="text-[13px] text-ink flex-1 truncate">{t.name}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
+
 function LegendList({ categories }) {
   const [open, setOpen] = useState(false)
   return (
@@ -93,7 +156,7 @@ function LegendList({ categories }) {
   )
 }
 
-export default function Sidebar({ nav, onHome, countries, categories, onPickCountry }) {
+export default function Sidebar({ nav, onHome, countries, categories, onPickCountry, onPickRegion, onSelectTea }) {
   const [expanded, setExpanded] = useState(true)
 
   if (!expanded) {
@@ -110,7 +173,7 @@ export default function Sidebar({ nav, onHome, countries, categories, onPickCoun
   }
 
   return (
-    <aside className="absolute top-4 left-4 bottom-4 z-20 w-64 max-w-[80vw] flex flex-col bg-porcelain/75 backdrop-blur-md border border-ink/10 rounded-2xl shadow-panel overflow-hidden">
+    <aside className="absolute top-4 left-4 bottom-4 z-20 w-72 max-w-[85vw] flex flex-col bg-porcelain/75 backdrop-blur-md border border-ink/10 rounded-2xl shadow-panel overflow-hidden">
       <div className="flex items-start justify-between px-4 pt-4 pb-3 shrink-0">
         <div>
           <p className="font-display text-lg text-ink leading-none">茶 · Атлас чая</p>
@@ -130,6 +193,11 @@ export default function Sidebar({ nav, onHome, countries, categories, onPickCoun
 
       <div className="px-4 pb-3 shrink-0">
         <Breadcrumb nav={nav} onHome={onHome} />
+        {nav.country && (
+          <p className="font-mono text-[10px] text-ink-soft/50 mt-1">
+            {nav.teas.length} точек чая · {nav.regions.length} регионов
+          </p>
+        )}
       </div>
 
       <div className="h-px bg-ink/10 shrink-0" />
@@ -139,6 +207,26 @@ export default function Sidebar({ nav, onHome, countries, categories, onPickCoun
           <SectionLabel>страны</SectionLabel>
           <CountryList countries={countries} current={nav.country} onPick={onPickCountry} />
         </div>
+
+        {nav.country && nav.regions.length > 0 && (
+          <>
+            <div className="h-px bg-ink/10" />
+            <div className="flex flex-col gap-2">
+              <SectionLabel>регионы · клик переносит на карту</SectionLabel>
+              <RegionList regions={nav.regions} current={nav.region} onPick={onPickRegion} />
+            </div>
+          </>
+        )}
+
+        {nav.country && nav.teas.length > 0 && (
+          <>
+            <div className="h-px bg-ink/10" />
+            <div className="flex flex-col gap-2">
+              <SectionLabel>чаи · клик открывает карточку</SectionLabel>
+              <TeaList teas={nav.teas} onPick={(t) => onSelectTea(nav.country.id, t.id)} />
+            </div>
+          </>
+        )}
 
         <div className="h-px bg-ink/10" />
 

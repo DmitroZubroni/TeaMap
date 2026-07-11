@@ -9,7 +9,7 @@ export default function App() {
   const mapRef = useRef(null)
   const [countries, setCountries] = useState([])
   const [categories, setCategories] = useState([])
-  const [nav, setNav] = useState({ stage: 'world', country: null, region: null })
+  const [nav, setNav] = useState({ stage: 'world', country: null, region: null, regions: [], teas: [] })
   const [selectedTea, setSelectedTea] = useState(null) // { countryId, teaId }
   const [toast, setToast] = useState(null)
 
@@ -44,6 +44,8 @@ export default function App() {
         countries={countries}
         categories={categories}
         onPickCountry={(id) => mapRef.current?.flyToCountryId(id)}
+        onPickRegion={(region) => mapRef.current?.flyToRegion(region)}
+        onSelectTea={handleSelectTea}
       />
       <Toast message={toast} />
 
