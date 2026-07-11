@@ -7,7 +7,6 @@ import { COUNTRY_CENTROIDS } from '../lib/countryMeta'
 import { createCountryPin, createRegionPin, createTeaPin } from '../lib/markers'
 
 const WORLD_MAX = 3.2
-const COUNTRY_MAX = 6.4
 const LOAD_TIMEOUT_MS = 12000
 
 const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onToast }, ref) {
@@ -25,7 +24,7 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
   const [regionsData, setRegionsData] = useState([])
   const [teasData, setTeasData] = useState([])
 
-  const stage = zoom <= WORLD_MAX ? 'world' : zoom <= COUNTRY_MAX ? 'region' : 'tea'
+  const stage = zoom <= WORLD_MAX ? 'world' : selectedRegionName ? 'region-focus' : 'country'
 
   // --- init map once ---
   useEffect(() => {
@@ -167,18 +166,18 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
     })
   }, [ready, stage, countries, flyToCountry])
 
-  // --- region-stage pins ---
+  // --- region pins: shown together with tea pins once a country is loaded ---
   useEffect(() => {
     if (!ready || !mapRef.current) return
     regionMarkersRef.current.forEach((m) => m.remove())
     regionMarkersRef.current = []
-    if (stage !== 'region' || !selectedCountry) return
+    if (stage === 'world' || !selectedCountry) return
 
     regionsData.forEach((region) => {
       const el = createRegionPin({ name: region.name })
       el.addEventListener('click', () => {
         setSelectedRegionName(region.name)
-        mapRef.current.flyTo({ center: [region.lng, region.lat], zoom: Math.max(region.zoom, COUNTRY_MAX + 0.6), duration: 900 })
+        mapRef.current.flyTo({ center: [region.lng, region.lat], zoom: Math.max(region.zoom, 8), duration: 900 })
       })
       const marker = new maplibregl.Marker({ element: el, anchor: 'bottom' })
         .setLngLat([region.lng, region.lat])
@@ -187,12 +186,12 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
     })
   }, [ready, stage, selectedCountry, regionsData])
 
-  // --- tea-stage pins ---
+  // --- tea pins: shown together with region pins as soon as a country is loaded ---
   useEffect(() => {
     if (!ready || !mapRef.current) return
     teaMarkersRef.current.forEach((m) => m.remove())
     teaMarkersRef.current = []
-    if (stage !== 'tea' || !selectedCountry) return
+    if (stage === 'world' || !selectedCountry) return
 
     teasData.forEach((tea) => {
       const el = createTeaPin({ name: tea.name, category: tea.category })

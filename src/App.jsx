@@ -1,10 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import MapView from './components/MapView'
-import Breadcrumb from './components/Breadcrumb'
-import Legend from './components/Legend'
+import Header from './components/Header'
 import Toast from './components/Toast'
 import TeaPanel from './components/TeaPanel'
-import CountrySwitcher from './components/CountrySwitcher'
 import { getCountries, getCategories } from './lib/api'
 
 export default function App() {
@@ -40,13 +38,13 @@ export default function App() {
         onToast={setToast}
       />
 
-      <Breadcrumb nav={nav} onHome={() => mapRef.current?.flyHome()} />
-      <CountrySwitcher
+      <Header
+        nav={nav}
+        onHome={() => mapRef.current?.flyHome()}
         countries={countries}
-        current={nav.country}
-        onPick={(id) => mapRef.current?.flyToCountryId(id)}
+        categories={categories}
+        onPickCountry={(id) => mapRef.current?.flyToCountryId(id)}
       />
-      <Legend categories={categories} />
       <Toast message={toast} />
 
       {selectedTea && (
