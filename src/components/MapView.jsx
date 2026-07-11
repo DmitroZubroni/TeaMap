@@ -83,18 +83,21 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
     onNav?.({ stage, country: selectedCountry, region: selectedRegionName })
   }, [stage, selectedCountry, selectedRegionName]) // eslint-disable-line react-hooks/exhaustive-deps
 
+  const loadCountryData = useCallback(async (country) => {
+    const [regions, teas] = await Promise.all([getRegions(country.id), getTeaIndex(country.id)])
+    setRegionsData(regions)
+    setTeasData(teas)
+    setSelectedCountry(country)
+    return regions
+  }, [])
+
   const flyToCountry = useCallback(async (country) => {
-    const map = mapRef.current
     if (!country || country.teaCount === 0) {
       onToast?.(`${country?.name ?? 'Эта страна'} — данные скоро появятся`)
       return
     }
-    const regions = await getRegions(country.id)
-    setRegionsData(regions)
-    const teas = await getTeaIndex(country.id)
-    setTeasData(teas)
-    setSelectedCountry(country)
-
+    const regions = await loadCountryData(country)
+    const map = mapRef.current
     if (regions.length) {
       const bounds = regions.reduce(
         (b, r) => b.extend([r.lng, r.lat]),
@@ -105,7 +108,45 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
       const c = COUNTRY_CENTROIDS[country.id]
       map.flyTo({ center: [c.lng, c.lat], zoom: 4.5, duration: 1100 })
     }
-  }, [onToast])
+  }, [onToast, loadCountryData])
+
+  // --- detect which country we're looking at when the person pans/zooms
+  // the map by hand, rather than only when they click a world pin ---
+  useEffect(() => {
+    if (!ready || !mapRef.current) return
+    const map = mapRef.current
+
+    const detect = () => {
+      if (map.getZoom() <= WORLD_MAX) return
+      const center = map.getCenter()
+      const active = countries.filter((c) => c.teaCount > 0 && COUNTRY_CENTROIDS[c.id])
+      let nearest = null
+      let nearestDist = Infinity
+      for (const c of active) {
+        const p = COUNTRY_CENTROIDS[c.id]
+        const d = Math.hypot(p.lat - center.lat, p.lng - center.lng)
+        if (d < nearestDist) {
+          nearestDist = d
+          nearest = c
+        }
+      }
+      const DETECT_RADIUS_DEG = 22
+      const match = nearest && nearestDist <= DETECT_RADIUS_DEG ? nearest : null
+
+      setSelectedCountry((prev) => {
+        if (match?.id === prev?.id) return prev
+        if (match) loadCountryData(match)
+        else {
+          setRegionsData([])
+          setTeasData([])
+        }
+        return match
+      })
+    }
+
+    map.on('moveend', detect)
+    return () => map.off('moveend', detect)
+  }, [ready, countries, loadCountryData])
 
   // --- world-stage country pins ---
   useEffect(() => {
@@ -166,6 +207,10 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
   useImperativeHandle(ref, () => ({
     flyHome() {
       mapRef.current?.flyTo({ center: [45, 25], zoom: 1.8, duration: 1000 })
+    },
+    flyToCountryId(id) {
+      const country = countries.find((c) => c.id === id)
+      if (country) flyToCountry(country)
     },
   }))
 

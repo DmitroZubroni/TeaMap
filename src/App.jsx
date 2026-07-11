@@ -4,6 +4,7 @@ import Breadcrumb from './components/Breadcrumb'
 import Legend from './components/Legend'
 import Toast from './components/Toast'
 import TeaPanel from './components/TeaPanel'
+import CountrySwitcher from './components/CountrySwitcher'
 import { getCountries, getCategories } from './lib/api'
 
 export default function App() {
@@ -40,6 +41,11 @@ export default function App() {
       />
 
       <Breadcrumb nav={nav} onHome={() => mapRef.current?.flyHome()} />
+      <CountrySwitcher
+        countries={countries}
+        current={nav.country}
+        onPick={(id) => mapRef.current?.flyToCountryId(id)}
+      />
       <Legend categories={categories} />
       <Toast message={toast} />
 
