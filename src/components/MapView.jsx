@@ -7,6 +7,7 @@ import { COUNTRY_CENTROIDS } from '../lib/countryMeta'
 import { createCountryPin, createRegionPin, createTeaPin } from '../lib/markers'
 
 const WORLD_MAX = 3.2
+const LABEL_ZOOM = 8
 const LOAD_TIMEOUT_MS = 12000
 
 const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onToast }, ref) {
@@ -25,6 +26,7 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
   const [teasData, setTeasData] = useState([])
 
   const stage = zoom <= WORLD_MAX ? 'world' : selectedRegionName ? 'region-focus' : 'country'
+  const labelsOn = zoom >= LABEL_ZOOM
 
   // --- init map once ---
   useEffect(() => {
@@ -194,14 +196,14 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
     if (stage === 'world' || !selectedCountry) return
 
     teasData.forEach((tea) => {
-      const el = createTeaPin({ name: tea.name, category: tea.category })
+      const el = createTeaPin({ name: tea.name, category: tea.category, labeled: labelsOn })
       el.addEventListener('click', () => onSelectTea(selectedCountry.id, tea.id))
-      const marker = new maplibregl.Marker({ element: el, anchor: 'center' })
+      const marker = new maplibregl.Marker({ element: el, anchor: labelsOn ? 'left' : 'center' })
         .setLngLat([tea.lng, tea.lat])
         .addTo(mapRef.current)
       teaMarkersRef.current.push(marker)
     })
-  }, [ready, stage, selectedCountry, teasData, onSelectTea])
+  }, [ready, stage, selectedCountry, teasData, labelsOn, onSelectTea])
 
   useImperativeHandle(ref, () => ({
     flyHome() {

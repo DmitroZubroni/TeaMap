@@ -41,8 +41,27 @@ export function createRegionPin({ name }) {
   return el
 }
 
-export function createTeaPin({ name, category }) {
+export function createTeaPin({ name, category, labeled = false }) {
   const color = categoryColor(category)
+
+  if (labeled) {
+    const el = document.createElement('button')
+    el.type = 'button'
+    el.className = [
+      'group flex items-center gap-1.5 rounded-full pl-1 pr-3 py-1',
+      'bg-porcelain border shadow-pin animate-pin-in cursor-pointer',
+      'font-body text-[12px] font-medium text-ink whitespace-nowrap',
+      'transition-transform duration-150 ease-out hover:-translate-y-0.5',
+      'focus:outline-none focus-visible:ring-2 focus-visible:ring-gold',
+    ].join(' ')
+    el.style.borderColor = color
+    el.innerHTML = `
+      <span class="w-3 h-3 rounded-full border border-porcelain shrink-0" style="background:${color}"></span>
+      <span>${name}</span>
+    `
+    return el
+  }
+
   const el = document.createElement('button')
   el.type = 'button'
   el.className = [

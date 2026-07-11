@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import MapView from './components/MapView'
-import Header from './components/Header'
+import Sidebar from './components/Sidebar'
 import Toast from './components/Toast'
 import TeaPanel from './components/TeaPanel'
 import { getCountries, getCategories } from './lib/api'
@@ -38,7 +38,7 @@ export default function App() {
         onToast={setToast}
       />
 
-      <Header
+      <Sidebar
         nav={nav}
         onHome={() => mapRef.current?.flyHome()}
         countries={countries}
