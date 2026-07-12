@@ -227,9 +227,20 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
       }
     })
     console.info(`[tea-atlas] точек чая на карте: ${teaMarkersRef.current.length} / ${teasData.length}`)
-    if (teasData[0]) {
+    if (teasData[0] && teaMarkersRef.current[0]) {
       const p = mapRef.current.project([teasData[0].lng, teasData[0].lat])
-      console.info(`[tea-atlas] проекция первой точки (${teasData[0].name}):`, p, 'размер карты:', mapRef.current.getContainer().getBoundingClientRect())
+      const markerRect = teaMarkersRef.current[0].getElement().getBoundingClientRect()
+      const containerRect = mapRef.current.getContainer().getBoundingClientRect()
+      console.info(`[tea-atlas] первая точка (${teasData[0].name}):`, {
+        projectedXY: p,
+        markerScreenRect: markerRect,
+        mapContainerRect: containerRect,
+        markerIsInsideContainer:
+          markerRect.left >= containerRect.left &&
+          markerRect.top >= containerRect.top &&
+          markerRect.right <= containerRect.right &&
+          markerRect.bottom <= containerRect.bottom,
+      })
     }
   }, [ready, stage, selectedCountry, teasData, labelsOn, onSelectTea])
 
