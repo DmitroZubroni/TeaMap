@@ -208,11 +208,15 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
   }, [ready, stage, selectedCountry, regionsData])
 
   // --- tea pins: shown together with region pins as soon as a country is loaded ---
+  const teaEffectRunCount = useRef(0)
   useEffect(() => {
     if (!ready || !mapRef.current) return
     teaMarkersRef.current.forEach((m) => m.remove())
     teaMarkersRef.current = []
     if (stage === 'world' || !selectedCountry) return
+
+    teaEffectRunCount.current += 1
+    const runNumber = teaEffectRunCount.current
 
     teasData.forEach((tea) => {
       try {
@@ -226,20 +230,34 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
         console.error('Не удалось отрисовать точку чая', tea, err)
       }
     })
-    console.info(`[tea-atlas] точек чая на карте: ${teaMarkersRef.current.length} / ${teasData.length}`)
+    console.info(
+      `[tea-atlas] запуск №${runNumber} · точек чая на карте: ${teaMarkersRef.current.length} / ${teasData.length} · stage=${stage} labelsOn=${labelsOn}`
+    )
     if (teasData[0] && teaMarkersRef.current[0]) {
-      const p = mapRef.current.project([teasData[0].lng, teasData[0].lat])
-      const markerRect = teaMarkersRef.current[0].getElement().getBoundingClientRect()
-      const containerRect = mapRef.current.getContainer().getBoundingClientRect()
-      console.info(`[tea-atlas] первая точка (${teasData[0].name}):`, {
-        projectedXY: p,
-        markerScreenRect: markerRect,
-        mapContainerRect: containerRect,
-        markerIsInsideContainer:
-          markerRect.left >= containerRect.left &&
-          markerRect.top >= containerRect.top &&
-          markerRect.right <= containerRect.right &&
-          markerRect.bottom <= containerRect.bottom,
+      const firstMarker = teaMarkersRef.current[0]
+      // measure after two paints so we see the settled position, not the
+      // pre-transform frame (CSS transforms/animations apply asynchronously)
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          const p = mapRef.current.project([teasData[0].lng, teasData[0].lat])
+          const markerRect = firstMarker.getElement().getBoundingClientRect()
+          const containerRect = mapRef.current.getContainer().getBoundingClientRect()
+          const computed = getComputedStyle(firstMarker.getElement())
+          console.info(`[tea-atlas] запуск №${runNumber} · первая точка (${teasData[0].name}), после отрисовки:`, {
+            projectedXY: p,
+            markerScreenRect: markerRect,
+            mapContainerRect: containerRect,
+            markerIsInsideContainer:
+              markerRect.left >= containerRect.left &&
+              markerRect.top >= containerRect.top &&
+              markerRect.right <= containerRect.right &&
+              markerRect.bottom <= containerRect.bottom,
+            computedTransform: computed.transform,
+            computedOpacity: computed.opacity,
+            computedDisplay: computed.display,
+            computedVisibility: computed.visibility,
+          })
+        })
       })
     }
   }, [ready, stage, selectedCountry, teasData, labelsOn, onSelectTea])
