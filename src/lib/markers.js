@@ -1,76 +1,99 @@
 import { categoryColor } from './categoryStyle'
 
-export function createCountryPin({ name, icon, active }) {
-  const el = document.createElement('button')
-  el.type = 'button'
-  el.className = [
+// IMPORTANT: MapLibre positions each marker by writing directly to
+// `element.style.transform` on the root element passed to `new
+// maplibregl.Marker({ element })`. Our own CSS entrance animation
+// (`animate-pin-in`) also animates the `transform` property — and a CSS
+// animation targeting `transform` wins over that inline style for as long
+// as it's "in effect", which with `animation-fill-mode: both` is forever
+// after it starts. The two fight over the same property and MapLibre's
+// positioning transform never wins, so every marker rendered at scale(1)
+// with zero translation — visually stuck at the map's origin instead of
+// its real geographic position.
+//
+// Fix: the entrance animation lives on an INNER wrapper, and clicks are
+// bound to that inner element too. The OUTER element (returned here, handed
+// to `Marker`) never has its `transform` touched by our own CSS, so
+// MapLibre has exclusive control of it.
+function wrap(inner, onClick) {
+  inner.classList.add('animate-pin-in')
+  if (onClick) inner.addEventListener('click', onClick)
+  const outer = document.createElement('div')
+  outer.appendChild(inner)
+  return outer
+}
+
+export function createCountryPin({ name, icon, active, onClick }) {
+  const inner = document.createElement('button')
+  inner.type = 'button'
+  inner.className = [
     'group flex items-center gap-2 rounded-full pl-2 pr-3.5 py-1.5',
     'font-body text-[13px] font-semibold whitespace-nowrap',
     'shadow-pin border transition-transform duration-150 ease-out',
     'hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold',
-    'animate-pin-in cursor-pointer',
+    'cursor-pointer',
     active
       ? 'bg-ink text-porcelain border-gold/70'
       : 'bg-porcelain/90 text-ink-soft border-ink/10 opacity-70 grayscale hover:opacity-90',
   ].join(' ')
 
-  el.innerHTML = `
+  inner.innerHTML = `
     <span class="grid place-items-center w-6 h-6 rounded-full text-[15px] ${active ? 'bg-gold/20' : 'bg-ink/5'}">${icon}</span>
     <span>${name}</span>
     ${active ? '<span class="w-1.5 h-1.5 rounded-full bg-gold"></span>' : '<span class="text-[10px] uppercase tracking-wide text-ink-soft/60">скоро</span>'}
   `
-  return el
+  return wrap(inner, onClick)
 }
 
-export function createRegionPin({ name }) {
-  const el = document.createElement('button')
-  el.type = 'button'
-  el.className = [
+export function createRegionPin({ name, onClick }) {
+  const inner = document.createElement('button')
+  inner.type = 'button'
+  inner.className = [
     'group flex items-center gap-1.5 rounded-full pl-1.5 pr-3 py-1',
     'bg-jade/90 text-porcelain border border-porcelain/30 shadow-pin',
     'font-body text-[12px] font-medium whitespace-nowrap',
     'transition-transform duration-150 ease-out hover:-translate-y-0.5',
-    'focus:outline-none focus-visible:ring-2 focus-visible:ring-gold animate-pin-in cursor-pointer',
+    'focus:outline-none focus-visible:ring-2 focus-visible:ring-gold cursor-pointer',
   ].join(' ')
-  el.innerHTML = `
+  inner.innerHTML = `
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="opacity-90">
       <path d="M3 20L9 8L13 15L16 10L21 20H3Z" fill="currentColor"/>
     </svg>
     <span>${name}</span>
   `
-  return el
+  return wrap(inner, onClick)
 }
 
-export function createTeaPin({ name, category, labeled = false }) {
+export function createTeaPin({ name, category, labeled = false, onClick }) {
   const color = categoryColor(category)
 
   if (labeled) {
-    const el = document.createElement('button')
-    el.type = 'button'
-    el.className = [
+    const inner = document.createElement('button')
+    inner.type = 'button'
+    inner.className = [
       'group flex items-center gap-1.5 rounded-full pl-1 pr-3 py-1',
-      'bg-porcelain border shadow-pin animate-pin-in cursor-pointer',
+      'bg-porcelain border shadow-pin cursor-pointer',
       'font-body text-[12px] font-medium text-ink whitespace-nowrap',
       'transition-transform duration-150 ease-out hover:-translate-y-0.5',
       'focus:outline-none focus-visible:ring-2 focus-visible:ring-gold',
     ].join(' ')
-    el.style.borderColor = color
-    el.innerHTML = `
+    inner.style.borderColor = color
+    inner.innerHTML = `
       <span class="w-3 h-3 rounded-full border border-porcelain shrink-0" style="background:${color}"></span>
       <span>${name}</span>
     `
-    return el
+    return wrap(inner, onClick)
   }
 
-  const el = document.createElement('button')
-  el.type = 'button'
-  el.className = [
+  const inner = document.createElement('button')
+  inner.type = 'button'
+  inner.className = [
     'group relative grid place-items-center w-4 h-4 rounded-full',
-    'border-2 border-porcelain shadow-pin animate-pin-in cursor-pointer',
+    'border-2 border-porcelain shadow-pin cursor-pointer',
     'transition-transform duration-150 ease-out hover:scale-125',
     'focus:outline-none focus-visible:ring-2 focus-visible:ring-gold',
   ].join(' ')
-  el.style.backgroundColor = color
+  inner.style.backgroundColor = color
 
   const tooltip = document.createElement('span')
   tooltip.className = [
@@ -79,7 +102,7 @@ export function createTeaPin({ name, category, labeled = false }) {
     'px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-150 shadow-pin',
   ].join(' ')
   tooltip.textContent = name
-  el.appendChild(tooltip)
+  inner.appendChild(tooltip)
 
-  return el
+  return wrap(inner, onClick)
 }

@@ -174,8 +174,12 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
     countries.forEach((country) => {
       const centroid = COUNTRY_CENTROIDS[country.id]
       if (!centroid) return
-      const el = createCountryPin({ name: country.name, icon: country.icon, active: country.teaCount > 0 })
-      el.addEventListener('click', () => flyToCountry(country))
+      const el = createCountryPin({
+        name: country.name,
+        icon: country.icon,
+        active: country.teaCount > 0,
+        onClick: () => flyToCountry(country),
+      })
       const marker = new maplibregl.Marker({ element: el, anchor: 'bottom' })
         .setLngLat([centroid.lng, centroid.lat])
         .addTo(mapRef.current)
@@ -192,10 +196,12 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
 
     regionsData.forEach((region) => {
       try {
-        const el = createRegionPin({ name: region.name })
-        el.addEventListener('click', () => {
-          setSelectedRegionName(region.name)
-          mapRef.current.flyTo({ center: [region.lng, region.lat], zoom: Math.max(region.zoom, 8), duration: 900 })
+        const el = createRegionPin({
+          name: region.name,
+          onClick: () => {
+            setSelectedRegionName(region.name)
+            mapRef.current.flyTo({ center: [region.lng, region.lat], zoom: Math.max(region.zoom, 8), duration: 900 })
+          },
         })
         const marker = new maplibregl.Marker({ element: el, anchor: 'bottom' })
           .setLngLat([region.lng, region.lat])
@@ -208,20 +214,20 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
   }, [ready, stage, selectedCountry, regionsData])
 
   // --- tea pins: shown together with region pins as soon as a country is loaded ---
-  const teaEffectRunCount = useRef(0)
   useEffect(() => {
     if (!ready || !mapRef.current) return
     teaMarkersRef.current.forEach((m) => m.remove())
     teaMarkersRef.current = []
     if (stage === 'world' || !selectedCountry) return
 
-    teaEffectRunCount.current += 1
-    const runNumber = teaEffectRunCount.current
-
     teasData.forEach((tea) => {
       try {
-        const el = createTeaPin({ name: tea.name, category: tea.category, labeled: labelsOn })
-        el.addEventListener('click', () => onSelectTea(selectedCountry.id, tea.id))
+        const el = createTeaPin({
+          name: tea.name,
+          category: tea.category,
+          labeled: labelsOn,
+          onClick: () => onSelectTea(selectedCountry.id, tea.id),
+        })
         const marker = new maplibregl.Marker({ element: el, anchor: labelsOn ? 'left' : 'center' })
           .setLngLat([tea.lng, tea.lat])
           .addTo(mapRef.current)
@@ -230,36 +236,6 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
         console.error('Не удалось отрисовать точку чая', tea, err)
       }
     })
-    console.info(
-      `[tea-atlas] запуск №${runNumber} · точек чая на карте: ${teaMarkersRef.current.length} / ${teasData.length} · stage=${stage} labelsOn=${labelsOn}`
-    )
-    if (teasData[0] && teaMarkersRef.current[0]) {
-      const firstMarker = teaMarkersRef.current[0]
-      // measure after two paints so we see the settled position, not the
-      // pre-transform frame (CSS transforms/animations apply asynchronously)
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          const p = mapRef.current.project([teasData[0].lng, teasData[0].lat])
-          const markerRect = firstMarker.getElement().getBoundingClientRect()
-          const containerRect = mapRef.current.getContainer().getBoundingClientRect()
-          const computed = getComputedStyle(firstMarker.getElement())
-          console.info(`[tea-atlas] запуск №${runNumber} · первая точка (${teasData[0].name}), после отрисовки:`, {
-            projectedXY: p,
-            markerScreenRect: markerRect,
-            mapContainerRect: containerRect,
-            markerIsInsideContainer:
-              markerRect.left >= containerRect.left &&
-              markerRect.top >= containerRect.top &&
-              markerRect.right <= containerRect.right &&
-              markerRect.bottom <= containerRect.bottom,
-            computedTransform: computed.transform,
-            computedOpacity: computed.opacity,
-            computedDisplay: computed.display,
-            computedVisibility: computed.visibility,
-          })
-        })
-      })
-    }
   }, [ready, stage, selectedCountry, teasData, labelsOn, onSelectTea])
 
   useImperativeHandle(ref, () => ({
