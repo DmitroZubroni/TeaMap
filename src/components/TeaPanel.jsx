@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
-import { getTeaDetail, getSources, getCategories, getTeaIndex } from '../lib/api'
+import { getTeaDetail, getCategories, getTeaIndex } from '../lib/api'
 import { categoryColor } from '../lib/categoryStyle'
+import TeaImage from './TeaImage'
 
 function Dots({ value = 0, max = 5 }) {
   return (
@@ -42,7 +43,6 @@ export default function TeaPanel({ countryId, teaId, onClose, onSelectTea }) {
   const [tea, setTea] = useState(null)
   const [error, setError] = useState(null)
   const [categories, setCategories] = useState([])
-  const [sources, setSources] = useState([])
   const [teaIndex, setTeaIndex] = useState([])
   const [tab, setTab] = useState('overview')
 
@@ -51,12 +51,11 @@ export default function TeaPanel({ countryId, teaId, onClose, onSelectTea }) {
     setTea(null)
     setError(null)
     setTab('overview')
-    Promise.all([getTeaDetail(countryId, teaId), getCategories(), getSources(), getTeaIndex(countryId)])
-      .then(([detail, cats, srcs, idx]) => {
+    Promise.all([getTeaDetail(countryId, teaId), getCategories(), getTeaIndex(countryId)])
+      .then(([detail, cats, idx]) => {
         if (cancelled) return
         setTea(detail)
         setCategories(cats)
-        setSources(srcs)
         setTeaIndex(idx)
       })
       .catch((e) => !cancelled && setError(e.message))
@@ -67,7 +66,6 @@ export default function TeaPanel({ countryId, teaId, onClose, onSelectTea }) {
 
   const categoryLabel = categories.find((c) => c.id === tea?.category)?.name
   const nameById = Object.fromEntries(teaIndex.map((t) => [t.id, t.name]))
-  const sourceById = Object.fromEntries(sources.map((s) => [s.id, s]))
   const color = tea ? categoryColor(tea.category) : '#8A8372'
 
   return (
@@ -92,6 +90,7 @@ export default function TeaPanel({ countryId, teaId, onClose, onSelectTea }) {
 
       {tea && (
         <>
+          <TeaImage tea={tea} />
           <div
             className="px-6 pt-7 pb-4 shrink-0"
             style={{ background: `linear-gradient(180deg, ${color}33, transparent)` }}
@@ -216,33 +215,7 @@ export default function TeaPanel({ countryId, teaId, onClose, onSelectTea }) {
                     </div>
                   )}
 
-                  {tea.sources?.length > 0 && (
-                    <div className="border-t border-ink/10 pt-3">
-                      <p className="font-mono text-[10px] uppercase tracking-wide text-ink-soft/60 mb-1.5">
-                        Источники
-                      </p>
-                      <ul className="flex flex-col gap-1">
-                        {tea.sources.map((id) => {
-                          const s = sourceById[id]
-                          if (!s) return null
-                          return (
-                            <li key={id}>
-                              <a
-                                href={s.url}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="text-[12px] text-gold hover:underline"
-                              >
-                                {s.name} ↗
-                              </a>
-                            </li>
-                          )
-                        })}
-                      </ul>
-                    </div>
-                  )}
-
-                  {!tea.relatedTeas?.length && !tea.sources?.length && (
+                  {!tea.relatedTeas?.length && (
                     <p className="text-[13px] text-ink-soft/60">Пока нечего показать.</p>
                   )}
                 </>

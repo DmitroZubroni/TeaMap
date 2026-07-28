@@ -45,6 +45,7 @@ export default function App() {
         categories={categories}
         onPickCountry={(id) => mapRef.current?.flyToCountryId(id)}
         onPickRegion={(region) => mapRef.current?.flyToRegion(region)}
+        onBackToRegions={() => mapRef.current?.clearRegionFocus()}
         onSelectTea={handleSelectTea}
       />
       <Toast message={toast} />

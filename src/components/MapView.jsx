@@ -220,7 +220,35 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
     teaMarkersRef.current = []
     if (stage === 'world' || !selectedCountry) return
 
+    // Several teas often share the exact same coordinate (same mountain/
+    // garden). Left as-is they'd render as a single stacked, unclickable
+    // dot, so duplicates are fanned out in a small circle around the
+    // shared point — small enough to still read as "one place" when
+    // zoomed out, wide enough to be individually clickable up close.
+    const groups = new Map()
     teasData.forEach((tea) => {
+      const key = `${tea.lat.toFixed(4)},${tea.lng.toFixed(4)}`
+      if (!groups.has(key)) groups.set(key, [])
+      groups.get(key).push(tea)
+    })
+    const OFFSET_DEG = 0.006
+    const positioned = []
+    groups.forEach((group) => {
+      if (group.length === 1) {
+        positioned.push({ tea: group[0], lat: group[0].lat, lng: group[0].lng })
+        return
+      }
+      group.forEach((tea, i) => {
+        const angle = (i / group.length) * 2 * Math.PI
+        positioned.push({
+          tea,
+          lat: tea.lat + OFFSET_DEG * Math.sin(angle),
+          lng: tea.lng + OFFSET_DEG * Math.cos(angle),
+        })
+      })
+    })
+
+    positioned.forEach(({ tea, lat, lng }) => {
       try {
         const el = createTeaPin({
           name: tea.name,
@@ -229,7 +257,7 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
           onClick: () => onSelectTea(selectedCountry.id, tea.id),
         })
         const marker = new maplibregl.Marker({ element: el, anchor: labelsOn ? 'left' : 'center' })
-          .setLngLat([tea.lng, tea.lat])
+          .setLngLat([lng, lat])
           .addTo(mapRef.current)
         teaMarkersRef.current.push(marker)
       } catch (err) {
@@ -250,6 +278,9 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
       if (!region || !mapRef.current) return
       setSelectedRegionName(region.name)
       mapRef.current.flyTo({ center: [region.lng, region.lat], zoom: Math.max(region.zoom, 8), duration: 900 })
+    },
+    clearRegionFocus() {
+      setSelectedRegionName(null)
     },
   }))
 
