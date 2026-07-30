@@ -126,43 +126,16 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
     }
   }, [onToast, loadCountryData])
 
-  // --- detect which country we're looking at when the person pans/zooms
-  // the map by hand, rather than only when they click a world pin ---
-  useEffect(() => {
-    if (!ready || !mapRef.current) return
-    const map = mapRef.current
-
-    const detect = () => {
-      if (map.getZoom() <= WORLD_MAX) return
-      const center = map.getCenter()
-      const active = countries.filter((c) => c.teaCount > 0 && COUNTRY_CENTROIDS[c.id])
-      let nearest = null
-      let nearestDist = Infinity
-      for (const c of active) {
-        const p = COUNTRY_CENTROIDS[c.id]
-        const d = Math.hypot(p.lat - center.lat, p.lng - center.lng)
-        if (d < nearestDist) {
-          nearestDist = d
-          nearest = c
-        }
-      }
-      const DETECT_RADIUS_DEG = 22
-      const match = nearest && nearestDist <= DETECT_RADIUS_DEG ? nearest : null
-
-      setSelectedCountry((prev) => {
-        if (match?.id === prev?.id) return prev
-        if (match) loadCountryData(match)
-        else {
-          setRegionsData([])
-          setTeasData([])
-        }
-        return match
-      })
-    }
-
-    map.on('moveend', detect)
-    return () => map.off('moveend', detect)
-  }, [ready, countries, loadCountryData])
+  // Country selection now only ever happens via an explicit click (a world
+  // pin, or the sidebar's country list) — see flyToCountry / flyToCountryId.
+  // We used to also guess the "current" country from the map center on
+  // every pan/zoom, but that heuristic (nearest active-country centroid)
+  // breaks down badly once multiple countries are active: a small country's
+  // centroid can be geographically closer to a neighboring big country's
+  // region than that region is to its own country's centroid (e.g. Taiwan's
+  // centroid is closer to Wuyishan than mainland China's own centroid is),
+  // silently swapping the selected country to the wrong one mid-navigation.
+  // Explicit selection has no such ambiguity.
 
   // --- world-stage country pins ---
   useEffect(() => {
