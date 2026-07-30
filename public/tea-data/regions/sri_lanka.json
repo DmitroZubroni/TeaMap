@@ -1,0 +1,58 @@
+[
+  {
+    "id": "nuwara_eliya_region",
+    "name": "Нувара Элия",
+    "province": "Центральная",
+    "lat": 6.9497,
+    "lng": 80.7891,
+    "zoom": 11
+  },
+  {
+    "id": "uva_region",
+    "name": "Ува",
+    "province": "Ува",
+    "lat": 6.8333,
+    "lng": 81.05,
+    "zoom": 10
+  },
+  {
+    "id": "dimbula_region",
+    "name": "Димбула",
+    "province": "Центральная",
+    "lat": 6.8908,
+    "lng": 80.6337,
+    "zoom": 10
+  },
+  {
+    "id": "kandy_region",
+    "name": "Канди",
+    "province": "Центральная",
+    "lat": 7.2906,
+    "lng": 80.6337,
+    "zoom": 11
+  },
+  {
+    "id": "ruhuna_region",
+    "name": "Рухуна (юг)",
+    "province": "Южная",
+    "lat": 6.0535,
+    "lng": 80.221,
+    "zoom": 9
+  },
+  {
+    "id": "sabaragamuwa_region",
+    "name": "Сабарагамува",
+    "province": "Сабарагамува",
+    "lat": 6.6828,
+    "lng": 80.3992,
+    "zoom": 9
+  },
+  {
+    "id": "kegalle_region",
+    "name": "Кегалле",
+    "province": "Западная",
+    "lat": 7.2513,
+    "lng": 80.3464,
+    "zoom": 10
+  }
+]

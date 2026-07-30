@@ -1,0 +1,29 @@
+[
+  {
+    "id": "krasnodar_tea",
+    "name": "Краснодарский чай",
+    "country": "russia",
+    "category": "red",
+    "lat": 43.6304,
+    "lng": 39.7303,
+    "region": "Солохаул, Сочи"
+  },
+  {
+    "id": "matsesta_tea",
+    "name": "Мацестинский чай",
+    "country": "russia",
+    "category": "red",
+    "lat": 43.5333,
+    "lng": 39.8167,
+    "region": "Мацеста"
+  },
+  {
+    "id": "dagomys_tea",
+    "name": "Дагомысский чай",
+    "country": "russia",
+    "category": "red",
+    "lat": 43.6889,
+    "lng": 39.6408,
+    "region": "Дагомыс"
+  }
+]

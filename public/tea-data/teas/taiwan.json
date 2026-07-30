@@ -1,0 +1,56 @@
+[
+  {
+    "id": "dong_ding",
+    "name": "Дун Дин",
+    "country": "taiwan",
+    "category": "oolong_light",
+    "lat": 23.6858,
+    "lng": 120.7826,
+    "region": "гора Дун Дин"
+  },
+  {
+    "id": "ali_shan",
+    "name": "Али Шань",
+    "country": "taiwan",
+    "category": "oolong_light",
+    "lat": 23.5052,
+    "lng": 120.6598,
+    "region": "гора Алишань"
+  },
+  {
+    "id": "li_shan",
+    "name": "Ли Шань",
+    "country": "taiwan",
+    "category": "oolong_light",
+    "lat": 24.2333,
+    "lng": 121.2667,
+    "region": "гора Ли Шань"
+  },
+  {
+    "id": "oriental_beauty",
+    "name": "Бай Хао (Восточная красавица)",
+    "country": "taiwan",
+    "category": "oolong_dark",
+    "lat": 24.6999,
+    "lng": 121.1928,
+    "region": "Бэйпу"
+  },
+  {
+    "id": "muzha_tie_guan_yin",
+    "name": "Мучжа Те Гуань Инь",
+    "country": "taiwan",
+    "category": "oolong_dark",
+    "lat": 24.988,
+    "lng": 121.573,
+    "region": "Мучжа, Тайбэй"
+  },
+  {
+    "id": "ruby_18",
+    "name": "Хун Юй (Ruby №18)",
+    "country": "taiwan",
+    "category": "red",
+    "lat": 23.86,
+    "lng": 120.915,
+    "region": "озеро Солнца и Луны"
+  }
+]

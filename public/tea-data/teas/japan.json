@@ -1,0 +1,56 @@
+[
+  {
+    "id": "sencha",
+    "name": "Сенча",
+    "country": "japan",
+    "category": "green",
+    "lat": 34.9756,
+    "lng": 138.14,
+    "region": "Сидзуока"
+  },
+  {
+    "id": "matcha",
+    "name": "Матча",
+    "country": "japan",
+    "category": "green",
+    "lat": 34.8848,
+    "lng": 135.8048,
+    "region": "Удзи"
+  },
+  {
+    "id": "gyokuro",
+    "name": "Гёкуро",
+    "country": "japan",
+    "category": "green",
+    "lat": 33.2081,
+    "lng": 130.5644,
+    "region": "Яме"
+  },
+  {
+    "id": "hojicha",
+    "name": "Ходзича",
+    "country": "japan",
+    "category": "green",
+    "lat": 34.8848,
+    "lng": 135.8048,
+    "region": "Удзи"
+  },
+  {
+    "id": "genmaicha",
+    "name": "Гэммайча",
+    "country": "japan",
+    "category": "green",
+    "lat": 34.9756,
+    "lng": 138.14,
+    "region": "Сидзуока"
+  },
+  {
+    "id": "kukicha",
+    "name": "Кукича",
+    "country": "japan",
+    "category": "green",
+    "lat": 34.8848,
+    "lng": 135.8048,
+    "region": "Удзи"
+  }
+]

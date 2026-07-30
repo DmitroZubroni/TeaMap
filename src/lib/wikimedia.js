@@ -1,9 +1,6 @@
-// Looks up a representative photo for a tea region/mountain from Wikimedia
-// Commons at runtime. Commons content is freely licensed for this kind of
-// use; we keep the request minimal (one thumbnail) and cache results so we
-// never ask twice for the same query. If nothing suitable is found (which
-// happens often — many mountains simply have no Commons coverage), callers
-// should fall back to an illustrated placeholder rather than show nothing.
+// Looks up a representative dry-leaf photo from Wikimedia Commons at
+// runtime. Commons content is freely licensed for this kind of use; we
+// cache results so we never ask twice for the same query.
 const cache = new Map()
 
 export async function fetchCommonsImage(query) {

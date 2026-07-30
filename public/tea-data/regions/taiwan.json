@@ -1,0 +1,50 @@
+[
+  {
+    "id": "dongding_region",
+    "name": "Гора Дун Дин",
+    "province": "Наньтоу",
+    "lat": 23.6858,
+    "lng": 120.7826,
+    "zoom": 11
+  },
+  {
+    "id": "alishan_region",
+    "name": "Гора Алишань",
+    "province": "Цзяи",
+    "lat": 23.5052,
+    "lng": 120.6598,
+    "zoom": 10
+  },
+  {
+    "id": "lishan_region",
+    "name": "Гора Ли Шань",
+    "province": "Тайчжун",
+    "lat": 24.2333,
+    "lng": 121.2667,
+    "zoom": 10
+  },
+  {
+    "id": "beipu",
+    "name": "Бэйпу",
+    "province": "Синьчжу",
+    "lat": 24.6999,
+    "lng": 121.1928,
+    "zoom": 11
+  },
+  {
+    "id": "muzha",
+    "name": "Мучжа",
+    "province": "Тайбэй",
+    "lat": 24.988,
+    "lng": 121.573,
+    "zoom": 12
+  },
+  {
+    "id": "sun_moon_lake",
+    "name": "Озеро Солнца и Луны",
+    "province": "Наньтоу",
+    "lat": 23.86,
+    "lng": 120.915,
+    "zoom": 11
+  }
+]

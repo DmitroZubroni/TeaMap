@@ -1,0 +1,65 @@
+[
+  {
+    "id": "nuwara_eliya",
+    "name": "Нувара Элия",
+    "country": "sri_lanka",
+    "category": "red",
+    "lat": 6.9497,
+    "lng": 80.7891,
+    "region": "центральное нагорье"
+  },
+  {
+    "id": "uva",
+    "name": "Ува",
+    "country": "sri_lanka",
+    "category": "red",
+    "lat": 6.8333,
+    "lng": 81.05,
+    "region": "восточные склоны"
+  },
+  {
+    "id": "dimbula",
+    "name": "Димбула",
+    "country": "sri_lanka",
+    "category": "red",
+    "lat": 6.8908,
+    "lng": 80.6337,
+    "region": "западные склоны"
+  },
+  {
+    "id": "kandy",
+    "name": "Канди",
+    "country": "sri_lanka",
+    "category": "red",
+    "lat": 7.2906,
+    "lng": 80.6337,
+    "region": "среднегорье"
+  },
+  {
+    "id": "ruhuna",
+    "name": "Рухуна",
+    "country": "sri_lanka",
+    "category": "red",
+    "lat": 6.0535,
+    "lng": 80.221,
+    "region": "южное побережье"
+  },
+  {
+    "id": "sabaragamuwa",
+    "name": "Сабарагамува",
+    "country": "sri_lanka",
+    "category": "red",
+    "lat": 6.6828,
+    "lng": 80.3992,
+    "region": "юго-запад"
+  },
+  {
+    "id": "kegalle",
+    "name": "Кегалле",
+    "country": "sri_lanka",
+    "category": "red",
+    "lat": 7.2513,
+    "lng": 80.3464,
+    "region": "западное среднегорье"
+  }
+]

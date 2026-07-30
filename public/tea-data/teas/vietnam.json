@@ -1,0 +1,47 @@
+[
+  {
+    "id": "thai_nguyen",
+    "name": "Тхай Нгуен",
+    "country": "vietnam",
+    "category": "green",
+    "lat": 21.5928,
+    "lng": 105.8442,
+    "region": "Тан Кыонг"
+  },
+  {
+    "id": "ha_giang_shan_tuyet",
+    "name": "Ха Занг (Шан Туйет)",
+    "country": "vietnam",
+    "category": "green",
+    "lat": 22.8025,
+    "lng": 104.9784,
+    "region": "Хоанг Су Фи"
+  },
+  {
+    "id": "moc_chau",
+    "name": "Мок Тяу",
+    "country": "vietnam",
+    "category": "green",
+    "lat": 20.8333,
+    "lng": 104.6667,
+    "region": "плато Мок Тяу"
+  },
+  {
+    "id": "lam_dong",
+    "name": "Лам Донг (Бао Лок)",
+    "country": "vietnam",
+    "category": "oolong_light",
+    "lat": 11.547,
+    "lng": 107.811,
+    "region": "плато Тэйнгуен"
+  },
+  {
+    "id": "cao_bo",
+    "name": "Као Бо",
+    "country": "vietnam",
+    "category": "green",
+    "lat": 22.6667,
+    "lng": 104.85,
+    "region": "Ви Суен"
+  }
+]

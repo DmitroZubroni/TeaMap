@@ -104,7 +104,7 @@ function RegionList({ regions, onPick }) {
   )
 }
 
-function TeaRow({ tea, onPick }) {
+function TeaRow({ tea, onPick, countryIcon }) {
   return (
     <button
       type="button"
@@ -116,6 +116,7 @@ function TeaRow({ tea, onPick }) {
         style={{ backgroundColor: categoryColor(tea.category) }}
       />
       <span className="text-[13px] text-ink flex-1 truncate">{tea.name}</span>
+      {countryIcon && <span className="text-[12px] shrink-0 opacity-70">{countryIcon}</span>}
     </button>
   )
 }
@@ -131,8 +132,10 @@ function TeaListFlat({ teas, onPick }) {
   )
 }
 
-function ReferenceTab({ categories, teas, onPick }) {
+function ReferenceTab({ categories, teas, countries, onPick }) {
   const [query, setQuery] = useState('')
+  const iconByCountry = Object.fromEntries(countries.map((c) => [c.id, c.icon]))
+  const showCountryIcon = new Set(teas.map((t) => t.countryId)).size > 1
 
   const grouped = useMemo(() => {
     const q = query.trim().toLowerCase()
@@ -167,7 +170,7 @@ function ReferenceTab({ categories, teas, onPick }) {
       {teas.length > 0 && (
         <div className="flex flex-col gap-2">
           <div className="h-px bg-ink/10" />
-          <SectionLabel>все чаи · поиск</SectionLabel>
+          <SectionLabel>все чаи · поиск по всем странам</SectionLabel>
           <input
             type="text"
             value={query}
@@ -183,7 +186,12 @@ function ReferenceTab({ categories, teas, onPick }) {
                   <p className="text-[10px] text-ink-soft/50 uppercase tracking-wide mb-1 px-2">{cat.name}</p>
                   <div className="flex flex-col gap-0.5">
                     {grouped.get(cat.id).map((t) => (
-                      <TeaRow key={t.id} tea={t} onPick={onPick} />
+                      <TeaRow
+                        key={`${t.countryId}-${t.id}`}
+                        tea={t}
+                        onPick={onPick}
+                        countryIcon={showCountryIcon ? iconByCountry[t.countryId] : null}
+                      />
                     ))}
                   </div>
                 </div>
@@ -203,10 +211,12 @@ export default function Sidebar({
   onHome,
   countries,
   categories,
+  allTeas,
   onPickCountry,
   onPickRegion,
   onBackToRegions,
   onSelectTea,
+  onPickGlobalTea,
 }) {
   const [expanded, setExpanded] = useState(true)
   const [view, setView] = useState('nav') // 'nav' | 'reference'
@@ -314,7 +324,7 @@ export default function Sidebar({
             )}
           </>
         ) : (
-          <ReferenceTab categories={categories} teas={nav.teas} onPick={(t) => nav.country && pickTea(t)} />
+          <ReferenceTab categories={categories} teas={allTeas} countries={countries} onPick={onPickGlobalTea} />
         )}
       </div>
     </aside>

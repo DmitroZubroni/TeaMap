@@ -1,0 +1,83 @@
+[
+  {
+    "id": "assam_first_flush",
+    "name": "Ассам, первый сбор",
+    "country": "india",
+    "category": "red",
+    "lat": 26.7509,
+    "lng": 94.2037,
+    "region": "долина Брахмапутры"
+  },
+  {
+    "id": "assam_second_flush",
+    "name": "Ассам, второй сбор",
+    "country": "india",
+    "category": "red",
+    "lat": 26.7509,
+    "lng": 94.2037,
+    "region": "долина Брахмапутры"
+  },
+  {
+    "id": "darjeeling_first_flush",
+    "name": "Дарджилинг, первый сбор",
+    "country": "india",
+    "category": "red",
+    "lat": 27.041,
+    "lng": 88.2663,
+    "region": "Дарджилинг"
+  },
+  {
+    "id": "darjeeling_second_flush",
+    "name": "Дарджилинг, второй сбор",
+    "country": "india",
+    "category": "red",
+    "lat": 27.041,
+    "lng": 88.2663,
+    "region": "Дарджилинг"
+  },
+  {
+    "id": "darjeeling_autumnal",
+    "name": "Дарджилинг, осенний сбор",
+    "country": "india",
+    "category": "red",
+    "lat": 27.041,
+    "lng": 88.2663,
+    "region": "Дарджилинг"
+  },
+  {
+    "id": "nilgiri",
+    "name": "Нилгири",
+    "country": "india",
+    "category": "red",
+    "lat": 11.4102,
+    "lng": 76.695,
+    "region": "Голубые горы"
+  },
+  {
+    "id": "sikkim_temi",
+    "name": "Сикким (Temi Tea)",
+    "country": "india",
+    "category": "red",
+    "lat": 27.2833,
+    "lng": 88.35,
+    "region": "плантация Тэми"
+  },
+  {
+    "id": "munnar",
+    "name": "Мунар",
+    "country": "india",
+    "category": "red",
+    "lat": 10.0889,
+    "lng": 77.0595,
+    "region": "горы Кардамон"
+  },
+  {
+    "id": "kangra",
+    "name": "Кангра",
+    "country": "india",
+    "category": "red",
+    "lat": 32.1113,
+    "lng": 76.5344,
+    "region": "долина Кангра"
+  }
+]

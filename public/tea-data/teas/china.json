@@ -385,5 +385,149 @@
     "lat": 25.0692,
     "lng": 117.9847,
     "region": "Аньси"
+  },
+  {
+    "id": "zhengshan_xiaozhong",
+    "name": "Чжэншань Сяочжун",
+    "country": "china",
+    "category": "red",
+    "lat": 27.8206,
+    "lng": 117.6742,
+    "region": "Тунму, Уишань"
+  },
+  {
+    "id": "dianhong",
+    "name": "Дянь Хун",
+    "country": "china",
+    "category": "red",
+    "lat": 24.5833,
+    "lng": 99.9167,
+    "region": "уезд Фэнцин, Юньнань"
+  },
+  {
+    "id": "keemun",
+    "name": "Кимун",
+    "country": "china",
+    "category": "red",
+    "lat": 29.8672,
+    "lng": 117.7181,
+    "region": "уезд Цимэнь, Аньхой"
+  },
+  {
+    "id": "hu_hong",
+    "name": "Ху Хун",
+    "country": "china",
+    "category": "red",
+    "lat": 28.3667,
+    "lng": 111.2167,
+    "region": "уезд Аньхуа, Хунань"
+  },
+  {
+    "id": "ninghong",
+    "name": "Нин Хун",
+    "country": "china",
+    "category": "red",
+    "lat": 29.0333,
+    "lng": 115.7167,
+    "region": "уезд Сюнин, Цзянси"
+  },
+  {
+    "id": "yingde_hong",
+    "name": "Ин Дэ Хун",
+    "country": "china",
+    "category": "red",
+    "lat": 24.1833,
+    "lng": 113.4,
+    "region": "уезд Индэ, Гуандун"
+  },
+  {
+    "id": "chuan_hong",
+    "name": "Чуань Хун",
+    "country": "china",
+    "category": "red",
+    "lat": 28.76,
+    "lng": 104.63,
+    "region": "Ибинь, Сычуань"
+  },
+  {
+    "id": "liu_bao",
+    "name": "Лю Бао",
+    "country": "china",
+    "category": "dark_other",
+    "lat": 23.4667,
+    "lng": 111.2833,
+    "region": "уезд Цанву, Гуанси"
+  },
+  {
+    "id": "fu_zhuan",
+    "name": "Фу Чжуань",
+    "country": "china",
+    "category": "dark_other",
+    "lat": 28.3667,
+    "lng": 111.2167,
+    "region": "уезд Аньхуа, Хунань"
+  },
+  {
+    "id": "kang_zhuan",
+    "name": "Кан Чжуань",
+    "country": "china",
+    "category": "dark_other",
+    "lat": 29.9878,
+    "lng": 102.9633,
+    "region": "Яань, Сычуань"
+  },
+  {
+    "id": "qing_zhuan",
+    "name": "Цин Чжуань",
+    "country": "china",
+    "category": "dark_other",
+    "lat": 29.7233,
+    "lng": 113.9481,
+    "region": "уезд Чиби, Хубэй"
+  },
+  {
+    "id": "tian_jian",
+    "name": "Тянь Цзянь",
+    "country": "china",
+    "category": "dark_other",
+    "lat": 28.3667,
+    "lng": 111.2167,
+    "region": "уезд Аньхуа, Хунань"
+  },
+  {
+    "id": "lao_banzhang_sheng_puer",
+    "name": "Шэн пуэр (Лао Бань Чжан)",
+    "country": "china",
+    "category": "dark_sheng",
+    "lat": 21.8167,
+    "lng": 100.4,
+    "region": "гора Буланшань"
+  },
+  {
+    "id": "jingmai_sheng_puer",
+    "name": "Шэн пуэр (Цзинмай)",
+    "country": "china",
+    "category": "dark_sheng",
+    "lat": 22.2064,
+    "lng": 100.0206,
+    "region": "гора Цзинмай"
+  },
+  {
+    "id": "bingdao_sheng_puer",
+    "name": "Шэн пуэр (Биндао)",
+    "country": "china",
+    "category": "dark_sheng",
+    "lat": 23.75,
+    "lng": 99.9667,
+    "region": "гора Мэнку"
+  },
+  {
+    "id": "nannuo_sheng_puer",
+    "name": "Шэн пуэр (Наньно)",
+    "country": "china",
+    "category": "dark_sheng",
+    "lat": 21.9333,
+    "lng": 100.6167,
+    "region": "гора Наньношань"
   }
 ]

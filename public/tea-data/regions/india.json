@@ -1,0 +1,50 @@
+[
+  {
+    "id": "assam_valley",
+    "name": "Долина Брахмапутры",
+    "province": "Ассам",
+    "lat": 26.7509,
+    "lng": 94.2037,
+    "zoom": 8
+  },
+  {
+    "id": "darjeeling_region",
+    "name": "Дарджилинг",
+    "province": "Западная Бенгалия",
+    "lat": 27.041,
+    "lng": 88.2663,
+    "zoom": 10
+  },
+  {
+    "id": "nilgiri_hills",
+    "name": "Голубые горы (Нилгири)",
+    "province": "Тамилнад",
+    "lat": 11.4102,
+    "lng": 76.695,
+    "zoom": 9
+  },
+  {
+    "id": "temi_plantation",
+    "name": "Плантация Тэми",
+    "province": "Сикким",
+    "lat": 27.2833,
+    "lng": 88.35,
+    "zoom": 11
+  },
+  {
+    "id": "cardamom_hills",
+    "name": "Горы Кардамон (Мунар)",
+    "province": "Керала",
+    "lat": 10.0889,
+    "lng": 77.0595,
+    "zoom": 10
+  },
+  {
+    "id": "kangra_valley",
+    "name": "Долина Кангра",
+    "province": "Химачал-Прадеш",
+    "lat": 32.1113,
+    "lng": 76.5344,
+    "zoom": 10
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "doi_mae_salong",
+    "name": "Дои Мае Салонг",
+    "country": "thailand",
+    "category": "oolong_light",
+    "lat": 20.1667,
+    "lng": 99.6167,
+    "region": "гора Мае Салонг"
+  },
+  {
+    "id": "chiang_mai",
+    "name": "Чиангмайский чай",
+    "country": "thailand",
+    "category": "green",
+    "lat": 19.906,
+    "lng": 98.545,
+    "region": "северные горы"
+  }
+]

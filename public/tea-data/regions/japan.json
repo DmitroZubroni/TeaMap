@@ -1,0 +1,26 @@
+[
+  {
+    "id": "shizuoka_region",
+    "name": "Сидзуока",
+    "province": "Сидзуока",
+    "lat": 34.9756,
+    "lng": 138.14,
+    "zoom": 9
+  },
+  {
+    "id": "uji_region",
+    "name": "Удзи",
+    "province": "Киото",
+    "lat": 34.8848,
+    "lng": 135.8048,
+    "zoom": 11
+  },
+  {
+    "id": "yame_region",
+    "name": "Яме",
+    "province": "Фукуока",
+    "lat": 33.2081,
+    "lng": 130.5644,
+    "zoom": 10
+  }
+]
