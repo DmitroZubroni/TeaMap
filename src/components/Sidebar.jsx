@@ -235,7 +235,7 @@ export default function Sidebar({
   }
 
   const regionTeas = nav.region ? nav.teas.filter((t) => regionsMatch(t.region || '', nav.region)) : []
-  const pickTea = (t) => onSelectTea(nav.country.id, t.id)
+  const pickTea = (t) => onSelectTea(nav.country.id, t)
 
   return (
     <aside className="absolute top-4 left-4 bottom-4 z-20 w-72 max-w-[85vw] flex flex-col bg-porcelain/75 backdrop-blur-md border border-ink/10 rounded-2xl shadow-panel overflow-hidden">

@@ -112,6 +112,7 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
       onToast?.(`${country?.name ?? 'Эта страна'} — данные скоро появятся`)
       return
     }
+    setSelectedRegionName(null)
     const regions = await loadCountryData(country)
     const map = mapRef.current
     if (regions.length) {
@@ -254,6 +255,15 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
     },
     clearRegionFocus() {
       setSelectedRegionName(null)
+    },
+    async flyToTeaInCountry(countryId, tea) {
+      if (!tea || !mapRef.current) return
+      const country = countries.find((c) => c.id === countryId)
+      if (country && country.id !== selectedCountry?.id) {
+        setSelectedRegionName(null)
+        await loadCountryData(country)
+      }
+      mapRef.current.flyTo({ center: [tea.lng, tea.lat], zoom: Math.max(LABEL_ZOOM + 1, 9), duration: 1000 })
     },
   }))
 

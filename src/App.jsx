@@ -59,8 +59,13 @@ export default function App() {
     setSelectedTea({ countryId, teaId })
   }, [])
 
+  const handleSelectTeaAndFly = useCallback((countryId, tea) => {
+    mapRef.current?.flyToTeaInCountry(countryId, tea)
+    setSelectedTea({ countryId, teaId: tea.id })
+  }, [])
+
   const handlePickGlobalTea = useCallback((tea) => {
-    mapRef.current?.flyToCountryId(tea.countryId)
+    mapRef.current?.flyToTeaInCountry(tea.countryId, tea)
     setSelectedTea({ countryId: tea.countryId, teaId: tea.id })
   }, [])
 
@@ -85,7 +90,7 @@ export default function App() {
         onPickCountry={(id) => mapRef.current?.flyToCountryId(id)}
         onPickRegion={(region) => mapRef.current?.flyToRegion(region)}
         onBackToRegions={() => mapRef.current?.clearRegionFocus()}
-        onSelectTea={handleSelectTea}
+        onSelectTea={(countryId, tea) => handleSelectTeaAndFly(countryId, tea)}
         onPickGlobalTea={handlePickGlobalTea}
       />
       <Toast message={toast} />

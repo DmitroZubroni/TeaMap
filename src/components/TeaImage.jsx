@@ -1,9 +1,17 @@
-import { useEffect, useState } from 'react'
-import { fetchCommonsImage } from '../lib/wikimedia'
-import { categoryColor, categoryImageQuery } from '../lib/categoryStyle'
+import { categoryColor } from '../lib/categoryStyle'
 
-function Placeholder({ color, name }) {
-  const seed = name.split('').reduce((a, c) => a + c.charCodeAt(0), 0)
+// We tried auto-fetching a real photo from Wikimedia Commons twice — first
+// searching by the specific tea's name (returned unrelated crops/press
+// clippings — most single-origin teas have no dedicated coverage at all),
+// then by category ("dry oolong tea leaves" etc., meant to be more
+// reliable) — but that still occasionally surfaced wrong or broken results
+// (e.g. a scanned historical document matching on an incidental keyword).
+// A confidently-wrong image is worse than no photo, so this is a generated,
+// deterministic, leaf-themed illustration colored by category instead —
+// consistent and honest about being illustrative rather than a real photo.
+export default function TeaImage({ tea }) {
+  const color = categoryColor(tea.category)
+  const seed = tea.id.split('').reduce((a, c) => a + c.charCodeAt(0), 0)
   const leaves = Array.from({ length: 7 }).map((_, i) => {
     const x = 20 + ((seed * (i + 3)) % 160)
     const y = 15 + ((seed * (i + 5)) % 70)
@@ -11,6 +19,7 @@ function Placeholder({ color, name }) {
     const scale = 0.6 + ((seed * (i + 11)) % 40) / 100
     return { x, y, rot, scale, key: i }
   })
+
   return (
     <div
       className="w-full h-36 relative overflow-hidden shrink-0"
@@ -27,47 +36,7 @@ function Placeholder({ color, name }) {
           />
         ))}
       </svg>
-      <span className="absolute bottom-2 right-3 font-display text-xs italic text-ink/40">{name}</span>
+      <span className="absolute bottom-2 right-3 font-display text-xs italic text-ink/40">{tea.name}</span>
     </div>
-  )
-}
-
-// Tries a real, category-representative dry-leaf photo from Wikimedia
-// Commons first (see categoryImageQuery — deliberately searched by category,
-// not by this specific tea's name, since that search is far more reliable).
-// Falls back to a generated illustration only if nothing is found, so we
-// never show an empty box.
-export default function TeaImage({ tea }) {
-  const [image, setImage] = useState(undefined) // undefined = loading, null = none found
-
-  useEffect(() => {
-    if (!tea) return
-    setImage(undefined)
-    let cancelled = false
-    fetchCommonsImage(categoryImageQuery(tea.category)).then((result) => {
-      if (!cancelled) setImage(result)
-    })
-    return () => {
-      cancelled = true
-    }
-  }, [tea])
-
-  const color = tea ? categoryColor(tea.category) : '#8A8372'
-
-  if (image === undefined) {
-    return <div className="w-full h-36 bg-ink/5 animate-pulse shrink-0" />
-  }
-
-  if (!image) {
-    return <Placeholder color={color} name={tea.name} />
-  }
-
-  return (
-    <figure className="relative shrink-0">
-      <img src={image.url} alt={`${tea.name} — сухой лист`} className="w-full h-36 object-cover" loading="lazy" />
-      <figcaption className="absolute bottom-1 right-2 text-[9px] text-white/85 drop-shadow">
-        иллюстративное фото категории{image.attribution ? ` · ${image.attribution}` : ''} · Wikimedia Commons
-      </figcaption>
-    </figure>
   )
 }
