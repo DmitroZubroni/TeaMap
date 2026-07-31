@@ -1,9 +1,25 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
-import MapView from './components/MapView'
+import { useCallback, useEffect, useRef, useState, Suspense, lazy } from 'react'
 import Sidebar from './components/Sidebar'
 import Toast from './components/Toast'
 import TeaPanel from './components/TeaPanel'
 import { getCountries, getCategories, getTeaIndex } from './lib/api'
+
+// maplibre-gl is the single biggest dependency in this app. Splitting it
+// into its own chunk means the sidebar/shell can paint and become
+// interactive immediately, while the map streams in behind its own loading
+// state instead of blocking first paint of the whole page.
+const MapView = lazy(() => import('./components/MapView'))
+
+function MapLoading() {
+  return (
+    <div className="absolute inset-0 grid place-items-center bg-ink">
+      <div className="flex flex-col items-center gap-3">
+        <div className="w-8 h-8 rounded-full border-2 border-porcelain/20 border-t-gold animate-spin" />
+        <p className="font-mono text-[11px] uppercase tracking-widest text-porcelain/50">Загружаю карту…</p>
+      </div>
+    </div>
+  )
+}
 
 export default function App() {
   const mapRef = useRef(null)
@@ -40,23 +56,27 @@ export default function App() {
   }, [toast])
 
   const handleSelectTea = useCallback((countryId, teaId) => {
+    console.info('[tea-atlas] handleSelectTea вызван:', { countryId, teaId })
     setSelectedTea({ countryId, teaId })
   }, [])
 
   const handlePickGlobalTea = useCallback((tea) => {
+    console.info('[tea-atlas] глобальный поиск: клик по чаю', tea.id, 'страна:', tea.countryId)
     mapRef.current?.flyToCountryId(tea.countryId)
     setSelectedTea({ countryId: tea.countryId, teaId: tea.id })
   }, [])
 
   return (
     <div className="relative w-full h-svh overflow-hidden bg-ink">
-      <MapView
-        ref={mapRef}
-        countries={countries}
-        onSelectTea={handleSelectTea}
-        onNav={setNav}
-        onToast={setToast}
-      />
+      <Suspense fallback={<MapLoading />}>
+        <MapView
+          ref={mapRef}
+          countries={countries}
+          onSelectTea={handleSelectTea}
+          onNav={setNav}
+          onToast={setToast}
+        />
+      </Suspense>
 
       <Sidebar
         nav={nav}

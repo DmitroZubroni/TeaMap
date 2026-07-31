@@ -227,7 +227,10 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
           name: tea.name,
           category: tea.category,
           labeled: labelsOn,
-          onClick: () => onSelectTea(selectedCountry.id, tea.id),
+          onClick: () => {
+            console.info('[tea-atlas] клик по точке чая:', tea.id, 'страна:', selectedCountry.id)
+            onSelectTea(selectedCountry.id, tea.id)
+          },
         })
         const marker = new maplibregl.Marker({ element: el, anchor: labelsOn ? 'left' : 'center' })
           .setLngLat([lng, lat])
@@ -260,6 +263,14 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
   return (
     <div className="absolute inset-0">
       <div ref={containerRef} className="w-full h-full" />
+      {!ready && !loadError && (
+        <div className="absolute inset-0 z-10 grid place-items-center bg-ink pointer-events-none">
+          <div className="flex flex-col items-center gap-3">
+            <div className="w-8 h-8 rounded-full border-2 border-porcelain/20 border-t-gold animate-spin" />
+            <p className="font-mono text-[11px] uppercase tracking-widest text-porcelain/50">Загружаю карту…</p>
+          </div>
+        </div>
+      )}
       {loadError && (
         <div className="absolute inset-0 z-20 grid place-items-center bg-ink/90 px-6 text-center">
           <div className="max-w-sm">

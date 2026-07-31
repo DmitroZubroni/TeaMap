@@ -39,13 +39,18 @@ export default function TeaPanel({ countryId, teaId, onClose }) {
     setTea(null)
     setError(null)
     setTab('overview')
+    console.info('[tea-atlas] TeaPanel: загружаю', { countryId, teaId })
     Promise.all([getTeaDetail(countryId, teaId), getCategories()])
       .then(([detail, cats]) => {
         if (cancelled) return
+        console.info('[tea-atlas] TeaPanel: карточка загружена', detail?.name)
         setTea(detail)
         setCategories(cats)
       })
-      .catch((e) => !cancelled && setError(e.message))
+      .catch((e) => {
+        console.error('[tea-atlas] TeaPanel: ошибка загрузки', e)
+        if (!cancelled) setError(e.message)
+      })
     return () => {
       cancelled = true
     }
