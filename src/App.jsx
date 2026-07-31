@@ -56,12 +56,10 @@ export default function App() {
   }, [toast])
 
   const handleSelectTea = useCallback((countryId, teaId) => {
-    console.info('[tea-atlas] handleSelectTea вызван:', { countryId, teaId })
     setSelectedTea({ countryId, teaId })
   }, [])
 
   const handlePickGlobalTea = useCallback((tea) => {
-    console.info('[tea-atlas] глобальный поиск: клик по чаю', tea.id, 'страна:', tea.countryId)
     mapRef.current?.flyToCountryId(tea.countryId)
     setSelectedTea({ countryId: tea.countryId, teaId: tea.id })
   }, [])

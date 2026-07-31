@@ -227,10 +227,7 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
           name: tea.name,
           category: tea.category,
           labeled: labelsOn,
-          onClick: () => {
-            console.info('[tea-atlas] клик по точке чая:', tea.id, 'страна:', selectedCountry.id)
-            onSelectTea(selectedCountry.id, tea.id)
-          },
+          onClick: () => onSelectTea(selectedCountry.id, tea.id),
         })
         const marker = new maplibregl.Marker({ element: el, anchor: labelsOn ? 'left' : 'center' })
           .setLngLat([lng, lat])

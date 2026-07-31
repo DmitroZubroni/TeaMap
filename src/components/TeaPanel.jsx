@@ -39,18 +39,13 @@ export default function TeaPanel({ countryId, teaId, onClose }) {
     setTea(null)
     setError(null)
     setTab('overview')
-    console.info('[tea-atlas] TeaPanel: загружаю', { countryId, teaId })
     Promise.all([getTeaDetail(countryId, teaId), getCategories()])
       .then(([detail, cats]) => {
         if (cancelled) return
-        console.info('[tea-atlas] TeaPanel: карточка загружена', detail?.name)
         setTea(detail)
         setCategories(cats)
       })
-      .catch((e) => {
-        console.error('[tea-atlas] TeaPanel: ошибка загрузки', e)
-        if (!cancelled) setError(e.message)
-      })
+      .catch((e) => !cancelled && setError(e.message))
     return () => {
       cancelled = true
     }
@@ -64,7 +59,7 @@ export default function TeaPanel({ countryId, teaId, onClose }) {
       className={[
         'fixed z-30 bg-porcelain shadow-panel animate-panel-in overflow-hidden',
         'inset-x-0 bottom-0 max-h-[82vh] rounded-t-3xl',
-        'md:inset-y-0 md:right-0 md:left-auto md:bottom-auto md:max-h-none md:w-[440px] md:rounded-none md:rounded-l-3xl',
+        'md:inset-y-0 md:right-0 md:left-auto md:max-h-none md:w-[440px] md:rounded-none md:rounded-l-3xl',
       ].join(' ')}
     >
       {/* Hard-pinned to the parent's actual box via inset-0, rather than
