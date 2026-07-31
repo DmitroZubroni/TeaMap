@@ -218,7 +218,9 @@ export default function Sidebar({
   onSelectTea,
   onPickGlobalTea,
 }) {
-  const [expanded, setExpanded] = useState(true)
+  const [expanded, setExpanded] = useState(
+    () => typeof window === 'undefined' || window.innerWidth >= 640
+  )
   const [view, setView] = useState('nav') // 'nav' | 'reference'
 
   if (!expanded) {
@@ -227,7 +229,7 @@ export default function Sidebar({
         type="button"
         onClick={() => setExpanded(true)}
         aria-label="Открыть меню"
-        className="absolute top-4 left-4 z-20 grid place-items-center w-11 h-11 rounded-full bg-porcelain/80 backdrop-blur-md border border-ink/10 shadow-panel text-ink font-display text-lg"
+        className="absolute top-2 left-2 sm:top-4 sm:left-4 z-20 grid place-items-center w-11 h-11 rounded-full bg-porcelain/80 backdrop-blur-md border border-ink/10 shadow-panel text-ink font-display text-lg"
       >
         茶
       </button>
@@ -238,7 +240,7 @@ export default function Sidebar({
   const pickTea = (t) => onSelectTea(nav.country.id, t)
 
   return (
-    <aside className="absolute top-4 left-4 bottom-4 z-20 w-72 max-w-[85vw] flex flex-col bg-porcelain/75 backdrop-blur-md border border-ink/10 rounded-2xl shadow-panel overflow-hidden">
+    <aside className="absolute top-2 left-2 right-2 bottom-2 sm:right-auto sm:bottom-4 sm:top-4 sm:left-4 sm:w-72 z-20 flex flex-col bg-porcelain/75 backdrop-blur-md border border-ink/10 rounded-2xl shadow-panel overflow-hidden">
       <div className="flex items-start justify-between px-4 pt-4 pb-3 shrink-0">
         <div>
           <p className="font-display text-lg text-ink leading-none">茶 · Атлас чая</p>

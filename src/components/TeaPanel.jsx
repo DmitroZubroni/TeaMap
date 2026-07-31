@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { getTeaDetail, getCategories } from '../lib/api'
 import { categoryColor } from '../lib/categoryStyle'
-import TeaImage from './TeaImage'
 
 function Field({ label, value }) {
   if (!value) return null
@@ -80,7 +79,6 @@ export default function TeaPanel({ countryId, teaId, onClose }) {
 
         {tea && (
           <>
-            <TeaImage tea={tea} />
             <div
               className="px-6 pt-7 pb-4 shrink-0"
               style={{ background: `linear-gradient(180deg, ${color}33, transparent)` }}
