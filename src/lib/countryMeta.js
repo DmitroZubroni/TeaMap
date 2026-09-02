@@ -1,7 +1,7 @@
-// Rough centroids used only to place the world-view country pins.
-// When a country's regions are loaded, the map fits to their real bounds
-// instead — these coordinates never drive anything more precise than "which
-// pin to draw before we've fetched region data".
+// Приблизительные центроиды — только для расстановки пинов стран на
+// мировом виде. Как только регионы страны загружены, карта подгоняется под
+// их реальные границы — эти координаты никогда не используются точнее, чем
+// «какой пин нарисовать, пока данные о регионах ещё не загружены».
 export const COUNTRY_CENTROIDS = {
   china: { lat: 34.5, lng: 104.0 },
   india: { lat: 22.4, lng: 78.7 },

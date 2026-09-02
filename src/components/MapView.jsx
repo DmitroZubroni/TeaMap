@@ -5,12 +5,18 @@ import { STYLE_URL, applyTeaPalette } from '../lib/mapStyle'
 import { getRegions, getTeaIndex } from '../lib/api'
 import { COUNTRY_CENTROIDS } from '../lib/countryMeta'
 import { createCountryPin, createRegionPin, createTeaPin } from '../lib/markers'
+import { useI18n } from '../lib/i18n'
 
 const WORLD_MAX = 3.2
 const LABEL_ZOOM = 8
 const LOAD_TIMEOUT_MS = 12000
 
-const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onToast }, ref) {
+const MapView = forwardRef(function MapView({ countries, hiddenCategories, onSelectTea, onNav, onToast }, ref) {
+  const { t } = useI18n()
+  const tRef = useRef(t)
+  useEffect(() => {
+    tRef.current = t
+  }, [t])
   const containerRef = useRef(null)
   const mapRef = useRef(null)
   const worldMarkersRef = useRef([])
@@ -28,7 +34,7 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
   const stage = zoom <= WORLD_MAX ? 'world' : selectedRegionName ? 'region-focus' : 'country'
   const labelsOn = zoom >= LABEL_ZOOM
 
-  // --- init map once ---
+  // --- инициализация карты (один раз) ---
   useEffect(() => {
     const map = new maplibregl.Map({
       container: containerRef.current,
@@ -42,7 +48,7 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
     mapRef.current = map
 
     const timeout = setTimeout(() => {
-      setLoadError((prev) => prev ?? 'Карта долго не отвечает. Проверьте соединение и обновите страницу.')
+      setLoadError((prev) => prev ?? tRef.current('mapLoadErrorSlow'))
     }, LOAD_TIMEOUT_MS)
 
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'bottom-right')
@@ -58,18 +64,18 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
       try {
         applyTeaPalette(map)
       } catch {
-        // If recoloring fails for any reason, fall back to the stock
-        // CARTO look rather than blocking the map from showing at all.
+        // Если перекраска почему-то не удалась — используем стандартный вид
+        // CARTO, лишь бы карта не блокировалась вовсе.
       }
       setReady(true)
     })
     map.on('error', (e) => {
       console.error('Map error:', e?.error || e)
-      // Only block the UI for a failure before the map has ever finished
-      // loading — once it's up, isolated tile/glyph errors shouldn't nuke
-      // an otherwise-working map.
+      // Блокируем интерфейс только если сбой произошёл ДО первой успешной
+      // загрузки — если карта уже работает, отдельные ошибки тайлов/шрифтов
+      // не должны ломать уже рабочую карту.
       if (!map.loaded()) {
-        setLoadError((prev) => prev ?? 'Не удалось загрузить карту. Проверьте соединение и обновите страницу.')
+        setLoadError((prev) => prev ?? tRef.current('mapLoadErrorGeneric'))
       }
     })
 
@@ -79,8 +85,8 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
     }
   }, [])
 
-  // --- defensively re-measure the container; guards against any stale
-  // size MapLibre may have captured before layout fully settled ---
+  // --- подстраховка: заново измеряем контейнер на случай, если MapLibre
+  // захватил устаревший размер до того, как вёрстка полностью устаканилась ---
   useEffect(() => {
     if (!ready || !mapRef.current) return
     const map = mapRef.current
@@ -109,7 +115,7 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
 
   const flyToCountry = useCallback(async (country) => {
     if (!country || country.teaCount === 0) {
-      onToast?.(`${country?.name ?? 'Эта страна'} — данные скоро появятся`)
+      onToast?.(t('countrySoonToast', country?.name ?? t('thisCountry')))
       return
     }
     setSelectedRegionName(null)
@@ -125,20 +131,20 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
       const c = COUNTRY_CENTROIDS[country.id]
       map.flyTo({ center: [c.lng, c.lat], zoom: 4.5, duration: 1100 })
     }
-  }, [onToast, loadCountryData])
+  }, [onToast, loadCountryData, t])
 
-  // Country selection now only ever happens via an explicit click (a world
-  // pin, or the sidebar's country list) — see flyToCountry / flyToCountryId.
-  // We used to also guess the "current" country from the map center on
-  // every pan/zoom, but that heuristic (nearest active-country centroid)
-  // breaks down badly once multiple countries are active: a small country's
-  // centroid can be geographically closer to a neighboring big country's
-  // region than that region is to its own country's centroid (e.g. Taiwan's
-  // centroid is closer to Wuyishan than mainland China's own centroid is),
-  // silently swapping the selected country to the wrong one mid-navigation.
-  // Explicit selection has no such ambiguity.
+  // Выбор страны теперь происходит только по явному клику (пин на карте или
+  // список в сайдбаре) — см. flyToCountry / flyToCountryId. Раньше мы ещё
+  // пытались угадывать «текущую» страну по центру карты при любом
+  // перемещении, но эта эвристика (ближайший центр активной страны) сильно
+  // ломалась, как только активных стран стало несколько: центр маленькой
+  // страны может оказаться географически ближе к региону соседней большой
+  // страны, чем центр самой этой большой страны (например, центр Тайваня
+  // ближе к Уишаню, чем центр материкового Китая) — и страна тихо
+  // подменялась не той прямо посреди навигации. Явный выбор такой
+  // неоднозначности не имеет.
 
-  // --- world-stage country pins ---
+  // --- пины стран на мировом виде ---
   useEffect(() => {
     if (!ready || !mapRef.current) return
     worldMarkersRef.current.forEach((m) => m.remove())
@@ -161,7 +167,7 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
     })
   }, [ready, stage, countries, flyToCountry])
 
-  // --- region pins: shown together with tea pins once a country is loaded ---
+  // --- пины регионов: показываются вместе с точками чая, как только страна загружена ---
   useEffect(() => {
     if (!ready || !mapRef.current) return
     regionMarkersRef.current.forEach((m) => m.remove())
@@ -187,20 +193,22 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
     })
   }, [ready, stage, selectedCountry, regionsData])
 
-  // --- tea pins: shown together with region pins as soon as a country is loaded ---
+  // --- точки чая: показываются вместе с пинами регионов, как только страна загружена ---
   useEffect(() => {
     if (!ready || !mapRef.current) return
     teaMarkersRef.current.forEach((m) => m.remove())
     teaMarkersRef.current = []
     if (stage === 'world' || !selectedCountry) return
 
-    // Several teas often share the exact same coordinate (same mountain/
-    // garden). Left as-is they'd render as a single stacked, unclickable
-    // dot, so duplicates are fanned out in a small circle around the
-    // shared point — small enough to still read as "one place" when
-    // zoomed out, wide enough to be individually clickable up close.
+    // У многих чаёв совпадают координаты (одна и та же гора/сад). Если
+    // оставить как есть, они бы рисовались одной точкой друг на друге, по
+    // которой невозможно кликнуть отдельно — поэтому дубликаты веером
+    // разводятся по маленькому кругу вокруг общей точки: на общем виде это
+    // незаметно (всё ещё читается как «одно место»), а при приближении
+    // каждую точку уже можно кликнуть отдельно.
+    const visibleTeas = teasData.filter((tea) => !hiddenCategories?.has(tea.category))
     const groups = new Map()
-    teasData.forEach((tea) => {
+    visibleTeas.forEach((tea) => {
       const key = `${tea.lat.toFixed(4)},${tea.lng.toFixed(4)}`
       if (!groups.has(key)) groups.set(key, [])
       groups.get(key).push(tea)
@@ -238,7 +246,7 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
         console.error('Не удалось отрисовать точку чая', tea, err)
       }
     })
-  }, [ready, stage, selectedCountry, teasData, labelsOn, onSelectTea])
+  }, [ready, stage, selectedCountry, teasData, labelsOn, onSelectTea, hiddenCategories])
 
   useImperativeHandle(ref, () => ({
     flyHome() {
@@ -274,14 +282,14 @@ const MapView = forwardRef(function MapView({ countries, onSelectTea, onNav, onT
         <div className="absolute inset-0 z-10 grid place-items-center bg-ink pointer-events-none">
           <div className="flex flex-col items-center gap-3">
             <div className="w-8 h-8 rounded-full border-2 border-porcelain/20 border-t-gold animate-spin" />
-            <p className="font-mono text-[11px] uppercase tracking-widest text-porcelain/50">Загружаю карту…</p>
+            <p className="font-mono text-[11px] uppercase tracking-widest text-porcelain/50">{t('mapLoading')}</p>
           </div>
         </div>
       )}
       {loadError && (
         <div className="absolute inset-0 z-20 grid place-items-center bg-ink/90 px-6 text-center">
           <div className="max-w-sm">
-            <p className="font-display text-xl text-porcelain mb-2">Карта не загрузилась</p>
+            <p className="font-display text-xl text-porcelain mb-2">{t('mapLoadError')}</p>
             <p className="text-porcelain/70 text-sm">{loadError}</p>
           </div>
         </div>

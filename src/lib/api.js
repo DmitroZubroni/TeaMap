@@ -1,10 +1,11 @@
-// Tea data is fetched at runtime (never bundled into the JS) so the site
-// always reflects the latest data without a rebuild. Primary source is the
-// public GitHub repo's `main` branch via raw.githubusercontent.com — fast
-// (Fastly CDN, ~50-200ms in testing), open CORS, and updates the moment
-// something is pushed there. If that's ever unreachable (network hiccup,
-// repo made private, rate limiting), we fall back to the copy bundled at
-// build time under /public/tea-data, so the site still works either way.
+// Данные о чае запрашиваются в рантайме (никогда не бандлятся в JS), поэтому
+// сайт всегда показывает актуальные данные без пересборки. Основной
+// источник — публичный репозиторий на GitHub, ветка `main`, через
+// raw.githubusercontent.com — быстро (CDN Fastly, ~50–200 мс по замерам),
+// CORS открыт, обновления появляются сразу после пуша в репозиторий. Если
+// он вдруг окажется недоступен (сбой сети, репозиторий стал приватным,
+// лимиты запросов) — используется резервная копия, собранная в бандл из
+// /public/tea-data, чтобы сайт работал в любом случае.
 const GITHUB_BASE = 'https://raw.githubusercontent.com/DmitroZubroni/TeaMenuFoundation/main'
 const LOCAL_BASE = '/tea-data'
 

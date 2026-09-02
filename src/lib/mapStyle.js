@@ -1,11 +1,11 @@
-// We use CARTO's free, no-API-key "Positron" vector style (OpenMapTiles
-// schema, © OpenStreetMap contributors / © CARTO — attribution is preserved
-// automatically by MapLibre's AttributionControl) as the style URL passed
-// straight to MapLibre, and recolor its layers in place once MapLibre has
-// successfully loaded it. We deliberately do NOT fetch/parse the style JSON
-// ourselves before handing it to the map: letting MapLibre own that request
-// means we don't duplicate its request/retry/CORS handling, and a fetch
-// failure on our side can never leave the map stuck with nothing rendered.
+// Используем бесплатный векторный стиль CARTO «Positron» (без API-ключа,
+// схема OpenMapTiles, © OpenStreetMap contributors / © CARTO — атрибуция
+// сохраняется автоматически через AttributionControl MapLibre) — URL стиля
+// передаётся напрямую в MapLibre, а его слои перекрашиваются на месте уже
+// после успешной загрузки. Мы намеренно НЕ загружаем/парсим JSON стиля сами
+// перед передачей в карту: пусть MapLibre сам управляет этим запросом — так
+// мы не дублируем его логику повторов/CORS, и сбой на нашей стороне никогда
+// не оставит карту вовсе без отрисовки.
 export const STYLE_URL = 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json'
 
 const PALETTE = {
@@ -30,10 +30,10 @@ function includesAny(str, needles) {
   return needles.some((n) => s.includes(n))
 }
 
-// Recolors an already-loaded style's layers via setPaintProperty. Safe to
-// call multiple times (e.g. again after setStyle). Any single layer failing
-// to update is caught and skipped so one unexpected layer shape can't stop
-// the rest of the palette from applying.
+// Перекрашивает слои уже загруженного стиля через setPaintProperty. Можно
+// вызывать повторно (например, ещё раз после setStyle). Ошибка в отдельном
+// слое перехватывается и пропускается, чтобы один неожиданный слой не
+// ломал применение палитры целиком.
 export function applyTeaPalette(map) {
   const layers = map.getStyle()?.layers || []
 
@@ -79,8 +79,8 @@ export function applyTeaPalette(map) {
         }
       }
     } catch {
-      // Skip layers whose paint properties don't match what we expect —
-      // never let one odd layer break the whole recolor pass.
+      // Пропускаем слои, чьи paint-свойства не совпадают с ожидаемыми —
+      // никогда не даём одному нестандартному слою сломать весь проход перекраски.
     }
   }
 }

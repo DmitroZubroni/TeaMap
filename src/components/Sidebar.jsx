@@ -1,10 +1,13 @@
 import { useMemo, useState } from 'react'
 import { categoryColor } from '../lib/categoryStyle'
+import { useI18n } from '../lib/i18n'
 
-// tea.region (e.g. "Сиху, Ханчжоу") and region.name (e.g. "Сиху (Ханчжоу)")
-// don't always match exactly in the source data — different punctuation,
-// extra location detail, etc. Normalize both and check for a substring
-// match in either direction rather than requiring strict equality.
+const FOCUS_RING = 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold'
+
+// tea.region (например, «Сиху, Ханчжоу») и region.name (например,
+// «Сиху (Ханчжоу)») не всегда совпадают дословно в исходных данных — разная
+// пунктуация, лишние уточнения местности и т.д. Нормализуем обе строки и
+// проверяем вхождение в любую сторону, а не требуем точного совпадения.
 function normalizeRegion(s) {
   return s
     .toLowerCase()
@@ -20,24 +23,32 @@ function regionsMatch(a, b) {
   return na.includes(nb) || nb.includes(na)
 }
 
-function Breadcrumb({ nav, onHome }) {
-  const crumbs = ['Мир']
-  if (nav.country) crumbs.push(nav.country.name)
-  if (nav.region) crumbs.push(nav.region)
+function Breadcrumb({ nav, onHome, onCountry }) {
+  const { t } = useI18n()
+  const crumbs = [{ label: t('home'), onClick: onHome }]
+  if (nav.country) {
+    // Кликабелен, только если это не последняя (текущая) крошка — то есть
+    // когда после страны ещё есть регион, и клик по стране означает «вернуться
+    // к обзору страны», а не «остаться на месте».
+    const isCurrent = !nav.region
+    crumbs.push({ label: nav.country.name, onClick: isCurrent ? undefined : () => onCountry(nav.country.id) })
+  }
+  if (nav.region) crumbs.push({ label: nav.region, onClick: undefined })
 
   return (
     <div className="flex flex-wrap items-center gap-x-1.5 gap-y-1">
-      {crumbs.map((c, i) => (
+      {crumbs.map((crumb, i) => (
         <span key={i} className="flex items-center gap-1.5">
           {i > 0 && <span className="text-ink/25 text-xs">/</span>}
           <button
             type="button"
-            onClick={i === 0 ? onHome : undefined}
-            className={`text-[12.5px] font-medium whitespace-nowrap ${
+            onClick={crumb.onClick}
+            disabled={!crumb.onClick}
+            className={`text-[12.5px] font-medium whitespace-nowrap rounded ${FOCUS_RING} ${
               i === crumbs.length - 1 ? 'text-gold' : 'text-ink/55 hover:text-ink transition-colors'
-            } ${i === 0 ? 'cursor-pointer' : 'cursor-default'}`}
+            } ${crumb.onClick ? 'cursor-pointer' : 'cursor-default'}`}
           >
-            {c}
+            {crumb.label}
           </button>
         </span>
       ))}
@@ -50,6 +61,7 @@ function SectionLabel({ children }) {
 }
 
 function CountryList({ countries, current, onPick }) {
+  const { t } = useI18n()
   const sorted = [...countries].sort((a, b) => b.teaCount - a.teaCount)
   return (
     <div className="flex flex-col gap-1">
@@ -63,6 +75,7 @@ function CountryList({ countries, current, onPick }) {
             onClick={() => onPick(c.id)}
             className={[
               'flex items-center gap-2 rounded-xl px-2 py-1.5 text-left transition-colors',
+              FOCUS_RING,
               isCurrent ? 'bg-gold/25' : 'hover:bg-ink/5',
               !active && 'opacity-55',
             ].join(' ')}
@@ -74,7 +87,7 @@ function CountryList({ countries, current, onPick }) {
             {active ? (
               <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${isCurrent ? 'bg-gold' : 'bg-jade'}`} />
             ) : (
-              <span className="text-[9px] uppercase tracking-wide text-ink-soft/50 shrink-0">скоро</span>
+              <span className="text-[9px] uppercase tracking-wide text-ink-soft/50 shrink-0">{t('soon')}</span>
             )}
           </button>
         )
@@ -92,7 +105,7 @@ function RegionList({ regions, onPick }) {
           key={r.id}
           type="button"
           onClick={() => onPick(r)}
-          className="flex items-center gap-2 rounded-xl px-2 py-1.5 text-left hover:bg-ink/5 transition-colors"
+          className={`flex items-center gap-2 rounded-xl px-2 py-1.5 text-left hover:bg-ink/5 transition-colors ${FOCUS_RING}`}
         >
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" className="shrink-0 text-jade">
             <path d="M3 20L9 8L13 15L16 10L21 20H3Z" fill="currentColor" />
@@ -109,7 +122,7 @@ function TeaRow({ tea, onPick, countryIcon }) {
     <button
       type="button"
       onClick={() => onPick(tea)}
-      className="flex items-center gap-2 rounded-xl px-2 py-1.5 text-left hover:bg-ink/5 transition-colors w-full"
+      className={`flex items-center gap-2 rounded-xl px-2 py-1.5 text-left hover:bg-ink/5 transition-colors w-full ${FOCUS_RING}`}
     >
       <span
         className="w-2 h-2 rounded-full border border-ink/10 shrink-0"
@@ -122,61 +135,103 @@ function TeaRow({ tea, onPick, countryIcon }) {
 }
 
 function TeaListFlat({ teas, onPick }) {
-  if (!teas.length) return <p className="text-[13px] text-ink-soft/60 px-2">Чаи этого региона пока не добавлены.</p>
+  const { t } = useI18n()
+  if (!teas.length) return <p className="text-[13px] text-ink-soft/60 px-2">{t('noTeasInRegion')}</p>
   return (
     <div className="flex flex-col gap-0.5">
-      {teas.map((t) => (
-        <TeaRow key={t.id} tea={t} onPick={onPick} />
+      {teas.map((tea) => (
+        <TeaRow key={tea.id} tea={tea} onPick={onPick} />
       ))}
     </div>
   )
 }
 
-function ReferenceTab({ categories, teas, countries, onPick }) {
+function CategoryFilter({ categories, hiddenCategories, onToggleCategory }) {
+  const { t } = useI18n()
+  const allHidden = categories.length > 0 && categories.every((cat) => hiddenCategories.has(cat.id))
+
+  return (
+    <div>
+      <div className="flex items-center justify-between">
+        <SectionLabel>{t('filterTitle')}</SectionLabel>
+        <button
+          type="button"
+          onClick={() =>
+            categories.forEach((cat) => {
+              const isHidden = hiddenCategories.has(cat.id)
+              if (allHidden ? isHidden : !isHidden) onToggleCategory(cat.id)
+            })
+          }
+          className={`text-[10px] text-gold hover:underline shrink-0 rounded ${FOCUS_RING}`}
+        >
+          {allHidden ? t('filterAll') : t('filterNone')}
+        </button>
+      </div>
+      <div className="grid grid-cols-1 gap-0.5 mt-2">
+        {categories.map((cat) => {
+          const visible = !hiddenCategories.has(cat.id)
+          return (
+            <button
+              key={cat.id}
+              type="button"
+              onClick={() => onToggleCategory(cat.id)}
+              aria-pressed={visible}
+              className={`flex items-center gap-2 rounded-lg px-1.5 py-1 hover:bg-ink/5 transition-colors ${FOCUS_RING} ${
+                visible ? '' : 'opacity-40'
+              }`}
+            >
+              <span
+                className="w-3 h-3 rounded-md border border-ink/15 shrink-0 grid place-items-center"
+                style={{ backgroundColor: visible ? categoryColor(cat.id) : 'transparent' }}
+              >
+                {visible && (
+                  <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
+                    <path d="M1 4L3 6L7 1.5" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
+                  </svg>
+                )}
+              </span>
+              <span className="text-[12px] text-ink/80 leading-tight text-left flex-1 truncate">{cat.name}</span>
+            </button>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+
+function ReferenceTab({ categories, teas, countries, hiddenCategories, onToggleCategory, onPick }) {
+  const { t } = useI18n()
   const [query, setQuery] = useState('')
   const iconByCountry = Object.fromEntries(countries.map((c) => [c.id, c.icon]))
-  const showCountryIcon = new Set(teas.map((t) => t.countryId)).size > 1
+  const showCountryIcon = new Set(teas.map((tea) => tea.countryId)).size > 1
 
   const grouped = useMemo(() => {
     const q = query.trim().toLowerCase()
     const filtered = q
-      ? teas.filter((t) => t.name.toLowerCase().includes(q) || (t.region || '').toLowerCase().includes(q))
+      ? teas.filter((tea) => tea.name.toLowerCase().includes(q) || (tea.region || '').toLowerCase().includes(q))
       : teas
     const byCategory = new Map()
-    filtered.forEach((t) => {
-      if (!byCategory.has(t.category)) byCategory.set(t.category, [])
-      byCategory.get(t.category).push(t)
+    filtered.forEach((tea) => {
+      if (!byCategory.has(tea.category)) byCategory.set(tea.category, [])
+      byCategory.get(tea.category).push(tea)
     })
     return byCategory
   }, [teas, query])
 
   return (
     <div className="flex flex-col gap-4">
-      <div>
-        <SectionLabel>цвет точки = цвет настоя</SectionLabel>
-        <div className="grid grid-cols-1 gap-1 mt-2">
-          {categories.map((cat) => (
-            <div key={cat.id} className="flex items-center gap-2">
-              <span
-                className="w-2.5 h-2.5 rounded-full border border-ink/10 shrink-0"
-                style={{ backgroundColor: categoryColor(cat.id) }}
-              />
-              <span className="text-[12px] text-ink/80 leading-tight">{cat.name}</span>
-            </div>
-          ))}
-        </div>
-      </div>
+      <CategoryFilter categories={categories} hiddenCategories={hiddenCategories} onToggleCategory={onToggleCategory} />
 
       {teas.length > 0 && (
         <div className="flex flex-col gap-2">
           <div className="h-px bg-ink/10" />
-          <SectionLabel>все чаи · поиск по всем странам</SectionLabel>
+          <SectionLabel>{t('allTeasSearch')}</SectionLabel>
           <input
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Название или регион…"
-            className="w-full text-[13px] bg-ink/5 rounded-lg px-3 py-1.5 placeholder:text-ink-soft/40 text-ink outline-none focus:bg-ink/10 transition-colors"
+            placeholder={t('searchPlaceholder')}
+            className={`w-full text-[13px] bg-ink/5 rounded-lg px-3 py-1.5 placeholder:text-ink-soft/40 text-ink outline-none focus:bg-ink/10 transition-colors ${FOCUS_RING}`}
           />
           <div className="flex flex-col gap-3 mt-1">
             {categories
@@ -185,23 +240,41 @@ function ReferenceTab({ categories, teas, countries, onPick }) {
                 <div key={cat.id}>
                   <p className="text-[10px] text-ink-soft/50 uppercase tracking-wide mb-1 px-2">{cat.name}</p>
                   <div className="flex flex-col gap-0.5">
-                    {grouped.get(cat.id).map((t) => (
+                    {grouped.get(cat.id).map((tea) => (
                       <TeaRow
-                        key={`${t.countryId}-${t.id}`}
-                        tea={t}
+                        key={`${tea.countryId}-${tea.id}`}
+                        tea={tea}
                         onPick={onPick}
-                        countryIcon={showCountryIcon ? iconByCountry[t.countryId] : null}
+                        countryIcon={showCountryIcon ? iconByCountry[tea.countryId] : null}
                       />
                     ))}
                   </div>
                 </div>
               ))}
-            {query && grouped.size === 0 && (
-              <p className="text-[13px] text-ink-soft/60 px-2">Ничего не найдено.</p>
-            )}
+            {query && grouped.size === 0 && <p className="text-[13px] text-ink-soft/60 px-2">{t('nothingFound')}</p>}
           </div>
         </div>
       )}
+    </div>
+  )
+}
+
+function LocaleToggle() {
+  const { locale, setLocale } = useI18n()
+  return (
+    <div className={`flex rounded-full bg-ink/5 p-0.5 shrink-0 ${FOCUS_RING}`}>
+      {['en', 'ru'].map((l) => (
+        <button
+          key={l}
+          type="button"
+          onClick={() => setLocale(l)}
+          className={`px-2 py-0.5 rounded-full text-[10px] font-mono uppercase transition-colors ${FOCUS_RING} ${
+            locale === l ? 'bg-ink text-porcelain' : 'text-ink-soft/60 hover:text-ink'
+          }`}
+        >
+          {l}
+        </button>
+      ))}
     </div>
   )
 }
@@ -212,15 +285,16 @@ export default function Sidebar({
   countries,
   categories,
   allTeas,
+  hiddenCategories,
+  onToggleCategory,
   onPickCountry,
   onPickRegion,
   onBackToRegions,
   onSelectTea,
   onPickGlobalTea,
 }) {
-  const [expanded, setExpanded] = useState(
-    () => typeof window === 'undefined' || window.innerWidth >= 640
-  )
+  const { t } = useI18n()
+  const [expanded, setExpanded] = useState(() => typeof window === 'undefined' || window.innerWidth >= 640)
   const [view, setView] = useState('nav') // 'nav' | 'reference'
 
   if (!expanded) {
@@ -228,41 +302,44 @@ export default function Sidebar({
       <button
         type="button"
         onClick={() => setExpanded(true)}
-        aria-label="Открыть меню"
-        className="absolute top-2 left-2 sm:top-4 sm:left-4 z-20 grid place-items-center w-11 h-11 rounded-full bg-porcelain/80 backdrop-blur-md border border-ink/10 shadow-panel text-ink font-display text-lg"
+        aria-label={t('openMenu')}
+        className={`absolute top-2 left-2 sm:top-4 sm:left-4 z-20 grid place-items-center w-11 h-11 rounded-full bg-porcelain/80 backdrop-blur-md border border-ink/10 shadow-panel text-ink font-display text-lg ${FOCUS_RING}`}
       >
         茶
       </button>
     )
   }
 
-  const regionTeas = nav.region ? nav.teas.filter((t) => regionsMatch(t.region || '', nav.region)) : []
-  const pickTea = (t) => onSelectTea(nav.country.id, t)
+  const regionTeas = nav.region ? nav.teas.filter((tea) => regionsMatch(tea.region || '', nav.region)) : []
+  const pickTea = (tea) => onSelectTea(nav.country.id, tea)
 
   return (
     <aside className="absolute top-2 left-2 right-2 bottom-2 sm:right-auto sm:bottom-4 sm:top-4 sm:left-4 sm:w-72 z-20 flex flex-col bg-porcelain/75 backdrop-blur-md border border-ink/10 rounded-2xl shadow-panel overflow-hidden">
-      <div className="flex items-start justify-between px-4 pt-4 pb-3 shrink-0">
-        <div>
-          <p className="font-display text-lg text-ink leading-none">茶 · Атлас чая</p>
-          <p className="font-mono text-[9px] uppercase tracking-widest text-ink-soft/60 mt-1">
-            карта чайных регионов
+      <div className="flex items-start justify-between px-4 pt-4 pb-3 shrink-0 gap-2">
+        <div className="min-w-0">
+          <p className="font-display text-lg text-ink leading-none truncate">{t('appTitle')}</p>
+          <p className="font-mono text-[9px] uppercase tracking-widest text-ink-soft/60 mt-1 truncate">
+            {t('appTagline')}
           </p>
         </div>
-        <button
-          type="button"
-          onClick={() => setExpanded(false)}
-          aria-label="Свернуть меню"
-          className="text-ink/40 hover:text-ink transition-colors text-sm leading-none mt-1"
-        >
-          ✕
-        </button>
+        <div className="flex items-center gap-2 shrink-0">
+          <LocaleToggle />
+          <button
+            type="button"
+            onClick={() => setExpanded(false)}
+            aria-label={t('collapseMenu')}
+            className={`text-ink/40 hover:text-ink transition-colors text-sm leading-none rounded ${FOCUS_RING}`}
+          >
+            ✕
+          </button>
+        </div>
       </div>
 
       <div className="px-4 pb-3 shrink-0">
-        <Breadcrumb nav={nav} onHome={onHome} />
+        <Breadcrumb nav={nav} onHome={onHome} onCountry={onPickCountry} />
         {nav.country && (
           <p className="font-mono text-[10px] text-ink-soft/50 mt-1">
-            {nav.teas.length} точек чая · {nav.regions.length} регионов
+            {t('teaCountLine', nav.teas.length, nav.regions.length)}
           </p>
         )}
       </div>
@@ -273,20 +350,22 @@ export default function Sidebar({
           onClick={() => setView('nav')}
           className={[
             'flex-1 text-[12px] font-medium py-1.5 rounded-lg transition-colors',
+            FOCUS_RING,
             view === 'nav' ? 'bg-ink text-porcelain' : 'text-ink-soft/60 hover:bg-ink/5',
           ].join(' ')}
         >
-          Навигация
+          {t('tabNav')}
         </button>
         <button
           type="button"
           onClick={() => setView('reference')}
           className={[
             'flex-1 text-[12px] font-medium py-1.5 rounded-lg transition-colors',
+            FOCUS_RING,
             view === 'reference' ? 'bg-ink text-porcelain' : 'text-ink-soft/60 hover:bg-ink/5',
           ].join(' ')}
         >
-          Справочник
+          {t('tabReference')}
         </button>
       </div>
 
@@ -296,7 +375,7 @@ export default function Sidebar({
         {view === 'nav' ? (
           <>
             <div className="flex flex-col gap-2">
-              <SectionLabel>страны</SectionLabel>
+              <SectionLabel>{t('countries')}</SectionLabel>
               <CountryList countries={countries} current={nav.country} onPick={onPickCountry} />
             </div>
 
@@ -305,7 +384,7 @@ export default function Sidebar({
                 <div className="h-px bg-ink/10" />
                 {!nav.region ? (
                   <div className="flex flex-col gap-2">
-                    <SectionLabel>регионы · клик покажет чаи региона</SectionLabel>
+                    <SectionLabel>{t('regionsHintClick')}</SectionLabel>
                     <RegionList regions={nav.regions} onPick={onPickRegion} />
                   </div>
                 ) : (
@@ -313,12 +392,13 @@ export default function Sidebar({
                     <button
                       type="button"
                       onClick={onBackToRegions}
-                      className="flex items-center gap-1.5 text-[12px] text-ink-soft/60 hover:text-ink transition-colors w-fit"
+                      className={`flex items-center gap-1.5 text-[12px] text-ink-soft/60 hover:text-ink transition-colors w-fit rounded ${FOCUS_RING}`}
                     >
-                      <span>←</span>
-                      <span>Все регионы</span>
+                      <span>{t('allRegions')}</span>
                     </button>
-                    <SectionLabel>{nav.region} · клик открывает карточку</SectionLabel>
+                    <SectionLabel>
+                      {nav.region} · {t('teaHintClick')}
+                    </SectionLabel>
                     <TeaListFlat teas={regionTeas} onPick={pickTea} />
                   </div>
                 )}
@@ -326,7 +406,14 @@ export default function Sidebar({
             )}
           </>
         ) : (
-          <ReferenceTab categories={categories} teas={allTeas} countries={countries} onPick={onPickGlobalTea} />
+          <ReferenceTab
+            categories={categories}
+            teas={allTeas}
+            countries={countries}
+            hiddenCategories={hiddenCategories}
+            onToggleCategory={onToggleCategory}
+            onPick={onPickGlobalTea}
+          />
         )}
       </div>
     </aside>

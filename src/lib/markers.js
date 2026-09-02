@@ -1,20 +1,21 @@
 import { categoryColor } from './categoryStyle'
 
-// IMPORTANT: MapLibre positions each marker by writing directly to
-// `element.style.transform` on the root element passed to `new
-// maplibregl.Marker({ element })`. Our own CSS entrance animation
-// (`animate-pin-in`) also animates the `transform` property — and a CSS
-// animation targeting `transform` wins over that inline style for as long
-// as it's "in effect", which with `animation-fill-mode: both` is forever
-// after it starts. The two fight over the same property and MapLibre's
-// positioning transform never wins, so every marker rendered at scale(1)
-// with zero translation — visually stuck at the map's origin instead of
-// its real geographic position.
+// ВАЖНО: MapLibre позиционирует каждую метку, напрямую записывая
+// `element.style.transform` в корневой элемент, переданный в `new
+// maplibregl.Marker({ element })`. Наша собственная CSS-анимация появления
+// (`animate-pin-in`) тоже анимирует свойство `transform` — а CSS-анимация,
+// нацеленная на `transform`, побеждает этот инлайн-стиль, пока она «в силе»,
+// а с `animation-fill-mode: both` она «в силе» навсегда после запуска. Эти
+// два механизма боролись за одно и то же свойство, и позиционирующий
+// transform от MapLibre никогда не побеждал — в итоге каждая метка
+// рендерилась с чистым scale(1) без единого пикселя сдвига: визуально
+// застревала в точке (0,0) карты вместо своей настоящей географической
+// позиции.
 //
-// Fix: the entrance animation lives on an INNER wrapper, and clicks are
-// bound to that inner element too. The OUTER element (returned here, handed
-// to `Marker`) never has its `transform` touched by our own CSS, so
-// MapLibre has exclusive control of it.
+// Исправление: анимация появления теперь живёт на ВНУТРЕННЕМ элементе-
+// обёртке, и клики тоже вешаются на него. ВНЕШНИЙ элемент (то, что
+// возвращается отсюда и передаётся в `Marker`) никогда не трогается нашим
+// CSS по свойству `transform` — MapLibre получает над ним полный контроль.
 function wrap(inner, onClick) {
   inner.classList.add('animate-pin-in')
   if (onClick) inner.addEventListener('click', onClick)

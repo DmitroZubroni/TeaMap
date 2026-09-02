@@ -1,6 +1,6 @@
-// The categorical palette is not arbitrary — each color approximates the
-// actual color of the brewed liquor for that tea category. This is the
-// signature visual idea of the atlas: color-code by what's in the cup.
+// Палитра категорий выбрана не произвольно — каждый цвет приближён к
+// реальному цвету настоя этой категории чая. Это и есть фирменная
+// визуальная идея атласа: цвет точки = то, что в чашке.
 export const CATEGORY_COLORS = {
   white: '#EFDFA0',
   green: '#7FA579',
