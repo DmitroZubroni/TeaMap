@@ -98,8 +98,8 @@ export default function TeaPanel({ countryId, teaId, onClose }) {
       aria-label={tea?.name || t('loadingCard')}
       className={[
         'fixed z-30 bg-porcelain shadow-panel animate-panel-in overflow-hidden',
-        'inset-x-0 bottom-0 max-h-[82vh] rounded-t-3xl',
-        'md:inset-y-0 md:right-0 md:left-auto md:max-h-none md:w-[440px] md:rounded-none md:rounded-l-3xl',
+        'inset-x-0 bottom-0 h-[82vh] rounded-t-3xl',
+        'md:inset-y-0 md:right-0 md:left-auto md:h-auto md:w-[440px] md:rounded-none md:rounded-l-3xl',
       ].join(' ')}
     >
       {/* Hard-pinned to the parent's actual box via inset-0, rather than

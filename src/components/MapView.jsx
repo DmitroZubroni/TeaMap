@@ -250,6 +250,8 @@ const MapView = forwardRef(function MapView({ countries, hiddenCategories, onSel
 
   useImperativeHandle(ref, () => ({
     flyHome() {
+      setSelectedCountry(null)
+      setSelectedRegionName(null)
       mapRef.current?.flyTo({ center: [45, 25], zoom: 1.8, duration: 1000 })
     },
     flyToCountryId(id) {

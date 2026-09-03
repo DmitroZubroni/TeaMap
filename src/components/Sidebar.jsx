@@ -374,35 +374,39 @@ export default function Sidebar({
       <div className="flex-1 overflow-y-auto scrollbar-thin px-4 py-3 flex flex-col gap-4">
         {view === 'nav' ? (
           <>
-            <div className="flex flex-col gap-2">
-              <SectionLabel>{t('countries')}</SectionLabel>
-              <CountryList countries={countries} current={nav.country} onPick={onPickCountry} />
-            </div>
-
-            {nav.country && nav.regions.length > 0 && (
-              <>
-                <div className="h-px bg-ink/10" />
-                {!nav.region ? (
-                  <div className="flex flex-col gap-2">
-                    <SectionLabel>{t('regionsHintClick')}</SectionLabel>
-                    <RegionList regions={nav.regions} onPick={onPickRegion} />
-                  </div>
-                ) : (
-                  <div className="flex flex-col gap-2">
-                    <button
-                      type="button"
-                      onClick={onBackToRegions}
-                      className={`flex items-center gap-1.5 text-[12px] text-ink-soft/60 hover:text-ink transition-colors w-fit rounded ${FOCUS_RING}`}
-                    >
-                      <span>{t('allRegions')}</span>
-                    </button>
-                    <SectionLabel>
-                      {nav.region} · {t('teaHintClick')}
-                    </SectionLabel>
-                    <TeaListFlat teas={regionTeas} onPick={pickTea} />
-                  </div>
-                )}
-              </>
+            {!nav.country ? (
+              <div className="flex flex-col gap-2">
+                <SectionLabel>{t('countries')}</SectionLabel>
+                <CountryList countries={countries} current={nav.country} onPick={onPickCountry} />
+              </div>
+            ) : !nav.region ? (
+              <div className="flex flex-col gap-2">
+                <button
+                  type="button"
+                  onClick={onHome}
+                  className={`flex items-center gap-1.5 text-[12px] text-ink-soft/60 hover:text-ink transition-colors w-fit rounded ${FOCUS_RING}`}
+                >
+                  <span>{t('allCountries')}</span>
+                </button>
+                <SectionLabel>
+                  {nav.country.name} · {t('regionsHintClick')}
+                </SectionLabel>
+                <RegionList regions={nav.regions} onPick={onPickRegion} />
+              </div>
+            ) : (
+              <div className="flex flex-col gap-2">
+                <button
+                  type="button"
+                  onClick={onBackToRegions}
+                  className={`flex items-center gap-1.5 text-[12px] text-ink-soft/60 hover:text-ink transition-colors w-fit rounded ${FOCUS_RING}`}
+                >
+                  <span>{t('allRegions')}</span>
+                </button>
+                <SectionLabel>
+                  {nav.region} · {t('teaHintClick')}
+                </SectionLabel>
+                <TeaListFlat teas={regionTeas} onPick={pickTea} />
+              </div>
             )}
           </>
         ) : (
