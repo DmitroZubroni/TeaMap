@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { categoryColor } from '../lib/categoryStyle'
 import { useI18n } from '../lib/i18n'
+import { useDebouncedValue } from '../lib/useDebouncedValue'
 
 const FOCUS_RING = 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold'
 
@@ -92,6 +93,22 @@ function CountryList({ countries, current, onPick }) {
           </button>
         )
       })}
+    </div>
+  )
+}
+
+function ListSkeleton({ rows = 4 }) {
+  return (
+    <div className="flex flex-col gap-1">
+      {Array.from({ length: rows }).map((_, i) => (
+        <div key={i} className="flex items-center gap-2 px-2 py-1.5">
+          <span className="w-3 h-3 rounded-full bg-ink/10 shrink-0 animate-pulse" />
+          <span
+            className="h-3 rounded bg-ink/10 animate-pulse"
+            style={{ width: `${55 + ((i * 17) % 35)}%` }}
+          />
+        </div>
+      ))}
     </div>
   )
 }
@@ -202,11 +219,12 @@ function CategoryFilter({ categories, hiddenCategories, onToggleCategory }) {
 function ReferenceTab({ categories, teas, countries, hiddenCategories, onToggleCategory, onPick }) {
   const { t } = useI18n()
   const [query, setQuery] = useState('')
+  const debouncedQuery = useDebouncedValue(query, 200)
   const iconByCountry = Object.fromEntries(countries.map((c) => [c.id, c.icon]))
   const showCountryIcon = new Set(teas.map((tea) => tea.countryId)).size > 1
 
   const grouped = useMemo(() => {
-    const q = query.trim().toLowerCase()
+    const q = debouncedQuery.trim().toLowerCase()
     const filtered = q
       ? teas.filter((tea) => tea.name.toLowerCase().includes(q) || (tea.region || '').toLowerCase().includes(q))
       : teas
@@ -216,7 +234,7 @@ function ReferenceTab({ categories, teas, countries, hiddenCategories, onToggleC
       byCategory.get(tea.category).push(tea)
     })
     return byCategory
-  }, [teas, query])
+  }, [teas, debouncedQuery])
 
   return (
     <div className="flex flex-col gap-4">
@@ -251,7 +269,9 @@ function ReferenceTab({ categories, teas, countries, hiddenCategories, onToggleC
                   </div>
                 </div>
               ))}
-            {query && grouped.size === 0 && <p className="text-[13px] text-ink-soft/60 px-2">{t('nothingFound')}</p>}
+            {debouncedQuery && grouped.size === 0 && (
+              <p className="text-[13px] text-ink-soft/60 px-2">{t('nothingFound')}</p>
+            )}
           </div>
         </div>
       )}
@@ -279,12 +299,36 @@ function LocaleToggle() {
   )
 }
 
+function FavoritesTab({ teas, countries, onPick }) {
+  const { t } = useI18n()
+  const iconByCountry = Object.fromEntries(countries.map((c) => [c.id, c.icon]))
+  const showCountryIcon = new Set(teas.map((tea) => tea.countryId)).size > 1
+
+  if (!teas.length) {
+    return <p className="text-[13px] text-ink-soft/60 px-2">{t('noFavorites')}</p>
+  }
+
+  return (
+    <div className="flex flex-col gap-0.5">
+      {teas.map((tea) => (
+        <TeaRow
+          key={`${tea.countryId}-${tea.id}`}
+          tea={tea}
+          onPick={onPick}
+          countryIcon={showCountryIcon ? iconByCountry[tea.countryId] : null}
+        />
+      ))}
+    </div>
+  )
+}
+
 export default function Sidebar({
   nav,
   onHome,
   countries,
   categories,
   allTeas,
+  favoriteTeas,
   hiddenCategories,
   onToggleCategory,
   onPickCountry,
@@ -295,7 +339,7 @@ export default function Sidebar({
 }) {
   const { t } = useI18n()
   const [expanded, setExpanded] = useState(() => typeof window === 'undefined' || window.innerWidth >= 640)
-  const [view, setView] = useState('nav') // 'nav' | 'reference'
+  const [view, setView] = useState('nav') // 'nav' | 'reference' | 'favorites'
 
   if (!expanded) {
     return (
@@ -367,6 +411,17 @@ export default function Sidebar({
         >
           {t('tabReference')}
         </button>
+        <button
+          type="button"
+          onClick={() => setView('favorites')}
+          className={[
+            'flex-1 text-[12px] font-medium py-1.5 rounded-lg transition-colors',
+            FOCUS_RING,
+            view === 'favorites' ? 'bg-ink text-porcelain' : 'text-ink-soft/60 hover:bg-ink/5',
+          ].join(' ')}
+        >
+          {t('tabFavorites')}
+        </button>
       </div>
 
       <div className="h-px bg-ink/10 shrink-0 mt-3" />
@@ -391,7 +446,7 @@ export default function Sidebar({
                 <SectionLabel>
                   {nav.country.name} · {t('regionsHintClick')}
                 </SectionLabel>
-                <RegionList regions={nav.regions} onPick={onPickRegion} />
+                {nav.loading ? <ListSkeleton /> : <RegionList regions={nav.regions} onPick={onPickRegion} />}
               </div>
             ) : (
               <div className="flex flex-col gap-2">
@@ -405,11 +460,11 @@ export default function Sidebar({
                 <SectionLabel>
                   {nav.region} · {t('teaHintClick')}
                 </SectionLabel>
-                <TeaListFlat teas={regionTeas} onPick={pickTea} />
+                {nav.loading ? <ListSkeleton /> : <TeaListFlat teas={regionTeas} onPick={pickTea} />}
               </div>
             )}
           </>
-        ) : (
+        ) : view === 'reference' ? (
           <ReferenceTab
             categories={categories}
             teas={allTeas}
@@ -418,6 +473,8 @@ export default function Sidebar({
             onToggleCategory={onToggleCategory}
             onPick={onPickGlobalTea}
           />
+        ) : (
+          <FavoritesTab teas={favoriteTeas} countries={countries} onPick={onPickGlobalTea} />
         )}
       </div>
     </aside>

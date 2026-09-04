@@ -1,9 +1,10 @@
-import { useCallback, useEffect, useRef, useState, Suspense, lazy } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState, Suspense, lazy } from 'react'
 import Sidebar from './components/Sidebar'
 import Toast from './components/Toast'
 import TeaPanel from './components/TeaPanel'
 import { getCountries, getCategories, getTeaIndex } from './lib/api'
 import { I18nProvider, useI18n } from './lib/i18n'
+import { useFavorites } from './lib/favorites'
 
 // maplibre-gl — самая тяжёлая зависимость в приложении. Вынос её в отдельный
 // чанк позволяет сайдбару/каркасу отрисоваться и стать интерактивным сразу,
@@ -23,15 +24,52 @@ function MapLoading() {
   )
 }
 
+// Разбирает URL вида ?country=china&region=wuyi&tea=da_hong_pao в объект
+// маршрута. Query-параметры на корневом пути выбраны намеренно: они не
+// требуют никакой особой настройки на хостинге (в отличие от «красивых»
+// путей вида /china/wuyi/da_hong_pao, которым нужен SPA-fallback на сервере,
+// которого может не быть на статическом хостинге).
+function parseRoute(search) {
+  const params = new URLSearchParams(search)
+  const countryId = params.get('country')
+  if (!countryId) return null
+  return {
+    countryId,
+    regionId: params.get('region') || null,
+    teaId: params.get('tea') || null,
+  }
+}
+
+function routeToUrl(nav, selectedTea) {
+  const params = new URLSearchParams()
+  if (nav.country) {
+    params.set('country', nav.country.id)
+    if (nav.region && nav.regionId) params.set('region', nav.regionId)
+    if (selectedTea) params.set('tea', selectedTea.teaId)
+  }
+  const search = params.toString()
+  return search ? `${window.location.pathname}?${search}` : window.location.pathname
+}
+
 function AppInner() {
   const mapRef = useRef(null)
   const [countries, setCountries] = useState([])
   const [categories, setCategories] = useState([])
   const [allTeas, setAllTeas] = useState([]) // every tea across every active country, for global search
-  const [nav, setNav] = useState({ stage: 'world', country: null, region: null, regions: [], teas: [] })
+  const [nav, setNav] = useState({
+    stage: 'world',
+    country: null,
+    region: null,
+    regionId: null,
+    regions: [],
+    teas: [],
+    loading: false,
+  })
   const [selectedTea, setSelectedTea] = useState(null) // { countryId, teaId }
   const [toast, setToast] = useState(null)
   const [hiddenCategories, setHiddenCategories] = useState(() => new Set())
+  const [pendingRoute, setPendingRoute] = useState(() => parseRoute(window.location.search))
+  const { favorites, toggleFavorite, isFavorite } = useFavorites()
 
   useEffect(() => {
     getCountries().then(setCountries)
@@ -81,6 +119,71 @@ function AppInner() {
     })
   }, [])
 
+  // --- ссылка → приложение: реагируем на кнопки «назад/вперёд» браузера ---
+  useEffect(() => {
+    const onPopState = () => setPendingRoute(parseRoute(window.location.search))
+    window.addEventListener('popstate', onPopState)
+    return () => window.removeEventListener('popstate', onPopState)
+  }, [])
+
+  // --- ссылка → приложение: постепенно «долетаем» до того, что указано в
+  // URL, по шагу за раз (страна → регион → чай), пересчитываясь по мере
+  // того, как асинхронно подгружаются данные ---
+  useEffect(() => {
+    if (!pendingRoute || !countries.length) return
+    const country = countries.find((c) => c.id === pendingRoute.countryId)
+    if (!country || country.teaCount === 0) {
+      setPendingRoute(null)
+      return
+    }
+
+    if (nav.country?.id !== pendingRoute.countryId) {
+      mapRef.current?.flyToCountryId(pendingRoute.countryId)
+      return
+    }
+    if (nav.loading) return
+
+    if (pendingRoute.regionId && nav.regionId !== pendingRoute.regionId) {
+      const region = nav.regions.find((r) => r.id === pendingRoute.regionId)
+      if (region) {
+        mapRef.current?.flyToRegion(region)
+        return
+      }
+    }
+    if (!pendingRoute.regionId && nav.region) {
+      mapRef.current?.clearRegionFocus()
+      return
+    }
+
+    if (pendingRoute.teaId) {
+      if (!selectedTea || selectedTea.teaId !== pendingRoute.teaId) {
+        const tea = nav.teas.find((t) => t.id === pendingRoute.teaId)
+        if (tea) setSelectedTea({ countryId: pendingRoute.countryId, teaId: tea.id })
+      }
+    } else if (selectedTea) {
+      setSelectedTea(null)
+    }
+
+    setPendingRoute(null)
+  }, [pendingRoute, countries, nav, selectedTea])
+
+  // --- приложение → ссылка: отражаем текущую навигацию в URL, пока сами не
+  // заняты «долётом» по входящей ссылке (иначе эффекты будут спорить друг с
+  // другом за адресную строку) ---
+  useEffect(() => {
+    if (pendingRoute) return
+    const newUrl = routeToUrl(nav, selectedTea)
+    const current = window.location.pathname + window.location.search
+    if (newUrl !== current) {
+      window.history.pushState(null, '', newUrl)
+    }
+  }, [nav.country, nav.region, nav.regionId, selectedTea, pendingRoute]) // eslint-disable-line react-hooks/exhaustive-deps
+
+  const favoriteTeas = useMemo(
+    () => allTeas.filter((tea) => favorites.has(`${tea.countryId}:${tea.id}`)),
+    [allTeas, favorites]
+  )
+
   return (
     <div className="relative w-full h-svh overflow-hidden bg-ink">
       <Suspense fallback={<MapLoading />}>
@@ -100,6 +203,7 @@ function AppInner() {
         countries={countries}
         categories={categories}
         allTeas={allTeas}
+        favoriteTeas={favoriteTeas}
         hiddenCategories={hiddenCategories}
         onToggleCategory={toggleCategory}
         onPickCountry={(id) => mapRef.current?.flyToCountryId(id)}
@@ -114,6 +218,8 @@ function AppInner() {
         <TeaPanel
           countryId={selectedTea.countryId}
           teaId={selectedTea.teaId}
+          isFavorite={isFavorite(selectedTea.countryId, selectedTea.teaId)}
+          onToggleFavorite={() => toggleFavorite(selectedTea.countryId, selectedTea.teaId)}
           onClose={() => setSelectedTea(null)}
         />
       )}

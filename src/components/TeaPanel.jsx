@@ -27,7 +27,7 @@ function Section({ label, children }) {
 
 const FOCUSABLE_SELECTOR = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
 
-export default function TeaPanel({ countryId, teaId, onClose }) {
+export default function TeaPanel({ countryId, teaId, isFavorite, onToggleFavorite, onClose }) {
   const { t } = useI18n()
   const [tea, setTea] = useState(null)
   const [error, setError] = useState(null)
@@ -115,6 +115,21 @@ export default function TeaPanel({ countryId, teaId, onClose }) {
         >
           ✕
         </button>
+        {tea && (
+          <button
+            type="button"
+            onClick={onToggleFavorite}
+            aria-label={isFavorite ? t('removeFavorite') : t('addFavorite')}
+            aria-pressed={isFavorite}
+            className={`absolute top-3 right-14 z-10 grid place-items-center w-8 h-8 rounded-full bg-ink/80 hover:bg-ink transition-colors ${FOCUS_RING} ${
+              isFavorite ? 'text-red-400' : 'text-porcelain'
+            }`}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill={isFavorite ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="2">
+              <path d="M12 21s-6.7-4.3-9.3-8.2C1 10 1.5 6.6 4.1 4.9 6.4 3.4 9.3 4 11 6.1c.4.5.6.7 1 .7s.6-.2 1-.7c1.7-2.1 4.6-2.7 6.9-1.2 2.6 1.7 3.1 5.1 1.4 7.9C18.7 16.7 12 21 12 21Z" />
+            </svg>
+          </button>
+        )}
 
         {!tea && !error && <div className="p-8 text-center text-ink-soft/60 text-sm">{t('loadingCard')}</div>}
         {error && <div className="p-8 text-center text-red-800 text-sm">{error}</div>}

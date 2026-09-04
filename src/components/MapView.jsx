@@ -27,11 +27,12 @@ const MapView = forwardRef(function MapView({ countries, hiddenCategories, onSel
   const [loadError, setLoadError] = useState(null)
   const [zoom, setZoom] = useState(1.8)
   const [selectedCountry, setSelectedCountry] = useState(null)
-  const [selectedRegionName, setSelectedRegionName] = useState(null)
+  const [selectedRegion, setSelectedRegion] = useState(null)
   const [regionsData, setRegionsData] = useState([])
   const [teasData, setTeasData] = useState([])
+  const [loadingCountry, setLoadingCountry] = useState(false)
 
-  const stage = zoom <= WORLD_MAX ? 'world' : selectedRegionName ? 'region-focus' : 'country'
+  const stage = zoom <= WORLD_MAX ? 'world' : selectedRegion ? 'region-focus' : 'country'
   const labelsOn = zoom >= LABEL_ZOOM
 
   // --- инициализация карты (один раз) ---
@@ -56,7 +57,7 @@ const MapView = forwardRef(function MapView({ countries, hiddenCategories, onSel
     map.on('zoomend', () => {
       if (map.getZoom() <= WORLD_MAX) {
         setSelectedCountry(null)
-        setSelectedRegionName(null)
+        setSelectedRegion(null)
       }
     })
     map.on('load', () => {
@@ -99,18 +100,25 @@ const MapView = forwardRef(function MapView({ countries, hiddenCategories, onSel
     onNav?.({
       stage,
       country: selectedCountry,
-      region: selectedRegionName,
+      region: selectedRegion?.name ?? null,
+      regionId: selectedRegion?.id ?? null,
       regions: regionsData,
       teas: teasData,
+      loading: loadingCountry,
     })
-  }, [stage, selectedCountry, selectedRegionName, teasData, regionsData]) // eslint-disable-line react-hooks/exhaustive-deps
+  }, [stage, selectedCountry, selectedRegion, teasData, regionsData, loadingCountry]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const loadCountryData = useCallback(async (country) => {
-    const [regions, teas] = await Promise.all([getRegions(country.id), getTeaIndex(country.id)])
-    setRegionsData(regions)
-    setTeasData(teas)
-    setSelectedCountry(country)
-    return regions
+    setLoadingCountry(true)
+    try {
+      const [regions, teas] = await Promise.all([getRegions(country.id), getTeaIndex(country.id)])
+      setRegionsData(regions)
+      setTeasData(teas)
+      setSelectedCountry(country)
+      return regions
+    } finally {
+      setLoadingCountry(false)
+    }
   }, [])
 
   const flyToCountry = useCallback(async (country) => {
@@ -118,7 +126,7 @@ const MapView = forwardRef(function MapView({ countries, hiddenCategories, onSel
       onToast?.(t('countrySoonToast', country?.name ?? t('thisCountry')))
       return
     }
-    setSelectedRegionName(null)
+    setSelectedRegion(null)
     const regions = await loadCountryData(country)
     const map = mapRef.current
     if (regions.length) {
@@ -179,7 +187,7 @@ const MapView = forwardRef(function MapView({ countries, hiddenCategories, onSel
         const el = createRegionPin({
           name: region.name,
           onClick: () => {
-            setSelectedRegionName(region.name)
+            setSelectedRegion(region)
             mapRef.current.flyTo({ center: [region.lng, region.lat], zoom: Math.max(region.zoom, 8), duration: 900 })
           },
         })
@@ -251,7 +259,7 @@ const MapView = forwardRef(function MapView({ countries, hiddenCategories, onSel
   useImperativeHandle(ref, () => ({
     flyHome() {
       setSelectedCountry(null)
-      setSelectedRegionName(null)
+      setSelectedRegion(null)
       mapRef.current?.flyTo({ center: [45, 25], zoom: 1.8, duration: 1000 })
     },
     flyToCountryId(id) {
@@ -260,17 +268,17 @@ const MapView = forwardRef(function MapView({ countries, hiddenCategories, onSel
     },
     flyToRegion(region) {
       if (!region || !mapRef.current) return
-      setSelectedRegionName(region.name)
+      setSelectedRegion(region)
       mapRef.current.flyTo({ center: [region.lng, region.lat], zoom: Math.max(region.zoom, 8), duration: 900 })
     },
     clearRegionFocus() {
-      setSelectedRegionName(null)
+      setSelectedRegion(null)
     },
     async flyToTeaInCountry(countryId, tea) {
       if (!tea || !mapRef.current) return
       const country = countries.find((c) => c.id === countryId)
       if (country && country.id !== selectedCountry?.id) {
-        setSelectedRegionName(null)
+        setSelectedRegion(null)
         await loadCountryData(country)
       }
       mapRef.current.flyTo({ center: [tea.lng, tea.lat], zoom: Math.max(LABEL_ZOOM + 1, 9), duration: 1000 })
