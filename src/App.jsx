@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState, Suspense, lazy } fro
 import Sidebar from './components/Sidebar'
 import Toast from './components/Toast'
 import TeaPanel from './components/TeaPanel'
+import DonateModal from './components/DonateModal'
 import { getCountries, getCategories, getTeaIndex } from './lib/api'
 import { I18nProvider, useI18n } from './lib/i18n'
 import { useFavorites } from './lib/favorites'
@@ -69,6 +70,7 @@ function AppInner() {
   const [toast, setToast] = useState(null)
   const [hiddenCategories, setHiddenCategories] = useState(() => new Set())
   const [pendingRoute, setPendingRoute] = useState(() => parseRoute(window.location.search))
+  const [showDonate, setShowDonate] = useState(false)
   const { favorites, toggleFavorite, isFavorite } = useFavorites()
 
   useEffect(() => {
@@ -211,8 +213,11 @@ function AppInner() {
         onBackToRegions={() => mapRef.current?.clearRegionFocus()}
         onSelectTea={(countryId, tea) => handleSelectTeaAndFly(countryId, tea)}
         onPickGlobalTea={handlePickGlobalTea}
+        onOpenDonate={() => setShowDonate(true)}
       />
       <Toast message={toast} />
+
+      {showDonate && <DonateModal onClose={() => setShowDonate(false)} />}
 
       {selectedTea && (
         <TeaPanel

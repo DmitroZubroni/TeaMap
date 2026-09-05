@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { categoryColor } from '../lib/categoryStyle'
 import { useI18n } from '../lib/i18n'
 import { useDebouncedValue } from '../lib/useDebouncedValue'
+import { PialaIcon } from './DonateModal'
 
 const FOCUS_RING = 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold'
 
@@ -336,6 +337,7 @@ export default function Sidebar({
   onBackToRegions,
   onSelectTea,
   onPickGlobalTea,
+  onOpenDonate,
 }) {
   const { t } = useI18n()
   const [expanded, setExpanded] = useState(() => typeof window === 'undefined' || window.innerWidth >= 640)
@@ -343,14 +345,27 @@ export default function Sidebar({
 
   if (!expanded) {
     return (
-      <button
-        type="button"
-        onClick={() => setExpanded(true)}
-        aria-label={t('openMenu')}
-        className={`absolute top-2 left-2 sm:top-4 sm:left-4 z-20 grid place-items-center w-11 h-11 rounded-full bg-porcelain/80 backdrop-blur-md border border-ink/10 shadow-panel text-ink font-display text-lg ${FOCUS_RING}`}
-      >
-        茶
-      </button>
+      <div className="absolute top-2 left-2 sm:top-4 sm:left-4 z-20 flex flex-col gap-2">
+        <button
+          type="button"
+          onClick={() => setExpanded(true)}
+          aria-label={t('openMenu')}
+          className={`grid place-items-center w-11 h-11 rounded-full bg-porcelain/80 backdrop-blur-md border border-ink/10 shadow-panel text-ink font-display text-lg ${FOCUS_RING}`}
+        >
+          茶
+        </button>
+        {onOpenDonate && (
+          <button
+            type="button"
+            onClick={onOpenDonate}
+            title={t('donateBtn')}
+            aria-label={t('donateBtn')}
+            className={`grid place-items-center w-11 h-11 rounded-full bg-porcelain/80 backdrop-blur-md border border-ink/10 shadow-panel text-gold hover:text-gold-soft transition-colors ${FOCUS_RING}`}
+          >
+            <PialaIcon className="w-5 h-5" />
+          </button>
+        )}
+      </div>
     )
   }
 
@@ -477,6 +492,20 @@ export default function Sidebar({
           <FavoritesTab teas={favoriteTeas} countries={countries} onPick={onPickGlobalTea} />
         )}
       </div>
+
+      {onOpenDonate && (
+        <div className="px-4 py-2.5 shrink-0 border-t border-ink/10 flex items-center justify-between bg-porcelain/40">
+          <button
+            type="button"
+            onClick={onOpenDonate}
+            className={`flex items-center gap-2 text-[12px] font-medium text-gold hover:text-gold-soft transition-colors rounded py-0.5 ${FOCUS_RING}`}
+          >
+            <PialaIcon className="w-4 h-4 text-gold shrink-0" />
+            <span>{t('donateBtn')}</span>
+          </button>
+          <span className="font-mono text-[9px] uppercase tracking-wider text-ink-soft/40">TeaMap</span>
+        </div>
+      )}
     </aside>
   )
 }

@@ -64,6 +64,15 @@ const STRINGS = {
     mapLoadErrorGeneric: 'Не удалось загрузить карту. Проверьте соединение и обновите страницу.',
     countrySoonToast: (name) => `${name} — данные скоро появятся`,
     thisCountry: 'Эта страна',
+    donateBtn: 'Угостить чаем',
+    donateBadge: 'Поддержка проекта',
+    donateTitle: 'TeaMap — открытый атлас чая',
+    donateDesc:
+      'Атлас развивается открыто, бесплатно и без рекламы. Если проект помог вам погрузиться в чайную географию, открыть для себя новые сорта или найти любимый чай — вы можете поддержать автора пиалой хорошего чая!',
+    donateCtaLabel: 'Отправить чаевые через CloudTips',
+    donateCtaSub: 'СБП · T-Pay · СберPay · Карты любого банка',
+    donateSecure: 'Безопасная оплата через Т-Банк. Ваши личные данные не передаются.',
+    close: 'Закрыть',
   },
   en: {
     appTitle: '茶 · Tea Atlas',
@@ -122,6 +131,15 @@ const STRINGS = {
     mapLoadErrorGeneric: 'Could not load the map. Check your connection and reload the page.',
     countrySoonToast: (name) => `${name} — data coming soon`,
     thisCountry: 'This country',
+    donateBtn: 'Buy a bowl of tea',
+    donateBadge: 'Project Support',
+    donateTitle: 'TeaMap — Open Tea Atlas',
+    donateDesc:
+      'The atlas is developed openly, freely, and without ads. If the project helped you explore tea geography, discover new terroirs, or find a favorite tea — you can support the author with a bowl of good tea!',
+    donateCtaLabel: 'Send a tip via CloudTips',
+    donateCtaSub: 'SBP · T-Pay · SberPay · Any bank card',
+    donateSecure: 'Secure payment powered by T-Bank. Your personal data is not shared.',
+    close: 'Close',
   },
 }
 
