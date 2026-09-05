@@ -8,6 +8,9 @@ import { getStoredLocale, setStoredLocale } from './locale'
 // переключатель языка она не входит.
 const STRINGS = {
   ru: {
+    metaTitle: 'Атлас чая — Интерактивная карта чайных регионов и сортов мира',
+    metaDescription:
+      'Интерактивный атлас чайных терруаров, регионов и сортов мира: происхождение (origins), высоты гор (elevations), культивары (cultivars) и заваривание (gongfu brewing) чаёв Китая, Японии, Индии и других стран.',
     appTitle: '茶 · Атлас чая',
     appTagline: 'карта чайных регионов',
     tabNav: 'Навигация',
@@ -75,6 +78,9 @@ const STRINGS = {
     close: 'Закрыть',
   },
   en: {
+    metaTitle: 'Tea Atlas — Interactive World Map of Tea Terroirs & Cultivars',
+    metaDescription:
+      'Interactive world map of tea terroirs, origins, and mountain elevations. Explore authentic cultivars, tasting profiles, and gongfu brewing guides across China, Japan, India, and beyond.',
     appTitle: '茶 · Tea Atlas',
     appTagline: 'map of tea-growing regions',
     tabNav: 'Navigate',
@@ -152,8 +158,23 @@ export function I18nProvider({ children }) {
 
   useEffect(() => {
     const dict = STRINGS[locale] || STRINGS.en
-    document.title = dict.appTitle
+    document.title = dict.metaTitle || dict.appTitle
     document.documentElement.lang = locale
+
+    if (dict.metaDescription) {
+      const metaDesc = document.querySelector('meta[name="description"]')
+      if (metaDesc) metaDesc.setAttribute('content', dict.metaDescription)
+      const ogDesc = document.querySelector('meta[property="og:description"]')
+      if (ogDesc) ogDesc.setAttribute('content', dict.metaDescription)
+      const twDesc = document.querySelector('meta[name="twitter:description"]')
+      if (twDesc) twDesc.setAttribute('content', dict.metaDescription)
+    }
+    if (dict.metaTitle) {
+      const ogTitle = document.querySelector('meta[property="og:title"]')
+      if (ogTitle) ogTitle.setAttribute('content', dict.metaTitle)
+      const twTitle = document.querySelector('meta[name="twitter:title"]')
+      if (twTitle) twTitle.setAttribute('content', dict.metaTitle)
+    }
   }, [locale])
 
   // api.js читает локаль один раз при загрузке модуля (чтобы не тащить
