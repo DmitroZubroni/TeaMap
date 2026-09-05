@@ -1,12 +1,7 @@
-// Используем бесплатный векторный стиль CARTO «Positron» (без API-ключа,
-// схема OpenMapTiles, © OpenStreetMap contributors / © CARTO — атрибуция
-// сохраняется автоматически через AttributionControl MapLibre) — URL стиля
-// передаётся напрямую в MapLibre, а его слои перекрашиваются на месте уже
-// после успешной загрузки. Мы намеренно НЕ загружаем/парсим JSON стиля сами
-// перед передачей в карту: пусть MapLibre сам управляет этим запросом — так
-// мы не дублируем его логику повторов/CORS, и сбой на нашей стороне никогда
-// не оставит карту вовсе без отрисовки.
-export const STYLE_URL = 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json'
+// Предварительно оптимизированный стиль с запечённой чайной палитрой и
+// прямыми эндпоинтами тайлов (без лишних запросов к tiles.json).
+export const STYLE_URL = '/map/style.json'
+export const FALLBACK_STYLE_URL = 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json'
 
 const PALETTE = {
   background: '#EEE6D3',

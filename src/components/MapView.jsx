@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, useCallback, forwardRef, useImperativeHandle } from 'react'
 import maplibregl from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
-import { STYLE_URL, applyTeaPalette } from '../lib/mapStyle'
+import { STYLE_URL, FALLBACK_STYLE_URL, applyTeaPalette } from '../lib/mapStyle'
 import { getRegions, getTeaIndex } from '../lib/api'
 import { COUNTRY_CENTROIDS } from '../lib/countryMeta'
 import { createCountryPin, createRegionPin, createTeaPin } from '../lib/markers'
@@ -10,6 +10,37 @@ import { useI18n } from '../lib/i18n'
 const WORLD_MAX = 3.2
 const LABEL_ZOOM = 8
 const LOAD_TIMEOUT_MS = 12000
+
+// Плавная кубическая кривая ускорения-замедления (ease-in-out),
+// исключающая резкие рывки камеры на старте и приземлении
+const SMOOTH_EASING = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2)
+
+const ANIMATION = {
+  world: {
+    duration: 1600,
+    curve: 1.45,
+    easing: SMOOTH_EASING,
+    essential: true,
+  },
+  country: {
+    duration: 1800,
+    curve: 1.5,
+    easing: SMOOTH_EASING,
+    essential: true,
+  },
+  region: {
+    duration: 1500,
+    curve: 1.42,
+    easing: SMOOTH_EASING,
+    essential: true,
+  },
+  tea: {
+    duration: 1400,
+    curve: 1.35,
+    easing: SMOOTH_EASING,
+    essential: true,
+  },
+}
 
 const MapView = forwardRef(function MapView({ countries, hiddenCategories, onSelectTea, onNav, onToast }, ref) {
   const { t } = useI18n()
@@ -44,6 +75,7 @@ const MapView = forwardRef(function MapView({ countries, hiddenCategories, onSel
       zoom: 1.8,
       minZoom: 1.4,
       maxZoom: 13,
+      fadeDuration: 0, // Мгновенное появление тайлов без 300мс затухания
       attributionControl: { compact: true },
     })
     mapRef.current = map
@@ -70,8 +102,17 @@ const MapView = forwardRef(function MapView({ countries, hiddenCategories, onSel
       }
       setReady(true)
     })
+    let attemptedFallback = false
     map.on('error', (e) => {
-      console.error('Map error:', e?.error || e)
+      console.error('Map error:', e?.error?.message || e?.message || e?.error || e)
+      if (!map.loaded() && !attemptedFallback) {
+        attemptedFallback = true
+        console.warn('Falling back to remote CARTO style...')
+        try {
+          map.setStyle(FALLBACK_STYLE_URL)
+          return
+        } catch {}
+      }
       // Блокируем интерфейс только если сбой произошёл ДО первой успешной
       // загрузки — если карта уже работает, отдельные ошибки тайлов/шрифтов
       // не должны ломать уже рабочую карту.
@@ -134,10 +175,29 @@ const MapView = forwardRef(function MapView({ countries, hiddenCategories, onSel
         (b, r) => b.extend([r.lng, r.lat]),
         new maplibregl.LngLatBounds([regions[0].lng, regions[0].lat], [regions[0].lng, regions[0].lat])
       )
-      map.fitBounds(bounds, { padding: 90, duration: 1100, maxZoom: 5.5 })
+      const isMobile = typeof window !== 'undefined' && window.innerWidth < 640
+      map.fitBounds(bounds, {
+        padding: {
+          top: isMobile ? 80 : 90,
+          bottom: isMobile ? 80 : 90,
+          left: isMobile ? 40 : 320,
+          right: isMobile ? 40 : 80,
+        },
+        duration: ANIMATION.country.duration,
+        easing: ANIMATION.country.easing,
+        maxZoom: 5.5,
+        essential: true,
+      })
     } else {
       const c = COUNTRY_CENTROIDS[country.id]
-      map.flyTo({ center: [c.lng, c.lat], zoom: 4.5, duration: 1100 })
+      map.flyTo({
+        center: [c.lng, c.lat],
+        zoom: 4.5,
+        duration: ANIMATION.country.duration,
+        curve: ANIMATION.country.curve,
+        easing: ANIMATION.country.easing,
+        essential: true,
+      })
     }
   }, [onToast, loadCountryData, t])
 
@@ -188,7 +248,14 @@ const MapView = forwardRef(function MapView({ countries, hiddenCategories, onSel
           name: region.name,
           onClick: () => {
             setSelectedRegion(region)
-            mapRef.current.flyTo({ center: [region.lng, region.lat], zoom: Math.max(region.zoom, 8), duration: 900 })
+            mapRef.current.flyTo({
+              center: [region.lng, region.lat],
+              zoom: Math.max(region.zoom, 8),
+              duration: ANIMATION.region.duration,
+              curve: ANIMATION.region.curve,
+              easing: ANIMATION.region.easing,
+              essential: true,
+            })
           },
         })
         const marker = new maplibregl.Marker({ element: el, anchor: 'bottom' })
@@ -244,7 +311,17 @@ const MapView = forwardRef(function MapView({ countries, hiddenCategories, onSel
           name: tea.name,
           category: tea.category,
           labeled: labelsOn,
-          onClick: () => onSelectTea(selectedCountry.id, tea.id),
+          onClick: () => {
+            onSelectTea(selectedCountry.id, tea.id)
+            mapRef.current?.flyTo({
+              center: [lng, lat],
+              zoom: Math.max(mapRef.current.getZoom(), LABEL_ZOOM + 1),
+              duration: ANIMATION.tea.duration,
+              curve: ANIMATION.tea.curve,
+              easing: ANIMATION.tea.easing,
+              essential: true,
+            })
+          },
         })
         const marker = new maplibregl.Marker({ element: el, anchor: labelsOn ? 'left' : 'center' })
           .setLngLat([lng, lat])
@@ -260,7 +337,14 @@ const MapView = forwardRef(function MapView({ countries, hiddenCategories, onSel
     flyHome() {
       setSelectedCountry(null)
       setSelectedRegion(null)
-      mapRef.current?.flyTo({ center: [45, 25], zoom: 1.8, duration: 1000 })
+      mapRef.current?.flyTo({
+        center: [45, 25],
+        zoom: 1.8,
+        duration: ANIMATION.world.duration,
+        curve: ANIMATION.world.curve,
+        easing: ANIMATION.world.easing,
+        essential: true,
+      })
     },
     flyToCountryId(id) {
       const country = countries.find((c) => c.id === id)
@@ -269,7 +353,14 @@ const MapView = forwardRef(function MapView({ countries, hiddenCategories, onSel
     flyToRegion(region) {
       if (!region || !mapRef.current) return
       setSelectedRegion(region)
-      mapRef.current.flyTo({ center: [region.lng, region.lat], zoom: Math.max(region.zoom, 8), duration: 900 })
+      mapRef.current.flyTo({
+        center: [region.lng, region.lat],
+        zoom: Math.max(region.zoom, 8),
+        duration: ANIMATION.region.duration,
+        curve: ANIMATION.region.curve,
+        easing: ANIMATION.region.easing,
+        essential: true,
+      })
     },
     clearRegionFocus() {
       setSelectedRegion(null)
@@ -281,7 +372,14 @@ const MapView = forwardRef(function MapView({ countries, hiddenCategories, onSel
         setSelectedRegion(null)
         await loadCountryData(country)
       }
-      mapRef.current.flyTo({ center: [tea.lng, tea.lat], zoom: Math.max(LABEL_ZOOM + 1, 9), duration: 1000 })
+      mapRef.current.flyTo({
+        center: [tea.lng, tea.lat],
+        zoom: Math.max(LABEL_ZOOM + 1, 9.2),
+        duration: ANIMATION.tea.duration,
+        curve: ANIMATION.tea.curve,
+        easing: ANIMATION.tea.easing,
+        essential: true,
+      })
     },
   }))
 

@@ -7,11 +7,11 @@ import { getCountries, getCategories, getTeaIndex } from './lib/api'
 import { I18nProvider, useI18n } from './lib/i18n'
 import { useFavorites } from './lib/favorites'
 
-// maplibre-gl — самая тяжёлая зависимость в приложении. Вынос её в отдельный
-// чанк позволяет сайдбару/каркасу отрисоваться и стать интерактивным сразу,
-// пока карта грузится отдельно за своим собственным индикатором загрузки, не
-// блокируя первую отрисовку всей страницы.
-const MapView = lazy(() => import('./components/MapView'))
+// Начинаем загрузку чанка MapLibre сразу при чтении модуля,
+// чтобы браузер скачивал движок параллельно с рендерингом интерфейса,
+// но сохраняем lazy для неблокирующего показа сайдбара.
+const mapViewPromise = import('./components/MapView')
+const MapView = lazy(() => mapViewPromise)
 
 function MapLoading() {
   const { t } = useI18n()
