@@ -75,6 +75,7 @@ const STRINGS = {
     donateCtaLabel: 'Отправить чаевые через CloudTips',
     donateCtaSub: 'СБП · T-Pay · СберPay · Карты любого банка',
     donateSecure: 'Безопасная оплата через Т-Банк. Ваши личные данные не передаются.',
+    donateTelegramContact: 'Связь с автором в Telegram',
     close: 'Закрыть',
   },
   en: {
@@ -145,6 +146,7 @@ const STRINGS = {
     donateCtaLabel: 'Send a tip via CloudTips',
     donateCtaSub: 'SBP · T-Pay · SberPay · Any bank card',
     donateSecure: 'Secure payment powered by T-Bank. Your personal data is not shared.',
+    donateTelegramContact: 'Contact the author via Telegram',
     close: 'Close',
   },
 }
