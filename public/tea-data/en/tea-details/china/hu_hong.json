@@ -1,0 +1,51 @@
+{
+  "id": "hu_hong",
+  "name": "Hu Hong",
+  "aliases": ["Hu Hong", "Hunan Black Tea", "Huhong", "湖红"],
+  "country": "china",
+  "category": "red",
+  "location": {
+    "province": "Hunan",
+    "city": "Yiyang",
+    "region": "Anhua County",
+    "mountain": "Anhua Hills",
+    "latitude": 28.3667,
+    "longitude": 111.2167,
+    "altitude": "300–700 m"
+  },
+  "characteristics": {
+    "cultivar": "Hunan local heirloom bushes",
+    "oxidation": "95–100%",
+    "roast": "Subtle smoke notes (traditionally)",
+    "harvestSeason": "Spring and summer",
+    "waterTemperature": "90–95°C",
+    "steeps": "4–6 infusions",
+    "leafWeight": "5 g per 150 ml",
+    "teaware": "Western teapot or gaiwan",
+    "rarity": 2,
+    "difficulty": 1,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Robust, malty Hunan black tea with a historic legacy in the overland tea trade to Russia via Kyakhta",
+    "overview": "From one of the oldest black tea producing regions in China, whose harvest historically traveled along the overland Great Tea Road to Russia and Mongolia.",
+    "leaf": "Sturdy, tightly twisted dark-brown leaves",
+    "liquor": "Rich reddish-brown liquor",
+    "aroma": "Malty, with gentle smoky nuances",
+    "taste": "Bold, full-bodied, without harsh astringency",
+    "aftertaste": "Moderate and malty",
+    "processing": "Plucking → withering → rolling → full oxidation → drying, traditionally with a touch of gentle smoking"
+  },
+  "history": {
+    "origin": "Anhua County has long been a historical tea center in Hunan, initially renowned for dark tea (heicha), and producing black tea since the 19th century",
+    "development": "In the 18th and 19th centuries, tea from this region was heavily exported along the overland 'Great Tea Road' through Kyakhta to Russia, alongside compressed dark teas from the same county",
+    "modern": "Today less prominent internationally than Keemun or Dian Hong, but remains an important and respected regional category of Chinese black tea",
+    "interestingFacts": [
+      "Anhua County is unique in producing both famous dark teas (Fu Zhuan, Tian Jian) and black tea (Hu Hong) — a rare coexistence of two major fermented tea traditions in a single county",
+      "Historically, Hunan black tea formed a substantial portion of overland exports to Russia alongside teas from Hubei"
+    ]
+  },
+  "relatedTeas": ["keemun", "ninghong", "chuan_hong"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

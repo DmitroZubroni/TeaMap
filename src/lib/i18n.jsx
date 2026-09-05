@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react'
+import { getStoredLocale, setStoredLocale } from './locale'
 
 // Здесь переводится только «обвязка» интерфейса (подписи, кнопки,
 // заголовки разделов, сообщения). Сама база чаёв (названия, описания,
@@ -127,14 +128,27 @@ const STRINGS = {
 const I18nContext = createContext(null)
 
 export function I18nProvider({ children }) {
-  // По умолчанию английский, переключается на русский в интерфейсе.
-  const [locale, setLocale] = useState('en')
+  // Язык интерфейса и язык данных теперь один и тот же переключатель:
+  // читаем сохранённый выбор при загрузке (по умолчанию — английский).
+  const [locale] = useState(getStoredLocale)
 
   useEffect(() => {
     const dict = STRINGS[locale] || STRINGS.en
     document.title = dict.appTitle
     document.documentElement.lang = locale
   }, [locale])
+
+  // api.js читает локаль один раз при загрузке модуля (чтобы не тащить
+  // повсюду реактивную зависимость по всему дереву запросов), поэтому смена
+  // языка данных требует перезагрузки страницы. Это не страшно: адрес уже
+  // содержит текущую страну/регион/чай (см. App.jsx), так что после
+  // перезагрузки приложение само долетит обратно туда же, просто на другом
+  // языке.
+  const setLocale = (next) => {
+    if (next === locale) return
+    setStoredLocale(next)
+    window.location.reload()
+  }
 
   const value = useMemo(() => {
     const dict = STRINGS[locale] || STRINGS.en
@@ -143,7 +157,7 @@ export function I18nProvider({ children }) {
       return typeof entry === 'function' ? entry(...args) : entry
     }
     return { locale, setLocale, t }
-  }, [locale])
+  }, [locale]) // eslint-disable-line react-hooks/exhaustive-deps
 
   return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>
 }

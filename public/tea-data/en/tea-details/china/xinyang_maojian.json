@@ -1,0 +1,51 @@
+{
+  "id": "xinyang_maojian",
+  "name": "Xinyang Maojian",
+  "aliases": ["Xin Yang Mao Jian", "Xinyang Fur Tip", "信阳毛尖"],
+  "country": "china",
+  "category": "green",
+  "location": {
+    "province": "Henan",
+    "city": "Xinyang",
+    "region": "Xinyang Mountains (Five Main Peaks)",
+    "mountain": "Mount Wushan and surroundings",
+    "latitude": 32.1475,
+    "longitude": 114.0753,
+    "altitude": "300–800 m"
+  },
+  "characteristics": {
+    "cultivar": "Local bushes, Xinyang Qunti cultivar",
+    "oxidation": "0%",
+    "roast": "Gentle pan-firing / multi-stage drying",
+    "harvestSeason": "Early spring",
+    "waterTemperature": "80–85°C",
+    "steeps": "3–4 infusions",
+    "leafWeight": "3 g per 150 ml",
+    "teaware": "Glass tumbler",
+    "rarity": 3,
+    "difficulty": 1,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Fine, needle-rolled green tea from northern China with a fresh chestnut and vegetal flavor",
+    "overview": "One of the premier green teas of northern China — representing the northernmost major commercial tea-growing region where climatic limits permit high-quality tea cultivation.",
+    "leaf": "Fine, tightly rolled needle-shaped leaves dusted with tender white fuzz",
+    "liquor": "Pale green, bright and clear liquor",
+    "aroma": "Fresh, grassy, with toasted chestnut notes",
+    "taste": "Vibrant and fresh, slightly brisk upfront, opening into a sweet roasted chestnut finish",
+    "aftertaste": "Crisp, refreshing, and clean",
+    "processing": "Plucking of one bud with one leaf → wok fixation → rolling into fine needles by hand or semi-mechanically → multi-stage low-temperature drying"
+  },
+  "history": {
+    "origin": "The name translates to 'Xinyang Fur Tips' — this region is historically considered the northern cradle of Chinese tea culture, documented since the Tang dynasty",
+    "development": "Honored as one of China's Ten Famous Teas thanks to Henan's cooler climate, which promotes slower bud development and dense nutrient accumulation",
+    "modern": "Because of its northerly latitude, the growing season is significantly shorter, imparting an extraordinary depth and concentration of flavor to the tea",
+    "interestingFacts": [
+      "Henan is one of China's northernmost commercial tea-growing regions, contrasting with the predominantly southern distribution of tea cultivation in China",
+      "Traditional shaping required tea artisans to roll needles directly against heated metal trays with bare hands, demanding immense skill and heat tolerance"
+    ]
+  },
+  "relatedTeas": ["long_jing", "huangshan_maofeng"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

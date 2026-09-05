@@ -1,0 +1,51 @@
+{
+  "id": "mengding_ganlu",
+  "name": "Mengding Ganlu",
+  "aliases": ["Meng Ding Gan Lu", "Sweet Dew", "Mengding Sweet Dew", "蒙顶甘露"],
+  "country": "china",
+  "category": "green",
+  "location": {
+    "province": "Sichuan",
+    "city": "Ya'an",
+    "region": "Mount Mengding",
+    "mountain": "Mengdingshan",
+    "latitude": 30.0989,
+    "longitude": 103.0361,
+    "altitude": "800–1400 m"
+  },
+  "characteristics": {
+    "cultivar": "Mount Mengding indigenous varietals",
+    "oxidation": "0%",
+    "roast": "Multi-stage pan fixation and gentle drying",
+    "harvestSeason": "Early spring",
+    "waterTemperature": "80°C",
+    "steeps": "3–4 infusions",
+    "leafWeight": "3 g per 150 ml",
+    "teaware": "Glass tumbler",
+    "rarity": 4,
+    "difficulty": 2,
+    "agesWell": false
+  },
+  "description": {
+    "short": "One of China's oldest historic teas — finely rolled delicate needles with a sweet dew-like flavor and gentle briskness",
+    "overview": "Mount Mengding is traditionally venerated as the birthplace of deliberate tea cultivation around 2,000 years ago — representing one of humanity's earliest sites of organized tea farming.",
+    "leaf": "Fine, tightly rolled tender needles of dark jade green dusted with soft silver down",
+    "liquor": "Clear, shimmering pale yellow-green liquor",
+    "aroma": "Sweet, refreshing, with subtle floral and fresh herbal notes",
+    "taste": "Delicately sweet ('Ganlu' translates to 'Sweet Dew'), with a brisk lively start softening into lingering honeyed sweetness",
+    "aftertaste": "Crisp, sweet, and soothingly refreshing",
+    "processing": "Plucking tender one-bud-one-leaf shoots → wok fixation → three rounds of rolling and pan-drying (san chao san rou) into fine needles → multi-stage drying"
+  },
+  "history": {
+    "origin": "According to tradition, Daoist master Wu Lizhen planted seven wild tea bushes here during the Western Han dynasty over 2,000 years ago, marking one of China's earliest recorded instances of domestic tea cultivation",
+    "development": "Mengding tea was presented as an imperial tribute tea continuously for over a millennium, from the Tang dynasty until the fall of the Qing dynasty",
+    "modern": "Today, 'Ganlu' (Sweet Dew) represents the premier green tea of Mount Mengding, alongside its famed sibling Mengding Huangya (yellow tea)",
+    "interestingFacts": [
+      "Mount Mengding holds claim to the world's longest documented continuous history of purposeful tea cultivation",
+      "The legendary site known as the 'Garden of Seven Imperial Bushes' is still revered on Mount Mengding in tribute to Wu Lizhen"
+    ]
+  },
+  "relatedTeas": ["zhu_ye_qing", "mengding_huangya"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

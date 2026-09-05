@@ -1,0 +1,51 @@
+{
+  "id": "bai_ji_guan",
+  "name": "Bai Ji Guan",
+  "aliases": ["White Cockscomb", "Baijiguan", "白鸡冠"],
+  "country": "china",
+  "category": "oolong_dark",
+  "location": {
+    "province": "Fujian",
+    "city": "Wuyishan",
+    "region": "Wuyishan, Huiyuan Temple area",
+    "mountain": "Wuyi Mountains",
+    "latitude": 27.7546,
+    "longitude": 117.9647,
+    "altitude": "500–800 m"
+  },
+  "characteristics": {
+    "cultivar": "Bai Ji Guan (unique cultivar with genetically pale, yellowish-green young leaves)",
+    "oxidation": "30–45% (lighter than most Yancha)",
+    "roast": "Moderate (gentler roast to preserve the delicate, pale leaf)",
+    "harvestSeason": "Spring",
+    "waterTemperature": "90–95°C",
+    "steeps": "6–9 infusions",
+    "leafWeight": "6 g per 100–120 ml",
+    "teaware": "Gaiwan",
+    "rarity": 4,
+    "difficulty": 3,
+    "agesWell": true
+  },
+  "description": {
+    "short": "The lightest of Wuyishan's 'Four Great Bushes', distinguished by its pale yellowish-green leaves and sweet, mellow profile",
+    "overview": "Stands completely apart from other Wuyi rock oolongs due to the naturally pale, albino-like hue of its young spring leaves. Consequently, it receives a more delicate oxidation and gentle roast to avoid overwhelming its unique subtleties.",
+    "leaf": "Yellowish-green to pale chartreuse-bronze twisted leaves; serrated and curved, resembling a rooster's comb (hence the name)",
+    "liquor": "Bright light amber infusion, conspicuously lighter than Da Hong Pao or Rou Gui",
+    "aroma": "Delicate floral, honeyed sweetness, with gentle toasted grain nuances",
+    "taste": "Mellow, sweet, and smooth, lacking the aggressive mineral sharpness found in heavier rock teas",
+    "aftertaste": "Light, sweet, and refreshing, with virtually no lingering bitterness or astringency",
+    "processing": "Follows classic Yancha craftsmanship (withering, tossing, fixation, rolling, roasting), but governed by meticulous lower-temperature roasting to safeguard the delicacy of the pale leaf"
+  },
+  "history": {
+    "origin": "The name translates to 'White Cockscomb'—referencing the shape, serrations, and luminous light coloration of the tender young shoots, reminiscent of a rooster's crest.",
+    "development": "According to mountain chronicles, the original mother bush flourished outside Huiyuan Temple in Wuyishan, tended with devotion by Taoist and Buddhist monks.",
+    "modern": "Holds a distinguished rank among the 'Four Great Famous Bushes' (Si Da Ming Cong: Da Hong Pao, Tie Luo Han, Bai Ji Guan, Shui Jin Gui), coveted by collectors for its unusual gentle profile.",
+    "interestingFacts": [
+      "It is the only cultivar among the Four Great Famous Bushes where natural leaf pigmentation (albino mutation) fundamentally produces a visibly lighter, sweeter tea.",
+      "Because the delicate leaves scorch easily, roasting Bai Ji Guan demands master-level control over charcoal temperature and timing."
+    ]
+  },
+  "relatedTeas": ["tie_luo_han", "shui_jin_gui", "da_hong_pao"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

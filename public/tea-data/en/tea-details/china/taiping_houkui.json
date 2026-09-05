@@ -1,0 +1,51 @@
+{
+  "id": "taiping_houkui",
+  "name": "Taiping Houkui",
+  "aliases": ["Taiping Houkui", "Monkey King", "Peaceful Monkey Leader", "太平猴魁"],
+  "country": "china",
+  "category": "green",
+  "location": {
+    "province": "Anhui",
+    "city": "Huangshan (Taiping County)",
+    "region": "Houkeng Village",
+    "mountain": "Foothills of Mount Huangshan",
+    "latitude": 30.4297,
+    "longitude": 118.1256,
+    "altitude": "300–700 m"
+  },
+  "characteristics": {
+    "cultivar": "Local Shi Da Cha (large-leaf varietal)",
+    "oxidation": "0%",
+    "roast": "Screen-pressing and baking without wok pan-firing",
+    "harvestSeason": "Mid-spring, slightly later than early bud teas",
+    "waterTemperature": "80–85°C",
+    "steeps": "3–4 infusions",
+    "leafWeight": "2–3 g (a few large leaves) per 200 ml",
+    "teaware": "Tall glass tumbler or gaiwan",
+    "rarity": 4,
+    "difficulty": 2,
+    "agesWell": false
+  },
+  "description": {
+    "short": "The largest leaf among China's premier green teas — giant flat blades up to 10 cm long with a delicate orchid aroma",
+    "overview": "Renowned for its extraordinary leaf size (one bud embracing two leaves, meticulously selected for uniformity) and distinct shaping technique — leaves are pressed flat between fine wire meshes rather than rolled.",
+    "leaf": "Remarkably large, straight, two-leaf-and-bud sets 7–10 cm long, deep emerald green with subtle reddish veins and faint mesh markings",
+    "liquor": "Delicate yellow-green, crystal clear and glowing",
+    "aroma": "Pure orchid floral aroma, fresh and sweetly lingering",
+    "taste": "Mild, smooth, and naturally sweet with subtle orchid fragrance and practically zero astringency",
+    "aftertaste": "Crisp, floral, and cleanly refreshing",
+    "processing": "Strict selection of uniform large shoots (one bud with two leaves) → pan fixation → manual flattening and pressing between cloth or wire mesh screens → multi-stage gentle baking"
+  },
+  "history": {
+    "origin": "The name translates to 'Monkey Leader of Taiping' — associated in lore with monkeys inhabiting the misty cliffs or honoring the tea master Wang Kuicheng who created the style",
+    "development": "Developed in the early 20th century through careful selection of uniform, robust shoots from the indigenous Shi Da Cha cultivar",
+    "modern": "Awarded a gold medal at the 1915 Panama-Pacific International Exposition, establishing its enduring fame as one of China's Ten Famous Teas",
+    "interestingFacts": [
+      "One of the rare prestigious Chinese green teas prized for colossal leaf size rather than minute tender buds — the exact opposite of common convention",
+      "Each individual sprig is traditionally arranged by hand on wire mesh screens to ensure it dries into a pristine, razor-flat shape"
+    ]
+  },
+  "relatedTeas": ["huangshan_maofeng", "long_jing"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

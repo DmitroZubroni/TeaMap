@@ -1,0 +1,51 @@
+{
+  "id": "sencha",
+  "name": "Sencha",
+  "aliases": ["Sencha", "煎茶"],
+  "country": "japan",
+  "category": "green",
+  "location": {
+    "province": "Shizuoka",
+    "city": "Shizuoka",
+    "region": "Shizuoka Prefecture",
+    "mountain": "Foothills of Mount Fuji",
+    "latitude": 34.9756,
+    "longitude": 138.14,
+    "altitude": "50–500 m"
+  },
+  "characteristics": {
+    "cultivar": "Yabukita (dominant Japanese cultivar)",
+    "oxidation": "0%",
+    "roast": "None",
+    "harvestSeason": "First flush (ichibancha) — late April to May",
+    "waterTemperature": "70–80°C",
+    "steeps": "2–3 infusions",
+    "leafWeight": "3 g per 100–120 ml",
+    "teaware": "Kyusu (Japanese teapot) or glass cup",
+    "rarity": 1,
+    "difficulty": 1,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Japan's ubiquitous steamed green tea — crisp, briskly refreshing, with pronounced oceanic umami from brief steam fixation",
+    "overview": "The cornerstone of everyday Japanese tea culture, representing the vast majority of the nation's harvest. Its defining technical trait is steam fixation rather than pan-firing in a wok as done in China.",
+    "leaf": "Slender, glossy dark green pine-needle-like rolled leaves",
+    "liquor": "Vibrant emerald green liquor",
+    "aroma": "Fresh, marine, lightly grassy with sweet seaweed notes",
+    "taste": "Vibrant, rich umami sweetness, gentle astringency, and crisp refreshing vegetable notes",
+    "aftertaste": "Refreshing, crisp finish",
+    "processing": "Plucking → hot steam fixation (15–20 seconds, unlike pan-firing) → rolling and needle shaping → drying"
+  },
+  "history": {
+    "origin": "Steam fixation technology arrived in Japan from Tang-era China, but while China later abandoned steaming in favor of dry pan-firing, Japan perfected steam crafting into its national standard.",
+    "development": "Modern sencha took form in the 18th century when master Nagatani Soen revolutionized rolling and drying methods (the Uji method) to create beautiful needle leaves.",
+    "modern": "Today Sencha is the quintessential daily tea of Japan, consumed throughout homes, restaurants, and offices in contrast to ceremonial matcha.",
+    "interestingFacts": [
+      "Retaining steam fixation rather than pan-roasting is the primary technological divide separating Japanese green teas from Chinese green teas.",
+      "Master Nagatani Soen, who refined sencha crafting in 1738, is revered across Japan as the father of modern Japanese green tea."
+    ]
+  },
+  "relatedTeas": ["gyokuro", "hojicha", "genmaicha"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

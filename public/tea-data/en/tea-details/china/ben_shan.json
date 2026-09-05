@@ -1,0 +1,51 @@
+{
+  "id": "ben_shan",
+  "name": "Ben Shan",
+  "aliases": ["Native Mountain", "Original Mountain", "本山"],
+  "country": "china",
+  "category": "oolong_light",
+  "location": {
+    "province": "Fujian",
+    "city": "Anxi",
+    "region": "Anxi",
+    "mountain": "Anxi Hills",
+    "latitude": 25.0692,
+    "longitude": 117.9847,
+    "altitude": "300–700 m"
+  },
+  "characteristics": {
+    "cultivar": "Ben Shan",
+    "oxidation": "15–25%",
+    "roast": "Minimal",
+    "harvestSeason": "Spring and Autumn",
+    "waterTemperature": "90–95°C",
+    "steeps": "6–8 infusions",
+    "leafWeight": "6 g per 100–120 ml",
+    "teaware": "Gaiwan",
+    "rarity": 2,
+    "difficulty": 1,
+    "agesWell": false
+  },
+  "description": {
+    "short": "A light, floral Anxi oolong often appreciated as an accessible sister variety to Tie Guan Yin",
+    "overview": "Grown alongside Tie Guan Yin across the terroirs of Anxi County and processed in a similar fashion, but crafted from a distinct, hardier, and higher-yielding cultivar.",
+    "leaf": "Tightly rolled light-green pearls, visually almost indistinguishable from Tie Guan Yin",
+    "liquor": "Bright light golden infusion",
+    "aroma": "Floral, slightly lighter and softer than Tie Guan Yin",
+    "taste": "Smooth, floral, with a lighter body and gentle sweetness",
+    "aftertaste": "Fresh and clean, moderately brief",
+    "processing": "Follows the general Anxi ball-rolled oolong technique: withering → shaking/tossing → fixation (kill-green) → cloth-wrapped rolling into balls → light drying"
+  },
+  "history": {
+    "origin": "The name means 'Source Mountain' or 'Native Mountain' (Ben Shan), emphasizing that this cultivar is native to the same heartland as Tie Guan Yin.",
+    "development": "Historically cultivated as an easier-to-grow, resilient, and more productive alternative to Tie Guan Yin across Anxi family farms.",
+    "modern": "Due to its striking visual similarity to Tie Guan Yin, it has sometimes been substituted for it; connoisseurs distinguish it in the cup by its lighter body and more delicate, straightforward floral fragrance.",
+    "interestingFacts": [
+      "Ben Shan and Tie Guan Yin look so similar as dry rolled leaf that they are virtually identical to the naked eye; the distinction reveals itself in the brewed cup.",
+      "Ben Shan's vigor, disease resistance, and reliable yield made it historically essential for the livelihood of Anxi tea-farming communities."
+    ]
+  },
+  "relatedTeas": ["tie_guan_yin", "mao_xie", "huangjin_gui"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

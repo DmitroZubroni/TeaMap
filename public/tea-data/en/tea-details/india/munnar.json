@@ -1,0 +1,51 @@
+{
+  "id": "munnar",
+  "name": "Munnar",
+  "aliases": ["Munnar Tea"],
+  "country": "india",
+  "category": "red",
+  "location": {
+    "province": "Kerala State",
+    "city": "Munnar",
+    "region": "Cardamom Hills, Western Ghats",
+    "mountain": "Western Ghats",
+    "latitude": 10.0889,
+    "longitude": 77.0595,
+    "altitude": "1500–2500 m"
+  },
+  "characteristics": {
+    "cultivar": "Camellia sinensis var. sinensis and hybrids",
+    "oxidation": "90–100%",
+    "roast": "None",
+    "harvestSeason": "Year-round",
+    "waterTemperature": "90–95°C",
+    "steeps": "2–3 infusions",
+    "leafWeight": "3–4 g per 200 ml",
+    "teaware": "Teapot",
+    "rarity": 2,
+    "difficulty": 1,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Gentle, softly sweet black tea cultivated at high altitudes in India's southernmost state",
+    "overview": "Nestled in the Cardamom Hills of Kerala, Munnar is famed not only for fragrant tea but also for cardamoms cultivated alongside tea estates on dramatic mist-shrouded mountain slopes.",
+    "leaf": "Twisted, medium dark brown leaf",
+    "liquor": "Vibrant reddish-amber liquor",
+    "aroma": "Mild, subtly sweet, warm",
+    "taste": "Smooth, well-balanced, rounded with gentle sweetness and low astringency",
+    "aftertaste": "Moderate, mellow",
+    "processing": "Plucking → withering → rolling → full oxidation → drying"
+  },
+  "history": {
+    "origin": "Estates were pioneered by Scottish planters in the late 19th century who expanded into the cool highlands of southern India following earlier tea successes in the north.",
+    "development": "The region historically produced aromatic cardamom spice alongside tea shrubs, giving rise to the name of the surrounding Cardamom Hills mountain range.",
+    "modern": "Today, Munnar serves as a hub of both plantation agriculture and scenic eco-tourism, featuring colonial heritage bungalows and tea history museums.",
+    "interestingFacts": [
+      "The Cardamom Hills take their name from the aromatic spice naturally flourishing alongside the hill stations' tea gardens.",
+      "Munnar is one of India's premier tourist destinations, celebrated for panoramic emerald tea hills that blanket the peaks."
+    ]
+  },
+  "relatedTeas": ["nilgiri", "assam_second_flush"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

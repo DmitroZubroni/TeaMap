@@ -1,0 +1,51 @@
+{
+  "id": "fu_zhuan",
+  "name": "Fu Zhuan",
+  "aliases": ["Fu Zhuan", "Fu Brick Tea", "茯砖茶"],
+  "country": "china",
+  "category": "dark_other",
+  "location": {
+    "province": "Hunan",
+    "city": "Yiyang",
+    "region": "Anhua County",
+    "mountain": "Anhua Hills",
+    "latitude": 28.3667,
+    "longitude": 111.2167,
+    "altitude": "300–700 m"
+  },
+  "characteristics": {
+    "cultivar": "Local Anhua tea bushes",
+    "oxidation": "Post-fermentation with fungal cultivation",
+    "roast": "None",
+    "harvestSeason": "Summer and autumn (mature leaves)",
+    "waterTemperature": "95–100°C",
+    "steeps": "8–12 infusions",
+    "leafWeight": "6–8 g per 100–120 ml",
+    "teaware": "Clay teapot",
+    "rarity": 3,
+    "difficulty": 2,
+    "agesWell": true
+  },
+  "description": {
+    "short": "Brick-pressed dark tea blooming with beneficial 'golden flower' fungus, historically a vital nutritional staple for nomadic peoples",
+    "overview": "Renowned for the deliberate cultivation of the beneficial fungus Eurotium cristatum ('golden flowers' or jin hua) inside the tea brick — making it unique in the tea world, where the presence of this specific microbe is prized as a mark of high quality rather than spoilage.",
+    "leaf": "Compressed into dense rectangular bricks of mature dark leaves, speckled internally with tiny yellowish-golden fungal colonies",
+    "liquor": "Deep red-brown, dense liquor",
+    "aroma": "Earthy, with a distinctive sweet 'mushroom'/floral nuance imparted by Eurotium cristatum",
+    "taste": "Smooth, earthy, gently sweet, without harsh bitterness or astringency",
+    "aftertaste": "Moderately long, warming finish",
+    "processing": "Harvesting mature leaves → kill-green → rolling → primary drying → compression into bricks → controlled incubation in warm, humid flowering chambers fostering Eurotium cristatum growth → slow drying of finished bricks"
+  },
+  "history": {
+    "origin": "Produced in Anhua County, Hunan since the Song dynasty as a durable compressed tea purpose-built for long-distance caravan transport to nomadic peoples in northwestern China, Mongolia, and Tibet.",
+    "development": "The character 'Fu' historically relates both to its production around the Dog Days of summer (Fu Tian) and the historic trading crossroads of Jingyang in Shaanxi province, where tea was pressed and matured before heading out along the Silk Road.",
+    "modern": "For centuries, Fu Brick was an indispensable daily staple for steppe pastoralists whose diet was overwhelmingly meat- and dairy-based, providing vital vitamins, minerals, and digestive support.",
+    "interestingFacts": [
+      "The density of vibrant golden fungal spores (Eurotium cristatum) inside the brick is the primary quality benchmark — the more abundant the 'golden flowers', the higher the brick is valued.",
+      "Eurotium cristatum has attracted considerable modern scientific interest for its probiotic, metabolic, and antioxidant properties, fueling international curiosity."
+    ]
+  },
+  "relatedTeas": ["liu_bao", "tian_jian", "qing_zhuan"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

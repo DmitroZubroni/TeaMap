@@ -1,0 +1,51 @@
+{
+  "id": "mao_xie",
+  "name": "Mao Xie",
+  "aliases": ["Hairy Crab", "Mao Xie Oolong", "毛蟹"],
+  "country": "china",
+  "category": "oolong_light",
+  "location": {
+    "province": "Fujian",
+    "city": "Anxi",
+    "region": "Anxi",
+    "mountain": "Anxi Hills",
+    "latitude": 25.0692,
+    "longitude": 117.9847,
+    "altitude": "300–700 m"
+  },
+  "characteristics": {
+    "cultivar": "Mao Xie",
+    "oxidation": "15–25%",
+    "roast": "Minimal",
+    "harvestSeason": "Spring and Autumn (one of the earliest and highest-yielding cultivars)",
+    "waterTemperature": "90–95°C",
+    "steeps": "5–7 infusions",
+    "leafWeight": "6 g per 100–120 ml",
+    "teaware": "Gaiwan",
+    "rarity": 2,
+    "difficulty": 1,
+    "agesWell": false
+  },
+  "description": {
+    "short": "One of Anxi's four famous cultivars, known for distinctive downy hairs on the underside of the leaf and a brisk floral profile",
+    "overview": "Named after the dense white fuzz on the undersides of young leaves and serrated edges reminiscent of hairy crab legs. It is one of the most prolific and widely cultivated varieties in Anxi County.",
+    "leaf": "Rolled greenish pearls with visible white downy hairs on the leaf undersides",
+    "liquor": "Bright light yellow infusion",
+    "aroma": "Floral with a crisp, slightly sharper edge than Tie Guan Yin",
+    "taste": "Floral, brisk, mildly astringent, with a more straightforward body than premium cultivars",
+    "aftertaste": "Moderate, clean, and refreshing",
+    "processing": "Standard Anxi light oolong processing: withering → tossing/shaking → fixation (kill-green) → ball rolling → drying"
+  },
+  "history": {
+    "origin": "The name translates to 'Hairy Crab', inspired by the dense downy fuzz covering young buds and leaves resembling crab pincers and hairs.",
+    "development": "Recognized as one of the 'Four Great Famous Teas of Anxi' alongside Tie Guan Yin, Ben Shan, and Huangjin Gui, historically valued for its hardiness, early bud-break, and prolific yields.",
+    "modern": "Primarily enjoyed as a satisfying, everyday, and budget-friendly tea rather than a rare connoisseur collectible.",
+    "interestingFacts": [
+      "Its high yield and early harvest made Mao Xie one of the most widely planted cultivars in Anxi, ensuring a stable crop when other cultivars are still budding.",
+      "Often described as a punchier, slightly rustic counterpart to Tie Guan Yin, making it a fantastic comparison study for tea learners exploring cultivar differences in the same terroir."
+    ]
+  },
+  "relatedTeas": ["ben_shan", "tie_guan_yin", "huangjin_gui"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

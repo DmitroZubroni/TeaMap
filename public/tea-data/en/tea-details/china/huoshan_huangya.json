@@ -1,0 +1,51 @@
+{
+  "id": "huoshan_huangya",
+  "name": "Huoshan Huangya",
+  "aliases": ["Huoshan Huangya", "Huoshan Yellow Bud", "霍山黄芽"],
+  "country": "china",
+  "category": "yellow",
+  "location": {
+    "province": "Anhui",
+    "city": "Huoshan",
+    "region": "Huoshan County",
+    "mountain": "Dabie Mountains (eastern slopes)",
+    "latitude": 31.3944,
+    "longitude": 116.33,
+    "altitude": "300–800 m"
+  },
+  "characteristics": {
+    "cultivar": "Local Huoshan County cultivars",
+    "oxidation": "Minimal, with a smothering stage",
+    "roast": "Light",
+    "harvestSeason": "Early spring",
+    "waterTemperature": "80°C",
+    "steeps": "3–4 infusions",
+    "leafWeight": "3 g per 150 ml",
+    "teaware": "Glass tumbler",
+    "rarity": 4,
+    "difficulty": 3,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Historic imperial tribute tea dating to the Han dynasty — a revived yellow tea with gentle sweetness",
+    "overview": "One of the earliest recorded teas in Chinese history, whose production completely ceased in the early 20th century before being painstakingly reconstructed in modern times from archival records.",
+    "leaf": "Short, plump yellowish-green buds",
+    "liquor": "Clear, pale-yellow liquor",
+    "aroma": "Gentle, sweet, with mild nutty accents",
+    "taste": "Sweet, smooth, completely free of sharp grassiness",
+    "aftertaste": "Soft, subtle, and clean",
+    "processing": "Plucking buds → pan-firing fixation → smothering in moist enclosures (men huang) → re-firing → final drying"
+  },
+  "history": {
+    "origin": "Recorded in historical texts dating back to the Han dynasty (over 2,000 years ago), making it one of China's earliest documented teas.",
+    "development": "Supplied as imperial tribute for centuries; during the 20th century, production was nearly lost due to wars and social upheavals.",
+    "modern": "The authentic yellow tea technique was revived in the early 1970s based on ancient agricultural treatises and surviving elders' memories, successfully restoring commercial production.",
+    "interestingFacts": [
+      "It is among the few teas whose lineage spans over 2,000 years of documented Chinese tea history (despite an interruption prior to its mid-century revival).",
+      "Huoshan County is situated on the eastern slopes of the same Dabie Mountains where green Lu'an Gua Pian is grown, yet employs a fundamentally distinct processing philosophy."
+    ]
+  },
+  "relatedTeas": ["junshan_yinzhen", "mengding_huangya"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

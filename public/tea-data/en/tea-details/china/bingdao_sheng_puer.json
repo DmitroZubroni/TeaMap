@@ -1,0 +1,51 @@
+{
+  "id": "bingdao_sheng_puer",
+  "name": "Sheng Pu-erh (Bingdao)",
+  "aliases": ["Bingdao Sheng Pu-erh", "Bingdao Raw Pu-erh", "Ice Island", "冰岛", "冰岛生普"],
+  "country": "china",
+  "category": "dark_sheng",
+  "location": {
+    "province": "Yunnan",
+    "city": "Lincang",
+    "region": "Bingdao Village, Mengku Mountain",
+    "mountain": "Mengku Mountain",
+    "latitude": 23.75,
+    "longitude": 99.9667,
+    "altitude": "1400–1800 m"
+  },
+  "characteristics": {
+    "cultivar": "Camellia sinensis var. assamica, ancient arbor trees aged 200–300+ years",
+    "oxidation": "Minimal at production",
+    "roast": "None",
+    "harvestSeason": "Spring",
+    "waterTemperature": "95–100°C",
+    "steeps": "12–20 infusions",
+    "leafWeight": "8 g per 100–110 ml",
+    "teaware": "Thin porcelain gaiwan",
+    "rarity": 5,
+    "difficulty": 4,
+    "agesWell": true
+  },
+  "description": {
+    "short": "One of the most expensive and exquisite sheng pu-erh terroirs — exceptional sweetness with almost no bitterness",
+    "overview": "Bingdao village in the Mengku mountains rivals Lao Banzhang for the crown of elite pu-erh terroirs, but takes an entirely different path — not through brute power, but through supreme purity, rock-sugar sweetness, and a soothing cooling sensation.",
+    "leaf": "Large, thick dark-green leaves from ancient arbor trees",
+    "liquor": "Luminous pale gold, crystal-clear liquor",
+    "aroma": "Exquisite honeyed, floral bouquet with notes of rock sugar and fresh mountain air",
+    "taste": "Exceptionally sweet from the very first infusion, virtually devoid of bitterness and harsh astringency, boasting a silken, nectar-like texture",
+    "aftertaste": "Extraordinarily long and sweet, leaving a lingering cool, refreshing sensation in the throat (reminiscent of its name, \"ice island\")",
+    "processing": "Hand-harvesting from old trees → withering → gentle low-temperature fixation → rolling → sun-drying → steam compression into cakes"
+  },
+  "history": {
+    "origin": "The name Bingdao translates literally to \"Ice Island\" (a phonetic rendering from the indigenous Dai language, also evocative of the tea's refreshing cool sensation in the throat)",
+    "development": "Much like Lao Banzhang, world-class fame arrived relatively recently — during the 2000s and 2010s — when connoisseurs specifically sought out the unmistakable rock-candy sweetness of its ancient arbor trees",
+    "modern": "Today authentic raw material from old Bingdao trees ranks among the most expensive tea leaves in the world, making it a frequent target for counterfeiting",
+    "interestingFacts": [
+      "Bingdao and Lao Banzhang are often compared as the two royal poles of luxury pu-erh: Lao Banzhang represents strength and majesty (the King), while Bingdao represents grace, sweetness, and delicacy (the Queen)",
+      "Because authentic Bingdao old-tree leaves fetch astronomical prices, much of the tea labeled \"Bingdao\" on the market originates from surrounding, lower-altitude areas of Mengku"
+    ]
+  },
+  "relatedTeas": ["lao_banzhang_sheng_puer", "jingmai_sheng_puer"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

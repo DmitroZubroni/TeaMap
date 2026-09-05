@@ -1,0 +1,51 @@
+{
+  "id": "lao_cong_shui_xian",
+  "name": "Lao Cong Shui Xian",
+  "aliases": ["Old Bush Shui Xian", "Old Tree Water Sprite", "老丛水仙"],
+  "country": "china",
+  "category": "oolong_dark",
+  "location": {
+    "province": "Fujian",
+    "city": "Wuyishan",
+    "region": "Wuyishan, primarily Langu area",
+    "mountain": "Wuyi Mountains",
+    "latitude": 27.7546,
+    "longitude": 117.9647,
+    "altitude": "500–900 m"
+  },
+  "characteristics": {
+    "cultivar": "Shui Xian (bushes aged 60 to 100+ years)",
+    "oxidation": "40–60%",
+    "roast": "Medium to heavy, often multi-stage roasting",
+    "harvestSeason": "Spring",
+    "waterTemperature": "95–100°C",
+    "steeps": "10–15 infusions",
+    "leafWeight": "6–8 g per 100–120 ml",
+    "teaware": "Yixing clay teapot",
+    "rarity": 4,
+    "difficulty": 3,
+    "agesWell": true
+  },
+  "description": {
+    "short": "Old-bush Shui Xian celebrated for its signature mossy (taixian) and deeply resonant woody complexity",
+    "overview": "Bush age is the defining dimension of this tea: the extensive root systems of gnarly, moss-draped bushes undisturbed for decades yield remarkable depth and an inimitable mossy woodland character unavailable in younger plants.",
+    "leaf": "Large, dark-brown, rugged twisted leaves, often thicker and more irregular than standard Shui Xian",
+    "liquor": "Deep amber to rich mahogany, thick and viscous infusion",
+    "aroma": "Moss, damp bark, aged timber, forest floor, and warm subtle spice",
+    "taste": "Dense, viscous, layered with iconic moss (tai xian) notes, profound stony minerality, and completely free of rough astringency",
+    "aftertaste": "Extremely lingering and warming, filled with soothing throat richness and sweet minerality",
+    "processing": "Follows traditional rock tea craftsmanship, exclusively sourcing leaves from ancient, untamed bushes left to grow naturally without heavy pruning"
+  },
+  "history": {
+    "origin": "The designation 'Lao Cong' ('Old Bush') was popularized by local growers to distinguish tea plucked from ancient, semi-wild Shui Xian groves from standard cultivated plantation bushes.",
+    "development": "For decades, these low-yielding old bushes were neglected in favor of faster-growing plantings, until the 2000s when connoisseurs and collectors rediscovered their unique mossy terroir signature.",
+    "modern": "Today, Lao Cong Shui Xian is among the most sought-after collector teas in Wuyi, frequently labeled with specific historical micro-plots and grove names.",
+    "interestingFacts": [
+      "To qualify as authentic 'Lao Cong', bushes generally must be at least 60 years old, with premier grade lots harvested from centenary trees over 100 years of age.",
+      "The term 'Taixian Xiang' (苔藓香, moss fragrance) has become the gold-standard sensory descriptor exclusively reserved for high-grade old-bush Shui Xian."
+    ]
+  },
+  "relatedTeas": ["shui_xian", "rou_gui", "ban_tian_yao"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

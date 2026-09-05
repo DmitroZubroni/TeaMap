@@ -1,0 +1,51 @@
+{
+  "id": "liu_bao",
+  "name": "Liu Bao",
+  "aliases": ["Liu Bao", "Liu Bao Cha", "六堡茶"],
+  "country": "china",
+  "category": "dark_other",
+  "location": {
+    "province": "Guangxi",
+    "city": "Wuzhou",
+    "region": "Cangwu County",
+    "mountain": "Cangwu Hills",
+    "latitude": 23.4667,
+    "longitude": 111.2833,
+    "altitude": "200–600 m"
+  },
+  "characteristics": {
+    "cultivar": "Local Guangxi tea bushes",
+    "oxidation": "Post-fermentation (accelerated wet piling and/or natural aging)",
+    "roast": "None",
+    "harvestSeason": "Summer and autumn (mature leaves are typically used)",
+    "waterTemperature": "95–100°C",
+    "steeps": "8–12 infusions",
+    "leafWeight": "6–8 g per 100–120 ml",
+    "teaware": "Clay teapot",
+    "rarity": 3,
+    "difficulty": 2,
+    "agesWell": true
+  },
+  "description": {
+    "short": "Dark post-fermented tea with a characteristic nutty/'betel nut' aroma, traditionally packed into large woven bamboo baskets",
+    "overview": "One of China's oldest dark teas (Hei Cha) and historically an indispensable commodity for Chinese migrant laborers in Southeast Asia. While sharing wet-piling principles with Shou Pu-erh, Liu Bao possesses its own distinctive betel nut and aged aroma.",
+    "leaf": "Dark brown, often compressed into large woven bamboo baskets (longbao) or pressed into bricks",
+    "liquor": "Deep ruby-red, almost black, clear liquor",
+    "aroma": "Nutty, earthy, with a signature note described by locals as 'betel nut aroma' (binglang xiang)",
+    "taste": "Smooth, mellow, earthy, free of harsh astringency, with comforting nutty depth",
+    "aftertaste": "Moderately long, warming finish",
+    "processing": "Harvesting → withering → kill-green → rolling → post-fermentation (wet piling similar to wo dui) → aging in large bamboo baskets or pressing → natural maturation in aging cellars"
+  },
+  "history": {
+    "origin": "Produced in Cangwu County for centuries, taking its name from the historic tea trading township of Liubao.",
+    "development": "During the 19th and 20th centuries, it became a primary export along the 'Tea-Boat Road' to the Chinese diaspora in Malaysia, Singapore, and across Southeast Asia, valued as an affordable, revitalizing beverage for miners and laborers enduring heat and demanding physical work.",
+    "modern": "In recent decades, Liu Bao has experienced a strong domestic revival across China as a prized alternative to Pu-erh, especially among tea collectors seeking exceptional aging potential.",
+    "interestingFacts": [
+      "The massive woven bamboo basket (longbao) used to age Liu Bao is the signature packaging of this tea, setting it apart from typical Pu-erh cakes and bricks.",
+      "Historically associated with tin miners in Southeast Asia, who relied on Liu Bao to stave off the humid tropical heat and support digestion."
+    ]
+  },
+  "relatedTeas": ["menghai_shu_puer", "fu_zhuan"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

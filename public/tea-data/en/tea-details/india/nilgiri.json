@@ -1,0 +1,51 @@
+{
+  "id": "nilgiri",
+  "name": "Nilgiri",
+  "aliases": ["Nilgiri Tea", "Blue Mountain Tea"],
+  "country": "india",
+  "category": "red",
+  "location": {
+    "province": "Tamil Nadu State",
+    "city": "Ooty (Udhagamandalam)",
+    "region": "Blue Mountains (Nilgiris)",
+    "mountain": "Western Ghats, Nilgiri Mountains",
+    "latitude": 11.4102,
+    "longitude": 76.6950,
+    "altitude": "1000–2500 m"
+  },
+  "characteristics": {
+    "cultivar": "Camellia sinensis var. sinensis and hybrids",
+    "oxidation": "90–100%",
+    "roast": "None",
+    "harvestSeason": "Year-round, premier harvest is December–January",
+    "waterTemperature": "90–95°C",
+    "steeps": "2–3 infusions",
+    "leafWeight": "3–4 g per 200 ml",
+    "teaware": "Teapot, excellent with or without milk",
+    "rarity": 2,
+    "difficulty": 1,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Aromatic, gently brisk southern Indian black tea, sharing its crisp brightness with Ceylon teas",
+    "overview": "The sole major tea region of southern India, situated high in the Western Ghats. Due to equatorial proximity, tea is harvested year-round without the marked seasonal flushes seen in Assam and Darjeeling.",
+    "leaf": "Twisted, medium-sized dark brown leaf",
+    "liquor": "Bright orange, crystal clear liquor",
+    "aroma": "Crisp, lively, lightly fruity",
+    "taste": "Aromatic, pleasantly brisk, briskly refreshing, and lighter than Assam",
+    "aftertaste": "Moderate, clean, refreshing",
+    "processing": "Plucking → withering → rolling (orthodox or CTC) → full oxidation → drying"
+  },
+  "history": {
+    "origin": "Plantations in the Nilgiri hills were established by British colonists in the mid-19th century, shortly following early successes in Assam and Darjeeling.",
+    "development": "Thanks to equatorial latitudes and high altitude, Nilgiri avoids cold winter dormancy; bushes produce fresh leaves throughout all 12 months.",
+    "modern": "Nilgiri is frequently compared in brightness and crisp astringency to Ceylon teas of nearby Sri Lanka, which shares similar geographical and climatic influences.",
+    "interestingFacts": [
+      "The name 'Nilgiri' translates to 'Blue Mountains' in Sanskrit and Tamil, named for the hazy blue mist that cloaks the peaks at dawn.",
+      "Nilgiri is the only prominent high-volume tea-growing region in Southern India, whereas northeastern states (Assam, West Bengal) dominate the rest of the country."
+    ]
+  },
+  "relatedTeas": ["assam_second_flush", "munnar"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "darjeeling_second_flush",
+  "name": "Darjeeling Second Flush",
+  "aliases": ["Darjeeling Second Flush", "Muscatel Darjeeling"],
+  "country": "india",
+  "category": "red",
+  "location": {
+    "province": "West Bengal",
+    "city": "Darjeeling",
+    "region": "Himalayan Foothills",
+    "mountain": "Himalayas (Southern Foothills)",
+    "latitude": 27.0410,
+    "longitude": 88.2663,
+    "altitude": "1000–2000 m"
+  },
+  "characteristics": {
+    "cultivar": "Camellia sinensis var. sinensis",
+    "oxidation": "70–90%",
+    "roast": "None",
+    "harvestSeason": "May–June",
+    "waterTemperature": "90–95°C",
+    "steeps": "2–3 infusions",
+    "leafWeight": "3–4 g per 200 ml",
+    "teaware": "Teapot, usually enjoyed without milk",
+    "rarity": 5,
+    "difficulty": 2,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Classic rich muscatel flavor ('muscatel'), the most recognized and sought-after harvest of Darjeeling",
+    "overview": "The second flush is considered the signature flavor profile of Darjeeling worldwide — praised for its distinctive muscatel note reminiscent of sweet muscat grapes, which earned the region global fame.",
+    "leaf": "Twisted, brownish-purple leaf with visible silvery tips",
+    "liquor": "Rich amber-copper liquor",
+    "aroma": "Muscatel (grape-like), fruity, with floral undertones",
+    "taste": "Rich, fruity, with signature 'muscatel' sweetness and medium-full body",
+    "aftertaste": "Long, fruity, aromatic",
+    "processing": "Plucking → withering → rolling → deeper oxidation than first flush → drying"
+  },
+  "history": {
+    "origin": "The distinctive muscatel character of the second flush is linked to small green tea jassids (leafhoppers), whose bites trigger stress defenses in the leaves that synthesize unique aromatic compounds.",
+    "development": "This insect-induced reaction is similar to Taiwan's famed Oriental Beauty — a rare occurrence where an agricultural pest contributes to the signature excellence of a tea.",
+    "modern": "Darjeeling Second Flush is the most internationally celebrated export from the region, anchoring Darjeeling's reputation as the Champagne of Teas.",
+    "interestingFacts": [
+      "The descriptor 'muscatel' has become the universal industry benchmark for top-tier Darjeeling second flush.",
+      "The link between leafhopper feeding and muscatel flavor makes the vintage dependent on annual weather conditions, as insect activity varies year to year."
+    ]
+  },
+  "relatedTeas": ["darjeeling_first_flush", "darjeeling_autumnal"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

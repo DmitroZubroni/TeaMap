@@ -1,0 +1,51 @@
+{
+  "id": "da_hong_pao",
+  "name": "Da Hong Pao",
+  "aliases": ["Big Red Robe", "Scarlet Robe", "大红袍"],
+  "country": "china",
+  "category": "oolong_dark",
+  "location": {
+    "province": "Fujian",
+    "city": "Wuyishan (Nanping)",
+    "region": "Wuyishan",
+    "mountain": "Jiulongke (Nine Dragon Ravine)",
+    "latitude": 27.7546,
+    "longitude": 117.9647,
+    "altitude": "600–800 m"
+  },
+  "characteristics": {
+    "cultivar": "Qi Dan (and other mother bush clones)",
+    "oxidation": "50–70%",
+    "roast": "Medium to heavy (traditional charcoal roast)",
+    "harvestSeason": "Spring (late April to early May)",
+    "waterTemperature": "95–100°C",
+    "steeps": "8–12 infusions in gaiwan",
+    "leafWeight": "5–8 g per 100–120 ml",
+    "teaware": "Gaiwan or small Yixing clay teapot",
+    "rarity": 5,
+    "difficulty": 3,
+    "agesWell": true
+  },
+  "description": {
+    "short": "Legendary rock oolong from the Wuyi Mountains with deep mineral character, roasted notes, and rich woody depth",
+    "overview": "Da Hong Pao is the king of Wuyi rock teas (yancha). Growing in mineral-rich, rocky ravines and misty cliff crevices, it embodies the celebrated 'rock rhyme' (yan yun) — a harmony of minerality and floral fragrance.",
+    "leaf": "Large, twisted leaves of dark brown, almost black hue with a glossy sheen from charcoal roasting",
+    "liquor": "Rich amber-orange to ruby infusion, visually thick and lustrous",
+    "aroma": "Toasted bread, aged wood, subtle caramel, stony minerality, revealing sweet floral undertones in later steepings",
+    "taste": "Opening with bold roast and distinct minerality; the mid-palate unfolds sweetness and gentle spice, followed by a dry mineral finish and returning throat sweetness (hui gan)",
+    "aftertaste": "Long, warming, with a dry stony minerality and a lasting sweet resonance deep in the throat",
+    "processing": "Plucking → solar withering → repeated tossing/bruising (yao qing) for edge oxidation → fixation (kill-green) → rolling → lengthy traditional charcoal roasting, often repeated over months"
+  },
+  "history": {
+    "origin": "The name translates to 'Big Red Robe'. According to legend, an imperial scholar fallen ill on his way to the civil service examinations was cured by tea from these bushes; after placing first, he returned and draped his crimson official robe around the bushes in gratitude.",
+    "development": "Only six ancient mother bushes clung to the sheer cliffs of Jiulongke (Nine Dragon Gorge). Harvesting from these revered mother bushes was officially permanently banned in 2006, designating them as protected national treasures.",
+    "modern": "Today's commercially available Da Hong Pao is produced from vegetative cuttings of the mother bushes (primarily the Qi Dan cultivar) or as a masterful blend of premium Wuyi cultivars crafted to replicate the iconic profile.",
+    "interestingFacts": [
+      "The last harvest from the authentic mother bushes in 2005 auctioned for over $20,000 for just 20 grams.",
+      "Wuyi rock tea making craftsmanship, centered on Da Hong Pao, was the first tea production technique inscribed into China's National Intangible Cultural Heritage list."
+    ]
+  },
+  "relatedTeas": ["tie_luo_han", "shui_jin_gui", "rou_gui", "shui_xian"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

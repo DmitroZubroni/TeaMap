@@ -1,0 +1,51 @@
+{
+  "id": "mi_lan_xiang",
+  "name": "Mi Lan Xiang (Dan Cong)",
+  "aliases": ["Mi Lan Xiang", "Honey Orchid Dan Cong", "蜜兰香单丛"],
+  "country": "china",
+  "category": "oolong_dark",
+  "location": {
+    "province": "Guangdong",
+    "city": "Chaozhou",
+    "region": "Phoenix Mountain (Fenghuang)",
+    "mountain": "Phoenix Mountain",
+    "latitude": 23.6987,
+    "longitude": 116.6169,
+    "altitude": "1000–1400 m"
+  },
+  "characteristics": {
+    "cultivar": "Individual Dan Cong old bushes with 'honey orchid' aroma profile",
+    "oxidation": "30–50%",
+    "roast": "Medium, charcoal or electric baking",
+    "harvestSeason": "Spring",
+    "waterTemperature": "95–100°C",
+    "steeps": "8–12 infusions",
+    "leafWeight": "5–6 g per 100 ml",
+    "teaware": "Small clay teapot (gongfu style)",
+    "rarity": 4,
+    "difficulty": 3,
+    "agesWell": true
+  },
+  "description": {
+    "short": "One of the most popular aroma types of Phoenix Dan Cong with a pronounced honey-floral fragrance",
+    "overview": "Dan Cong translates to 'single bush' — historically, each tree on Phoenix Mountain was harvested and processed individually, yielding dozens of distinct aromatic profiles. Mi Lan Xiang ('Honey Orchid Aroma') is the most famous among them.",
+    "leaf": "Long, twisted dark brown leaves with undulating edges",
+    "liquor": "Rich amber-orange liquor",
+    "aroma": "Honey, orchid, ripe fruit — an intense and unmistakable floral-honey bouquet",
+    "taste": "Sweet, floral, with a full body and a subtle mountain minerality",
+    "aftertaste": "Long sweet finish with a lingering return of honeyed fragrance",
+    "processing": "Harvesting from individual trees → sun withering → multiple shaking sessions for edge oxidation (a hallmark of Dan Cong is very vigorous shaking) → kill-green → rolling into long strips (not balls) → baking/roasting"
+  },
+  "history": {
+    "origin": "The name 'Dan Cong' reflects the tradition of processing leaves from each tree separately without blending them with leaves from other trees — a rare practice in Chinese tea production.",
+    "development": "Many tea trees on Phoenix Mountain are believed to trace their lineage back to the Southern Song dynasty and are several centuries old; the aroma subtypes (xiangxing) evolved over centuries through natural selection and clonal propagation via cuttings.",
+    "modern": "Today there are more than ten recognized Dan Cong aroma types (Mi Lan Xiang, Ya Shi Xiang, Zhi Lan Xiang, and others), each originating from a distinct tree lineage.",
+    "interestingFacts": [
+      "Individual ancient trees several hundred years old still survive on Phoenix Mountain; tea harvested from them is exceptionally rare and prized.",
+      "Unlike many oolongs rolled into tight spheres like Tie Guan Yin, Dan Cong is twisted into long, slender strips."
+    ]
+  },
+  "relatedTeas": ["ya_shi_xiang", "zhi_lan_xiang", "ba_xian"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

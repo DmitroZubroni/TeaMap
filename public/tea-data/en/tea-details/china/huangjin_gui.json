@@ -1,0 +1,51 @@
+{
+  "id": "huangjin_gui",
+  "name": "Huangjin Gui",
+  "aliases": ["Golden Osmanthus", "Huang Jin Gui", "黄金桂"],
+  "country": "china",
+  "category": "oolong_light",
+  "location": {
+    "province": "Fujian",
+    "city": "Anxi",
+    "region": "Anxi",
+    "mountain": "Anxi Hills",
+    "latitude": 25.0692,
+    "longitude": 117.9847,
+    "altitude": "300–700 m"
+  },
+  "characteristics": {
+    "cultivar": "Huang Dan (Yellow Dan)",
+    "oxidation": "15–25%",
+    "roast": "Minimal or none",
+    "harvestSeason": "Spring, harvested 7–10 days earlier than Tie Guan Yin",
+    "waterTemperature": "90–95°C",
+    "steeps": "6–8 infusions",
+    "leafWeight": "6 g per 100–120 ml",
+    "teaware": "Gaiwan",
+    "rarity": 3,
+    "difficulty": 2,
+    "agesWell": false
+  },
+  "description": {
+    "short": "One of the most aromatic Anxi oolongs, boasting an intense floral fragrance reminiscent of sweet osmanthus",
+    "overview": "Regarded as the 'sister' of Tie Guan Yin: hailing from the same county with similar light oxidation, but crafted from a distinct cultivar that yields a notably more intense, almost perfumed floral profile.",
+    "leaf": "Tightly rolled light-green pearls, slightly brighter and yellower than Tie Guan Yin",
+    "liquor": "Bright light golden infusion",
+    "aroma": "Intensely floral, reminiscent of sweet osmanthus and blooming magnolia, with delicate fruity undertones",
+    "taste": "Vibrant, floral, and naturally sweet, with a lighter body compared to Tie Guan Yin",
+    "aftertaste": "Crisp, fresh, and lingeringly fragrant",
+    "processing": "Plucking → withering → gentle tossing/shaking for minimal edge oxidation → fixation (kill-green) → ball-rolling → light drying without roasting"
+  },
+  "history": {
+    "origin": "The name translates to 'Golden Osmanthus' due to its golden infusion and dazzling floral fragrance resembling blossoming osmanthus flowers.",
+    "development": "Bred from the Huang Dan ('Yellow Dan' or 'Yellow Bud') cultivar in Anxi County, it is prized primarily for its exceptionally early budding and aromatic intensity rather than body heaviness.",
+    "modern": "Due to its very early harvest window (earlier than most other Anxi oolongs), it traditionally heralds the opening of the spring tea season.",
+    "interestingFacts": [
+      "Celebrated among local tea farmers with the saying: 'Golden liquor, fragrance carrying ten li'—highlighting its penetrating bouquet.",
+      "Despite its dazzling aroma, the body is relatively light and delicate compared to Tie Guan Yin, creating a fascinating contrast between scent and palate."
+    ]
+  },
+  "relatedTeas": ["tie_guan_yin", "ben_shan", "mao_xie"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

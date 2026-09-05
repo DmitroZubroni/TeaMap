@@ -6,8 +6,21 @@
 // он вдруг окажется недоступен (сбой сети, репозиторий стал приватным,
 // лимиты запросов) — используется резервная копия, собранная в бандл из
 // /public/tea-data, чтобы сайт работал в любом случае.
+import { getStoredLocale } from './locale'
+
 const GITHUB_BASE = 'https://raw.githubusercontent.com/DmitroZubroni/TeaMenuFoundation/main'
 const LOCAL_BASE = '/tea-data'
+
+// Английская версия базы лежит в подпапке `en/` того же репозитория, зеркаля
+// структуру русской версии (которая как была в корне без префикса, так там
+// и остаётся). Локаль читаем один раз при загрузке страницы: переключение
+// языка перезагружает страницу (см. i18n.jsx), так что «жить обновлённой»
+// прямо в рантайме этому модулю не нужно.
+const DATA_LOCALE = getStoredLocale()
+
+function localizedPath(path) {
+  return DATA_LOCALE === 'en' ? `en/${path}` : path
+}
 
 const cache = new Map()
 
@@ -17,19 +30,40 @@ async function fetchFrom(base, path) {
   return res.json()
 }
 
+// Цепочка отказоустойчивости: сначала GitHub на нужном языке, если файла там
+// ещё нет (перевод ещё не готов/не запушен) — GitHub на русском (лучше
+// показать русский текст, чем сломать страницу), и только если GitHub
+// целиком недоступен — локальная резервная копия (она пока только на
+// русском, см. README).
 async function fetchJSON(path) {
-  if (cache.has(path)) return cache.get(path)
+  const key = localizedPath(path)
+  if (cache.has(key)) return cache.get(key)
+
   let data
   try {
-    data = await fetchFrom(GITHUB_BASE, path)
+    data = await fetchFrom(GITHUB_BASE, key)
   } catch (err) {
-    try {
-      data = await fetchFrom(LOCAL_BASE, path)
-    } catch {
-      throw err
+    if (key !== path) {
+      // Английского файла ещё нет — тихо откатываемся на русский оригинал.
+      try {
+        data = await fetchFrom(GITHUB_BASE, path)
+      } catch {
+        data = undefined
+      }
+    }
+    if (data === undefined) {
+      try {
+        data = await fetchFrom(LOCAL_BASE, key)
+      } catch {
+        try {
+          data = await fetchFrom(LOCAL_BASE, path)
+        } catch {
+          throw err
+        }
+      }
     }
   }
-  cache.set(path, data)
+  cache.set(key, data)
   return data
 }
 

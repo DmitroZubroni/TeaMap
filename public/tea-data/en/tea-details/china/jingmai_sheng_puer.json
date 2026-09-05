@@ -1,0 +1,51 @@
+{
+  "id": "jingmai_sheng_puer",
+  "name": "Sheng Pu-erh (Jingmai)",
+  "aliases": ["Jingmai Sheng Pu-erh", "Jingmai Raw Pu-erh", "景迈", "景迈生普"],
+  "country": "china",
+  "category": "dark_sheng",
+  "location": {
+    "province": "Yunnan",
+    "city": "Pu'er (Lancang)",
+    "region": "Jingmai Mountain",
+    "mountain": "Jingmai Mountain",
+    "latitude": 22.2064,
+    "longitude": 100.0206,
+    "altitude": "1400–1700 m"
+  },
+  "characteristics": {
+    "cultivar": "Camellia sinensis var. assamica, ancient arbor trees growing under forest canopy",
+    "oxidation": "Minimal at production",
+    "roast": "None",
+    "harvestSeason": "Spring",
+    "waterTemperature": "95–100°C",
+    "steeps": "10–18 infusions",
+    "leafWeight": "7–8 g per 100–110 ml",
+    "teaware": "Gaiwan",
+    "rarity": 5,
+    "difficulty": 3,
+    "agesWell": true
+  },
+  "description": {
+    "short": "Mellow, aromatic sheng pu-erh from one of the world's oldest cultivated tea forests, inscribed as a UNESCO World Heritage site",
+    "overview": "Jingmai Mountain features a unique ancient landscape where tea trees have been cultivated for centuries directly beneath a natural forest canopy rather than on cleared terraces, inscribed as a UNESCO World Heritage Cultural Landscape in 2023.",
+    "leaf": "Medium-sized, tender leaves, less leathery than Bulang varieties",
+    "liquor": "Clear, luminous pale yellow liquor",
+    "aroma": "Floral-honeyed, forest-fresh, with distinct notes of wild honey and orchids",
+    "taste": "Smooth, gentle sweetness, with minimal bitterness compared to bolder terroirs, marked by elegant floral tones",
+    "aftertaste": "Long, sweet, and refreshing",
+    "processing": "Hand-harvesting from old forest canopy trees → withering → gentle low-temperature fixation → rolling → sun-drying → steam compression into cakes"
+  },
+  "history": {
+    "origin": "The indigenous Dai and Bulang peoples have cultivated tea on Jingmai Mountain within an agroforestry system (tea trees thriving amidst native forest) for over 1,000 years",
+    "development": "Cultivating tea under shade and alongside diverse tree species fosters natural ecological balance and pest control without heavy human intervention",
+    "modern": "In September 2023, the Cultural Landscape of Old Tea Forests of Jingmai Mountain was inscribed onto the UNESCO World Heritage List as the world's first heritage site dedicated specifically to tea culture",
+    "interestingFacts": [
+      "Jingmai is the first tea-growing landscape in history to receive UNESCO World Heritage status, recognizing its millennium-old sustainable forest tea culture",
+      "Unlike the formidable bitterness of Lao Banzhang, Jingmai is celebrated primarily for its delicate floral aroma (lan xiang) and honeyed gentleness"
+    ]
+  },
+  "relatedTeas": ["lao_banzhang_sheng_puer", "yiwu_sheng_puer", "yue_guang_bai"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "junshan_yinzhen",
+  "name": "Junshan Yinzhen",
+  "aliases": ["Junshan Yinzhen", "Junshan Silver Needle", "君山银针"],
+  "country": "china",
+  "category": "yellow",
+  "location": {
+    "province": "Hunan",
+    "city": "Yueyang",
+    "region": "Junshan Island, Dongting Lake",
+    "mountain": "Junshan Island",
+    "latitude": 29.3897,
+    "longitude": 112.9308,
+    "altitude": "Around 50 m (lake island microclimate)"
+  },
+  "characteristics": {
+    "cultivar": "Junshan Island local landrace",
+    "oxidation": "Minimal, with a unique 'yellowing' / smothering stage (men huang)",
+    "roast": "Gentle final drying",
+    "harvestSeason": "Early spring, a very short harvesting window",
+    "waterTemperature": "80–85°C",
+    "steeps": "3–5 infusions",
+    "leafWeight": "3 g per 150 ml",
+    "teaware": "Tall glass tumbler (buds perform a striking vertical 'dance' in water)",
+    "rarity": 5,
+    "difficulty": 3,
+    "agesWell": false
+  },
+  "description": {
+    "short": "An exceedingly rare yellow tea made from island buds — smooth, mellow, and delicately sweet without green tea astringency",
+    "overview": "One of China's rarest and most prestigious imperial teas, produced exclusively on the small Junshan Island in Dongting Lake. The defining hallmark of yellow tea is the gentle smothering (men huang) process under damp paper, which mellows harsh vegetative notes.",
+    "leaf": "Plump, straight golden-yellow buds cloaked in fine silvery fuzz",
+    "liquor": "Clear, bright pale-yellow liquor, slightly richer than white tea",
+    "aroma": "Mellow, sweet, with delicate nutty and floral undertones",
+    "taste": "Silky, sweet, and gentle, devoid of the astringent grassy sharpness typical of green tea",
+    "aftertaste": "Soft, subtle, with a delicate lingering sweetness",
+    "processing": "Plucking buds only → initial heat fixation → first smothering wrapped in damp paper (men huang) for several hours → light re-firing and secondary smothering (repeated in cycles) → final drying"
+  },
+  "history": {
+    "origin": "According to legend, tea from Junshan Island was sent as tribute to the imperial court as early as the Tang dynasty as an exotic treasure from the middle of Dongting Lake.",
+    "development": "The technique of smothering (men huang), which defines yellow tea against green tea, evolved as a method to temper the astringency and grassiness of tender spring buds.",
+    "modern": "Because of the tiny land area of the island and the meticulous multi-day craftsmanship required, output remains miniscule, making authentic Junshan Yinzhen one of China's most elusive and costly teas.",
+    "interestingFacts": [
+      "When steeped in a tall clear glass, the plump buds stand upright and rise and fall vertically in what connoisseurs call the 'three rises and three falls' dance.",
+      "Yellow tea is by far the smallest and rarest among the six classical Chinese tea categories, with Junshan Yinzhen standing as its foremost emblem."
+    ]
+  },
+  "relatedTeas": ["mengding_huangya", "huoshan_huangya"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

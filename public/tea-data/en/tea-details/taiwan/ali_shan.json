@@ -1,0 +1,51 @@
+{
+  "id": "ali_shan",
+  "name": "Ali Shan",
+  "aliases": ["Ali Shan", "Alishan High Mountain Oolong", "阿里山"],
+  "country": "taiwan",
+  "category": "oolong_light",
+  "location": {
+    "province": "Chiayi",
+    "city": "Alishan",
+    "region": "Ali Shan Mountain",
+    "mountain": "Ali Shan",
+    "latitude": 23.5052,
+    "longitude": 120.6598,
+    "altitude": "1000–1600 m"
+  },
+  "characteristics": {
+    "cultivar": "Qingxin Oolong, Jin Xuan",
+    "oxidation": "15–25%",
+    "roast": "Minimal or unroasted",
+    "harvestSeason": "Spring and winter",
+    "waterTemperature": "85–90°C",
+    "steeps": "6–8 infusions",
+    "leafWeight": "6 g per 100–120 ml",
+    "teaware": "Gaiwan",
+    "rarity": 3,
+    "difficulty": 1,
+    "agesWell": false
+  },
+  "description": {
+    "short": "One of Taiwan's premier 'High Mountain Oolongs' — crisp, creamy-floral, with a distinct cooling alpine sweetness",
+    "overview": "The 'gao shan cha' (high mountain tea) category is considered the pinnacle of Taiwanese oolong craft — high elevation, dense fog, and diurnal temperature swings produce delicate leaves rich in amino acids.",
+    "leaf": "Tightly rolled bright green pearls",
+    "liquor": "Pale golden, crystalline liquor",
+    "aroma": "Creamy, floral, fresh orchid bouquet",
+    "taste": "Silky, buttery, sweet, with very low astringency",
+    "aftertaste": "Refreshing, sweet, with a lingering cool sensation in the throat",
+    "processing": "Plucking → withering → light tossing → fixation → ball rolling → minimal drying without heavy baking"
+  },
+  "history": {
+    "origin": "Commercial tea growing on Ali Shan developed in the mid-to-late 20th century as high-altitude infrastructure expanded through central Taiwan.",
+    "development": "The term 'gao shan cha' became a world-renowned quality benchmark largely due to regions like Ali Shan proving the extraordinary virtues of high-altitude cloud terroir.",
+    "modern": "Today Ali Shan is among Taiwan's most celebrated tea brands worldwide, intimately connected to alpine tourism, scenic sunrises above cloud seas, and the historic forest train.",
+    "interestingFacts": [
+      "Ali Shan is world-famous for its historic narrow-gauge mountain railway (Alishan Forest Railway), built during the Japanese era for logging and now carrying travelers past scenic tea terraces.",
+      "In Taiwan, 'High Mountain Oolong' is an official regulatory category requiring plantations to sit at or above 1,000 meters in altitude."
+    ]
+  },
+  "relatedTeas": ["li_shan", "dong_ding"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

@@ -1,0 +1,50 @@
+{
+  "id": "xing_ren_xiang",
+  "name": "Xing Ren Xiang",
+  "aliases": ["Xing Ren Xiang", "Almond Aroma Dan Cong", "杏仁香"],
+  "country": "china",
+  "category": "oolong_dark",
+  "location": {
+    "province": "Guangdong",
+    "city": "Chaozhou",
+    "region": "Phoenix Mountain (Fenghuang)",
+    "mountain": "Phoenix Mountain",
+    "latitude": 23.6987,
+    "longitude": 116.6169,
+    "altitude": "900–1300 m"
+  },
+  "characteristics": {
+    "cultivar": "Xing Ren Xiang Dan Cong",
+    "oxidation": "35–50%",
+    "roast": "Medium",
+    "harvestSeason": "Spring",
+    "waterTemperature": "95–100°C",
+    "steeps": "7–9 infusions",
+    "leafWeight": "5–6 g per 100 ml",
+    "teaware": "Clay teapot",
+    "rarity": 3,
+    "difficulty": 2,
+    "agesWell": true
+  },
+  "description": {
+    "short": "Dan Cong with a distinctive nutty ('almond') aroma, less floral than Mi Lan Xiang",
+    "overview": "One of the Dan Cong aroma types dominated by nutty rather than floral notes — a vivid illustration of the diversity possible within a single terroir and processing craft.",
+    "leaf": "Long, twisted dark-brown leaves",
+    "liquor": "Amber liquor",
+    "aroma": "Nutty (almond), with subtle sweetness",
+    "taste": "Nutty, mellow, with a full body and mineral foundation",
+    "aftertaste": "Moderately long, nutty finish",
+    "processing": "Classic Dan Cong craft: withering → shaking → kill-green → rolling → baking/roasting"
+  },
+  "history": {
+    "origin": "Named after its dominant aromatic note reminiscent of almonds — consistent with the tradition of naming all Dan Cong varieties by their distinctive fragrances.",
+    "development": "Like other Fenghuang xiangxing (aroma types), it was developed through the selection of individual mother bushes with this unique aroma and propagated via cuttings.",
+    "modern": "Less famous in the West than Mi Lan Xiang, but highly prized by connoisseurs for its atypical nutty rather than purely floral profile.",
+    "interestingFacts": [
+      "The Fenghuang 'xiangxing' (aroma profile) system comprises more than ten officially recognized categories, and Xing Ren Xiang represents one of the less commercialized yet instantly recognizable styles."
+    ]
+  },
+  "relatedTeas": ["ba_xian", "zhi_lan_xiang", "mi_lan_xiang"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

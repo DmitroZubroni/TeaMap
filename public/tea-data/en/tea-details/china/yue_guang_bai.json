@@ -1,0 +1,51 @@
+{
+  "id": "yue_guang_bai",
+  "name": "Yue Guang Bai",
+  "aliases": ["Yue Guang Bai", "Moonlight White", "月光白"],
+  "country": "china",
+  "category": "white",
+  "location": {
+    "province": "Yunnan",
+    "city": "Pu'er (Simao)",
+    "region": "Jingmai / Mengku Mountains",
+    "mountain": "Jingmai",
+    "latitude": 22.2064,
+    "longitude": 100.0206,
+    "altitude": "1000–1600 m"
+  },
+  "characteristics": {
+    "cultivar": "Camellia sinensis var. assamica (large-leaf Yunnan trees)",
+    "oxidation": "Low, natural",
+    "roast": "None",
+    "harvestSeason": "Spring",
+    "waterTemperature": "85–90°C",
+    "steeps": "5–7 infusions",
+    "leafWeight": "4–5 g per 150 ml",
+    "teaware": "Gaiwan",
+    "rarity": 3,
+    "difficulty": 1,
+    "agesWell": true
+  },
+  "description": {
+    "short": "Yunnan white tea with two-toned leaves — dark on top and silvery underneath, fuller-bodied and more honeyed than Fujian white tea",
+    "overview": "Crafted using white tea techniques but made from large-leaf Yunnan trees (Camellia sinensis var. assamica) rather than Fujian cultivars, resulting in a denser body and greater richness compared to traditional Fujian white tea.",
+    "leaf": "Leaves with striking two-toned coloration: dark upper surface and silvery-white downy underside (hence 'Moonlight')",
+    "liquor": "Golden-yellow liquor, deeper and richer than Fujian white tea",
+    "aroma": "Honeyed, fruity, with hints of dried fruit",
+    "taste": "Full-bodied, sweet, and honeyed, with noticeably more mouthfeel than Fujian white teas",
+    "aftertaste": "Long, sweet, and honeyed",
+    "processing": "Plucking bud with leaf from large-leaf var. assamica trees → extended indoor shade-withering (avoiding direct sunlight to maintain the leaf color contrast) → slow drying"
+  },
+  "history": {
+    "origin": "A relatively modern style compared to classic Fujian white teas — developed in Yunnan as a regional adaptation of white tea processing using indigenous broad-leaf material.",
+    "development": "Expanded commercially during the 2000s when Yunnan pu-erh producers began experimenting with alternative processing methods for large-leaf tea gardens.",
+    "modern": "Today Yue Guang Bai is a well-established style distinct from classical Fujian white tea, celebrated for its unique two-toned leaf aesthetic and nectar-like flavor.",
+    "interestingFacts": [
+      "The name 'Moonlight' refers to the visual appearance of the leaf (one side dark like the night sky, the other pale silvery like moonlight), not to any nocturnal harvesting ritual.",
+      "Thanks to the high polyphenol content of broad-leaf Yunnan varietals, Yue Guang Bai ages remarkably well, sharing aging traits with young sheng pu-erh."
+    ]
+  },
+  "relatedTeas": ["bai_hao_yin_zhen", "bai_mu_dan"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

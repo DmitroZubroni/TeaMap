@@ -1,0 +1,51 @@
+{
+  "id": "mengding_huangya",
+  "name": "Mengding Huangya",
+  "aliases": ["Mengding Huangya", "Mengding Yellow Bud", "蒙顶黄芽"],
+  "country": "china",
+  "category": "yellow",
+  "location": {
+    "province": "Sichuan",
+    "city": "Ya'an",
+    "region": "Mengding Mountain",
+    "mountain": "Mengdingshan",
+    "latitude": 30.0989,
+    "longitude": 103.0361,
+    "altitude": "800–1400 m"
+  },
+  "characteristics": {
+    "cultivar": "Local Mengding Mountain cultivars",
+    "oxidation": "Minimal, with a smothering stage (men huang)",
+    "roast": "Gentle final drying",
+    "harvestSeason": "Early spring, a very short harvesting window",
+    "waterTemperature": "80°C",
+    "steeps": "3–4 infusions",
+    "leafWeight": "3 g per 150 ml",
+    "teaware": "Glass tumbler",
+    "rarity": 4,
+    "difficulty": 3,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Delicate, sweet yellow tea made strictly from buds — a historic imperial tribute from the same sacred mountain as Mengding Ganlu",
+    "overview": "Harvested on Mount Mengding, one of the cradle lands of tea cultivation, but crafted using yellow tea processing — featuring the smothered yellowing (men huang) stage that removes vegetal astringency.",
+    "leaf": "Straight golden-yellow buds with delicate fine down",
+    "liquor": "Clear, pale-yellow liquor",
+    "aroma": "Mellow, sweet, with roasted nutty notes",
+    "taste": "Delicate and sweet, devoid of green tea grassiness, with gentle toasted nut undertones",
+    "aftertaste": "Soft and gently sweet",
+    "processing": "Plucking buds only → gentle pan-firing fixation → smothering in damp cloth or paper (men huang) → light re-firing → final drying"
+  },
+  "history": {
+    "origin": "Mount Mengding was historically one of the earliest and most revered centers of imperial tribute tea in China, dating back to the Tang dynasty.",
+    "development": "Alongside the green Mengding Ganlu, Huangya emerged as a premium tribute style from the same mountain, crafted using yellow tea smothered-oxidation methods.",
+    "modern": "Today it is one of the few surviving yellow teas of Sichuan, handcrafted in strictly limited quantities.",
+    "interestingFacts": [
+      "Mount Mengding supplied official imperial tribute tea ('gong cha') continuously across dynasties for well over a millennium until the fall of the Qing dynasty.",
+      "The smothered yellowing (men huang) step is the sole technical distinction between Mengding Huangya and green Mengding Ganlu from the same mountain, despite identical terroir and raw pluck."
+    ]
+  },
+  "relatedTeas": ["junshan_yinzhen", "mengding_ganlu", "huoshan_huangya"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

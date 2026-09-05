@@ -1,0 +1,51 @@
+{
+  "id": "huangshan_maofeng",
+  "name": "Huangshan Maofeng",
+  "aliases": ["Huang Shan Mao Feng", "Yellow Mountain Fur Peak", "黄山毛峰"],
+  "country": "china",
+  "category": "green",
+  "location": {
+    "province": "Anhui",
+    "city": "Huangshan",
+    "region": "Huangshan Mountain Area",
+    "mountain": "Huangshan (Yellow Mountain)",
+    "latitude": 30.1341,
+    "longitude": 118.1663,
+    "altitude": "700–1200 m"
+  },
+  "characteristics": {
+    "cultivar": "Local heirloom Huangshan varietals",
+    "oxidation": "0%",
+    "roast": "Gentle pan-firing / multi-stage baking",
+    "harvestSeason": "Early spring (pre- and post-Qingming)",
+    "waterTemperature": "80–85°C",
+    "steeps": "3–4 infusions",
+    "leafWeight": "3 g per 150 ml",
+    "teaware": "Glass tumbler",
+    "rarity": 3,
+    "difficulty": 1,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Downy green tea from Mount Huangshan, fresh and delicate with subtle floral orchid notes",
+    "overview": "Grown in the misty Huangshan mountains, a celebrated UNESCO World Heritage site. Constant mountain mist and high humidity create a gentle microclimate that slows leaf growth, concentrating rich amino acids and aromatic compounds.",
+    "leaf": "Delicately twisted bud-and-leaf sets ('sparrow tongues'), covered in fine white down, with a characteristic golden fish-tail tip at the base",
+    "liquor": "Clear, pale yellow-green liquor",
+    "aroma": "Fresh, delicate orchid floral notes with nuances of sweet spring meadow",
+    "taste": "Mild, clean, and subtly sweet without astringency, carrying faint orchid undertones",
+    "aftertaste": "Clean, refreshing, and gently lingering",
+    "processing": "Plucking of one bud with one leaf → brief withering → wok fixation → gentle rolling/shaping → multi-stage low-temperature drying and baking"
+  },
+  "history": {
+    "origin": "The name means 'Yellow Mountain Fur Peak' — referencing the fine downy fuzz covering the tender young shoots and its birthplace in the Yellow Mountains",
+    "development": "First crafted in the late 19th century by local tea merchants adapting traditional pan-firing methods to the unique mountain terroir of Huangshan",
+    "modern": "Recognized as one of China's Ten Famous Teas and an iconic agricultural treasure of Anhui Province",
+    "interestingFacts": [
+      "Mount Huangshan is a UNESCO World Heritage site, where terraced tea gardens thrive alongside ancient granite peaks and pine forests",
+      "The highest grade is hand-picked during a very narrow window of just a few days in early spring, accounting for its scarcity and premium status"
+    ]
+  },
+  "relatedTeas": ["long_jing", "taiping_houkui", "lu_an_gua_pian"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

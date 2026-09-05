@@ -1,0 +1,18 @@
+[
+  {
+    "id": "mae_salong_region",
+    "name": "Doi Mae Salong",
+    "province": "Chiang Rai",
+    "lat": 20.1667,
+    "lng": 99.6167,
+    "zoom": 11
+  },
+  {
+    "id": "chiang_mai_region",
+    "name": "Chiang Mai Mountains",
+    "province": "Chiang Mai",
+    "lat": 19.906,
+    "lng": 98.545,
+    "zoom": 9
+  }
+]

@@ -1,0 +1,51 @@
+{
+  "id": "li_shan",
+  "name": "Li Shan",
+  "aliases": ["Li Shan", "Lishan High Mountain Oolong", "梨山"],
+  "country": "taiwan",
+  "category": "oolong_light",
+  "location": {
+    "province": "Taichung",
+    "city": "Heping",
+    "region": "Li Shan Mountain",
+    "mountain": "Li Shan (one of Taiwan's highest tea zones)",
+    "latitude": 24.2333,
+    "longitude": 121.2667,
+    "altitude": "1800–2600 m"
+  },
+  "characteristics": {
+    "cultivar": "Qingxin Oolong",
+    "oxidation": "15–25%",
+    "roast": "Unroasted",
+    "harvestSeason": "Spring and winter",
+    "waterTemperature": "85–90°C",
+    "steeps": "6–9 infusions",
+    "leafWeight": "6 g per 100–120 ml",
+    "teaware": "Gaiwan",
+    "rarity": 5,
+    "difficulty": 2,
+    "agesWell": false
+  },
+  "description": {
+    "short": "The highest and most prestigious oolong in Taiwan — exceptionally sweet, ethereal, with persistent alpine floral fragrance",
+    "overview": "Cultivated at some of the highest elevations of any tea gardens in the world, where slow leaf growth yields extreme concentrations of natural sugars and aromatic compounds.",
+    "leaf": "Large, tightly rolled light jade pearls",
+    "liquor": "Luminous, pale crystalline gold",
+    "aroma": "Sublime mountain floral bouquet, crisp cool air nuance",
+    "taste": "Remarkably smooth, delicate, honey-sweet, free of bitterness, with silky mouthfeel",
+    "aftertaste": "Exceptionally persistent, clean, sweet and cooling",
+    "processing": "Careful high-altitude manual harvest → withering → gentle tossing → kill-green → ball rolling → low-temperature drying"
+  },
+  "history": {
+    "origin": "Pioneering farmers began planting tea on Li Shan in the 1980s, testing whether extreme alpine altitudes formerly deemed unviable could sustain Camellia sinensis.",
+    "development": "The triumph of those early Li Shan plots demonstrated that extreme elevations above 2,000 meters produced a tea of unmatched sweetness and aromatic purity.",
+    "modern": "Today Li Shan is Taiwan's most prestigious and expensive tea terroir, coveted by connoisseurs and frequently gifted as a luxury emblem in business and diplomacy.",
+    "interestingFacts": [
+      "Li Shan tea gardens are among the highest commercial tea plantations on Earth, rivaled only by high-altitude plots in Darjeeling and Yunnan.",
+      "Due to steep terrain and extreme cold, harvests are strictly limited in volume and command premium pricing across international markets."
+    ]
+  },
+  "relatedTeas": ["ali_shan", "dong_ding"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

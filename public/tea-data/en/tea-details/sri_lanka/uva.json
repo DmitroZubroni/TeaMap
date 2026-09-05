@@ -1,0 +1,51 @@
+{
+  "id": "uva",
+  "name": "Uva",
+  "aliases": ["Uva"],
+  "country": "sri_lanka",
+  "category": "red",
+  "location": {
+    "province": "Uva Province",
+    "city": "Bandarawela",
+    "region": "Eastern Slopes of Central Massif",
+    "mountain": "Eastern Ghats of Sri Lanka",
+    "latitude": 6.8333,
+    "longitude": 81.05,
+    "altitude": "1200–1700 m"
+  },
+  "characteristics": {
+    "cultivar": "Camellia sinensis var. sinensis",
+    "oxidation": "90–100%",
+    "roast": "None",
+    "harvestSeason": "July–September (monsoon wind season)",
+    "waterTemperature": "90–95°C",
+    "steeps": "2–3 infusions",
+    "leafWeight": "3–4 g per 200 ml",
+    "teaware": "Teapot",
+    "rarity": 4,
+    "difficulty": 1,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Brisk, iconic tea with a signature wintergreen and wine-like character, shaped by the region's unique desiccating monsoon winds",
+    "overview": "The only region in Sri Lanka where warm, dry foehn-like monsoon winds blowing across eastern slopes in summer induce intense natural leaf stress, generating an unmistakable minty, brisk pungency.",
+    "leaf": "Dark brown, neatly twisted leaves",
+    "liquor": "Brilliant deep reddish-orange liquor",
+    "aroma": "Pungent, eucalyptus, wintergreen menthol, with sweet wine acidity",
+    "taste": "Vibrant, brisk, with a signature cooling wintergreen snap and complex citrus acidity",
+    "aftertaste": "Long, clean, refreshing astringency",
+    "processing": "Plucking → rapid withering driven by dry mountain winds → orthodox rolling → full oxidation → drying"
+  },
+  "history": {
+    "origin": "Uva lies on the leeward eastern slopes of Sri Lanka's central massif, where dry katabatic winds accelerate natural leaf withering during specific months.",
+    "development": "This seasonal microclimate creates a narrow window (July–September) when seasonal Uva develops its world-famous mentholated character.",
+    "modern": "Uva is one of the three classic high-grown terroirs of Sri Lanka (alongside Nuwara Eliya and Dimbula), prized by blenders and single-estate collectors alike.",
+    "interestingFacts": [
+      "Uva is among the few teas in the world whose iconic sensory signature depends strictly on a specific seasonal wind (the Cachan wind).",
+      "Only tea plucked during this meteorological window achieves true 'seasonal Uva' status; off-season pickings lack the distinctive menthol pungency."
+    ]
+  },
+  "relatedTeas": ["nuwara_eliya", "dimbula"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

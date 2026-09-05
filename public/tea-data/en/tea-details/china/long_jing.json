@@ -1,0 +1,51 @@
+{
+  "id": "long_jing",
+  "name": "Longjing",
+  "aliases": ["Long Jing", "Dragon Well", "Xi Hu Long Jing", "龙井"],
+  "country": "china",
+  "category": "green",
+  "location": {
+    "province": "Zhejiang",
+    "city": "Hangzhou",
+    "region": "West Lake (Xihu)",
+    "mountain": "Hills around West Lake",
+    "latitude": 30.2168,
+    "longitude": 120.1358,
+    "altitude": "100–300 m"
+  },
+  "characteristics": {
+    "cultivar": "Longjing 43 / Local heirloom bushes (qunti zhong)",
+    "oxidation": "0% (green tea)",
+    "roast": "Dry pan-firing in a cast-iron wok (not considered roasting in the oolong sense)",
+    "harvestSeason": "Early spring (the finest harvest is pre-Qingming, early April)",
+    "waterTemperature": "75–85°C",
+    "steeps": "3–5 infusions",
+    "leafWeight": "3 g per 150 ml",
+    "teaware": "Glass tumbler or gaiwan",
+    "rarity": 4,
+    "difficulty": 2,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Flat green tea with a chestnut aroma and a mellow, sweet flavor",
+    "overview": "One of China's Ten Famous Teas. Its uniqueness comes from hand pan-firing in a hot cast-iron wok, which imparts the distinctive flattened sword-like shape to the leaves.",
+    "leaf": "Flat, smooth, light-green leaves resembling the shape of a sword blade",
+    "liquor": "Light yellow-green, clear, and bright liquor",
+    "aroma": "Toasted chestnut, fresh spring grass, delicate sweetness",
+    "taste": "Mellow, delicately sweet, with nutty and roasted chestnut notes, free of bitterness when brewed at proper temperature",
+    "aftertaste": "Fresh, subtly sweet, clean and refreshing",
+    "processing": "Plucking of one bud with 1–2 leaves → brief withering → hand-firing and shaping in a hot wok (shaqing and flattening simultaneously) → final drying"
+  },
+  "history": {
+    "origin": "The name means 'Dragon Well' — named after a well in a village near West Lake where, according to legend, a benevolent dragon resided",
+    "development": "Documented as early as the Tang dynasty, Longjing gained widespread renown during the Qing dynasty",
+    "modern": "During the 18th century, Emperor Qianlong visited a temple near West Lake, praised tea picked from 18 bushes, and granted them imperial status; these bushes are preserved today as protected heritage trees",
+    "interestingFacts": [
+      "Authentic Longjing from the West Lake protected origin carries a protected geographical indication and is far more expensive than teas processed with the same method in other regions",
+      "Skilled tea masters shape the leaves with bare hands inside a wok heated to around 200°C, a craft requiring years of dedicated training"
+    ]
+  },
+  "relatedTeas": ["bi_luo_chun", "anji_baicha", "taiping_houkui"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

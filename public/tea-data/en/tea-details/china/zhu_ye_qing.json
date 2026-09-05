@@ -1,0 +1,51 @@
+{
+  "id": "zhu_ye_qing",
+  "name": "Zhu Ye Qing",
+  "aliases": ["Zhuyeqing", "Bamboo Leaf Green", "竹叶青"],
+  "country": "china",
+  "category": "green",
+  "location": {
+    "province": "Sichuan",
+    "city": "Leshan",
+    "region": "Mount Emei",
+    "mountain": "Emeishan",
+    "latitude": 29.5946,
+    "longitude": 103.3347,
+    "altitude": "800–1200 m"
+  },
+  "characteristics": {
+    "cultivar": "Mount Emei indigenous varietals",
+    "oxidation": "0%",
+    "roast": "Wok fixation and gentle shaping",
+    "harvestSeason": "Early spring",
+    "waterTemperature": "80°C",
+    "steeps": "3–4 infusions",
+    "leafWeight": "3 g per 150 ml",
+    "teaware": "Glass tumbler",
+    "rarity": 3,
+    "difficulty": 1,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Flat green tea from Mount Emei, shaped like tender bamboo leaves, with a smooth, sweet, refreshing taste",
+    "overview": "Originating in Buddhist monasteries on Mount Emei, one of China's Four Sacred Buddhist Mountains. It remains deeply connected to Sichuan's ancient monastic tea traditions.",
+    "leaf": "Flat, sleek, slightly curved lanceolate leaves resembling vibrant young bamboo leaves",
+    "liquor": "Clear, bright pale green-jade liquor",
+    "aroma": "Fresh, vegetal, with sweet grassy and light floral notes",
+    "taste": "Smooth, refreshing, gently brisk, with a delicate natural sweetness",
+    "aftertaste": "Light, cooling, and lingeringly sweet",
+    "processing": "Plucking of one bud with 1–2 tender leaves → wok fixation (shaqing) → gentle manual flattening and shaping into lanceolate leaves → low-temperature drying"
+  },
+  "history": {
+    "origin": "Mount Emei is one of the Four Sacred Mountains of Chinese Buddhism; tea cultivation here has been intertwined with Chan (Zen) monastic meditation for centuries",
+    "development": "The tea's modern recipe and standardized bamboo-leaf silhouette were formally perfected in 1964, building on centuries of monastic tea culture",
+    "modern": "Named 'Zhu Ye Qing' (Bamboo Leaf Green) by Marshal Chen Yi during his 1964 visit to Mount Emei after tasting the tea prepared by monks at Wannian Temple",
+    "interestingFacts": [
+      "Mount Emei is a UNESCO World Heritage site, protecting both its sacred cultural monuments and pristine high-mountain tea ecosystems",
+      "Unlike intensely pressed flat teas like Longjing, Zhu Ye Qing is shaped with gentle pressure, preserving a graceful natural curve reminiscent of bamboo foliage"
+    ]
+  },
+  "relatedTeas": ["mengding_ganlu", "long_jing"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

@@ -1,0 +1,50 @@
+{
+  "id": "cao_bo",
+  "name": "Cao Bo",
+  "aliases": ["Cao Bồ", "Vị Xuyên"],
+  "country": "vietnam",
+  "category": "green",
+  "location": {
+    "province": "Ha Giang",
+    "city": "Vi Xuyen",
+    "region": "Cao Bo Commune",
+    "mountain": "Northern Vietnamese Highlands",
+    "latitude": 22.6667,
+    "longitude": 104.85,
+    "altitude": "1000–1400 m"
+  },
+  "characteristics": {
+    "cultivar": "Ancient wild Shan (var. assamica) trees",
+    "oxidation": "0%",
+    "roast": "Light pan-firing",
+    "harvestSeason": "Spring",
+    "waterTemperature": "85–90°C",
+    "steeps": "5–7 infusions",
+    "leafWeight": "4 g per 150 ml",
+    "teaware": "Gaiwan",
+    "rarity": 4,
+    "difficulty": 2,
+    "agesWell": true
+  },
+  "description": {
+    "short": "One of Vietnam's most famous groves of ancient wild tea trees, recognized as an iconic single-terroir within Ha Giang",
+    "overview": "A small yet revered grove of ancient tea trees in Cao Bo commune, where local ethnic families have for centuries harvested leaves from centenarian wild trees.",
+    "leaf": "Large downy buds covered in silver fuzz, dark green mature leaves",
+    "liquor": "Vibrant yellow-green liquor",
+    "aroma": "Mountain air, honey, wild forest notes",
+    "taste": "Rich, deeply sweet, with wild forest complexity",
+    "aftertaste": "Long, sweet honeyed finish",
+    "processing": "Hand-picking from wild trees → pan fixation → manual rolling → sun or charcoal drying"
+  },
+  "history": {
+    "origin": "Cao Bo commune in Vi Xuyen district of Ha Giang is famous for its distinct, historically documented ancient tea groves, central to the community's heritage and livelihoods.",
+    "development": "While Ha Giang as a province is broadly known for Shan Tuyet tea, Cao Bo has earned specific recognition among connoisseurs as an elite micro-terroir.",
+    "modern": "Local cooperatives and authorities promote Cao Bo as an independent origin brand with certified organic and ancient-tree provenance.",
+    "interestingFacts": [
+      "Cao Bo illustrates how specific highland villages can distinguish themselves into world-renowned micro-terroirs, similar to specific gushu tea villages in Yunnan."
+    ]
+  },
+  "relatedTeas": ["ha_giang_shan_tuyet", "thai_nguyen"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

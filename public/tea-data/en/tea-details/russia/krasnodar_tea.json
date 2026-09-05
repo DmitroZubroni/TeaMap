@@ -1,0 +1,51 @@
+{
+  "id": "krasnodar_tea",
+  "name": "Krasnodar Tea",
+  "aliases": ["Sochi Tea", "Russian Tea"],
+  "country": "russia",
+  "category": "red",
+  "location": {
+    "province": "Krasnodar Krai",
+    "city": "Sochi",
+    "region": "Sochi Surroundings (Solokhaul and neighboring villages)",
+    "mountain": "Western Caucasus Foothills",
+    "latitude": 43.6304,
+    "longitude": 39.7303,
+    "altitude": "100–400 m"
+  },
+  "characteristics": {
+    "cultivar": "Cold-hardy cultivars of Chinese origin adapted to the subtropical climate",
+    "oxidation": "80–100%",
+    "roast": "None",
+    "harvestSeason": "May–September",
+    "waterTemperature": "90–95°C",
+    "steeps": "2–3 infusions",
+    "leafWeight": "3 g per 200 ml",
+    "teaware": "Teapot",
+    "rarity": 4,
+    "difficulty": 1,
+    "agesWell": false
+  },
+  "description": {
+    "short": "The northernmost commercially grown tea in the world — gentle, light-bodied flavor shaped by the short growing season of a cool subtropical climate",
+    "overview": "A truly unique tea in terms of geography and climate: the Black Sea coast of Sochi is the northernmost place on the planet where tea bushes can survive the winter and yield commercial harvests, thanks to a humid subtropical microclimate shielded from northern winds by the Caucasus Mountains.",
+    "leaf": "Small, twisted dark brown leaves",
+    "liquor": "Light yellowish-brown liquor, typically less saturated than tropical black teas",
+    "aroma": "Mild, slightly herbal and sweet",
+    "taste": "Light-bodied, soft, free of harsh astringency, with a gentle tart note",
+    "aftertaste": "Moderate and smooth",
+    "processing": "Plucking → withering → rolling → oxidation → drying (traditional black tea method)"
+  },
+  "history": {
+    "origin": "The first experimental plantings near Sochi (Solokhaul village) were made in the late 19th century, but systematic commercial cultivation emerged in the Soviet era.",
+    "development": "Peasant farmer Iuda Koshman, persevering independently despite skepticism from official agronomists, grew the first viable commercial tea bushes in Solokhaul in the early 20th century, earning him the title 'father of Russian tea'.",
+    "modern": "During the Soviet period, large state tea farms were established around Sochi and Dagomys to supply the domestic market; today Krasnodar tea is a niche, recognizable Russian brand with a remarkable climatic history.",
+    "interestingFacts": [
+      "Krasnodar Krai is the northernmost region in the world where Camellia sinensis is cultivated on a commercial rather than experimental scale.",
+      "Iuda Koshman began growing tea with virtually no scientific backing, relying entirely on his own observations of local microclimates."
+    ]
+  },
+  "relatedTeas": ["matsesta_tea", "dagomys_tea"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

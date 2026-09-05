@@ -1,0 +1,51 @@
+{
+  "id": "lu_an_gua_pian",
+  "name": "Lu'an Guapian",
+  "aliases": ["Lu'an Gua Pian", "Lu'an Melon Seed", "Liu'an Guapian", "六安瓜片"],
+  "country": "china",
+  "category": "green",
+  "location": {
+    "province": "Anhui",
+    "city": "Lu'an",
+    "region": "Dabie Mountains, Jinzhai County",
+    "mountain": "Dabieshan",
+    "latitude": 31.7514,
+    "longitude": 115.9967,
+    "altitude": "300–800 m"
+  },
+  "characteristics": {
+    "cultivar": "Local Lu'an varietals",
+    "oxidation": "0%",
+    "roast": "Double pan-firing with final charcoal baking",
+    "harvestSeason": "Mid-spring (harvested later than most green teas, once leaves have fully opened)",
+    "waterTemperature": "80–85°C",
+    "steeps": "3–4 infusions",
+    "leafWeight": "3 g per 150 ml",
+    "teaware": "Glass tumbler or gaiwan",
+    "rarity": 4,
+    "difficulty": 2,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Unique green tea made without buds or stems — single open leaves shaped like melon seeds",
+    "overview": "The only variety of Chinese green tea where buds and petioles (stems) are deliberately removed, using exclusively the mature leaf blades. This gives it a singular appearance, texture, and rich taste profile.",
+    "leaf": "Individual flat leaf blades devoid of buds and stems, deep emerald green with gently curved edges resembling melon seeds",
+    "liquor": "Rich, clear green-yellow liquor, denser than typical green teas",
+    "aroma": "Fresh, grassy, with faint toasty warmth from charcoal baking",
+    "taste": "Full-bodied, gently brisk, with roasted nut undertones and a rich savory finish",
+    "aftertaste": "Medium-long, clean, with subtle dryness and sweetness",
+    "processing": "Plucking of mature 2nd and 3rd leaves (excluding the bud) → manual de-stemming to isolate leaf blades → two-stage wok fixation → final charcoal baking in specialized bamboo baskets (laohuo / longhong)"
+  },
+  "history": {
+    "origin": "The name means 'Lu'an Melon Seed' — describing the distinctive curved silhouette of the processed leaf blade",
+    "development": "Uniquely, producers intentionally discard the bud, deeming it less flavor-rich than mature leaves — an unusual practice in Chinese tea culture where buds are conventionally prized",
+    "modern": "Historically celebrated as an imperial tribute tea during the Ming and Qing dynasties; today protected as a national geographical indication product and one of China's Ten Famous Teas",
+    "interestingFacts": [
+      "The final charcoal baking in specialized bamboo baskets over open coals is a unique technique for green tea, more reminiscent of charcoal-roasted oolongs",
+      "Because it contains no buds, the tea looks very different from typical high-grade green teas, sometimes surprising newcomers who expect tender downy shoots"
+    ]
+  },
+  "relatedTeas": ["huangshan_maofeng", "taiping_houkui"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

@@ -1,0 +1,50 @@
+{
+  "id": "huang_zhi_xiang",
+  "name": "Huang Zhi Xiang",
+  "aliases": ["Huang Zhi Xiang", "Yellow Gardenia Aroma Dan Cong", "黄枝香"],
+  "country": "china",
+  "category": "oolong_dark",
+  "location": {
+    "province": "Guangdong",
+    "city": "Chaozhou",
+    "region": "Phoenix Mountain (Fenghuang)",
+    "mountain": "Phoenix Mountain",
+    "latitude": 23.6987,
+    "longitude": 116.6169,
+    "altitude": "900–1300 m"
+  },
+  "characteristics": {
+    "cultivar": "Huang Zhi Xiang Dan Cong",
+    "oxidation": "35–50%",
+    "roast": "Medium",
+    "harvestSeason": "Spring",
+    "waterTemperature": "95–100°C",
+    "steeps": "8–10 infusions",
+    "leafWeight": "5–6 g per 100 ml",
+    "teaware": "Clay teapot",
+    "rarity": 3,
+    "difficulty": 2,
+    "agesWell": true
+  },
+  "description": {
+    "short": "Dan Cong with the aroma of yellow gardenia — one of the oldest recognized Fenghuang xiangxing",
+    "overview": "Regarded as one of the historically foundational, earliest officially classified Dan Cong aroma types alongside Mi Lan Xiang — serving as an archetype for the category.",
+    "leaf": "Long, twisted dark brown leaves",
+    "liquor": "Rich amber liquor",
+    "aroma": "Floral, reminiscent of gardenia blossoms, with a honeyed undertone",
+    "taste": "Rich, sweet-floral, with a full, satisfying body",
+    "aftertaste": "Long, sweet finish",
+    "processing": "Classic Dan Cong craft: withering → shaking → kill-green → rolling → baking/roasting"
+  },
+  "history": {
+    "origin": "Named after its aromatic resemblance to the blossom of yellow gardenia (Huang Zhi), native to southern China.",
+    "development": "One of the earliest officially documented aroma types of Phoenix Mountain, recorded in local Chaozhou tea classifications.",
+    "modern": "Alongside Mi Lan Xiang, it is considered one of the benchmark Dan Cong aroma styles against which newer and rarer selections are measured.",
+    "interestingFacts": [
+      "Some tea scholars believe that Mi Lan Xiang historically derived from the Huang Zhi Xiang lineage, though today both are cultivated and classified as distinct varieties."
+    ]
+  },
+  "relatedTeas": ["mi_lan_xiang", "zhi_lan_xiang", "jiang_hua_xiang"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

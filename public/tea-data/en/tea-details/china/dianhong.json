@@ -1,0 +1,51 @@
+{
+  "id": "dianhong",
+  "name": "Dian Hong",
+  "aliases": ["Dianhong", "Yunnan Black Tea", "Yunnan Gold", "滇红"],
+  "country": "china",
+  "category": "red",
+  "location": {
+    "province": "Yunnan",
+    "city": "Lincang",
+    "region": "Fengqing County",
+    "mountain": "Fengqing Hills",
+    "latitude": 24.5833,
+    "longitude": 99.9167,
+    "altitude": "1200–1800 m"
+  },
+  "characteristics": {
+    "cultivar": "Camellia sinensis var. assamica (Yunnan large-leaf cultivar)",
+    "oxidation": "95–100%",
+    "roast": "None, drying only",
+    "harvestSeason": "Spring and summer",
+    "waterTemperature": "90–95°C",
+    "steeps": "5–7 infusions",
+    "leafWeight": "5 g per 100–120 ml",
+    "teaware": "Gaiwan or clay teapot",
+    "rarity": 2,
+    "difficulty": 1,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Golden black tea from Yunnan buds, sweet and malty with a honeyed aroma",
+    "overview": "Crafted from the same large-leaf var. assamica material used for Yunnan pu-erh, but processed with full black tea oxidation, yielding an exceptionally rich and malty profile.",
+    "leaf": "Slender golden buds covered in down (in premium grades) or larger dark leaves with golden tips (in standard grades)",
+    "liquor": "Bright golden-red, rich and clear liquor",
+    "aroma": "Honey, malt, sweet potato, dried fruits",
+    "taste": "Sweet, malty, full-bodied, without harsh astringency",
+    "aftertaste": "Long, warm, and sweet",
+    "processing": "Plucking → withering → rolling → full oxidation → drying"
+  },
+  "history": {
+    "origin": "Developed in the late 1930s when Chinese tea experts sought to enter the international black tea market and compete with Indian and Ceylon teas",
+    "development": "Yunnan's large-leaf var. assamica proved exceptionally well suited for producing full-bodied, malty black tea with strength comparable to Assam teas",
+    "modern": "Premium grades consisting entirely of golden downy buds (such as Golden Needle or Yunnan Gold) are today prized among China's most celebrated black teas",
+    "interestingFacts": [
+      "Dian Hong became one of China's major export teas in the 20th century, specifically formulated to appeal to Western palates accustomed to bold black teas",
+      "It uses the exact same botanical variety (var. assamica) as famous Yunnan pu-erh, yet yields a completely different flavor profile through black tea processing"
+    ]
+  },
+  "relatedTeas": ["zhengshan_xiaozhong", "yingde_hong", "keemun"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

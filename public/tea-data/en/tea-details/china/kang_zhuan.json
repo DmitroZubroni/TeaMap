@@ -1,0 +1,51 @@
+{
+  "id": "kang_zhuan",
+  "name": "Kang Zhuan",
+  "aliases": ["Kang Zhuan", "Tibetan Brick Tea", "康砖茶"],
+  "country": "china",
+  "category": "dark_other",
+  "location": {
+    "province": "Sichuan",
+    "city": "Ya'an",
+    "region": "Ya'an District",
+    "mountain": "Western Sichuan Hills",
+    "latitude": 29.9878,
+    "longitude": 102.9633,
+    "altitude": "600–1200 m"
+  },
+  "characteristics": {
+    "cultivar": "Local Ya'an tea bushes, including coarse mature leaf material",
+    "oxidation": "Post-fermentation",
+    "roast": "None",
+    "harvestSeason": "Summer and autumn, incorporating mature leaves and woody stems",
+    "waterTemperature": "95–100°C (traditionally boiled/simmered)",
+    "steeps": "Traditionally boiled rather than infused",
+    "leafWeight": "Piece broken from the brick to taste",
+    "teaware": "Metal pot or traditional Tibetan teapot for simmering with milk/butter",
+    "rarity": 2,
+    "difficulty": 3,
+    "agesWell": true
+  },
+  "description": {
+    "short": "Coarse brick tea historically traded to Tibet along the Ancient Tea Horse Road in exchange for warhorses",
+    "overview": "Utilizes some of the coarsest raw material among all tea categories — mature leaves and woody stems that would be discarded in other traditions. This exact coarseness gives the tea the body and fortitude required for traditional Tibetan preparation boiled with yak butter and salt.",
+    "leaf": "Compressed into dense rectangular dark brown bricks composed of coarse, mature leaves and woody stems",
+    "liquor": "Very dark, dense, nearly black liquor when simmered",
+    "aroma": "Earthy, rustic, and smoky",
+    "taste": "Robust, bold, and hearty, crafted specifically to be churned with yak butter, milk, and salt rather than consumed plain",
+    "aftertaste": "Dense, long-lasting finish",
+    "processing": "Harvesting coarse mature material (including stems) → kill-green → post-fermentation piling → compression into bricks → prolonged aging"
+  },
+  "history": {
+    "origin": "The production of brick tea for Tibet in Sichuan dates back to the Tang dynasty and was later formalized as an imperial monopoly under the strategic 'Tea for Horses' trade policy (Cha Ma Mao Yi).",
+    "development": "For centuries, porters and pack animals hauled heavy loads across treacherous Himalayan passes along the Tea Horse Road (Cha Ma Gudao) to Tibet, exchanging tea for warhorses vital to the imperial cavalry.",
+    "modern": "While no longer a military currency, Kang Zhuan remains an essential cornerstone of everyday Tibetan cultural life, simmered with yak butter and salt to create the nourishing staple 'Po Cha'.",
+    "interestingFacts": [
+      "The Tea Horse Road across the rugged mountains of southwestern China is regarded as one of the most perilous trading networks in human history, rivaling the Silk Road in regional significance.",
+      "Owing to its high proportion of mature stems and fibrous material, the tea historically supplied indispensable dietary fiber and minerals to populations subsisting largely on meat and dairy."
+    ]
+  },
+  "relatedTeas": ["fu_zhuan", "qing_zhuan"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

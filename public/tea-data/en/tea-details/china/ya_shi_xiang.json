@@ -1,0 +1,51 @@
+{
+  "id": "ya_shi_xiang",
+  "name": "Ya Shi Xiang",
+  "aliases": ["Ya Shi Xiang", "Duck Shit Aroma", "鸭屎香"],
+  "country": "china",
+  "category": "oolong_dark",
+  "location": {
+    "province": "Guangdong",
+    "city": "Chaozhou",
+    "region": "Phoenix Mountain (Fenghuang)",
+    "mountain": "Phoenix Mountain, yellow soil plot",
+    "latitude": 23.6987,
+    "longitude": 116.6169,
+    "altitude": "900–1300 m"
+  },
+  "characteristics": {
+    "cultivar": "Distinct Dan Cong lineage with 'Ba Xian' aroma profile",
+    "oxidation": "30–50%",
+    "roast": "Medium",
+    "harvestSeason": "Spring",
+    "waterTemperature": "95–100°C",
+    "steeps": "8–10 infusions",
+    "leafWeight": "5–6 g per 100 ml",
+    "teaware": "Clay teapot (gongfu style)",
+    "rarity": 3,
+    "difficulty": 2,
+    "agesWell": true
+  },
+  "description": {
+    "short": "Aromatic Dan Cong with an unusual name and a vibrant honey-floral flavor despite its 'startling' title",
+    "overview": "One of the most talked-about Dan Cong teas due to its curious name, which in no way reflects its true taste — the tea itself is fragrant, sweet, and floral.",
+    "leaf": "Long twisted dark-brown leaves",
+    "liquor": "Amber-yellow, clear liquor",
+    "aroma": "Floral and honeyed, with fruity notes",
+    "taste": "Sweet, floral, with a full body and the mineral undertone of Phoenix Mountain",
+    "aftertaste": "Lingering sweet aftertaste",
+    "processing": "Classic Dan Cong craftsmanship: sun withering → vigorous shaking → kill-green → rolling into strips → baking/roasting"
+  },
+  "history": {
+    "origin": "According to one popular story, a local farmer, wanting to prevent competitors from copying his prized cultivar, deliberately gave the tea an unappealing name to disguise its true worth.",
+    "development": "Despite the comical origin of its name, the tea gained tremendous popularity precisely through the striking contrast between its name and its exquisite, refined flavor.",
+    "modern": "Today it is sometimes marketed under more melodious alternative names (such as 'Golden Phoenix'), yet the original name remains by far the most famous and recognizable.",
+    "interestingFacts": [
+      "It is one of the few teas in the world whose global fame is partially driven by its unconventional and memorable name.",
+      "Growers note that the bushes grow in distinctive yellowish soil (huang ni tu), which is believed to contribute to the tea's unique flavor profile."
+    ]
+  },
+  "relatedTeas": ["mi_lan_xiang", "ba_xian", "zhi_lan_xiang"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

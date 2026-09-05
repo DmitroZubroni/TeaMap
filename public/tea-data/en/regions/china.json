@@ -1,0 +1,266 @@
+[
+  {
+    "id": "wuyi",
+    "name": "Wuyi Mountains",
+    "province": "Fujian",
+    "lat": 27.7546,
+    "lng": 117.9647,
+    "zoom": 11
+  },
+  {
+    "id": "anxi",
+    "name": "Anxi",
+    "province": "Fujian",
+    "lat": 25.0692,
+    "lng": 117.9847,
+    "zoom": 10
+  },
+  {
+    "id": "xihu",
+    "name": "West Lake (Hangzhou)",
+    "province": "Zhejiang",
+    "lat": 30.2168,
+    "lng": 120.1358,
+    "zoom": 12
+  },
+  {
+    "id": "dongshan",
+    "name": "Dongshan, Lake Taihu",
+    "province": "Jiangsu",
+    "lat": 31.477,
+    "lng": 120.409,
+    "zoom": 11
+  },
+  {
+    "id": "tongmu",
+    "name": "Tongmu",
+    "province": "Fujian",
+    "lat": 27.8206,
+    "lng": 117.6742,
+    "zoom": 12
+  },
+  {
+    "id": "yiwu",
+    "name": "Yiwu",
+    "province": "Yunnan",
+    "lat": 22.1167,
+    "lng": 101.4667,
+    "zoom": 10
+  },
+  {
+    "id": "menghai",
+    "name": "Menghai",
+    "province": "Yunnan",
+    "lat": 21.9583,
+    "lng": 100.4547,
+    "zoom": 10
+  },
+  {
+    "id": "fuding",
+    "name": "Fuding",
+    "province": "Fujian",
+    "lat": 27.3319,
+    "lng": 120.2131,
+    "zoom": 10
+  },
+  {
+    "id": "dongting",
+    "name": "Dongting Lake",
+    "province": "Hunan",
+    "lat": 29.3897,
+    "lng": 112.9308,
+    "zoom": 10
+  },
+  {
+    "id": "fenghuang",
+    "name": "Phoenix Mountain (Fenghuang)",
+    "province": "Guangdong",
+    "lat": 23.6987,
+    "lng": 116.6169,
+    "zoom": 11
+  },
+  {
+    "id": "huangshan",
+    "name": "Huangshan Mountain",
+    "province": "Anhui",
+    "lat": 30.1341,
+    "lng": 118.1663,
+    "zoom": 11
+  },
+  {
+    "id": "xinyang",
+    "name": "Xinyang Mountains",
+    "province": "Henan",
+    "lat": 32.1475,
+    "lng": 114.0753,
+    "zoom": 10
+  },
+  {
+    "id": "dabeshan",
+    "name": "Dabie Mountains (Lu'an)",
+    "province": "Anhui",
+    "lat": 31.7514,
+    "lng": 115.9967,
+    "zoom": 10
+  },
+  {
+    "id": "houkeng",
+    "name": "Houkeng Village",
+    "province": "Anhui",
+    "lat": 30.4297,
+    "lng": 118.1256,
+    "zoom": 12
+  },
+  {
+    "id": "lianhuashan",
+    "name": "Lianhua Mountain (Anji)",
+    "province": "Zhejiang",
+    "lat": 30.6386,
+    "lng": 119.6819,
+    "zoom": 11
+  },
+  {
+    "id": "emeishan",
+    "name": "Emei Mountain",
+    "province": "Sichuan",
+    "lat": 29.5946,
+    "lng": 103.3347,
+    "zoom": 10
+  },
+  {
+    "id": "enshi",
+    "name": "Enshi County",
+    "province": "Hubei",
+    "lat": 30.3,
+    "lng": 109.4833,
+    "zoom": 9
+  },
+  {
+    "id": "mengdingshan",
+    "name": "Mengding Mountain",
+    "province": "Sichuan",
+    "lat": 30.0989,
+    "lng": 103.0361,
+    "zoom": 11
+  },
+  {
+    "id": "huoshan",
+    "name": "Huoshan County",
+    "province": "Anhui",
+    "lat": 31.3944,
+    "lng": 116.33,
+    "zoom": 10
+  },
+  {
+    "id": "weishan",
+    "name": "Weishan Mountain",
+    "province": "Hunan",
+    "lat": 28.2597,
+    "lng": 112.1275,
+    "zoom": 10
+  },
+  {
+    "id": "jingmai",
+    "name": "Jingmai Mountains",
+    "province": "Yunnan",
+    "lat": 22.2064,
+    "lng": 100.0206,
+    "zoom": 10
+  },
+  {
+    "id": "fengqing",
+    "name": "Fengqing County",
+    "province": "Yunnan",
+    "lat": 24.5833,
+    "lng": 99.9167,
+    "zoom": 10
+  },
+  {
+    "id": "qimen",
+    "name": "Qimen County",
+    "province": "Anhui",
+    "lat": 29.8672,
+    "lng": 117.7181,
+    "zoom": 10
+  },
+  {
+    "id": "anhua",
+    "name": "Anhua County",
+    "province": "Hunan",
+    "lat": 28.3667,
+    "lng": 111.2167,
+    "zoom": 10
+  },
+  {
+    "id": "xiuning_jiangxi",
+    "name": "Xiuning County",
+    "province": "Jiangxi",
+    "lat": 29.0333,
+    "lng": 115.7167,
+    "zoom": 10
+  },
+  {
+    "id": "yingde",
+    "name": "Yingde County",
+    "province": "Guangdong",
+    "lat": 24.1833,
+    "lng": 113.4,
+    "zoom": 10
+  },
+  {
+    "id": "yibin",
+    "name": "Yibin",
+    "province": "Sichuan",
+    "lat": 28.76,
+    "lng": 104.63,
+    "zoom": 9
+  },
+  {
+    "id": "cangwu",
+    "name": "Cangwu County",
+    "province": "Guangxi",
+    "lat": 23.4667,
+    "lng": 111.2833,
+    "zoom": 10
+  },
+  {
+    "id": "yaan",
+    "name": "Ya'an",
+    "province": "Sichuan",
+    "lat": 29.9878,
+    "lng": 102.9633,
+    "zoom": 9
+  },
+  {
+    "id": "chibi",
+    "name": "Chibi County",
+    "province": "Hubei",
+    "lat": 29.7233,
+    "lng": 113.9481,
+    "zoom": 10
+  },
+  {
+    "id": "bulangshan",
+    "name": "Bulang Mountain (Lao Banzhang)",
+    "province": "Yunnan",
+    "lat": 21.8167,
+    "lng": 100.4,
+    "zoom": 11
+  },
+  {
+    "id": "mengku",
+    "name": "Mengku Mountain (Bingdao)",
+    "province": "Yunnan",
+    "lat": 23.75,
+    "lng": 99.9667,
+    "zoom": 11
+  },
+  {
+    "id": "nannuoshan",
+    "name": "Nannuo Mountain",
+    "province": "Yunnan",
+    "lat": 21.9333,
+    "lng": 100.6167,
+    "zoom": 11
+  }
+]

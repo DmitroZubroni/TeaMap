@@ -1,0 +1,51 @@
+{
+  "id": "ruhuna",
+  "name": "Ruhuna",
+  "aliases": ["Ruhuna", "Low-grown Ceylon"],
+  "country": "sri_lanka",
+  "category": "red",
+  "location": {
+    "province": "Southern Province",
+    "city": "Galle",
+    "region": "Southern Coast, Lowlands",
+    "mountain": "Low-grown Coastal Zone (up to 600 m)",
+    "latitude": 6.0535,
+    "longitude": 80.221,
+    "altitude": "0–600 m"
+  },
+  "characteristics": {
+    "cultivar": "Camellia sinensis var. sinensis, primarily clonal selections",
+    "oxidation": "95–100%",
+    "roast": "None",
+    "harvestSeason": "Year-round",
+    "waterTemperature": "95–100°C",
+    "steeps": "1–2 infusions",
+    "leafWeight": "4 g per 200 ml",
+    "teaware": "Teapot, outstanding with milk",
+    "rarity": 1,
+    "difficulty": 1,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Bold, jet-black, full-bodied low-grown Ceylon tea — the richest and thickest in cup of all Sri Lankan regions",
+    "overview": "Southern coastal lowlands where hot, humid tropical climates accelerate rapid bush growth, concentrating deep caramel sugars and creating heavy, velvety body.",
+    "leaf": "Jet-black, twisted leaves or small granular CTC pellets",
+    "liquor": "Extremely dark, thick burgundy-black liquor",
+    "aroma": "Malty, cocoa, dark caramel, molasses",
+    "taste": "Bold, thick, deeply malty with chocolate and caramel notes, standing up effortlessly to milk and sweetening",
+    "aftertaste": "Heavy, enduring, sweet malty finish",
+    "processing": "Plucking → withering → orthodox or CTC rolling → deep full oxidation → drying"
+  },
+  "history": {
+    "origin": "Named after the ancient historic southern kingdom of Ruhuna, dating back to pre-Buddhist Sri Lankan antiquity.",
+    "development": "Low-grown cultivation expanded dynamically in the late 19th and early 20th centuries as demand for heavy, strong breakfast teas grew globally.",
+    "modern": "Today Ruhuna is the largest volume producer in Sri Lanka, revered across the Middle East and Central Asia for its dark liquor and bold flavor.",
+    "interestingFacts": [
+      "'Low-grown' is an official regulatory tier of Ceylon tea (below 600 m), and Ruhuna is its most famous exemplar.",
+      "Because of its dark liquor and rich sweetness, Ruhuna tea commands immense popularity across the Middle East, where extra-strong, sweet black tea is a hospitality staple."
+    ]
+  },
+  "relatedTeas": ["sabaragamuwa", "kegalle"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

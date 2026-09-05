@@ -1,0 +1,51 @@
+{
+  "id": "tian_jian",
+  "name": "Tian Jian",
+  "aliases": ["Tian Jian", "Heavenly Tip", "天尖"],
+  "country": "china",
+  "category": "dark_other",
+  "location": {
+    "province": "Hunan",
+    "city": "Yiyang",
+    "region": "Anhua County",
+    "mountain": "Anhua Hills",
+    "latitude": 28.3667,
+    "longitude": 111.2167,
+    "altitude": "300–700 m"
+  },
+  "characteristics": {
+    "cultivar": "Local Anhua tea bushes, select tender young leaf material",
+    "oxidation": "Post-fermentation",
+    "roast": "None",
+    "harvestSeason": "Spring",
+    "waterTemperature": "95–100°C",
+    "steeps": "8–10 infusions",
+    "leafWeight": "6 g per 100–120 ml",
+    "teaware": "Clay teapot",
+    "rarity": 4,
+    "difficulty": 3,
+    "agesWell": true
+  },
+  "description": {
+    "short": "Loose-leaf top-grade dark tea made from tender spring leaves — historically an elite Anhua specialty, gentler than compressed bricks",
+    "overview": "Unlike Fu Zhuan and other compressed bricks from Anhua, Tian Jian was historically preserved in loose-leaf form and reserved for affluent patrons and local gentry rather than long-distance caravan transport.",
+    "leaf": "Loose, dark, twisted leaves made from select tender spring pluckings",
+    "liquor": "Deep amber, clearer and brighter than heavily compressed dark teas",
+    "aroma": "Mellow and earthy, with subtle sweetness",
+    "taste": "Soft, smooth, and refined, much less astringent and coarse than brick dark teas from the same region",
+    "aftertaste": "Moderately long, warming finish",
+    "processing": "Harvesting select tender young leaves → kill-green → rolling → post-fermentation piling without heavy brick compression, keeping the leaves loose"
+  },
+  "history": {
+    "origin": "The historical grading system of Anhua dark tea divided harvests into three 'Jian' tiers, where 'Tian Jian' ('Heavenly Tip') represented the highest loose-leaf grade, separate from raw material destined for brick compression.",
+    "development": "While compressed categories (like Fu Zhuan) were designed for rough overland export to border nomadic peoples, Tian Jian remained a luxury tribute and domestic premium tea.",
+    "modern": "Today it is one of the most highly prized loose dark teas of Hunan, cherished as an elegant, nuanced alternative to compressed Hei Cha.",
+    "interestingFacts": [
+      "The name 'Heavenly Tip' signifies the supreme grade in the traditional three-tier Jian hierarchy (Tian Jian, Sheng Jian, and Gong Jian).",
+      "Unlike the vast majority of dark teas synonymous with tightly compressed bricks and cakes, Tian Jian is a rare example of a high-grade loose-leaf Hei Cha."
+    ]
+  },
+  "relatedTeas": ["fu_zhuan", "liu_bao"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

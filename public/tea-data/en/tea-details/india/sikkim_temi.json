@@ -1,0 +1,51 @@
+{
+  "id": "sikkim_temi",
+  "name": "Sikkim (Temi Tea)",
+  "aliases": ["Temi Tea", "Sikkim Tea"],
+  "country": "india",
+  "category": "red",
+  "location": {
+    "province": "Sikkim State",
+    "city": "Namchi",
+    "region": "Temi Tea Estate",
+    "mountain": "Himalayas, South Sikkim",
+    "latitude": 27.2833,
+    "longitude": 88.3500,
+    "altitude": "1600–1800 m"
+  },
+  "characteristics": {
+    "cultivar": "Camellia sinensis var. sinensis, Darjeeling-type clones",
+    "oxidation": "60–90%",
+    "roast": "None",
+    "harvestSeason": "March–June",
+    "waterTemperature": "88–92°C",
+    "steeps": "2–3 infusions",
+    "leafWeight": "3 g per 200 ml",
+    "teaware": "Teapot",
+    "rarity": 4,
+    "difficulty": 2,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Light, aromatic Himalayan black tea from India's only state-run tea garden",
+    "overview": "The sole tea estate in the Himalayan state of Sikkim, perched on mountain slopes near Darjeeling, sharing a remarkably similar terroir, elevation, and flavor profile.",
+    "leaf": "Twisted, light brown leaf with fine tips",
+    "liquor": "Luminous pale amber liquor",
+    "aroma": "Floral and light, filled with cool Himalayan mountain freshness",
+    "taste": "Mellow, fragrant, slightly gentler and smoother than classic Darjeeling",
+    "aftertaste": "Crisp, delicate, refreshing",
+    "processing": "Plucking → withering → rolling → medium-depth oxidation → drying"
+  },
+  "history": {
+    "origin": "Temi Tea Estate was established in 1969 by the royal government of the Kingdom of Sikkim (then an independent state) as an initiative to employ Tibetan refugees.",
+    "development": "Following Sikkim's integration into India in 1975, the garden remained government-operated, standing as the only tea producer in the entire state.",
+    "modern": "Sikkim became India's first 100% certified organic state, an eco-friendly achievement shared by the agricultural practices of the Temi plantation.",
+    "interestingFacts": [
+      "Temi is the only state-owned tea garden in India, distinguishing it from the privately held estates across Assam and Darjeeling.",
+      "In 2016, Sikkim was declared the world's first fully organic state, giving Temi tea pristine organic pedigree."
+    ]
+  },
+  "relatedTeas": ["darjeeling_first_flush", "darjeeling_second_flush"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

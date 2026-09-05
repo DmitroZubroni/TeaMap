@@ -1,0 +1,51 @@
+{
+  "id": "ha_giang_shan_tuyet",
+  "name": "Ha Giang (Shan Tuyet)",
+  "aliases": ["Ha Giang", "Shan Tuyết", "Snow Shan"],
+  "country": "vietnam",
+  "category": "green",
+  "location": {
+    "province": "Ha Giang",
+    "city": "Hoang Su Phi",
+    "region": "Highland Border Mountains",
+    "mountain": "Northern Vietnamese Highlands",
+    "latitude": 22.8025,
+    "longitude": 104.9784,
+    "altitude": "1200–1800 m"
+  },
+  "characteristics": {
+    "cultivar": "Ancient wild Camellia sinensis var. assamica (Shan) trees",
+    "oxidation": "0% (in green style) or partial (for darker styles from the same trees)",
+    "roast": "Light pan-firing",
+    "harvestSeason": "Spring",
+    "waterTemperature": "85–90°C",
+    "steeps": "5–8 infusions",
+    "leafWeight": "4 g per 150 ml",
+    "teaware": "Gaiwan or small clay teapot",
+    "rarity": 4,
+    "difficulty": 2,
+    "agesWell": true
+  },
+  "description": {
+    "short": "Tea harvested from ancient wild trees growing in misty mountains on the Chinese border, featuring snow-white downy buds and deep forest character",
+    "overview": "Harvested from wild or semi-wild trees, some estimated to be several centuries old — a rare surviving ecosystem of arboreal tea trees thriving naturally in high-mountain cloud forests.",
+    "leaf": "Large plump buds densely covered in white down (hence 'snowy' or tuyết), dark green leaves",
+    "liquor": "Rich yellow-green liquor",
+    "aroma": "Wild mountain forest, raw honey, floral resin",
+    "taste": "Thick, naturally sweet, with woody and forest undertones, far less grassy than plantation tea",
+    "aftertaste": "Lingering honey sweetness",
+    "processing": "Hand-harvested from tall wild trees (often requiring ladders) → fixation → rolling → drying"
+  },
+  "history": {
+    "origin": "The mountainous districts of Ha Giang are primarily inhabited by ethnic minorities (Hmong, Dao, Tay), who have traditionally harvested leaves from ancient wild trees scattered across the forest canopy.",
+    "development": "Some trees in the region are estimated to exceed 300 years of age, standing among the oldest living tea plants on Earth alongside Yunnan's gushu trees.",
+    "modern": "Rising global appreciation for wild-harvested ancient arbor tea has elevated Ha Giang's status as a premium, ecological artisanal tea.",
+    "interestingFacts": [
+      "Northern Vietnam's wild tea forests are botanically contiguous with the ancient tea forests of neighboring Yunnan, China, sharing the evolutionary origins of Camellia sinensis var. assamica.",
+      "Harvesting from towering wild trees requires agility and homemade wooden ladders or tree-climbing, demanding intense physical labor compared to manicured plantation rows."
+    ]
+  },
+  "relatedTeas": ["thai_nguyen", "cao_bo"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

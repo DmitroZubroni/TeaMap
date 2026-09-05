@@ -1,0 +1,51 @@
+{
+  "id": "rou_gui",
+  "name": "Rou Gui",
+  "aliases": ["Cassia", "Cinnamon Oolong", "肉桂"],
+  "country": "china",
+  "category": "oolong_dark",
+  "location": {
+    "province": "Fujian",
+    "city": "Wuyishan",
+    "region": "Wuyishan",
+    "mountain": "Wuyi Mountains, Niaoshidian and Malin areas",
+    "latitude": 27.7546,
+    "longitude": 117.9647,
+    "altitude": "400–900 m"
+  },
+  "characteristics": {
+    "cultivar": "Rou Gui",
+    "oxidation": "40–60%",
+    "roast": "Heavy, characteristically well-roasted",
+    "harvestSeason": "Spring",
+    "waterTemperature": "95–100°C",
+    "steeps": "8–12 infusions",
+    "leafWeight": "6–8 g per 100–120 ml",
+    "teaware": "Gaiwan or Yixing clay teapot",
+    "rarity": 3,
+    "difficulty": 2,
+    "agesWell": true
+  },
+  "description": {
+    "short": "Spicy, cinnamon-scented rock oolong — one of the most iconic and beloved teas of Wuyishan",
+    "overview": "Alongside Shui Xian, Rou Gui forms one half of the foundational pillar of Wuyi rock tea, celebrated for its pungent cinnamon spice, robust body, and fierce rock rhyme.",
+    "leaf": "Large, dark-brown, tightly twisted leaves with roasted gleam",
+    "liquor": "Rich orange-red to bright amber infusion",
+    "aroma": "Cinnamon bark, warm spices, subtle sweetness, and deep stony minerality",
+    "taste": "Spicy with an assertive cinnamon note, full-bodied, mineral, accompanied by a dry, structured finish",
+    "aftertaste": "Long, spicy-sweet, leaving a warming glow in the throat",
+    "processing": "Plucking → solar withering → vigorous tossing/bruising for pronounced edge oxidation → fixation (kill-green) → rolling → multi-stage charcoal roasting"
+  },
+  "history": {
+    "origin": "The name translates to 'Cassia' or 'Cinnamon', derived from its distinctively sharp, spicy aroma reminiscent of Chinese cassia bark.",
+    "development": "Recorded in the Wuyi region since the Qing dynasty (19th century), it surged in prominence in the late 20th century to become the flagship export and benchmark of Wuyi Yancha.",
+    "modern": "Today, Rou Gui from prestigious micro-terroirs commands cult status and premium prices for its exceptional intensity and 'rock rhyme' (yan yun).",
+    "interestingFacts": [
+      "Rou Gui is prized as sharper, spicier, and more aggressive compared to the softer, woody Shui Xian; tea masters often brew them back-to-back as the twin archetypes of Wuyi oolongs.",
+      "Roasting levels for Rou Gui vary significantly from medium floral-spicy to deep charcoal-roasted, dramatically shifting its aromatic expression."
+    ]
+  },
+  "relatedTeas": ["shui_xian", "lao_cong_shui_xian", "qi_dan"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

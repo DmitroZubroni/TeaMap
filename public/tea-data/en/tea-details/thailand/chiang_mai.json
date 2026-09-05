@@ -1,0 +1,51 @@
+{
+  "id": "chiang_mai",
+  "name": "Chiang Mai Tea",
+  "aliases": ["Chiang Mai Tea", "เชียงใหม่"],
+  "country": "thailand",
+  "category": "green",
+  "location": {
+    "province": "Chiang Mai",
+    "city": "Doi Ang Khang / Doi Inthanon",
+    "region": "Northern Mountain Highlands",
+    "mountain": "Northern Thai Highlands",
+    "latitude": 19.906,
+    "longitude": 98.545,
+    "altitude": "1000–1600 m"
+  },
+  "characteristics": {
+    "cultivar": "Assamica and native mountain varieties tended by Akha and Lahu hill tribes",
+    "oxidation": "0–30% (depending on style — green or light oolong)",
+    "roast": "Minimal",
+    "harvestSeason": "Year-round",
+    "waterTemperature": "80–90°C",
+    "steeps": "4–6 infusions",
+    "leafWeight": "4 g per 150 ml",
+    "teaware": "Glass cup or gaiwan",
+    "rarity": 2,
+    "difficulty": 1,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Green and lightly oxidized teas of the northern highlands, traditionally gathered and cultivated by mountain ethnic minorities",
+    "overview": "Unlike Mae Salong's Yunnanese diaspora history, Chiang Mai tea heritage is closely tied to indigenous Akha and Lahu hill tribes who lived in these misty mountains long before commercial tea trade began.",
+    "leaf": "Twisted light to deep green leaves according to oxidation level",
+    "liquor": "Pale yellow to warm golden",
+    "aroma": "Fresh, grassy, wildflower nuances",
+    "taste": "Mild, clean, with a brisk pleasant crispness",
+    "aftertaste": "Refreshing and clean",
+    "processing": "Plucking → fixation or light oxidation depending on target style → rolling → drying"
+  },
+  "history": {
+    "origin": "Akha and Lahu mountain tribes harvested local tea trees for generations before the modern Thai state developed formal agriculture, consuming tea as a vital everyday beverage rather than a commercial commodity.",
+    "development": "With royal development programs and expanding eco-tourism encouraging alternative sustainable livelihoods, tea production evolved into structured community gardens.",
+    "modern": "Today Chiang Mai tea is primarily marketed locally and to eco-conscious visitors across northern Thailand, serving as a regional artisanal specialty.",
+    "interestingFacts": [
+      "Unlike conventional monoculture plantations, much of Chiang Mai tea is harvested from semi-wild or agroforestry trees growing naturally beneath native forest canopy.",
+      "Doi Inthanon and Doi Ang Khang are renowned birdwatching and highland nature sanctuaries, integrating regional tea cultivation directly with ecotourism."
+    ]
+  },
+  "relatedTeas": ["doi_mae_salong"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

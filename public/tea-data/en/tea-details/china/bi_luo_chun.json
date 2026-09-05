@@ -1,0 +1,51 @@
+{
+  "id": "bi_luo_chun",
+  "name": "Biluochun",
+  "aliases": ["Bi Luo Chun", "Green Snail Spring", "Dongting Biluochun", "碧螺春"],
+  "country": "china",
+  "category": "green",
+  "location": {
+    "province": "Jiangsu",
+    "city": "Suzhou",
+    "region": "Dongshan and Xishan, Lake Taihu",
+    "mountain": "Hills around Lake Taihu",
+    "latitude": 31.4770,
+    "longitude": 120.4090,
+    "altitude": "50–200 m"
+  },
+  "characteristics": {
+    "cultivar": "Local bushes interplanted with fruit trees",
+    "oxidation": "0%",
+    "roast": "Low-temperature pan-firing in a wok",
+    "harvestSeason": "Early spring (March)",
+    "waterTemperature": "75–80°C",
+    "steeps": "3–4 infusions",
+    "leafWeight": "3 g per 150 ml",
+    "teaware": "Glass tumbler",
+    "rarity": 4,
+    "difficulty": 2,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Finely rolled spiral green tea with a pronounced fruity and floral fragrance",
+    "overview": "One of the rare teas traditionally interplanted among peach, plum, and other fruit trees. The roots of the tea bushes intermingle with the fruit trees, which is traditionally believed to impart the tea's characteristic fruity fragrance.",
+    "leaf": "Very small, tightly curled into spiral snail-like shapes, abundantly covered with white downy hair",
+    "liquor": "Pale green, brilliant, and crystal clear",
+    "aroma": "Fruity (peach, plum), floral, and crisp",
+    "taste": "Delicate, sweet, with floral-fruity notes and a slight refreshing briskness upfront",
+    "aftertaste": "Crisp, sweet, clean, and refreshing",
+    "processing": "Plucking of one bud with one leaf → wok fixation → labor-intensive hand-rolling into tight spirals → low-temperature drying"
+  },
+  "history": {
+    "origin": "The name translates to 'Green Snail Spring'. According to legend, a tea picker ran out of basket space and tucked freshly picked leaves into her bodice; warmed by her body heat, they released a fragrance so intense it astonished everyone around.",
+    "development": "Cultivated in the Lake Taihu area since the Ming dynasty; the ancient tradition of interplanting tea bushes with fruit orchards continues to this day",
+    "modern": "Today protected by a geographical indication; authentic Biluochun from Dongshan and Xishan commands significantly higher prices than counterparts produced in other regions",
+    "interestingFacts": [
+      "Producing 500 grams of top-grade Biluochun requires hand-picking 60,000 to 70,000 tiny tender buds",
+      "Its original vernacular name was 'Scary Fragrance' (Xia Sha Ren Xiang); Emperor Kangxi found this uncouth and bestowed the poetic name 'Biluochun' (Green Snail Spring)"
+    ]
+  },
+  "relatedTeas": ["long_jing", "taiping_houkui"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

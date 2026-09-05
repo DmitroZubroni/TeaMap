@@ -1,0 +1,47 @@
+[
+  {
+    "id": "thai_nguyen",
+    "name": "Thai Nguyen",
+    "country": "vietnam",
+    "category": "green",
+    "lat": 21.5928,
+    "lng": 105.8442,
+    "region": "Tan Cuong"
+  },
+  {
+    "id": "ha_giang_shan_tuyet",
+    "name": "Ha Giang (Shan Tuyet)",
+    "country": "vietnam",
+    "category": "green",
+    "lat": 22.8025,
+    "lng": 104.9784,
+    "region": "Hoang Su Phi"
+  },
+  {
+    "id": "moc_chau",
+    "name": "Moc Chau",
+    "country": "vietnam",
+    "category": "green",
+    "lat": 20.8333,
+    "lng": 104.6667,
+    "region": "Moc Chau Plateau"
+  },
+  {
+    "id": "lam_dong",
+    "name": "Lam Dong (Bao Loc)",
+    "country": "vietnam",
+    "category": "oolong_light",
+    "lat": 11.547,
+    "lng": 107.811,
+    "region": "Tay Nguyen Plateau"
+  },
+  {
+    "id": "cao_bo",
+    "name": "Cao Bo",
+    "country": "vietnam",
+    "category": "green",
+    "lat": 22.6667,
+    "lng": 104.85,
+    "region": "Vi Xuyen"
+  }
+]

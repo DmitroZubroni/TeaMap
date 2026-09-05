@@ -1,0 +1,51 @@
+{
+  "id": "ruby_18",
+  "name": "Hong Yu (Ruby #18)",
+  "aliases": ["Ruby No. 18", "Hong Yu", "紅玉"],
+  "country": "taiwan",
+  "category": "red",
+  "location": {
+    "province": "Nantou",
+    "city": "Yuchi",
+    "region": "Sun Moon Lake",
+    "mountain": "Hills around Sun Moon Lake (Riyue Tan)",
+    "latitude": 23.86,
+    "longitude": 120.915,
+    "altitude": "600–800 m"
+  },
+  "characteristics": {
+    "cultivar": "Ruby #18 (hybrid of native wild Taiwanese tea and Burmese var. assamica)",
+    "oxidation": "95–100%",
+    "roast": "None",
+    "harvestSeason": "Summer",
+    "waterTemperature": "90–95°C",
+    "steeps": "4–6 infusions",
+    "leafWeight": "5 g per 150 ml",
+    "teaware": "Gaiwan or standard teapot",
+    "rarity": 4,
+    "difficulty": 1,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Unique Taiwanese black tea with natural cooling aromas of cinnamon and fresh mint, specifically bred for the island's terroir",
+    "overview": "The only cultivar in the world bred specifically for black tea by Taiwanese agronomists by crossing an indigenous wild mountain tea tree with a Burmese large-leaf variety — the culmination of decades of dedicated research.",
+    "leaf": "Large, dark, gracefully twisted whole leaves",
+    "liquor": "Brilliant, glowing ruby-amber liquor",
+    "aroma": "Distinct natural cinnamon and wintergreen mint notes with a wild honey sweetness — completely unique to this cultivar",
+    "taste": "Naturally sweet, subtly spicy, with pronounced cinnamon-menthol nuances without any added flavorings",
+    "aftertaste": "Long, spicy-sweet, clean refreshing finish",
+    "processing": "Plucking → withering → rolling → full oxidation → drying"
+  },
+  "history": {
+    "origin": "Bred by Taiwan's Tea Research and Extension Station (TRES) by crossing native wild mountain Camellia formosensis with Burmese Assamica; the hybridization program spanned several decades.",
+    "development": "Officially registered as cultivar #18 in 1999 and trade-named 'Ruby' (Hong Yu, 'red jade') for its magnificent radiant liquor.",
+    "modern": "Primarily grown around scenic Sun Moon Lake, it is regarded as a crown jewel of modern Taiwanese agronomic breeding, celebrated for its naturally occurring spices.",
+    "interestingFacts": [
+      "Ruby #18 is one of the few cultivars globally bred purely and specifically for the black tea category rather than multipurpose processing.",
+      "Its distinct cinnamon and menthol notes are 100% natural, arising purely from the plant's unique genetic lineage rather than flavored oils or additives."
+    ]
+  },
+  "relatedTeas": ["dong_ding", "oriental_beauty"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

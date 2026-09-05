@@ -1,0 +1,51 @@
+{
+  "id": "sabaragamuwa",
+  "name": "Sabaragamuwa",
+  "aliases": ["Sabaragamuwa", "Mid-grown Ceylon"],
+  "country": "sri_lanka",
+  "category": "red",
+  "location": {
+    "province": "Sabaragamuwa Province",
+    "city": "Ratnapura",
+    "region": "Southwest Sri Lanka",
+    "mountain": "Mid-to-Low Elevation Zone (600–1200 m)",
+    "latitude": 6.6828,
+    "longitude": 80.3992,
+    "altitude": "600–1200 m"
+  },
+  "characteristics": {
+    "cultivar": "Camellia sinensis var. sinensis",
+    "oxidation": "90–100%",
+    "roast": "None",
+    "harvestSeason": "Year-round",
+    "waterTemperature": "92–96°C",
+    "steeps": "2 infusions",
+    "leafWeight": "3–4 g per 200 ml",
+    "teaware": "Teapot",
+    "rarity": 2,
+    "difficulty": 1,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Rich, brisk mid-grown tea with a smooth caramel undertone, bridging the intensity of coastal teas with highland perfume",
+    "overview": "A powerhouse tea-growing province in the wet southwest, centered around Ratnapura, the ancient 'City of Gems' famed for sapphire and ruby mining.",
+    "leaf": "Dark brown, neatly twisted leaves",
+    "liquor": "Bright, rich reddish-caramel liquor",
+    "aroma": "Sweet caramel, dark honey, warm spice",
+    "taste": "Full-bodied, moderately brisk, marrying the strength of lowlands with the sweetness of mid-hills",
+    "aftertaste": "Substantial, pleasant, warm finish",
+    "processing": "Plucking → withering → orthodox rolling → full oxidation → drying"
+  },
+  "history": {
+    "origin": "Sabaragamuwa has been world-renowned for centuries for alluvial gem mines surrounding Ratnapura, attracting traders across the Indian Ocean.",
+    "development": "Tea estates developed extensively along lush river basins and mid-elevation hills, providing versatile teas for commercial blenders.",
+    "modern": "One of Sri Lanka's largest tea-producing regions, providing a steady supply of high-grade mid-grown tea for export.",
+    "interestingFacts": [
+      "Ratnapura, the capital of Sabaragamuwa, translates to 'City of Gems' and is one of the world's most famous ruby and sapphire mining centers, creating an extraordinary dual agro-mining heritage.",
+      "Mid-grown Ceylon teas from Sabaragamuwa are prized for their versatility, retaining deep color and smooth flavor both hot and iced."
+    ]
+  },
+  "relatedTeas": ["ruhuna", "kegalle"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

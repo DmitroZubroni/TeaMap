@@ -1,0 +1,51 @@
+{
+  "id": "ninghong",
+  "name": "Ning Hong",
+  "aliases": ["Ninghong", "Ning Hong", "Ningzhou Black Tea", "Xiuning Black Tea", "宁红"],
+  "country": "china",
+  "category": "red",
+  "location": {
+    "province": "Jiangxi",
+    "city": "Jiujiang",
+    "region": "Xiuning County",
+    "mountain": "Xiuning Hills",
+    "latitude": 29.0333,
+    "longitude": 115.7167,
+    "altitude": "200–600 m"
+  },
+  "characteristics": {
+    "cultivar": "Jiangxi local heirloom bushes",
+    "oxidation": "95–100%",
+    "roast": "None",
+    "harvestSeason": "Spring and summer",
+    "waterTemperature": "90–95°C",
+    "steeps": "4–6 infusions",
+    "leafWeight": "5 g per 150 ml",
+    "teaware": "Western teapot or gaiwan",
+    "rarity": 2,
+    "difficulty": 1,
+    "agesWell": false
+  },
+  "description": {
+    "short": "One of China's earliest black teas exported to Europe, featuring a sweet honeyed-fruit profile",
+    "overview": "Historically one of China's premier 19th-century export black teas, which alongside Keemun shaped the Western conception of Chinese black tea.",
+    "leaf": "Twisted medium-sized dark-brown leaves",
+    "liquor": "Bright red, clear liquor",
+    "aroma": "Sweet, honeyed, and fruity",
+    "taste": "Mellow and gently sweet with fruity notes",
+    "aftertaste": "Moderate and sweet",
+    "processing": "Plucking → withering → rolling → full oxidation → drying"
+  },
+  "history": {
+    "origin": "Black tea production in the region (historically known as Ningzhou, which gave the tea its name) began in the 19th century in response to surging demand from European traders",
+    "development": "At the peak of its popularity in the late 19th century, Ninghong was celebrated as one of China's foremost export black teas alongside Keemun",
+    "modern": "Today less widely recognized outside China than during the height of the tea trade, but maintains its status as a historically significant regional black tea",
+    "interestingFacts": [
+      "In the 19th century, Ning Hong and Keemun were direct rivals in the European export trade, each competing for the reputation of China's finest black tea",
+      "The historic name 'Ningzhou' is largely absent from modern administrative divisions, but remains preserved in the tea's name"
+    ]
+  },
+  "relatedTeas": ["keemun", "hu_hong"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

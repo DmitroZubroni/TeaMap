@@ -1,0 +1,51 @@
+{
+  "id": "yingde_hong",
+  "name": "Yingde Hong",
+  "aliases": ["Yingde Hong", "Yingde Black Tea", "Ying Hong", "英德红茶"],
+  "country": "china",
+  "category": "red",
+  "location": {
+    "province": "Guangdong",
+    "city": "Qingyuan",
+    "region": "Yingde County",
+    "mountain": "Yingde Hills",
+    "latitude": 24.1833,
+    "longitude": 113.4,
+    "altitude": "100–500 m"
+  },
+  "characteristics": {
+    "cultivar": "Yunnan var. assamica adapted to Guangdong climate",
+    "oxidation": "95–100%",
+    "roast": "None",
+    "harvestSeason": "Year-round, peaking in spring",
+    "waterTemperature": "90–95°C",
+    "steeps": "4–6 infusions",
+    "leafWeight": "5 g per 150 ml",
+    "teaware": "Western teapot or gaiwan",
+    "rarity": 2,
+    "difficulty": 1,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Rich southern black tea reminiscent of Assam, adorned with golden tips",
+    "overview": "One of the few prominent black teas of southern China, developed in the mid-20th century specifically for mass export with an emphasis on strength and briskness characteristic of Indian teas.",
+    "leaf": "Dark, medium-sized leaves intermixed with golden tips",
+    "liquor": "Rich deep red liquor, reminiscent of Assam tea",
+    "aroma": "Malty, gently sweet, with nuances of cocoa",
+    "taste": "Bold, full-bodied, with a satisfyingly dense texture",
+    "aftertaste": "Moderately long, malty, and clean",
+    "processing": "Plucking → withering → rolling → full oxidation → drying"
+  },
+  "history": {
+    "origin": "Developed in the 1950s as part of a national initiative to expand black tea exports, utilizing Yunnan large-leaf plant material adapted to the subtropical climate of Guangdong",
+    "development": "Thanks to Guangdong's warmer and more humid climate compared to Yunnan, the cultivar yields an especially bold and robust tea resembling Assam in profile",
+    "modern": "One of the few widely produced black teas of southern China initially oriented toward international export rather than domestic consumption",
+    "interestingFacts": [
+      "Specially formulated to cater to Western (especially British) taste preferences that favored bold, milk-compatible teas similar to Indian varieties",
+      "Utilizes large-leaf var. assamica material introduced from Yunnan rather than indigenous southern Chinese varieties"
+    ]
+  },
+  "relatedTeas": ["dianhong", "chuan_hong"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

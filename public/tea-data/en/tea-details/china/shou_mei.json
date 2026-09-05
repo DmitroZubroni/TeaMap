@@ -1,0 +1,51 @@
+{
+  "id": "shou_mei",
+  "name": "Shou Mei",
+  "aliases": ["Shou Mei", "Longevity Eyebrow", "寿眉"],
+  "country": "china",
+  "category": "white",
+  "location": {
+    "province": "Fujian",
+    "city": "Fuding / Zhenghe",
+    "region": "Fuding and Zhenghe",
+    "mountain": "Hills of Fuding and Zhenghe",
+    "latitude": 27.3319,
+    "longitude": 120.2131,
+    "altitude": "200–600 m"
+  },
+  "characteristics": {
+    "cultivar": "Da Bai, Da Hao, and local cultivars",
+    "oxidation": "Low, natural",
+    "roast": "None",
+    "harvestSeason": "Late spring and summer",
+    "waterTemperature": "90–95°C",
+    "steeps": "5–8 infusions",
+    "leafWeight": "5 g per 150 ml",
+    "teaware": "Clay teapot (especially for aged tea)",
+    "rarity": 1,
+    "difficulty": 1,
+    "agesWell": true
+  },
+  "description": {
+    "short": "The most accessible white tea grade made from mature leaves, full-bodied and especially prized with age",
+    "overview": "Harvested from coarser, mature leaves later in the season, making it the most affordable white tea, yet this very maturity grants it tremendous aging potential.",
+    "leaf": "Large, mature leaves with few buds, dark green to brownish in color",
+    "liquor": "Ranges from bright yellow (young tea) to deep amber (aged tea)",
+    "aroma": "Grassy and hay-like when young, evolving into jujube date and honey aromas with years of storage",
+    "taste": "Full-bodied and rustic when young; softens and sweetens with age, developing rich dried-fruit nuances",
+    "aftertaste": "Moderate; warm, sweet, and comforting in aged versions",
+    "processing": "Harvesting mature leaves (sometimes with a sparse proportion of buds) → prolonged withering → slow drying without fixation or rolling"
+  },
+  "history": {
+    "origin": "Historically viewed as a residual grade of white tea — composed of whatever was plucked after the prized buds and young leaves were selected for Bai Hao Yin Zhen and Bai Mu Dan.",
+    "development": "Long regarded as an everyday, rustic beverage consumed domestically or brewed for folk health remedies.",
+    "modern": "With the surge of interest in aged white tea during the 2010s, Shou Mei underwent a dramatic re-evaluation — today, aged pressed Shou Mei tea cakes (similar to pu-erh) form a prominent collectible category.",
+    "interestingFacts": [
+      "In Fujian folklore, Shou Mei was traditionally drunk to cool internal heat and soothe inflammation, contributing to its name 'Longevity Eyebrow.'",
+      "Due to affordable raw material costs and its rich composition suited for aging, Shou Mei is the white tea most commonly pressed into cakes for long-term storage like pu-erh."
+    ]
+  },
+  "relatedTeas": ["bai_mu_dan", "gong_mei"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

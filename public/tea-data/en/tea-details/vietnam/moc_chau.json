@@ -1,0 +1,51 @@
+{
+  "id": "moc_chau",
+  "name": "Moc Chau",
+  "aliases": ["Mộc Châu"],
+  "country": "vietnam",
+  "category": "green",
+  "location": {
+    "province": "Son La",
+    "city": "Moc Chau",
+    "region": "Moc Chau Plateau",
+    "mountain": "Northwestern Plateau",
+    "latitude": 20.8333,
+    "longitude": 104.6667,
+    "altitude": "900–1050 m"
+  },
+  "characteristics": {
+    "cultivar": "Plantation Shan and varieties introduced during the Soviet era",
+    "oxidation": "0%",
+    "roast": "Pan-firing",
+    "harvestSeason": "Year-round",
+    "waterTemperature": "80–85°C",
+    "steeps": "4–5 infusions",
+    "leafWeight": "3 g per 150 ml",
+    "teaware": "Glass cup",
+    "rarity": 2,
+    "difficulty": 1,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Green tea from a cool highland plateau developed with historical French and Soviet agricultural collaboration",
+    "overview": "The Moc Chau plateau is a major commercial tea region in Vietnam shaped by two distinct historical eras of foreign technical cooperation: French colonial planting followed by extensive Soviet agrarian partnership.",
+    "leaf": "Twisted light green leaves",
+    "liquor": "Pale yellowish-green liquor",
+    "aroma": "Fresh, crisp herbal bouquet",
+    "taste": "Mild, clean, with gentle briskness",
+    "aftertaste": "Refreshing, crisp finish",
+    "processing": "Plucking → fixation → rolling → drying"
+  },
+  "history": {
+    "origin": "The earliest tea estates on the Moc Chau plateau were laid out by French colonial authorities in the first half of the 20th century to capitalize on the temperate highland climate.",
+    "development": "Following Vietnamese independence, the estates were greatly expanded with the technical and agronomic support of Soviet specialists as part of socialist trade collaboration.",
+    "modern": "Today Moc Chau is an agricultural powerhouse celebrated for rolling green tea hills and dairy farming, another legacy of modern highland development.",
+    "interestingFacts": [
+      "Moc Chau represents a rare case of a tea region sequentially developed by French colonial agronomists and later Soviet engineers, mirroring Vietnam's 20th-century political history.",
+      "The plateau's temperate climate also makes it famous for strawberries and cool-climate crops atypical of tropical Southeast Asia."
+    ]
+  },
+  "relatedTeas": ["thai_nguyen", "lam_dong"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

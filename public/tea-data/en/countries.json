@@ -1,0 +1,50 @@
+[
+  {
+    "id": "china",
+    "name": "China",
+    "icon": "🇨🇳",
+    "teaCount": 59
+  },
+  {
+    "id": "india",
+    "name": "India",
+    "icon": "🇮🇳",
+    "teaCount": 9
+  },
+  {
+    "id": "sri_lanka",
+    "name": "Sri Lanka",
+    "icon": "🇱🇰",
+    "teaCount": 7
+  },
+  {
+    "id": "vietnam",
+    "name": "Vietnam",
+    "icon": "🇻🇳",
+    "teaCount": 5
+  },
+  {
+    "id": "thailand",
+    "name": "Thailand",
+    "icon": "🇹🇭",
+    "teaCount": 2
+  },
+  {
+    "id": "russia",
+    "name": "Russia",
+    "icon": "🇷🇺",
+    "teaCount": 3
+  },
+  {
+    "id": "taiwan",
+    "name": "Taiwan",
+    "icon": "🇹🇼",
+    "teaCount": 6
+  },
+  {
+    "id": "japan",
+    "name": "Japan",
+    "icon": "🇯🇵",
+    "teaCount": 6
+  }
+]

@@ -1,0 +1,51 @@
+{
+  "id": "tie_luo_han",
+  "name": "Tie Luo Han",
+  "aliases": ["Iron Arhat", "Iron Warrior Monk", "铁罗汉"],
+  "country": "china",
+  "category": "oolong_dark",
+  "location": {
+    "province": "Fujian",
+    "city": "Wuyishan",
+    "region": "Wuyishan, Huiyuan Ravine",
+    "mountain": "Wuyi Mountains",
+    "latitude": 27.7546,
+    "longitude": 117.9647,
+    "altitude": "500–800 m"
+  },
+  "characteristics": {
+    "cultivar": "Tie Luo Han (distinct ancient cultivar)",
+    "oxidation": "40–60%",
+    "roast": "Heavy",
+    "harvestSeason": "Spring",
+    "waterTemperature": "95–100°C",
+    "steeps": "8–10 infusions",
+    "leafWeight": "6–7 g per 100–120 ml",
+    "teaware": "Gaiwan",
+    "rarity": 4,
+    "difficulty": 3,
+    "agesWell": true
+  },
+  "description": {
+    "short": "One of Wuyishan's 'Four Great Bushes' (Si Da Ming Cong), featuring a dense woody core, stony minerality, and subtle fruity tartness",
+    "overview": "Revered as one of the oldest named varieties of Wuyishan, with references tracing back as early as the Song dynasty. While less globally famous than Da Hong Pao, it is deeply cherished by Yancha connoisseurs for its rugged power and complex depth.",
+    "leaf": "Large, dark-brown twisted leaves with a deep charcoal-roasted appearance",
+    "liquor": "Dark amber, thick and crystalline infusion",
+    "aroma": "Woody, subtly spiced, with hints of dried fruit and gentle fruity acidity",
+    "taste": "Dense, robustly mineral, accented by an appetizing subtle fruit tang against a steadfast woody foundation",
+    "aftertaste": "Long, dry, with a gradual sweet resonance returning in the throat",
+    "processing": "Classic rock oolong methodology: solar withering → tossing/bruising → fixation (kill-green) → strip rolling → multiple sessions of slow charcoal roasting"
+  },
+  "history": {
+    "origin": "Legend links the name either to the dark, iron-like color of the dried leaves and strength of the brew, or to a Buddhist monk (an arhat or luohan) with iron-like health cured of illness by this tea.",
+    "development": "Recorded among the earliest designated rock teas in the Wuyi Mountains, with historical documents citing it well before the Qing dynasty popularity of Da Hong Pao.",
+    "modern": "Today, it holds pride of place as one of the elite 'Four Great Famous Bushes' (Si Da Ming Cong) alongside Da Hong Pao, Bai Ji Guan, and Shui Jin Gui.",
+    "interestingFacts": [
+      "Unlike Da Hong Pao, Tie Luo Han lacks an emperor-focused court legend, yet many rock tea connoisseurs regard its deep, rustic profile as purer and more compelling.",
+      "Authentic Tie Luo Han from original Wuyi gorge terroirs is produced in tiny quantities, making genuine batches exceptionally rare even locally."
+    ]
+  },
+  "relatedTeas": ["da_hong_pao", "bai_ji_guan", "shui_jin_gui"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

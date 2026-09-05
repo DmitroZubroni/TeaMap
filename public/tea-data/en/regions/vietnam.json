@@ -1,0 +1,42 @@
+[
+  {
+    "id": "tan_cuong",
+    "name": "Tan Cuong",
+    "province": "Thai Nguyen",
+    "lat": 21.5928,
+    "lng": 105.8442,
+    "zoom": 11
+  },
+  {
+    "id": "hoang_su_phi",
+    "name": "Hoang Su Phi",
+    "province": "Ha Giang",
+    "lat": 22.8025,
+    "lng": 104.9784,
+    "zoom": 10
+  },
+  {
+    "id": "moc_chau_region",
+    "name": "Moc Chau Plateau",
+    "province": "Son La",
+    "lat": 20.8333,
+    "lng": 104.6667,
+    "zoom": 10
+  },
+  {
+    "id": "bao_loc",
+    "name": "Tay Nguyen Plateau (Bao Loc)",
+    "province": "Lam Dong",
+    "lat": 11.547,
+    "lng": 107.811,
+    "zoom": 10
+  },
+  {
+    "id": "vi_xuyen",
+    "name": "Vi Xuyen (Cao Bo)",
+    "province": "Ha Giang",
+    "lat": 22.6667,
+    "lng": 104.85,
+    "zoom": 11
+  }
+]

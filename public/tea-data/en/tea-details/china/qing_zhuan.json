@@ -1,0 +1,51 @@
+{
+  "id": "qing_zhuan",
+  "name": "Qing Zhuan",
+  "aliases": ["Qing Zhuan", "Green Brick Tea (Hubei)", "青砖茶"],
+  "country": "china",
+  "category": "dark_other",
+  "location": {
+    "province": "Hubei",
+    "city": "Xianning",
+    "region": "Chibi County",
+    "mountain": "Chibi Hills",
+    "latitude": 29.7233,
+    "longitude": 113.9481,
+    "altitude": "200–600 m"
+  },
+  "characteristics": {
+    "cultivar": "Local Hubei tea bushes",
+    "oxidation": "Post-fermentation",
+    "roast": "None",
+    "harvestSeason": "Summer and autumn",
+    "waterTemperature": "95–100°C",
+    "steeps": "8–10 infusions",
+    "leafWeight": "6–8 g per 100–120 ml",
+    "teaware": "Clay teapot",
+    "rarity": 3,
+    "difficulty": 2,
+    "agesWell": true
+  },
+  "description": {
+    "short": "Dense brick-pressed dark tea from Hubei, historically exported across the overland Great Tea Road to Mongolia and Russia",
+    "overview": "Despite the name 'Green Brick' (which originally referred to the olive-green tint of newly pressed raw material before dark aging, rather than the green tea category), it is a classic post-fermented dark tea (Hei Cha) by method and flavor.",
+    "leaf": "Compressed into dense rectangular bricks of mature dark leaves",
+    "liquor": "Deep reddish-brown, dense liquor",
+    "aroma": "Earthy and woody, growing smoother, sweeter, and more mellow with age",
+    "taste": "Dense, earthy, full, mellowing and gaining pleasant sweetness over years of storage",
+    "aftertaste": "Moderately long, clean finish",
+    "processing": "Harvesting mature leaves → kill-green → rolling → post-fermentation wet piling → compression into sturdy bricks → prolonged aging"
+  },
+  "history": {
+    "origin": "The Chibi region (historically Yangloudong) in Hubei became a major center of brick tea manufacturing in the 19th century due to its strategic position along the overland northern trade routes.",
+    "development": "Heavily exported along the overland 'Great Tea Road' across Mongolia, Siberia, and into European Russia, where rock-hard brick tea was ideally suited for arduous camel caravan journeys lasting months.",
+    "modern": "While less famous internationally today than Pu-erh, it remains an essential historical category of Chinese tea, deeply interwoven with the Sino-Russian tea trade through Kyakhta.",
+    "interestingFacts": [
+      "The name 'Green Brick' refers to the appearance of the fresh unaged pressed tea rather than green tea processing — a frequent source of confusion for tea novices.",
+      "The town of Yangloudong in Chibi was one of the primary starting hubs of the overland Great Tea Road into Russia, forging an enduring link between Hubei dark tea and Russian tea-drinking customs."
+    ]
+  },
+  "relatedTeas": ["kang_zhuan", "fu_zhuan", "liu_bao"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "bao_zhong",
+  "name": "Bao Zhong",
+  "aliases": ["Pouchong", "Baozhong", "包种"],
+  "country": "china",
+  "category": "oolong_light",
+  "location": {
+    "province": "Fujian",
+    "city": "Anxi / Nanjing",
+    "region": "Anxi (historical origin; today the style is more widely produced in Taiwan)",
+    "mountain": "Anxi Hills",
+    "latitude": 25.0692,
+    "longitude": 117.9847,
+    "altitude": "300–800 m"
+  },
+  "characteristics": {
+    "cultivar": "Various Fujian cultivars (Qingxin and others)",
+    "oxidation": "8–18% (the lowest oxidation level among oolongs)",
+    "roast": "None",
+    "harvestSeason": "Spring and Autumn",
+    "waterTemperature": "85–90°C",
+    "steeps": "5–7 infusions",
+    "leafWeight": "5 g per 120 ml",
+    "teaware": "Gaiwan",
+    "rarity": 3,
+    "difficulty": 1,
+    "agesWell": false
+  },
+  "description": {
+    "short": "The least oxidized oolong, rivaling green tea in freshness while offering superior aromatic complexity",
+    "overview": "Occupies a unique middle ground between green tea and classic oolongs: minimal oxidation preserves the crisp liveliness of green tea, while the oolong bruising process yields deep floral sophistication.",
+    "leaf": "Gently twisted into loose open strips (not rolled into balls), dark-green leaves",
+    "liquor": "Bright light yellow-green, clear infusion",
+    "aroma": "Fresh floral, reminiscent of delicate orchids and vibrant spring greens",
+    "taste": "Light, clean, delicately sweet, with virtually no astringency",
+    "aftertaste": "Crisp, refreshing, and floral",
+    "processing": "Plucking → withering → gentle tossing/shaking for minimal edge oxidation → fixation (kill-green) → gentle rolling into loose strips (no ball shaping) → drying without roasting"
+  },
+  "history": {
+    "origin": "The name translates to 'wrapped kind'—historically, the finished tea was wrapped and sold in square paper parcels, which gave the tea its distinctive moniker.",
+    "development": "Originally developed in Fujian, the technique was brought to northern Taiwan in the 19th century by Fujianese immigrants, where Bao Zhong (widely known as Pouchong) flourished into a signature regional craft.",
+    "modern": "Today, Taiwanese Wenshan Pouchong is often regarded as the benchmark of this style, though the original methods and roots remain firmly rooted in mainland Fujian.",
+    "interestingFacts": [
+      "Bao Zhong is widely known as a 'bridge tea' between green and oolong teas—its light oxidation places it closer to green tea than any other oolong variety.",
+      "The signature square paper parcel packaging historically set it apart from ordinary teas sold strictly in bulk bins."
+    ]
+  },
+  "relatedTeas": ["tie_guan_yin", "huangjin_gui"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

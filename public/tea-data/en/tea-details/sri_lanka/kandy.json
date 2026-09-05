@@ -1,0 +1,51 @@
+{
+  "id": "kandy",
+  "name": "Kandy",
+  "aliases": ["Kandy"],
+  "country": "sri_lanka",
+  "category": "red",
+  "location": {
+    "province": "Central Province",
+    "city": "Kandy",
+    "region": "Mid-Country, Ancient Royal Capital",
+    "mountain": "Central Highlands (Mid-Grown Zone)",
+    "latitude": 7.2906,
+    "longitude": 80.6337,
+    "altitude": "600–1100 m"
+  },
+  "characteristics": {
+    "cultivar": "Camellia sinensis var. sinensis",
+    "oxidation": "90–100%",
+    "roast": "None",
+    "harvestSeason": "Year-round",
+    "waterTemperature": "90–95°C",
+    "steeps": "2–3 infusions",
+    "leafWeight": "3–4 g per 200 ml",
+    "teaware": "Teapot, holds milk exceptionally well",
+    "rarity": 2,
+    "difficulty": 1,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Robust, full-bodied mid-grown Ceylon black tea with rich maltiness — the cradle of Sri Lanka's commercial tea industry",
+    "overview": "Kandy is the historic last royal capital of Sri Lanka and the hallowed ground where Ceylon's first commercial tea estate was established.",
+    "leaf": "Dark brown, neatly twisted leaves",
+    "liquor": "Deep coppery-red liquor",
+    "aroma": "Warm, malty, subtly sweet",
+    "taste": "Robust, satisfyingly rich, brisk without harshness, holding milk and sugar wonderfully",
+    "aftertaste": "Substantial, comforting finish",
+    "processing": "Plucking → withering → orthodox rolling → full oxidation → drying"
+  },
+  "history": {
+    "origin": "In 1867 at the Loolecondera estate in Kandy, Scotsman James Taylor planted 19 acres of tea, sparking the island's commercial tea trade.",
+    "development": "Taylor's success turned Kandy into the epicenter from which tea cultivation spread across the central highlands.",
+    "modern": "Today Kandy is classified as the premier 'mid-grown' region, yielding robust, satisfying teas that anchor world-famous breakfast blends.",
+    "interestingFacts": [
+      "James Taylor's 1867 planting at Loolecondera in Kandy is the universally recognized birthplace of the Ceylon tea industry.",
+      "Kandy is a UNESCO World Heritage site home to the sacred Temple of the Tooth Relic, intertwining royal history with tea lore."
+    ]
+  },
+  "relatedTeas": ["dimbula", "kegalle"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

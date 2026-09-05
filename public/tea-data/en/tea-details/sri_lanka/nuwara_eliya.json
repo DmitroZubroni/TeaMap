@@ -1,0 +1,51 @@
+{
+  "id": "nuwara_eliya",
+  "name": "Nuwara Eliya",
+  "aliases": ["Nuwara Eliya", "Champagne of Ceylon"],
+  "country": "sri_lanka",
+  "category": "red",
+  "location": {
+    "province": "Central Province",
+    "city": "Nuwara Eliya",
+    "region": "Central Highlands",
+    "mountain": "Highest tea district on the island",
+    "latitude": 6.9497,
+    "longitude": 80.7891,
+    "altitude": "1800–2500 m"
+  },
+  "characteristics": {
+    "cultivar": "Camellia sinensis var. sinensis",
+    "oxidation": "70–90%",
+    "roast": "None",
+    "harvestSeason": "Year-round, best harvest in January–February",
+    "waterTemperature": "88–92°C",
+    "steeps": "2–3 infusions",
+    "leafWeight": "3 g per 200 ml",
+    "teaware": "Teapot, traditionally served without milk",
+    "rarity": 4,
+    "difficulty": 2,
+    "agesWell": false
+  },
+  "description": {
+    "short": "The palest and most delicate Ceylon tea — the 'Champagne of Ceylon', cultivated on the highest alpine peaks of the island",
+    "overview": "Grown at the highest altitudes in Sri Lanka under cool temperatures reminiscent of an English summer — yielding a remarkably bright, pale golden infusion that defies the stereotypical brisk strength of Ceylon tea.",
+    "leaf": "Delicate, fine twisted light brownish leaves with greenish flecks",
+    "liquor": "Pale, luminous golden liquor",
+    "aroma": "Ethereal, floral, with a crisp citrus and fresh blossom bouquet",
+    "taste": "Delicate, refined, airy floral sweetness with minimal astringency",
+    "aftertaste": "Fresh, crisp, fragrant finish",
+    "processing": "Plucking → withering → orthodox rolling → light-to-medium oxidation → drying"
+  },
+  "history": {
+    "origin": "Founded by British colonial administrators in the 19th century as a high-altitude hill station reminiscent of England's cool climate, earning the moniker 'Little England'.",
+    "development": "The brisk mountain climate was ideal not only for respite from tropical heat, but for producing an extraordinarily refined tea.",
+    "modern": "Today Nuwara Eliya is celebrated as Sri Lanka's premier luxury single-origin terroir, often likened in elegance to Darjeeling despite botanical differences.",
+    "interestingFacts": [
+      "Dubbed the 'Champagne of Ceylon', highlighting its rank as the most delicate and prestigious tea of Sri Lanka.",
+      "Nuwara Eliya retains striking British colonial Tudor-style architecture, combining historic tourism with verdant mountain tea estates."
+    ]
+  },
+  "relatedTeas": ["uva", "dimbula"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

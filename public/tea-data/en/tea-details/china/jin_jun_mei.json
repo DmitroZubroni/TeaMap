@@ -1,0 +1,51 @@
+{
+  "id": "jin_jun_mei",
+  "name": "Jin Jun Mei",
+  "aliases": ["Jin Jun Mei", "Golden Beautiful Eyebrows", "Jinjunmei", "金骏眉"],
+  "country": "china",
+  "category": "red",
+  "location": {
+    "province": "Fujian",
+    "city": "Wuyishan",
+    "region": "Tongmu (Wuyishan Nature Reserve)",
+    "mountain": "Wuyi Mountains",
+    "latitude": 27.8206,
+    "longitude": 117.6742,
+    "altitude": "1000–1500 m"
+  },
+  "characteristics": {
+    "cultivar": "Tongmu wild/semi-wild tea bushes (qunti zhong)",
+    "oxidation": "90–100%",
+    "roast": "Gentle drying without smoking",
+    "harvestSeason": "Early spring (buds only)",
+    "waterTemperature": "90–95°C",
+    "steeps": "6–8 infusions",
+    "leafWeight": "5 g per 100–120 ml",
+    "teaware": "Gaiwan",
+    "rarity": 5,
+    "difficulty": 2,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Premium black tea crafted exclusively from buds, sweet and honeyed without smokiness",
+    "overview": "Created as an unsmoked alternative to traditional Lapsang Souchong from the same village of Tongmu, designed for tea connoisseurs seeking refined sweetness without smoke.",
+    "leaf": "Slender, twisted golden-black buds (\"golden eyebrows\")",
+    "liquor": "Bright golden liquor with copper highlights",
+    "aroma": "Honey, sweet potato, delicate floral notes, subtle fruity acidity",
+    "taste": "Sweet, mellow, without astringency, featuring a honeyed and lightly floral profile",
+    "aftertaste": "Lingering sweet finish with a pleasant \"hui gan\" sensation in the throat",
+    "processing": "Plucking of buds only → extended withering → rolling → full oxidation → low-temperature drying without smoking"
+  },
+  "history": {
+    "origin": "Created in 2005 by local tea masters in Tongmu village at the request of merchants seeking a premium unsmoked black tea for the modern market",
+    "development": "Rapidly became one of China's most expensive black teas due to the labor-intensive harvesting of tiny buds and strictly limited production area",
+    "modern": "Today, numerous imitations from other provinces exist under this name; authentic Jin Jun Mei is produced exclusively within the Wuyishan Nature Reserve in Tongmu village",
+    "interestingFacts": [
+      "Producing 500 g of finished tea requires approximately 60,000–80,000 select buds, hand-picked in early spring",
+      "Tongmu is the exact village where the world's first black tea, the smoked Lapsang Souchong, was historically invented"
+    ]
+  },
+  "relatedTeas": ["zhengshan_xiaozhong", "dianhong", "yingde_hong"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "matcha",
+  "name": "Matcha",
+  "aliases": ["Matcha", "抹茶"],
+  "country": "japan",
+  "category": "green",
+  "location": {
+    "province": "Kyoto",
+    "city": "Uji",
+    "region": "Uji",
+    "mountain": "Uji Hills",
+    "latitude": 34.8848,
+    "longitude": 135.8048,
+    "altitude": "50–200 m"
+  },
+  "characteristics": {
+    "cultivar": "Samidori, Yabukita, Okumidori and shade-grown cultivars",
+    "oxidation": "0%",
+    "roast": "None",
+    "harvestSeason": "First flush, after 3–4 weeks of shade cultivation",
+    "waterTemperature": "70–80°C",
+    "steeps": "Whisked with bamboo chasen, single-serving suspension",
+    "leafWeight": "1.5–2 g powder per 60–70 ml",
+    "teaware": "Chawan (tea bowl) and chasen (bamboo whisk)",
+    "rarity": 4,
+    "difficulty": 3,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Stone-ground powdered green tea ground from shade-grown tencha leaves — the spiritual centerpiece of the Japanese tea ceremony",
+    "overview": "Unlike other teas, matcha is not steeped and discarded; the whole leaf is micro-milled and suspended in water, making every sip an intimate communion of beverage and ritual practice.",
+    "leaf": "Ultra-fine, luminescent jade-green powder",
+    "liquor": "Opaque, dense vibrant green with a velvety micro-foam froth",
+    "aroma": "Fresh, sweet grassy, marine nori nuances",
+    "taste": "Intense savory umami sweetness, subtle pleasant bitterness, thick creamy texture",
+    "aftertaste": "Long, sweet, lingering savory finish",
+    "processing": "Shading bushes 3–4 weeks before plucking (boosts L-theanine and chlorophyll, cuts bitterness) → harvest → steam fixation without rolling → drying flat (tencha) → slow granite stone milling into micron-fine powder"
+  },
+  "history": {
+    "origin": "Powdered, whisked green tea originated during Song Dynasty China (10th–13th centuries), where the practice virtually disappeared after the Mongol conquest.",
+    "development": "Zen monks brought the practice to Japan, where it evolved into the philosophical and spiritual discipline of Chanoyu (the Japanese Tea Ceremony), steeped in Zen aesthetics and wabi-sabi.",
+    "modern": "Uji remains the historic benchmark for top ceremonial grade matcha, while the tea has expanded globally into culinary staples, lattes, and confections.",
+    "interestingFacts": [
+      "While powdered tea vanished in China by the late Ming Dynasty, Japan preserved it and elevated it to a high philosophical art form.",
+      "Traditional granite stone mills turn at agonizingly slow speeds, producing merely 30 to 40 grams of ceremonial matcha per hour to prevent friction heat from scorching the fragile leaf."
+    ]
+  },
+  "relatedTeas": ["sencha", "gyokuro"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "kangra",
+  "name": "Kangra",
+  "aliases": ["Kangra Tea"],
+  "country": "india",
+  "category": "red",
+  "location": {
+    "province": "Himachal Pradesh",
+    "city": "Palampur",
+    "region": "Kangra Valley",
+    "mountain": "Himalayan Foothills (Western)",
+    "latitude": 32.1113,
+    "longitude": 76.5344,
+    "altitude": "900–1400 m"
+  },
+  "characteristics": {
+    "cultivar": "Camellia sinensis var. sinensis",
+    "oxidation": "70–90%",
+    "roast": "None",
+    "harvestSeason": "April–November",
+    "waterTemperature": "88–92°C",
+    "steeps": "2–3 infusions",
+    "leafWeight": "3 g per 200 ml",
+    "teaware": "Teapot",
+    "rarity": 4,
+    "difficulty": 2,
+    "agesWell": false
+  },
+  "description": {
+    "short": "One of India's oldest tea terroirs, noted for its pale liquor and delicate almond fragrance",
+    "overview": "Kangra Valley is among the earliest tea regions planted by the British in the western Himalayas, possessing a distinct microclimate and its own Geographical Indication separate from Darjeeling.",
+    "leaf": "Twisted, light brown leaf",
+    "liquor": "Pale, brilliant amber liquor",
+    "aroma": "Delicate, light almond and floral bouquet",
+    "taste": "Smooth, gentle, subtle nutty undertones without heavy tannins",
+    "aftertaste": "Crisp, light, brief",
+    "processing": "Plucking → withering → rolling → moderate oxidation → drying"
+  },
+  "history": {
+    "origin": "Tea gardens in Kangra Valley were initiated by the British in the 1850s, making it one of India's earliest commercial tea areas alongside Darjeeling.",
+    "development": "A catastrophic earthquake in 1905 leveled factories and infrastructure across the valley, severely setting back its industry compared to competitors in Darjeeling and Assam.",
+    "modern": "Today, Kangra holds a protected Geographical Indication (GI) and is regaining prominence as a boutique region prized for subtle, green-leaning black teas.",
+    "interestingFacts": [
+      "Despite its deep historic roots, Kangra remains far lesser-known abroad than Darjeeling, despite sharing similar Himalayan ancestry and varietal stock.",
+      "The devastating 1905 Kangra earthquake is widely cited as the principal event that derailed the valley from rivaling Darjeeling's global standing."
+    ]
+  },
+  "relatedTeas": ["darjeeling_first_flush", "sikkim_temi"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "weishan_maojian",
+  "name": "Weishan Maojian",
+  "aliases": ["Weishan Maojian", "沩山毛尖"],
+  "country": "china",
+  "category": "yellow",
+  "location": {
+    "province": "Hunan",
+    "city": "Ningxiang",
+    "region": "Weishan Mountain",
+    "mountain": "Weishan",
+    "latitude": 28.2597,
+    "longitude": 112.1275,
+    "altitude": "600–900 m"
+  },
+  "characteristics": {
+    "cultivar": "Local Weishan Mountain cultivars",
+    "oxidation": "Minimal, with a smothering stage and subtle smoking",
+    "roast": "Light pine-wood smoking during the final drying phase",
+    "harvestSeason": "Early spring",
+    "waterTemperature": "80–85°C",
+    "steeps": "3–4 infusions",
+    "leafWeight": "3 g per 150 ml",
+    "teaware": "Glass tumbler or gaiwan",
+    "rarity": 4,
+    "difficulty": 3,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Rare yellow tea with a delicate smoky whisper from traditional pine wood drying",
+    "overview": "One of the very few yellow teas incorporating a gentle smoking element — an unusual marriage for a category universally renowned for delicate sweetness rather than smokiness.",
+    "leaf": "Twisted downy needle-like leaves of a deep amber-yellow hue",
+    "liquor": "Rich golden-yellow liquor",
+    "aroma": "Mellow, subtly smoky, sweet",
+    "taste": "Sweet, with gentle delicate smokiness, free of harshness",
+    "aftertaste": "Soft, with a subtle lingering smoky nuance",
+    "processing": "Plucking → pan-firing fixation → moist smothering (men huang) → rolling → drying over smoldering pine firewood (imparting subtle smoke)"
+  },
+  "history": {
+    "origin": "Produced in the Mount Weishan area of Hunan province, historically linked with the local Buddhist Miyin Temple on Mount Weishan.",
+    "development": "Final open-fire pine smoking represents a preserved archaic technique inherited from traditional processing before modern drying machinery.",
+    "modern": "One of the least known regional yellow teas outside China, produced in strictly limited quantities.",
+    "interestingFacts": [
+      "Its smoky note draws curious comparisons to smoked black teas like traditional Zheng Shan Xiao Zhong (Lapsang Souchong), even though the categories and processing pathways are completely distinct.",
+      "Yellow tea remains the rarest of the six classical Chinese tea types, and unique regional variations like Weishan Maojian are rarely encountered beyond Hunan."
+    ]
+  },
+  "relatedTeas": ["junshan_yinzhen", "huoshan_huangya"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

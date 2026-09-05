@@ -1,0 +1,50 @@
+{
+  "id": "kegalle",
+  "name": "Kegalle",
+  "aliases": ["Kegalle"],
+  "country": "sri_lanka",
+  "category": "red",
+  "location": {
+    "province": "Western Province (Historic Sabaragamuwa boundary)",
+    "city": "Kegalle",
+    "region": "Western Mid-Country",
+    "mountain": "Western Foothills of Central Massif",
+    "latitude": 7.2513,
+    "longitude": 80.3464,
+    "altitude": "300–900 m"
+  },
+  "characteristics": {
+    "cultivar": "Camellia sinensis var. sinensis",
+    "oxidation": "90–100%",
+    "roast": "None",
+    "harvestSeason": "Year-round",
+    "waterTemperature": "92–96°C",
+    "steeps": "2 infusions",
+    "leafWeight": "3–4 g per 200 ml",
+    "teaware": "Teapot",
+    "rarity": 2,
+    "difficulty": 1,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Smooth, balanced black tea from a historic transit corridor in the western hills of Sri Lanka",
+    "overview": "A lesser-known yet historic tea-producing region nestled in the verdant foothills between the coastal plains and high mountains.",
+    "leaf": "Dark brown, neatly twisted leaves",
+    "liquor": "Bright golden-orange liquor",
+    "aroma": "Gentle, balanced, mildly fruity",
+    "taste": "Soft, harmonious flavor free of aggressive bite or heavy astringency",
+    "aftertaste": "Moderate and smooth",
+    "processing": "Plucking → withering → orthodox rolling → full oxidation → drying"
+  },
+  "history": {
+    "origin": "Situated along the natural trade routes connecting coastal Colombo with the high kingdom of Kandy, Kegalle emerged as a key logistical and processing center.",
+    "development": "Estates flourished alongside rubber and spice plantations, cultivating balanced teas valued for their steady character.",
+    "modern": "Today Kegalle teas are primarily integrated into balanced commercial blends, celebrated for reliable quality and approachable flavor.",
+    "interestingFacts": [
+      "Kegalle is widely renowned for the Pinnawala Elephant Orphanage, one of the island's most celebrated conservation sanctuaries, occasionally eclipsing its tea reputation."
+    ]
+  },
+  "relatedTeas": ["kandy", "sabaragamuwa"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

@@ -1,0 +1,65 @@
+[
+  {
+    "id": "nuwara_eliya",
+    "name": "Nuwara Eliya",
+    "country": "sri_lanka",
+    "category": "red",
+    "lat": 6.9497,
+    "lng": 80.7891,
+    "region": "Central Highlands"
+  },
+  {
+    "id": "uva",
+    "name": "Uva",
+    "country": "sri_lanka",
+    "category": "red",
+    "lat": 6.8333,
+    "lng": 81.05,
+    "region": "Eastern Slopes"
+  },
+  {
+    "id": "dimbula",
+    "name": "Dimbula",
+    "country": "sri_lanka",
+    "category": "red",
+    "lat": 6.8908,
+    "lng": 80.6337,
+    "region": "Western Slopes"
+  },
+  {
+    "id": "kandy",
+    "name": "Kandy",
+    "country": "sri_lanka",
+    "category": "red",
+    "lat": 7.2906,
+    "lng": 80.6337,
+    "region": "Mid-Country"
+  },
+  {
+    "id": "ruhuna",
+    "name": "Ruhuna",
+    "country": "sri_lanka",
+    "category": "red",
+    "lat": 6.0535,
+    "lng": 80.221,
+    "region": "Southern Coast"
+  },
+  {
+    "id": "sabaragamuwa",
+    "name": "Sabaragamuwa",
+    "country": "sri_lanka",
+    "category": "red",
+    "lat": 6.6828,
+    "lng": 80.3992,
+    "region": "Southwest"
+  },
+  {
+    "id": "kegalle",
+    "name": "Kegalle",
+    "country": "sri_lanka",
+    "category": "red",
+    "lat": 7.2513,
+    "lng": 80.3464,
+    "region": "Western Mid-Country"
+  }
+]

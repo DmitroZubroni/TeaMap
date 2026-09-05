@@ -1,0 +1,51 @@
+{
+  "id": "darjeeling_first_flush",
+  "name": "Darjeeling First Flush",
+  "aliases": ["Darjeeling First Flush"],
+  "country": "india",
+  "category": "red",
+  "location": {
+    "province": "West Bengal",
+    "city": "Darjeeling",
+    "region": "Himalayan Foothills",
+    "mountain": "Himalayas (Southern Foothills)",
+    "latitude": 27.0410,
+    "longitude": 88.2663,
+    "altitude": "1000–2000 m"
+  },
+  "characteristics": {
+    "cultivar": "Camellia sinensis var. sinensis (Chinese varietals introduced by the British)",
+    "oxidation": "40–70% (lighter than traditional black tea)",
+    "roast": "None",
+    "harvestSeason": "March–April, immediately following spring bud burst",
+    "waterTemperature": "85–90°C",
+    "steeps": "2–3 infusions",
+    "leafWeight": "3 g per 200 ml",
+    "teaware": "Teapot or gaiwan, best without milk",
+    "rarity": 5,
+    "difficulty": 2,
+    "agesWell": false
+  },
+  "description": {
+    "short": "The most prized and costly harvest of the year — pale, greenish, floral, and extraordinarily delicate, almost like an oolong",
+    "overview": "Revered as the 'Champagne of Teas', Darjeeling's first flush is especially prized for its delicate floral profile, standing in stark contrast to typical bold Indian black teas.",
+    "leaf": "Twisted, light greenish-brown leaf, less dense than the second flush",
+    "liquor": "Very pale, golden-green liquor",
+    "aroma": "Floral and fresh with notes of muscatel green grapes",
+    "taste": "Light, delicate, floral with minimal astringency — tea connoisseurs enjoy it pure without milk, much like a green or lightly oxidized oolong tea",
+    "aftertaste": "Fresh, floral, light",
+    "processing": "Plucking tender spring shoots right after winter dormancy → brief withering → gentle rolling → light oxidation (lighter than conventional black tea) → drying"
+  },
+  "history": {
+    "origin": "Darjeeling plantations were founded by the British in the 1840s in territory formerly belonging to Nepal, using Chinese (rather than Assamica) tea seeds and cultivars.",
+    "development": "The unique terroir — high elevation, mist, and diurnal temperature swings — combined with small-leaf Chinese cultivars produced a cup profile unlike any other Indian tea.",
+    "modern": "Darjeeling was India's first registered Geographical Indication (GI); the spring first flush is traditionally the most expensive and commands high bids at international auctions.",
+    "interestingFacts": [
+      "Darjeeling is the only major tea region in India historically planted with Camellia sinensis var. sinensis bushes rather than assamica, giving it its distinct refined profile.",
+      "Due to the short harvesting window and worldwide acclaim, first flush Darjeeling lots are frequently presold to collectors and premier tea merchants before picking even concludes."
+    ]
+  },
+  "relatedTeas": ["darjeeling_second_flush", "darjeeling_autumnal"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

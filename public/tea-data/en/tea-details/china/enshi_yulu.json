@@ -1,0 +1,51 @@
+{
+  "id": "enshi_yulu",
+  "name": "Enshi Yulu",
+  "aliases": ["Enshi Yulu", "Enshi Jade Dew", "恩施玉露"],
+  "country": "china",
+  "category": "green",
+  "location": {
+    "province": "Hubei",
+    "city": "Enshi",
+    "region": "Enshi Prefecture",
+    "mountain": "Mountains of Western Hubei",
+    "latitude": 30.3000,
+    "longitude": 109.4833,
+    "altitude": "400–800 m"
+  },
+  "characteristics": {
+    "cultivar": "Enshi indigenous varietals",
+    "oxidation": "0%",
+    "roast": "None — steam fixation instead of pan-firing",
+    "harvestSeason": "Early spring",
+    "waterTemperature": "75–80°C",
+    "steeps": "3–4 infusions",
+    "leafWeight": "3 g per 150 ml",
+    "teaware": "Glass tumbler",
+    "rarity": 4,
+    "difficulty": 2,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Rare needle-shaped green tea fixed with steam — an ancient Chinese technique largely superseded by pan-firing, sharing affinities with Japanese green tea",
+    "overview": "One of China's few remaining steamed green teas. Steaming was the dominant processing method during the Tang and Song dynasties before pan-firing took over in the Ming dynasty (16th century).",
+    "leaf": "Slender, straight, needle-like deep pine-green leaves with a vibrant glossy sheen",
+    "liquor": "Vivid emerald green, crystal clear (steam fixation preserves chlorophyll exceptionally well)",
+    "aroma": "Fresh, marine-vegetal, lightly savory with subtle nori seaweed notes reminiscent of Japanese sencha",
+    "taste": "Vibrant, brisk, and savory with pronounced umami richness and natural sweetness",
+    "aftertaste": "Crisp, cooling, and lingeringly sweet",
+    "processing": "Plucking tender shoots → steam fixation (zhenqing, rather than dry pan-firing) → rolling and straightening into fine needles on heated tables → drying"
+  },
+  "history": {
+    "origin": "Steam fixation was the standard method for green tea throughout Tang and Song dynasty China before being largely supplanted by dry wok pan-firing during the Ming dynasty",
+    "development": "Enshi preserved this ancient method through centuries of relative geographical isolation, serving as a living museum of ancient Chinese tea craft",
+    "modern": "While steaming became the hallmark of Japanese green tea production, in China it is extraordinarily rare outside of Enshi, making this tea a critical cultural treasure",
+    "interestingFacts": [
+      "Because of the shared steam-fixation method, Enshi Yulu's brisk umami profile closely parallels premium Japanese sencha — a rare convergence of Chinese and Japanese tea craftsmanship",
+      "The traditional crafting technique of Enshi Yulu has been inscribed as a Chinese National Intangible Cultural Heritage"
+    ]
+  },
+  "relatedTeas": ["mengding_ganlu", "zhu_ye_qing"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

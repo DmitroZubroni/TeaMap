@@ -1,0 +1,11 @@
+[
+  { "id": "white", "name": "White tea" },
+  { "id": "green", "name": "Green tea" },
+  { "id": "yellow", "name": "Yellow tea" },
+  { "id": "oolong_light", "name": "Light oolong" },
+  { "id": "oolong_dark", "name": "Dark oolong" },
+  { "id": "red", "name": "Red / Black tea" },
+  { "id": "dark_sheng", "name": "Dark tea — Sheng Pu-erh" },
+  { "id": "dark_shu", "name": "Dark tea — Shou Pu-erh" },
+  { "id": "dark_other", "name": "Dark tea — other Hei Cha" }
+]

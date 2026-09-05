@@ -1,0 +1,51 @@
+{
+  "id": "genmaicha",
+  "name": "Genmaicha",
+  "aliases": ["Genmaicha", "玄米茶", "Popcorn Tea"],
+  "country": "japan",
+  "category": "green",
+  "location": {
+    "province": "Shizuoka",
+    "city": "Shizuoka",
+    "region": "Various regions (blended from base sencha/bancha)",
+    "mountain": "Shizuoka Hills",
+    "latitude": 34.9756,
+    "longitude": 138.14,
+    "altitude": "50–500 m"
+  },
+  "characteristics": {
+    "cultivar": "Yabukita (base sencha/bancha) + roasted brown rice",
+    "oxidation": "0%",
+    "roast": "Rice is roasted; tea leaves remain unroasted",
+    "harvestSeason": "Based on regular season harvests (second/third flush, bancha)",
+    "waterTemperature": "80–85°C",
+    "steeps": "2 infusions",
+    "leafWeight": "4 g blend per 150 ml",
+    "teaware": "Kyusu",
+    "rarity": 1,
+    "difficulty": 1,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Green tea blended with roasted brown rice — comforting, nutty, and savory everyday beverage",
+    "overview": "A blend of steamed green tea leaves with toasted puffed brown rice, where occasional grains pop open like miniature popcorn — hence its playful Western nickname.",
+    "leaf": "Combination of dark green tea leaves with golden-brown toasted rice and white popped kernels",
+    "liquor": "Warm, pale yellow-gold liquor",
+    "aroma": "Toasted grain, nutty, warm basmati aroma",
+    "taste": "Mellow, nutty, savory sweetness from rice carbohydrates softening the brisk green tea astringency",
+    "aftertaste": "Comforting, toasted grain finish",
+    "processing": "Production of base green tea (sencha or bancha) → separate high-temperature roasting of brown rice until puffed → careful proportioned blending"
+  },
+  "history": {
+    "origin": "Originally invented by budget-conscious tea drinkers as a clever way to extend expensive tea leaves with affordable roasted rice during lean economic times.",
+    "development": "Over time, the blend moved from economic necessity to a beloved comfort tea celebrated for its warming, savory profile.",
+    "modern": "Today genmaicha is one of Japan's most popular daily staples and a globally recognized comfort tea, widely enjoyed alongside meals.",
+    "interestingFacts": [
+      "Nicknamed 'popcorn tea' because grains of rice pop open during roasting, creating white puffed blossoms scattered through the blend.",
+      "A popular luxury variation called 'Matcha-iri Genmaicha' coats the leaves and rice in vivid green matcha powder, giving an emerald liquor and rich umami kick."
+    ]
+  },
+  "relatedTeas": ["sencha", "hojicha"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

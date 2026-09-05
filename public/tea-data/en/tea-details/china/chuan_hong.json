@@ -1,0 +1,50 @@
+{
+  "id": "chuan_hong",
+  "name": "Chuan Hong",
+  "aliases": ["Chuan Hong", "Sichuan Black Tea", "Chuanhong", "川红"],
+  "country": "china",
+  "category": "red",
+  "location": {
+    "province": "Sichuan",
+    "city": "Yibin",
+    "region": "Gaoxian County",
+    "mountain": "Hills of Southern Sichuan",
+    "latitude": 28.7600,
+    "longitude": 104.6300,
+    "altitude": "400–900 m"
+  },
+  "characteristics": {
+    "cultivar": "Southern Sichuan local heirloom bushes",
+    "oxidation": "95–100%",
+    "roast": "None",
+    "harvestSeason": "Spring",
+    "waterTemperature": "90–95°C",
+    "steeps": "4–6 infusions",
+    "leafWeight": "5 g per 150 ml",
+    "teaware": "Western teapot or gaiwan",
+    "rarity": 2,
+    "difficulty": 1,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Mellow black tea from southern Sichuan with a nutty finish and gentle spice",
+    "overview": "A regional black tea developed in the 20th century primarily for the Chinese domestic market, in contrast to export-oriented teas like Keemun or Dian Hong.",
+    "leaf": "Dark brown, twisted, medium-sized leaves",
+    "liquor": "Reddish-brown liquor",
+    "aroma": "Mellow, gently spicy, with nutty undertones",
+    "taste": "Smooth, nutty, without harsh astringency",
+    "aftertaste": "Moderate and nutty",
+    "processing": "Plucking → withering → rolling → full oxidation → drying"
+  },
+  "history": {
+    "origin": "Developed in the 20th century as a regional black tea in Sichuan, a province historically far more renowned for green teas and dark tea for Tibet",
+    "development": "Aimed primarily at the domestic Chinese market, in contrast to the export focus of teas from Anhui and Yunnan",
+    "modern": "Remains a relatively niche regional tea, lesser known outside of China but appreciated for its approachable flavor",
+    "interestingFacts": [
+      "Sichuan is a province with an exceptionally wide spectrum of tea styles: producing famous green teas (Mengding Ganlu, Zhu Ye Qing), compressed dark tea for Tibet (Kang Zhuan), and separately, the black tea Chuan Hong"
+    ]
+  },
+  "relatedTeas": ["yingde_hong", "hu_hong"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

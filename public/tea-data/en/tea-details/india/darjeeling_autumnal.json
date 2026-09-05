@@ -1,0 +1,50 @@
+{
+  "id": "darjeeling_autumnal",
+  "name": "Darjeeling Autumnal Flush",
+  "aliases": ["Darjeeling Autumnal Flush"],
+  "country": "india",
+  "category": "red",
+  "location": {
+    "province": "West Bengal",
+    "city": "Darjeeling",
+    "region": "Himalayan Foothills",
+    "mountain": "Himalayas (Southern Foothills)",
+    "latitude": 27.0410,
+    "longitude": 88.2663,
+    "altitude": "1000–2000 m"
+  },
+  "characteristics": {
+    "cultivar": "Camellia sinensis var. sinensis",
+    "oxidation": "80–100%",
+    "roast": "None",
+    "harvestSeason": "October–November, following the monsoon season",
+    "waterTemperature": "90–95°C",
+    "steeps": "2–3 infusions",
+    "leafWeight": "3–4 g per 200 ml",
+    "teaware": "Teapot",
+    "rarity": 3,
+    "difficulty": 1,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Darker and fuller in body than spring harvests, featuring a nutty profile and mellow aromatic character",
+    "overview": "Harvested after the summer monsoons subside when leaves reach maturity — producing a less airy and floral, but richer, amber-tinted cup with nutty depth.",
+    "leaf": "Dark brown, denser leaf than spring flushes",
+    "liquor": "Rich, deep copper liquor",
+    "aroma": "Nutty, more subdued than the first or second flush",
+    "taste": "Full-bodied, nutty, softer and less astringent than spring harvests; accommodates milk well",
+    "aftertaste": "Moderate, warm, nutty",
+    "processing": "Harvesting mature autumn leaves → withering → rolling → full oxidation → drying"
+  },
+  "history": {
+    "origin": "The autumnal harvest gained recognition as a distinct category later than the first and second flushes, as buyers began appreciating the seasonal variance of the terroir throughout the year.",
+    "development": "Due to softer aroma profiles, autumnal teas were historically viewed as secondary, but over time found loyal followers who favor comforting, rounded black teas.",
+    "modern": "Today, Darjeeling Autumnal is an affordable alternative to prized spring lots, and its fuller body makes it amenable to pairing with milk.",
+    "interestingFacts": [
+      "Unlike the first and second flushes, which are almost universally drunk pure, autumnal flush has enough depth to take a dash of milk or be used in spiced chai."
+    ]
+  },
+  "relatedTeas": ["darjeeling_first_flush", "darjeeling_second_flush"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

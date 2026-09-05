@@ -1,0 +1,51 @@
+{
+  "id": "lam_dong",
+  "name": "Lam Dong (Bao Loc)",
+  "aliases": ["Lâm Đồng", "Bảo Lộc"],
+  "country": "vietnam",
+  "category": "oolong_light",
+  "location": {
+    "province": "Lam Dong",
+    "city": "Bao Loc",
+    "region": "Tay Nguyen Plateau",
+    "mountain": "Central Highland Plateau (Tay Nguyen)",
+    "latitude": 11.547,
+    "longitude": 107.811,
+    "altitude": "800–1000 m"
+  },
+  "characteristics": {
+    "cultivar": "Taiwanese oolong cultivars (Jin Xuan, Cui Yu) introduced by Taiwanese investors",
+    "oxidation": "20–35%",
+    "roast": "Minimal",
+    "harvestSeason": "Year-round",
+    "waterTemperature": "90–95°C",
+    "steeps": "6–8 infusions",
+    "leafWeight": "6 g per 100–120 ml",
+    "teaware": "Gaiwan",
+    "rarity": 2,
+    "difficulty": 1,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Taiwanese-style oolongs from basalt plateaus, floral and creamy, cultivated primarily for export",
+    "overview": "Since the 1990s, the region was heavily developed by Taiwanese tea producers who transplanted classic cultivars and crafting techniques to Vietnam's mineral-rich basalt soils.",
+    "leaf": "Rolled bright green pearls",
+    "liquor": "Pale golden liquor",
+    "aroma": "Creamy, floral, echoing high-mountain Taiwanese oolongs",
+    "taste": "Smooth, velvety, floral with mild natural sweetness",
+    "aftertaste": "Clean, fresh floral finish",
+    "processing": "Classic Taiwanese light oolong crafting: withering → tumbling → kill-green → ball rolling → gentle drying"
+  },
+  "history": {
+    "origin": "The Central Highlands of Vietnam were historically world-famous for Robusta coffee, but starting in the 1990s, Taiwanese entrepreneurs established high-grade oolong plantations in Bao Loc.",
+    "development": "The fertile volcanic soil and elevation proved exceptionally well-suited for cultivars like Jin Xuan and Four Seasons Spring, achieving quality that rivals domestic Taiwanese teas.",
+    "modern": "A large portion of Lam Dong oolong is exported directly to Taiwan and regional Asian markets, valued for its quality-to-price ratio.",
+    "interestingFacts": [
+      "Lam Dong is an example of complete cross-border transfer of tea cultivars, machinery, and master processing techniques from Taiwan to mainland Southeast Asia.",
+      "Bao Loc is uniquely positioned as both a premier center for high-grade oolong and one of the world's highest-volume Robusta coffee producing regions."
+    ]
+  },
+  "relatedTeas": ["thai_nguyen", "moc_chau"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

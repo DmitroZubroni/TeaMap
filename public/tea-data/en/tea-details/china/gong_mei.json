@@ -1,0 +1,51 @@
+{
+  "id": "gong_mei",
+  "name": "Gong Mei",
+  "aliases": ["Gong Mei", "Tribute Eyebrow", "贡眉"],
+  "country": "china",
+  "category": "white",
+  "location": {
+    "province": "Fujian",
+    "city": "Fuding / Zhenghe",
+    "region": "Fuding and Zhenghe",
+    "mountain": "Hills of Fuding and Zhenghe",
+    "latitude": 27.3319,
+    "longitude": 120.2131,
+    "altitude": "200–600 m"
+  },
+  "characteristics": {
+    "cultivar": "Local landrace cultivars (Xiao Bai / non-Da Bai)",
+    "oxidation": "Low, natural",
+    "roast": "None",
+    "harvestSeason": "Spring",
+    "waterTemperature": "85–90°C",
+    "steeps": "5–7 infusions",
+    "leafWeight": "5 g per 150 ml",
+    "teaware": "Gaiwan or clay teapot",
+    "rarity": 2,
+    "difficulty": 1,
+    "agesWell": true
+  },
+  "description": {
+    "short": "A medium-bodied white tea between Bai Mu Dan and Shou Mei, historically presented as tribute to the imperial court",
+    "overview": "Distinguished from Bai Mu Dan by traditionally using local landrace tea bushes (such as Xiao Bai) rather than specialized large-bud cultivars like Da Bai.",
+    "leaf": "Bud with medium-sized leaves, slightly smaller than those of Bai Mu Dan",
+    "liquor": "Golden-yellow liquor",
+    "aroma": "Floral and hay-like, gentle and mellow",
+    "taste": "Medium-bodied, bridging Bai Mu Dan and Shou Mei, with a delicate sweetness",
+    "aftertaste": "Moderate and gentle",
+    "processing": "Plucking buds with leaves from local landrace bushes → withering → slow drying without fixation"
+  },
+  "history": {
+    "origin": "The name translates to 'Tribute Eyebrow' — historically, although crafted from ordinary local bushes rather than elite cultivars, its quality was deemed fine enough for imperial tribute.",
+    "development": "Long regarded as an intermediate grade bridging prestigious Bai Mu Dan and everyday Shou Mei.",
+    "modern": "Less prevalent on the international market today than Bai Mu Dan or Shou Mei, it remains an official standard category in Fujian white tea classification.",
+    "interestingFacts": [
+      "The primary technical distinction of Gong Mei from Bai Mu Dan is its origin from traditional local landrace bushes rather than large-leaf Da Bai/Da Hao cultivars.",
+      "In practice, commercial boundaries between Gong Mei and Shou Mei can vary across producers, occasionally leading to overlap and confusion even among tea specialists."
+    ]
+  },
+  "relatedTeas": ["bai_mu_dan", "shou_mei"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

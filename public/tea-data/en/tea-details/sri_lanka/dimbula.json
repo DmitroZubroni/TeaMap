@@ -1,0 +1,51 @@
+{
+  "id": "dimbula",
+  "name": "Dimbula",
+  "aliases": ["Dimbula"],
+  "country": "sri_lanka",
+  "category": "red",
+  "location": {
+    "province": "Central Province",
+    "city": "Hatton",
+    "region": "Western Slopes of Central Massif",
+    "mountain": "Western Slopes of Central Highlands",
+    "latitude": 6.8908,
+    "longitude": 80.6337,
+    "altitude": "1100–1600 m"
+  },
+  "characteristics": {
+    "cultivar": "Camellia sinensis var. sinensis",
+    "oxidation": "90–100%",
+    "roast": "None",
+    "harvestSeason": "Year-round, best harvest January–March",
+    "waterTemperature": "90–95°C",
+    "steeps": "2–3 infusions",
+    "leafWeight": "3–4 g per 200 ml",
+    "teaware": "Teapot, pairs excellently with milk",
+    "rarity": 3,
+    "difficulty": 1,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Rich, aromatic, classic Ceylon black tea — the quintessential balanced archetype of the island's high-grown craft",
+    "overview": "Facing opposite Uva on the western mountain flank, Dimbula receives monsoon rains on a different schedule, giving a mellow, harmonious, floral-citrus flavor profile universally loved worldwide.",
+    "leaf": "Dark brown, tightly twisted whole leaves",
+    "liquor": "Brilliant reddish-amber liquor with a golden halo",
+    "aroma": "Aromatic, floral-fruity, with subtle jasmine and citrus undertones",
+    "taste": "Medium-to-full-bodied, perfectly balanced, lively without the sharp edge of Uva",
+    "aftertaste": "Pleasantly lingering, aromatic finish",
+    "processing": "Plucking → withering → orthodox rolling → full oxidation → drying"
+  },
+  "history": {
+    "origin": "One of the earliest regions where Scotsman James Taylor and fellow pioneers planted tea following the catastrophic 1870s coffee blight.",
+    "development": "The immediate success of Dimbula estates proved to the world that Ceylon tea could replace the ruined coffee sector and dominate global markets.",
+    "modern": "Today Dimbula is an anchor terroir for premium blends and single-estate offerings, valued for its quintessential balance.",
+    "interestingFacts": [
+      "The collapse of Ceylon coffee in the 1870s due to the fungal pathogen Hemileia vastatrix paved the way for the island's rise as a tea superpower, with Dimbula at its heart.",
+      "James Taylor, revered as the 'father of Ceylon tea', conducted his seminal commercial trials in this central corridor."
+    ]
+  },
+  "relatedTeas": ["uva", "nuwara_eliya", "kandy"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

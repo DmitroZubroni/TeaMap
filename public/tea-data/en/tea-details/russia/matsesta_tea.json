@@ -1,0 +1,51 @@
+{
+  "id": "matsesta_tea",
+  "name": "Matsesta Tea",
+  "aliases": ["Matsesta Tea"],
+  "country": "russia",
+  "category": "red",
+  "location": {
+    "province": "Krasnodar Krai",
+    "city": "Sochi",
+    "region": "Matsesta",
+    "mountain": "Western Caucasus Foothills, Matsesta River Valley",
+    "latitude": 43.5333,
+    "longitude": 39.8167,
+    "altitude": "50–250 m"
+  },
+  "characteristics": {
+    "cultivar": "Cold-hardy cultivars of Chinese origin",
+    "oxidation": "80–100%",
+    "roast": "None",
+    "harvestSeason": "May–September",
+    "waterTemperature": "90–95°C",
+    "steeps": "2–3 infusions",
+    "leafWeight": "3 g per 200 ml",
+    "teaware": "Teapot",
+    "rarity": 4,
+    "difficulty": 1,
+    "agesWell": false
+  },
+  "description": {
+    "short": "A local variety of Krasnodar tea from the Matsesta valley with a gentle herbal character",
+    "overview": "Matsesta is a Sochi district historically famed for hydrogen sulfide mineral springs and sanatorium medicine, which also developed as an early center of Russian tea growing.",
+    "leaf": "Small, twisted dark leaves",
+    "liquor": "Light yellowish-amber liquor",
+    "aroma": "Mild, herbal",
+    "taste": "Light-bodied, soft, with delicate herbal nuances",
+    "aftertaste": "Moderate and smooth",
+    "processing": "Plucking → withering → rolling → oxidation → drying"
+  },
+  "history": {
+    "origin": "The Matsesta River valley became one of the key areas where tea farming was established in the early 20th century alongside flourishing balneological resort infrastructure.",
+    "development": "The region's tea heritage stems from Iuda Koshman's pioneering experiments acclimating tea bushes to the Black Sea Caucasus coast.",
+    "modern": "Today Matsesta tea is a recognized local sub-brand within Sochi/Krasnodar tea, often sold as part of the regional health resort and artisanal tourist offerings.",
+    "interestingFacts": [
+      "Matsesta is renowned worldwide for therapeutic sulfur baths and historical Soviet sanatoriums, somewhat overshadowing its status as a cradle of Russian tea growing.",
+      "The parallel development of tea farming and spa medicine makes Matsesta an unusual cultural junction of agro-heritage and wellness history."
+    ]
+  },
+  "relatedTeas": ["krasnodar_tea", "dagomys_tea"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

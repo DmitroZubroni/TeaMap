@@ -1,0 +1,51 @@
+{
+  "id": "yiwu_sheng_puer",
+  "name": "Sheng Pu-erh (Yiwu)",
+  "aliases": ["Yiwu Sheng Pu-erh", "Raw Pu-erh (Yiwu)", "Yiwu Raw Pu-erh", "生普洱", "易武生普"],
+  "country": "china",
+  "category": "dark_sheng",
+  "location": {
+    "province": "Yunnan",
+    "city": "Xishuangbanna",
+    "region": "Yiwu",
+    "mountain": "Yiwu Mountain (one of the Six Famous Tea Mountains)",
+    "latitude": 22.1167,
+    "longitude": 101.4667,
+    "altitude": "1200–1800 m"
+  },
+  "characteristics": {
+    "cultivar": "Old-tree Camellia sinensis var. assamica (gu shu), aged 50 to 500+ years",
+    "oxidation": "Minimal at production; undergoes slow post-fermentation during storage",
+    "roast": "None",
+    "harvestSeason": "Spring (finest harvest), also autumn",
+    "waterTemperature": "95–100°C",
+    "steeps": "10–20+ infusions",
+    "leafWeight": "7–8 g per 100–110 ml",
+    "teaware": "Thin porcelain gaiwan",
+    "rarity": 5,
+    "difficulty": 4,
+    "agesWell": true
+  },
+  "description": {
+    "short": "Compressed tea from Yiwu arbor trees, naturally aged without artificial fermentation and evolving over decades",
+    "overview": "Yiwu is one of the most revered pu-erh regions, celebrated for its gentle yet deep and sweet sheng pu-erh crafted from arbor trees of various ages, including ancient tea trees.",
+    "leaf": "Large, gently twisted dark-green leaves; compressed into a dense cake (bingcha)",
+    "liquor": "Ranges from pale yellow (young tea) to amber and deep honey (aged tea)",
+    "aroma": "Floral, honeyed, with dried fruit notes; developing woody and earthy nuances with age",
+    "taste": "When young: fresh, slightly astringent, with pleasant bitterness quickly transforming into sweetness (hui gan); with age: mellow, deep, and sweet",
+    "aftertaste": "Long-lasting sweet finish in the throat, strong \"cha qi\" — a sensation of warmth and vitality typical of ancient trees",
+    "processing": "Plucking → withering → pan fixation (shaqing) at lower temperatures to preserve enzymes → rolling → sun-drying (maocha) → steam compression into cakes → natural aging"
+  },
+  "history": {
+    "origin": "Yiwu was a primary gathering center along the legendary Ancient Tea Horse Road (Cha Ma Gu Dao), from which compressed tea was carried to Tibet and neighboring regions",
+    "development": "In the 19th century, Yiwu was the epicenter of the pu-erh trade, home to renowned private tea houses (hao) whose vintage cakes are now legendary collector's items",
+    "modern": "After decades of quiet in the 20th century, enthusiasm for Yiwu rebounded in the 1990s and 2000s as collectors sought out the superior qualities of its ancient arbor trees",
+    "interestingFacts": [
+      "Ancient tea trees in the forests surrounding Yiwu are estimated to be several hundred years old",
+      "Authentic sheng pu-erh can age and improve for decades; well-preserved cakes from the 1990s command prices comparable to precious artifacts"
+    ]
+  },
+  "relatedTeas": ["menghai_shu_puer", "bulang_sheng_puer", "jingmai_sheng_puer"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

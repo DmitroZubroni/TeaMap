@@ -1,0 +1,51 @@
+{
+  "id": "assam_second_flush",
+  "name": "Assam Second Flush",
+  "aliases": ["Assam Second Flush", "Tippy Golden Assam"],
+  "country": "india",
+  "category": "red",
+  "location": {
+    "province": "Assam State",
+    "city": "Brahmaputra Valley",
+    "region": "Upper and Lower Assam",
+    "mountain": "Brahmaputra River Plains",
+    "latitude": 26.7509,
+    "longitude": 94.2037,
+    "altitude": "50–150 m"
+  },
+  "characteristics": {
+    "cultivar": "Camellia sinensis var. assamica",
+    "oxidation": "95–100%",
+    "roast": "None",
+    "harvestSeason": "May–June (second harvest of the year, premium)",
+    "waterTemperature": "95–100°C",
+    "steeps": "1–2 infusions",
+    "leafWeight": "3–4 g per 200 ml",
+    "teaware": "Teapot, traditionally served with milk",
+    "rarity": 3,
+    "difficulty": 1,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Premium, robust malty black tea with golden tips — the most celebrated and iconic harvest of Assam",
+    "overview": "The second flush is considered the pinnacle of Assam tea: summer heat and humidity yield a more concentrated, full-bodied leaf rich with golden buds (tips), prized above all others.",
+    "leaf": "Large, twisted, dark leaf with abundant golden tips ('tippy golden')",
+    "liquor": "Very rich, dark red, almost mahogany liquor",
+    "aroma": "Intense malty aroma with accents of honey and dried fruit",
+    "taste": "Strong, full-bodied, malty, with subtle sweetness, pairs excellently with milk",
+    "aftertaste": "Long, rich, malty",
+    "processing": "Plucking → withering → rolling (CTC or orthodox method) → full oxidation → drying"
+  },
+  "history": {
+    "origin": "The second flush is traditionally regarded as the prime season for Assam tea due to peak summer temperatures and the moisture of the monsoon season.",
+    "development": "Assam second flush historically formed the foundation of classic British black tea blends, including traditional English Breakfast.",
+    "modern": "Premium second flush lots with high tip content are marketed today as a distinct luxury category, fetching substantially higher prices than standard blending grades.",
+    "interestingFacts": [
+      "The strength and bold character of Assam second flush made it the historic favorite for milk tea in British culture.",
+      "An abundance of golden tips is a visual hallmark of high quality by which tea tasters grade premium lots."
+    ]
+  },
+  "relatedTeas": ["assam_first_flush", "yingde_hong"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

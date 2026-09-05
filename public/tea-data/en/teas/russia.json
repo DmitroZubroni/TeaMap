@@ -1,0 +1,29 @@
+[
+  {
+    "id": "krasnodar_tea",
+    "name": "Krasnodar Tea",
+    "country": "russia",
+    "category": "red",
+    "lat": 43.6304,
+    "lng": 39.7303,
+    "region": "Solokhaul, Sochi"
+  },
+  {
+    "id": "matsesta_tea",
+    "name": "Matsesta Tea",
+    "country": "russia",
+    "category": "red",
+    "lat": 43.5333,
+    "lng": 39.8167,
+    "region": "Matsesta"
+  },
+  {
+    "id": "dagomys_tea",
+    "name": "Dagomys Tea",
+    "country": "russia",
+    "category": "red",
+    "lat": 43.6889,
+    "lng": 39.6408,
+    "region": "Dagomys"
+  }
+]

@@ -1,0 +1,51 @@
+{
+  "id": "zhengshan_xiaozhong",
+  "name": "Zheng Shan Xiao Zhong (Lapsang Souchong)",
+  "aliases": ["Zhengshan Xiaozhong", "Lapsang Souchong", "Zheng Shan Xiao Zhong", "正山小种"],
+  "country": "china",
+  "category": "red",
+  "location": {
+    "province": "Fujian",
+    "city": "Wuyishan",
+    "region": "Tongmu Village",
+    "mountain": "Wuyi Mountains, Tongmu Nature Reserve",
+    "latitude": 27.8206,
+    "longitude": 117.6742,
+    "altitude": "1000–1500 m"
+  },
+  "characteristics": {
+    "cultivar": "Tongmu local heirloom bushes (qunti zhong)",
+    "oxidation": "90–100%",
+    "roast": "Smoked over smoldering pine wood",
+    "harvestSeason": "Spring",
+    "waterTemperature": "90–95°C",
+    "steeps": "5–8 infusions",
+    "leafWeight": "5 g per 100–120 ml",
+    "teaware": "Gaiwan or clay teapot",
+    "rarity": 3,
+    "difficulty": 1,
+    "agesWell": false
+  },
+  "description": {
+    "short": "The world's first black tea in history — smoked over pine wood embers with a resinous, smoky aroma",
+    "overview": "Regarded as the ancestor of all black (red) teas in the world. It was invented in Tongmu village as a method to quickly dry tea leaves over an open pine fire when time was short, accidentally giving birth to an entirely new category of tea.",
+    "leaf": "Dark brown, twisted leaves, often displaying a subtle resinous sheen",
+    "liquor": "Rich, deep amber liquor",
+    "aroma": "Smoky, resinous pine wood, with undertones of dried fruits and longan",
+    "taste": "Smoky, gently sweet, full-bodied with a mellow texture",
+    "aftertaste": "Long and persistent with lingering warm smoky notes",
+    "processing": "Plucking → withering over pine fire → rolling → full oxidation → drying and smoking with smoldering pine wood smoke in specialized multi-story smokehouses (Qinglou)"
+  },
+  "history": {
+    "origin": "According to legend, passing soldiers occupied a tea workshop in Tongmu, delaying the processing of fresh leaves. To salvage the crop, tea makers accelerated drying over open fires fueled by local pine wood — unintentionally creating the world's first black tea.",
+    "development": "This occurred around the 17th century; the tea quickly gained immense popularity in Europe through the East India Company trade and became one of the first Chinese teas widely celebrated in the West.",
+    "modern": "The name 'Lapsang Souchong', widely recognized in the West, is a dialect transliteration; today many imitations exist, but authentic Zhengshan Xiaozhong is produced exclusively within the protected Tongmu reserve.",
+    "interestingFacts": [
+      "Regarded as the first black (fully oxidized) tea in human history — all subsequent black teas worldwide trace their technological lineage back to this innovation.",
+      "Traditional smoking workshops (Qinglou) in Tongmu are multi-story wooden buildings where tea leaves are spread on upper floors while pine wood embers smolder on the ground floor below."
+    ]
+  },
+  "relatedTeas": ["jin_jun_mei", "dianhong", "keemun"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "kukicha",
+  "name": "Kukicha",
+  "aliases": ["Kukicha", "茎茶", "Twig Tea", "Bocha"],
+  "country": "japan",
+  "category": "green",
+  "location": {
+    "province": "Kyoto",
+    "city": "Uji",
+    "region": "Uji and other regions (co-product of sencha/gyokuro processing)",
+    "mountain": "Uji Hills",
+    "latitude": 34.8848,
+    "longitude": 135.8048,
+    "altitude": "50–200 m"
+  },
+  "characteristics": {
+    "cultivar": "Yabukita (stems from sencha/gyokuro/tencha sorting)",
+    "oxidation": "0%",
+    "roast": "None (or light if prepared as roasted hoji-kukicha)",
+    "harvestSeason": "Harvested alongside primary season crops",
+    "waterTemperature": "80–85°C",
+    "steeps": "2–3 infusions",
+    "leafWeight": "4 g per 150 ml",
+    "teaware": "Kyusu",
+    "rarity": 1,
+    "difficulty": 1,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Light, naturally sweet tea made from stems and stalks, a delightful byproduct of sencha and gyokuro sorting",
+    "overview": "Crafted exclusively from tender stems, petioles, and veins separated during the sorting of premium whole-leaf teas — a remarkable example of zero-waste artisanal Japanese tea production.",
+    "leaf": "Slender pale green and ivory twigs and stalks rather than flat leaf lamina",
+    "liquor": "Pale bright yellow, luminous liquor",
+    "aroma": "Mild, sweet, herbaceous, nutty",
+    "taste": "Crisp, naturally sweet, free from bitterness and heavy astringency, remarkably clean",
+    "aftertaste": "Gentle, refreshing finish",
+    "processing": "Sorting raw aracha after sencha or gyokuro processing → mechanical air and screen separation of stems from leaf flakes → final drying"
+  },
+  "history": {
+    "origin": "Began as a resourceful way for farming families to enjoy tea without wasting the stems sorted out of high-value commercial leaf consignments.",
+    "development": "A prestigious grade called 'Karigane' (or Shiragiku) made exclusively from shaded gyokuro and tencha stems emerged as an elite culinary delicacy.",
+    "modern": "Prized for its naturally low caffeine content (stems contain far less caffeine than leaf blades) and gentle digestive qualities, making it a soothing daily beverage.",
+    "interestingFacts": [
+      "Despite being composed of sorted 'stems', top-grade Karigane from shaded gyokuro gardens often commands higher prices than ordinary leaf sencha due to extraordinary L-theanine sweetness concentrated in stems.",
+      "Its exceptionally low caffeine levels make kukicha a traditional favorite for macrobiotic diets, children, and evening sipping."
+    ]
+  },
+  "relatedTeas": ["gyokuro", "hojicha", "genmaicha"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "doi_mae_salong",
+  "name": "Doi Mae Salong",
+  "aliases": ["Mae Salong Oolong", "ดอยแม่สลอง"],
+  "country": "thailand",
+  "category": "oolong_light",
+  "location": {
+    "province": "Chiang Rai",
+    "city": "Mae Salong",
+    "region": "Doi Mae Salong Mountain",
+    "mountain": "Doi Mae Salong",
+    "latitude": 20.1667,
+    "longitude": 99.6167,
+    "altitude": "1200–1600 m"
+  },
+  "characteristics": {
+    "cultivar": "Taiwanese cultivars (Jin Xuan, Cui Yu) introduced by Yunnan migrants",
+    "oxidation": "20–35%",
+    "roast": "Minimal",
+    "harvestSeason": "Year-round, best harvest in winter and spring",
+    "waterTemperature": "90–95°C",
+    "steeps": "6–8 infusions",
+    "leafWeight": "6 g per 100–120 ml",
+    "teaware": "Gaiwan",
+    "rarity": 3,
+    "difficulty": 1,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Taiwanese-style oolong from northern Thailand's mountains, floral and buttery, cultivated by descendants of Yunnan soldier migrants",
+    "overview": "Mae Salong is a unique area where southern Chinese (Yunnan) tea culture was brought to Thailand not by colonialism, but through military-political migration following the Chinese Civil War.",
+    "leaf": "Tightly rolled spheres of light green color",
+    "liquor": "Light golden liquor",
+    "aroma": "Floral, creamy, milk orchid notes",
+    "taste": "Smooth, buttery floral, naturally sweet",
+    "aftertaste": "Fresh, lingering floral notes",
+    "processing": "Taiwanese light oolong process: withering → tumbling/shaking → kill-green (fixation) → ball rolling → gentle drying"
+  },
+  "history": {
+    "origin": "Following the defeat of the Kuomintang in the Chinese Civil War (1949) and subsequent troop withdrawal from Burma (1961), remnants of the KMT 93rd Division settled in the mountains of northern Thailand, including Doi Mae Salong.",
+    "development": "Former soldiers and their families, largely native to Yunnan, brought tea-making knowledge with them and gradually converted their livelihoods from opium poppy farming to legal tea agriculture.",
+    "modern": "Today Mae Salong is a thriving tea production and tourist hub where Yunnanese Mandarin is still widely spoken and tea culture remains deeply intertwined with the Chinese diaspora history.",
+    "interestingFacts": [
+      "The region's transformation from opium cultivation to tea farming in the 1980s and 1990s was part of Thailand's Royal Project initiative to replace illicit crops with sustainable mountain agriculture.",
+      "Many inhabitants of Mae Salong still identify as ethnic Yunnanese and preserve ancestral customs despite decades of life in Thailand."
+    ]
+  },
+  "relatedTeas": ["chiang_mai", "tie_guan_yin", "lam_dong"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

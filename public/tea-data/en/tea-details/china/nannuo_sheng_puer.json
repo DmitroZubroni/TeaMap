@@ -1,0 +1,51 @@
+{
+  "id": "nannuo_sheng_puer",
+  "name": "Sheng Pu-erh (Nannuo)",
+  "aliases": ["Nannuo Sheng Pu-erh", "Nannuo Raw Pu-erh", "南糯", "南糯生普"],
+  "country": "china",
+  "category": "dark_sheng",
+  "location": {
+    "province": "Yunnan",
+    "city": "Xishuangbanna",
+    "region": "Nannuo Mountain",
+    "mountain": "Nannuo Mountain",
+    "latitude": 21.9333,
+    "longitude": 100.6167,
+    "altitude": "1400–1800 m"
+  },
+  "characteristics": {
+    "cultivar": "Camellia sinensis var. assamica, old arbor trees cultivated by the Hani people",
+    "oxidation": "Minimal at production",
+    "roast": "None",
+    "harvestSeason": "Spring",
+    "waterTemperature": "95–100°C",
+    "steeps": "10–16 infusions",
+    "leafWeight": "7–8 g per 100–110 ml",
+    "teaware": "Gaiwan",
+    "rarity": 3,
+    "difficulty": 3,
+    "agesWell": true
+  },
+  "description": {
+    "short": "Balanced sheng pu-erh tended by the Hani people, more accessible than cult terroirs yet boasting great depth and aging potential",
+    "overview": "Mount Nannuo is the ancestral land of the Hani people and historically home to one of the oldest documented cultivated tea trees in the world (the celebrated \"Tea King\" tree, estimated at over 800 years old).",
+    "leaf": "Medium-sized dark-green leaves",
+    "liquor": "Bright pale golden-yellow liquor",
+    "aroma": "Floral, with delicate nutty and honeyed undertones",
+    "taste": "Well-balanced, with moderate pleasant bitterness that smoothly transitions into sweetness",
+    "aftertaste": "Moderately long, sweet, and clean",
+    "processing": "Hand-harvesting from old trees → withering → fixation → rolling → sun-drying → steam compression into cakes"
+  },
+  "history": {
+    "origin": "Mount Nannuo is traditionally inhabited by the Hani ethnic group, whose ancestors cultivated tea trees over many centuries; it was home to one of the earliest documented ancient tea trees in the world",
+    "development": "The famous \"Nannuo Tea King\" tree, estimated by botanists to be over 800 years old, sadly died in 1994, but the region remains vital to pu-erh history thanks to its abundance of thriving old-growth groves",
+    "modern": "Today Nannuo is regarded as more accessible in price than cult terroirs like Lao Banzhang or Bingdao, while remaining an esteemed source of genuine old-tree character",
+    "interestingFacts": [
+      "The loss of the famous 800-year-old \"Tea King\" tree in 1994 was a landmark event in Yunnan's tea community, serving as a reminder of the fragility of even the oldest arbor trees",
+      "Nannuo is frequently recommended as an ideal gateway into old-tree (gu shu) pu-erh for enthusiasts not yet ready to pay the premium prices of Banzhang or Bingdao"
+    ]
+  },
+  "relatedTeas": ["lao_banzhang_sheng_puer", "yiwu_sheng_puer"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

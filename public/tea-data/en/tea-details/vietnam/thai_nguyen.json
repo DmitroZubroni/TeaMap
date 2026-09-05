@@ -1,0 +1,51 @@
+{
+  "id": "thai_nguyen",
+  "name": "Thai Nguyen",
+  "aliases": ["Thái Nguyên", "Chè Thái"],
+  "country": "vietnam",
+  "category": "green",
+  "location": {
+    "province": "Thai Nguyen",
+    "city": "Tan Cuong",
+    "region": "Thai Nguyen Province, Northern Vietnam",
+    "mountain": "Northern Vietnamese Foothills",
+    "latitude": 21.5928,
+    "longitude": 105.8442,
+    "altitude": "50–300 m"
+  },
+  "characteristics": {
+    "cultivar": "Trung Du and native Vietnamese varieties",
+    "oxidation": "0%",
+    "roast": "Pan-firing / dry roasting",
+    "harvestSeason": "Year-round, best in spring",
+    "waterTemperature": "80–85°C",
+    "steeps": "4–6 infusions",
+    "leafWeight": "3–4 g per 150 ml",
+    "teaware": "Glass cup or small clay teapot",
+    "rarity": 2,
+    "difficulty": 1,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Vietnam's most famous green tea — brisk, slightly astringent with a signature nutty aftertaste from the country's 'tea capital'",
+    "overview": "Thai Nguyen province, and specifically Tan Cuong commune, is regarded as the benchmark terroir for Vietnamese green tea, playing a cultural role akin to West Lake for China.",
+    "leaf": "Slender, tightly twisted dark green leaves",
+    "liquor": "Bright yellow-green, vibrant liquor",
+    "aroma": "Fresh, lightly toasted, nutty notes",
+    "taste": "Crisp astringency transitioning quickly into a pronounced nutty sweetness",
+    "aftertaste": "Long-lasting, nutty finish characteristic of classic Vietnamese green tea",
+    "processing": "Plucking → fixation in hot wok or rotating drum → rolling → drying, often with a final gentle roasting"
+  },
+  "history": {
+    "origin": "Tea production in Thai Nguyen grew rapidly in the 20th century, influenced by tea masters from southern China and the adaptation of local cultivars.",
+    "development": "The Tan Cuong area within the province emerged as the prime terroir, where unique soils and microclimates yield the distinctive nutty sweetness famous across Vietnam.",
+    "modern": "Today Thai Nguyen is recognized as Vietnam's 'tea capital', hosting an annual tea festival and holding official Geographical Indication status for Tan Cuong teas.",
+    "interestingFacts": [
+      "The distinctive nutty roasted flavor of Vietnamese green tea, distinct from grassy Chinese or umami Japanese styles, is the hallmark of Thai Nguyen tea.",
+      "The province holds a grand annual Tea Festival celebrating the craft and cultural identity of Vietnamese tea production."
+    ]
+  },
+  "relatedTeas": ["moc_chau", "ha_giang_shan_tuyet"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

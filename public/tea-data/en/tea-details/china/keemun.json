@@ -1,0 +1,51 @@
+{
+  "id": "keemun",
+  "name": "Keemun",
+  "aliases": ["Keemun", "Qimen Hongcha", "Qimen Black Tea", "祁门红茶"],
+  "country": "china",
+  "category": "red",
+  "location": {
+    "province": "Anhui",
+    "city": "Huangshan",
+    "region": "Qimen County",
+    "mountain": "Qimen Hills",
+    "latitude": 29.8672,
+    "longitude": 117.7181,
+    "altitude": "300–800 m"
+  },
+  "characteristics": {
+    "cultivar": "Qimen local heirloom bushes (Zhu Ye Zhong)",
+    "oxidation": "95–100%",
+    "roast": "None, drying only",
+    "harvestSeason": "Spring and summer",
+    "waterTemperature": "90–95°C",
+    "steeps": "4–6 infusions",
+    "leafWeight": "4–5 g per 150 ml",
+    "teaware": "Gaiwan or Western teapot",
+    "rarity": 2,
+    "difficulty": 1,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Fruity and winey black tea that historically became the foundation of English Breakfast blends",
+    "overview": "One of China's most celebrated black teas on the international market, renowned for its distinctive winey, fruity bouquet (\"Keemun aroma\" or Qihong Xiang) that distinguishes it from other black teas worldwide.",
+    "leaf": "Slender, tightly twisted, dark brown leaves with delicate golden flecks",
+    "liquor": "Bright reddish-amber, clear liquor",
+    "aroma": "Fruity and winey, with hints of sweet pipe tobacco and a delicate orchid fragrance",
+    "taste": "Smooth and fruity, without harsh astringency, balanced with a gentle wine-like acidity",
+    "aftertaste": "Moderate, clean, and pleasantly fruity",
+    "processing": "Plucking → withering → rolling → full oxidation → drying"
+  },
+  "history": {
+    "origin": "Created in 1875 when local official Yu Ganchen studied black tea production methods in Fujian and adapted them to the leaf material of Qimen County, which had previously produced only green tea",
+    "development": "Quickly gained widespread acclaim in Europe in the late 19th and early 20th centuries, becoming an indispensable pillar of classic British morning tea blends",
+    "modern": "Considered one of the \"Four Great Black Teas of the World\" alongside Darjeeling, Ceylon, and Assam; continues to serve as the historic cornerstone of English Breakfast blends",
+    "interestingFacts": [
+      "The unique 'Keemun aroma' is linked to specific aromatic compounds highly concentrated in the local Qimen Zhu Ye Zhong varietal, making it difficult to replicate in other regions",
+      "Prior to the creation of Keemun in 1875, Qimen County produced exclusively green tea — the pivot to black tea was a deliberate economic adaptation to supply surging Western demand"
+    ]
+  },
+  "relatedTeas": ["dianhong", "zhengshan_xiaozhong", "hu_hong"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

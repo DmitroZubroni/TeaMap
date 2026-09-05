@@ -1,0 +1,51 @@
+{
+  "id": "anji_baicha",
+  "name": "Anji Baicha",
+  "aliases": ["Anji White Tea", "An Ji Bai Cha", "安吉白茶"],
+  "country": "china",
+  "category": "green",
+  "location": {
+    "province": "Zhejiang",
+    "city": "Anji",
+    "region": "Lianhua Mountain",
+    "mountain": "Mount Lianhua (Lotus Mountain)",
+    "latitude": 30.6386,
+    "longitude": 119.6819,
+    "altitude": "600–900 m"
+  },
+  "characteristics": {
+    "cultivar": "Bai Ye No. 1 (natural temperature-sensitive albino mutant)",
+    "oxidation": "0%",
+    "roast": "None (pan fixation and gentle drying only)",
+    "harvestSeason": "Very early spring (leaves are pale albino only during the first cold weeks of spring)",
+    "waterTemperature": "75–80°C",
+    "steeps": "3–4 infusions",
+    "leafWeight": "3 g per 150 ml",
+    "teaware": "Glass tumbler",
+    "rarity": 4,
+    "difficulty": 1,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Despite its name ('White Tea'), this is a green tea made from a rare albino cultivar — extraordinarily sweet, tender, and rich in L-theanine",
+    "overview": "The name can be misleading: processed via pan fixation without fermentation, it is classified as a green tea. It is called 'white tea' because of the pale, almost translucent ivory-white leaves of its cold-sensitive albino mutant cultivar.",
+    "leaf": "Slender, straight, pale jade to translucent yellow-white shoots with contrasting dark green central veins",
+    "liquor": "Extremely pale, bright, almost translucent yellow-green liquor",
+    "aroma": "Delicate, sweet, with fresh bamboo and chestnut undertones",
+    "taste": "Exceptionally sweet and savory-umami due to extraordinarily high amino acid levels (up to double standard green teas, particularly L-theanine), with virtually no bitterness",
+    "aftertaste": "Delicate, refreshingly sweet, and clean",
+    "processing": "Plucking during a brief spring window while leaves remain albino (they turn ordinary green as weather warms) → pan fixation → gentle shaping → drying"
+  },
+  "history": {
+    "origin": "A single wild mother bush carrying this genetic chlorophyll mutation was discovered in the Anji mountains in the 1930s, remaining a botanical curiosity for decades",
+    "development": "Asexual propagation via cuttings began in the 1980s when agricultural scientists and local authorities recognized its extraordinary potential",
+    "modern": "Today, Anji Baicha is one of China's most coveted premium green teas, renowned for its umami richness and record-high amino acid content",
+    "interestingFacts": [
+      "The leaves express their albino trait only when temperatures remain below approximately 23°C; as spring warms up, new flushes revert to ordinary green, strictly limiting the harvest window to 2–3 weeks",
+      "Despite containing the character 'Bai' (White), it is technically a classic green tea processed with shaqing fixation rather than a withered white tea, a frequent point of confusion for beginners"
+    ]
+  },
+  "relatedTeas": ["long_jing", "bi_luo_chun"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

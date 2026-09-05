@@ -1,0 +1,50 @@
+{
+  "id": "zhi_lan_xiang",
+  "name": "Zhi Lan Xiang",
+  "aliases": ["Zhi Lan Xiang", "Iris Orchid Aroma Dan Cong", "芝兰香"],
+  "country": "china",
+  "category": "oolong_dark",
+  "location": {
+    "province": "Guangdong",
+    "city": "Chaozhou",
+    "region": "Phoenix Mountain (Fenghuang)",
+    "mountain": "Phoenix Mountain",
+    "latitude": 23.6987,
+    "longitude": 116.6169,
+    "altitude": "900–1300 m"
+  },
+  "characteristics": {
+    "cultivar": "Zhi Lan Xiang Dan Cong",
+    "oxidation": "35–50%",
+    "roast": "Medium",
+    "harvestSeason": "Spring",
+    "waterTemperature": "95–100°C",
+    "steeps": "7–9 infusions",
+    "leafWeight": "5–6 g per 100 ml",
+    "teaware": "Clay teapot",
+    "rarity": 3,
+    "difficulty": 2,
+    "agesWell": true
+  },
+  "description": {
+    "short": "Delicate floral-herbal Dan Cong with an aroma reminiscent of wild iris orchids",
+    "overview": "One of the more delicate Fenghuang aroma types, where floral notes evoke wild iris orchid and mountain herbs rather than the honey or ripe fruit found in heavier profiles.",
+    "leaf": "Long, twisted dark brown leaves",
+    "liquor": "Light amber liquor",
+    "aroma": "Subtle floral-herbal fragrance evoking wild orchid",
+    "taste": "Delicate and floral, with gentle minerality and soft natural sweetness",
+    "aftertaste": "Moderate, clean, and refreshing finish",
+    "processing": "Classic Dan Cong craft, often given slightly lighter roasting to preserve its subtle floral bouquet"
+  },
+  "history": {
+    "origin": "Named after its aromatic resemblance to the wild Zhi Lan orchid growing in the mountains of southern China.",
+    "development": "Like other Dan Cong aroma types, it was preserved and developed through careful selection and clonal cutting propagation of maternal trees bearing this distinct profile.",
+    "modern": "A more niche aroma type compared to dominant varieties like Mi Lan Xiang, prized by connoisseurs for its elegance and understated nuance.",
+    "interestingFacts": [
+      "The system of classifying and naming Dan Cong teas strictly by their natural fragrance profiles ('xiangxing') is unique to Phoenix Mountain and has few direct equivalents elsewhere in the tea world."
+    ]
+  },
+  "relatedTeas": ["xing_ren_xiang", "huang_zhi_xiang", "mi_lan_xiang"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

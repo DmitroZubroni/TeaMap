@@ -1,0 +1,51 @@
+{
+  "id": "gyokuro",
+  "name": "Gyokuro",
+  "aliases": ["Gyokuro", "玉露"],
+  "country": "japan",
+  "category": "green",
+  "location": {
+    "province": "Fukuoka",
+    "city": "Yame",
+    "region": "Yame",
+    "mountain": "Yame Hills",
+    "latitude": 33.2081,
+    "longitude": 130.5644,
+    "altitude": "50–300 m"
+  },
+  "characteristics": {
+    "cultivar": "Yabukita, Asahi",
+    "oxidation": "0%",
+    "roast": "None",
+    "harvestSeason": "First flush, after 2–3 weeks of shading",
+    "waterTemperature": "50–60°C (drastically lower than sencha)",
+    "steeps": "2–3 infusions",
+    "leafWeight": "5–6 g per 60–80 ml (very concentrated)",
+    "teaware": "Small kyusu or shiboridashi",
+    "rarity": 5,
+    "difficulty": 3,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Japan's most prestigious whole-leaf green tea — heavily shaded before harvest, brimming with deep savory umami sweetness",
+    "overview": "Like matcha, gyokuro employs extensive canopy shading before picking, but retains the intact whole needle leaf rather than stone-grinding, creating a concentrated, broth-like elixir.",
+    "leaf": "Lustrous, deep forest-green slender needles",
+    "liquor": "Pale jade-gold to rich crystalline green",
+    "aroma": "Heady oceanic umami, roasted nori, sweet steamed greens",
+    "taste": "Explosive broth-like umami, velvety sweetness, minimal bitterness when brewed with low water temperatures",
+    "aftertaste": "Deeply savory, coating, enduring umami finish",
+    "processing": "Intense canopy shading for 2–3 weeks → hand or careful machine plucking → steam fixation → intricate needle rolling → drying"
+  },
+  "history": {
+    "origin": "Gyokuro was created in Uji in the 1830s as a development of the shading technique previously reserved for ceremonial tencha, adapting it to whole-leaf infusion.",
+    "development": "Yame on the southern island of Kyushu became a world capital of gyokuro alongside Uji, celebrated for its river mists and specialized straw shading screens (honzu).",
+    "modern": "Gyokuro represents the absolute pinnacle of Japanese loose-leaf tea in price, rarity, and craftsmanship, celebrated like fine vintage wine.",
+    "interestingFacts": [
+      "The name translates as 'Jade Dew', referring to the pale, luminescent jade droplets in the cup.",
+      "Brewed at just 50–60°C (122–140°F), gyokuro has one of the lowest brewing temperatures of any tea in the world, specifically designed to extract theanine without releasing bitter catechins."
+    ]
+  },
+  "relatedTeas": ["matcha", "sencha"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

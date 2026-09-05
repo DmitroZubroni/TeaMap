@@ -1,0 +1,51 @@
+{
+  "id": "hojicha",
+  "name": "Hojicha",
+  "aliases": ["Hojicha", "焙じ茶"],
+  "country": "japan",
+  "category": "green",
+  "location": {
+    "province": "Kyoto",
+    "city": "Uji",
+    "region": "Uji and other regions (roasted from diverse harvests)",
+    "mountain": "Uji Hills",
+    "latitude": 34.8848,
+    "longitude": 135.8048,
+    "altitude": "50–200 m"
+  },
+  "characteristics": {
+    "cultivar": "Various (often utilizing later-harvest bancha or tea stalks)",
+    "oxidation": "0% (roasting is thermal processing, not enzyme oxidation)",
+    "roast": "Heavy — the defining process of this tea",
+    "harvestSeason": "Usually crafted from summer or autumn harvests (bancha)",
+    "waterTemperature": "90–95°C (high heat extracts rich aromas without bitterness)",
+    "steeps": "2–3 infusions",
+    "leafWeight": "4 g per 150 ml",
+    "teaware": "Kyusu",
+    "rarity": 1,
+    "difficulty": 1,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Roasted Japanese green tea with warm hazelnut and caramel aromas, boasting minimal caffeine",
+    "overview": "The only style of Japanese green tea where, following steam fixation, leaves are subjected to high-heat drum roasting — transforming the green profile into toasty, coffee-like comfort.",
+    "leaf": "Rich reddish-brown leaves and stems, visually unique among Japanese teas",
+    "liquor": "Clear reddish-brown liquor, resembling amber tea rather than typical green tea",
+    "aroma": "Toasted hazelnut, caramelized sugar, roasted grains, cocoa nuances",
+    "taste": "Smooth, nutty, gently sweet, virtually free of astringency or bitterness",
+    "aftertaste": "Warm, comforting toasted finish",
+    "processing": "Standard Japanese steaming → drying → high-temperature charcoal or drum roasting until leaf turns reddish-brown"
+  },
+  "history": {
+    "origin": "Created in Kyoto in the 1920s as a thrifty way to revitalize coarser bancha leaves and twigs by high-heat roasting.",
+    "development": "Roasting drastically alters the leaf chemistry, pyrolyzing tannins and sublimating caffeine, making hojicha exceptionally easy on digestion.",
+    "modern": "Today hojicha is a beloved daily drink in Japan, ideal for evening relaxation, and has become a global favorite in ice cream and roasted tea lattes.",
+    "interestingFacts": [
+      "Due to its minimal caffeine levels, hojicha is traditionally given to children, seniors, and enjoyed as a soothing evening tea throughout Japan.",
+      "Roasting transforms inexpensive bancha and stems into an artisanal beverage celebrated for its rich, complex caramel notes."
+    ]
+  },
+  "relatedTeas": ["sencha", "genmaicha"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

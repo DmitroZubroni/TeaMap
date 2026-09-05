@@ -1,0 +1,51 @@
+{
+  "id": "bai_hao_yin_zhen",
+  "name": "Bai Hao Yin Zhen",
+  "aliases": ["Silver Needle", "Bai Hao Yin Zhen", "White Hair Silver Needle", "白毫银针"],
+  "country": "china",
+  "category": "white",
+  "location": {
+    "province": "Fujian",
+    "city": "Fuding",
+    "region": "Fuding (also Zhenghe)",
+    "mountain": "Coastal hills of Fuding",
+    "latitude": 27.3319,
+    "longitude": 120.2131,
+    "altitude": "200–600 m"
+  },
+  "characteristics": {
+    "cultivar": "Da Bai (Big White) and Da Hao",
+    "oxidation": "Very low, natural (no fixation)",
+    "roast": "None, drying only",
+    "harvestSeason": "Early spring, a narrow window of just a few days",
+    "waterTemperature": "80–85°C",
+    "steeps": "3–5 infusions",
+    "leafWeight": "3–5 g per 150 ml",
+    "teaware": "Glass teapot or gaiwan",
+    "rarity": 5,
+    "difficulty": 1,
+    "agesWell": true
+  },
+  "description": {
+    "short": "The highest grade of white tea made exclusively of unopened buds covered in dense silvery down",
+    "overview": "Considered China's most prestigious white tea, it is harvested exclusively from plump, downy tea buds without leaves during a very brief early spring picking window.",
+    "leaf": "Large straight buds completely coated in dense silvery-white down",
+    "liquor": "Very pale, almost transparent pale-yellow liquor",
+    "aroma": "Delicate floral, honeyed, with hints of fresh hay",
+    "taste": "Exceptionally mellow, subtly sweet, almost free of astringency, with a delicate honey note",
+    "aftertaste": "Subtle, refreshing, and clean",
+    "processing": "Harvesting buds only → extended natural withering in sun and shade (no fixation or rolling) → slow low-temperature drying"
+  },
+  "history": {
+    "origin": "While white tea in general is mentioned in Chinese records dating back to the Song dynasty, the modern style of Bai Hao Yin Zhen as an individual variety was developed in Fujian during the 19th century.",
+    "development": "Commercial production took off in the late 19th century following the cultivation of large-bud tea varieties like Da Bai, bred specifically for this style.",
+    "modern": "Today, Bai Hao Yin Zhen holds protected geographical indication status and is produced mainly in Fuding and Zhenghe; thanks to its minimal processing, it ages remarkably well, developing a richer, more honeyed character over years of storage.",
+    "interestingFacts": [
+      "Due to the strict selection criteria requiring only intact, unopened buds, harvesting demands enormous manual labor, making it one of the most expensive white teas.",
+      "Unlike most teas, white tea traditionally undergoes no heat fixation (shaqing) — it is the least processed of the six classical Chinese tea categories."
+    ]
+  },
+  "relatedTeas": ["bai_mu_dan", "shou_mei", "yue_guang_bai"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

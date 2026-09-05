@@ -1,0 +1,51 @@
+{
+  "id": "bai_mu_dan",
+  "name": "Bai Mu Dan",
+  "aliases": ["Bai Mu Dan", "White Peony", "白牡丹"],
+  "country": "china",
+  "category": "white",
+  "location": {
+    "province": "Fujian",
+    "city": "Fuding / Zhenghe",
+    "region": "Fuding and Zhenghe",
+    "mountain": "Hills of Fuding and Zhenghe",
+    "latitude": 27.3319,
+    "longitude": 120.2131,
+    "altitude": "200–600 m"
+  },
+  "characteristics": {
+    "cultivar": "Da Bai, Da Hao",
+    "oxidation": "Very low, natural",
+    "roast": "None",
+    "harvestSeason": "Spring",
+    "waterTemperature": "85–90°C",
+    "steeps": "4–6 infusions",
+    "leafWeight": "4–5 g per 150 ml",
+    "teaware": "Gaiwan or glass teapot",
+    "rarity": 3,
+    "difficulty": 1,
+    "agesWell": true
+  },
+  "description": {
+    "short": "The second highest grade of white tea — one bud with two leaves, richer and fruitier than Silver Needle",
+    "overview": "More accessible and full-flavored than Bai Hao Yin Zhen due to the presence of tender leaves alongside buds, giving the liquor a rounder, fuller body.",
+    "leaf": "Downy bud flanked by two grayish-green leaves",
+    "liquor": "Light golden liquor, slightly deeper than Silver Needle",
+    "aroma": "Floral, fruity, with hints of fresh hay",
+    "taste": "Smooth, with gentle fruity sweetness and delicate astringency",
+    "aftertaste": "Fresh, gently sweet",
+    "processing": "Plucking one bud with two leaves → extended natural withering in sun and shade → slow drying without fixation or rolling"
+  },
+  "history": {
+    "origin": "The name means 'White Peony' — referring to the look of the dried leaves opening up like a flower during brewing.",
+    "development": "Began widespread production in the early 20th century as a more accessible alternative to costly Silver Needle, utilizing less rigid plucking standards.",
+    "modern": "Today, it is one of the most popular and recognized white teas internationally thanks to its balance of quality, flavor, and affordability.",
+    "interestingFacts": [
+      "There is an internal grading hierarchy for Bai Mu Dan (Premium, Grade 1, Grade 2) based on the proportion of buds to leaves in the plucked tea.",
+      "Like other white teas, it ages exceptionally well, gradually developing a richer, warmer, honeyed profile over years of storage."
+    ]
+  },
+  "relatedTeas": ["bai_hao_yin_zhen", "shou_mei", "gong_mei"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

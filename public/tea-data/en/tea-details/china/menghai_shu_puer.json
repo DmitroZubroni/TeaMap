@@ -1,0 +1,51 @@
+{
+  "id": "menghai_shu_puer",
+  "name": "Shou Pu-erh (Menghai)",
+  "aliases": ["Menghai Shu Pu-erh", "Ripe Pu-erh", "Menghai Shou Pu-erh", "Cooked Pu-erh", "熟普洱", "勐海熟普"],
+  "country": "china",
+  "category": "dark_shu",
+  "location": {
+    "province": "Yunnan",
+    "city": "Xishuangbanna",
+    "region": "Menghai",
+    "mountain": "Menghai Plateau",
+    "latitude": 21.9583,
+    "longitude": 100.4547,
+    "altitude": "1100–1600 m"
+  },
+  "characteristics": {
+    "cultivar": "Camellia sinensis var. assamica, primarily plantation bushes",
+    "oxidation": "Full accelerated post-fermentation via the wet-piling process (wo dui)",
+    "roast": "None",
+    "harvestSeason": "Summer and autumn harvests are commonly used for shou pu-erh",
+    "waterTemperature": "95–100°C",
+    "steeps": "8–12 infusions",
+    "leafWeight": "7–8 g per 100–110 ml",
+    "teaware": "Clay teapot (Yixing clay softens the flavor nicely)",
+    "rarity": 2,
+    "difficulty": 1,
+    "agesWell": true
+  },
+  "description": {
+    "short": "Dark tea with accelerated fermentation, smooth and earthy, ready to enjoy immediately after production",
+    "overview": "Menghai is the heartland of shou pu-erh production, where the wet-piling (wo dui) technique was refined in 1973, producing the taste of aged tea in just several weeks instead of decades.",
+    "leaf": "Dark-brown to nearly black leaves, loose or compressed into cakes, tuocha, or bricks",
+    "liquor": "Deep dark-red to nearly black, thick and opaque liquor",
+    "aroma": "Earthy, nutty, with nuances of wet wood, forest floor, or dried prunes",
+    "taste": "Mellow, thick, without astringency or bitterness, offering nutty depth and gentle sweetness",
+    "aftertaste": "Moderate, warm, earthy, and clean",
+    "processing": "Plucking → withering → fixation → rolling → drying (maocha) → wet-piling fermentation (wo dui) in piles for 40–60 days with periodic turning and temperature control → drying → optional steam compression"
+  },
+  "history": {
+    "origin": "Prior to 1973, all pu-erh was produced using only the \"raw\" (sheng) method and required years of natural aging to soften",
+    "development": "The wo dui technique was developed by teams at the Kunming and Menghai tea factories to satisfy surging demand—especially from Hong Kong—for mellow aged flavor without the long wait",
+    "modern": "Today, Menghai Tea Factory (founded in 1940) remains the benchmark producer of shou pu-erh, and classic recipes like \"7572\" set the standard for the entire industry",
+    "interestingFacts": [
+      "The recipe code \"7572\" signifies the year the recipe was created (1975), the leaf grade (7), and the factory code (2 for Menghai)",
+      "Shou pu-erh is frequently recommended to newcomers as an approachable and gentle entry into the world of dark fermented teas"
+    ]
+  },
+  "relatedTeas": ["yiwu_sheng_puer", "liu_bao", "fu_zhuan"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "tie_guan_yin",
+  "name": "Tie Guan Yin",
+  "aliases": ["Iron Goddess of Mercy", "Ti Kuan Yin", "铁观音"],
+  "country": "china",
+  "category": "oolong_light",
+  "location": {
+    "province": "Fujian",
+    "city": "Anxi",
+    "region": "Anxi",
+    "mountain": "Anxi Hills",
+    "latitude": 25.0692,
+    "longitude": 117.9847,
+    "altitude": "300–800 m"
+  },
+  "characteristics": {
+    "cultivar": "Tie Guan Yin (own cultivar)",
+    "oxidation": "15–30% (modern \"green\" style)",
+    "roast": "Light or none (in green style); traditional style has medium roast",
+    "harvestSeason": "Spring and Autumn",
+    "waterTemperature": "90–95°C",
+    "steeps": "6–10 infusions",
+    "leafWeight": "6–8 g per 100–120 ml",
+    "teaware": "Gaiwan",
+    "rarity": 3,
+    "difficulty": 2,
+    "agesWell": false
+  },
+  "description": {
+    "short": "Tightly rolled ball-shaped oolong with a milky-orchid aroma and light oxidation",
+    "overview": "One of China's most recognizable oolongs, rolled into dense pellets. The modern style (since the 1990s) emphasizes freshness and floral notes over heavy roasting.",
+    "leaf": "Dense dark-green rolled pellets that unfurl into whole leaves upon brewing",
+    "liquor": "Light golden, crystal-clear infusion",
+    "aroma": "Orchid, fresh cream, subtle floral trail",
+    "taste": "Smooth, creamy-floral flavor with delicate sweetness and minimal astringency",
+    "aftertaste": "Fresh, floral, lingering for several minutes in the mouth (\"hui gan\")",
+    "processing": "Harvesting → withering → tossing/shaking to bruise leaf edges for partial oxidation → fixation (kill-green) → repeated cloth-wrapped rolling into pearls/balls → drying"
+  },
+  "history": {
+    "origin": "The name means \"Iron Goddess of Mercy\" — according to legend, an impoverished farmer tended a dilapidated shrine to Guanyin, the goddess of mercy, and in a dream she guided him to a miraculous tea bush behind the temple.",
+    "development": "Cultivated in Anxi County since at least the 18th century; for generations it was produced in a traditional, higher-oxidized, and charcoal-roasted style.",
+    "modern": "In the 1990s, Anxi producers shifted toward lighter oxidation influenced by Taiwan and Southeast Asian market preferences, resulting in the contemporary fragrant, greener style.",
+    "interestingFacts": [
+      "Authentic old Tie Guan Yin bushes grow slowly with low yields, so most commercial tea today comes from higher-yielding clones.",
+      "The name has become synonymous with an entire style of rolled oolong, even when produced outside Anxi."
+    ]
+  },
+  "relatedTeas": ["huangjin_gui", "ben_shan", "mao_xie"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

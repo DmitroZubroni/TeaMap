@@ -1,0 +1,50 @@
+{
+  "id": "ba_xian",
+  "name": "Ba Xian",
+  "aliases": ["Ba Xian", "Eight Immortals", "八仙"],
+  "country": "china",
+  "category": "oolong_dark",
+  "location": {
+    "province": "Guangdong",
+    "city": "Chaozhou",
+    "region": "Phoenix Mountain (Fenghuang)",
+    "mountain": "Phoenix Mountain",
+    "latitude": 23.6987,
+    "longitude": 116.6169,
+    "altitude": "900–1300 m"
+  },
+  "characteristics": {
+    "cultivar": "Ba Xian Dan Cong",
+    "oxidation": "30–50%",
+    "roast": "Medium",
+    "harvestSeason": "Spring",
+    "waterTemperature": "95–100°C",
+    "steeps": "8–10 infusions",
+    "leafWeight": "5–6 g per 100 ml",
+    "teaware": "Clay teapot",
+    "rarity": 3,
+    "difficulty": 2,
+    "agesWell": true
+  },
+  "description": {
+    "short": "One of the most balanced and accessible Dan Cong aroma types, with a honey-fruity bouquet",
+    "overview": "Named after the Daoist legend of the Eight Immortals, reflecting this tea's status as one of the classic, revered Dan Cong varieties.",
+    "leaf": "Long, twisted dark brown leaves",
+    "liquor": "Rich amber liquor",
+    "aroma": "Honey and fruit, with delicate floral undertones",
+    "taste": "Balanced and gently sweet, with a full body and smooth minerality",
+    "aftertaste": "Moderately long, sweet aftertaste",
+    "processing": "Classic Dan Cong craft: withering → shaking → kill-green → rolling → baking/roasting"
+  },
+  "history": {
+    "origin": "The name alludes to the Daoist 'Eight Immortals' — a beloved motif in Chinese mythology representing diverse paths to perfection.",
+    "development": "Considered one of the venerable, well-established Fenghuang aroma cultivars cultivated across multiple plots on the mountain.",
+    "modern": "One of the more widely produced Dan Cong teas, making it more accessible in price compared to single-tree micro-lots.",
+    "interestingFacts": [
+      "Unlike some Dan Congs harvested strictly from a single ancient mother tree, Ba Xian is frequently propagated and produced from clonal bushes of that lineage, ensuring consistent flavor from batch to batch."
+    ]
+  },
+  "relatedTeas": ["mi_lan_xiang", "ya_shi_xiang", "xing_ren_xiang"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}

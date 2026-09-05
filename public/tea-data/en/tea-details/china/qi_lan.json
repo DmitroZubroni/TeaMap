@@ -1,0 +1,51 @@
+{
+  "id": "qi_lan",
+  "name": "Qi Lan",
+  "aliases": ["Rare Orchid", "Qilan", "奇兰"],
+  "country": "china",
+  "category": "oolong_dark",
+  "location": {
+    "province": "Fujian",
+    "city": "Wuyishan",
+    "region": "Wuyishan",
+    "mountain": "Wuyi Mountains",
+    "latitude": 27.7546,
+    "longitude": 117.9647,
+    "altitude": "500–900 m"
+  },
+  "characteristics": {
+    "cultivar": "Qi Lan (related to Anxi cultivars, adapted to Wuyishan)",
+    "oxidation": "40–55%",
+    "roast": "Medium",
+    "harvestSeason": "Spring",
+    "waterTemperature": "95–100°C",
+    "steeps": "7–9 infusions",
+    "leafWeight": "6 g per 100–120 ml",
+    "teaware": "Gaiwan",
+    "rarity": 3,
+    "difficulty": 2,
+    "agesWell": true
+  },
+  "description": {
+    "short": "Aromatic rock oolong featuring a pronounced floral ('orchid') bouquet grounded in Wuyi's signature minerality",
+    "overview": "Originally hailing from southern Fujian (Pinghe / Anxi), this cultivar was brought to Wuyishan where it acclimated to the rocky volcanic soil, retaining its brilliant floral fragrance while absorbing the deep mineral character of northern Fujian rock tea.",
+    "leaf": "Dark brown, medium-twisted leaves with roasted sheen",
+    "liquor": "Amber-orange, bright infusion",
+    "aroma": "Pronounced floral orchid bouquet intertwined with light mineral notes",
+    "taste": "Floral, subtly sweet, supported by the mineral foundation typical of Wuyi terroirs",
+    "aftertaste": "Moderately long, sweet, and floral",
+    "processing": "Standard Wuyi rock tea methodology, crafted with a slightly gentler charcoal roast to preserve delicate floral volatiles"
+  },
+  "history": {
+    "origin": "The name translates to 'Rare Orchid' (or 'Mystic Orchid'), directly reflecting its unmistakable orchid-like aroma.",
+    "development": "Originally bred in southern Fujian, its adaptability led to its introduction into Wuyishan as a favored variety both for single-cultivar production and aromatic blending.",
+    "modern": "Today, Wuyi Qi Lan is prized for its exquisite balance between southern Fujian floral brightness and northern Fujian cliffside minerality.",
+    "interestingFacts": [
+      "Because of its intense floral projection, Qi Lan is sometimes mistaken for Guangdong Dancong oolongs, despite hailing from entirely different botanical lineages and terroirs.",
+      "Cultivating the Qi Lan cultivar across different Fujian regions (Anxi, Pinghe, and Wuyishan) offers a masterclass in how terroir shapes the final character of identical genetics."
+    ]
+  },
+  "relatedTeas": ["ban_tian_yao", "rou_gui", "shui_xian"],
+  "gallery": [],
+  "sources": ["artoftea", "moychay", "wiki"]
+}
