@@ -1,8 +1,9 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { useI18n } from '../lib/i18n'
 import { typograph } from '../lib/typograph'
 
 const FOCUS_RING = 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary'
+const FOCUSABLE_SELECTOR = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
 
 export function PialaIcon({ className = 'w-5 h-5', ...props }) {
   return (
@@ -33,13 +34,36 @@ export function PialaIcon({ className = 'w-5 h-5', ...props }) {
 
 export default function DonateModal({ onClose }) {
   const { t } = useI18n()
+  const dialogRef = useRef(null)
+  const closeButtonRef = useRef(null)
 
+  // Д3: модальные окна держат фокус внутри себя (Tab не должен уводить
+  // пользователя за пределы модалки) и закрываются по Esc. Esc уже был —
+  // довершаем удержанием фокуса и переносом фокуса на крестик при открытии,
+  // как уже сделано в TeaPanel.
   useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === 'Escape') onClose()
+    closeButtonRef.current?.focus()
+
+    function handleKeyDown(e) {
+      if (e.key === 'Escape') {
+        onClose()
+        return
+      }
+      if (e.key !== 'Tab' || !dialogRef.current) return
+      const focusables = dialogRef.current.querySelectorAll(FOCUSABLE_SELECTOR)
+      if (!focusables.length) return
+      const first = focusables[0]
+      const last = focusables[focusables.length - 1]
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault()
+        last.focus()
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault()
+        first.focus()
+      }
     }
-    window.addEventListener('keydown', handleKeyDown)
-    return () => window.removeEventListener('keydown', handleKeyDown)
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
   }, [onClose])
 
   return (
@@ -48,8 +72,10 @@ export default function DonateModal({ onClose }) {
       onClick={onClose}
       role="dialog"
       aria-modal="true"
+      aria-labelledby="donate-modal-title"
     >
       <div
+        ref={dialogRef}
         className="relative w-full max-w-md rounded-3xl bg-surface border border-border p-6 shadow-panel my-auto animate-modal-in"
         onClick={(e) => e.stopPropagation()}
       >
@@ -61,6 +87,7 @@ export default function DonateModal({ onClose }) {
           </div>
 
           <button
+            ref={closeButtonRef}
             type="button"
             onClick={onClose}
             aria-label={t('close')}
@@ -72,7 +99,7 @@ export default function DonateModal({ onClose }) {
 
         {/* Заголовок и описание */}
         <div className="mb-6">
-          <h2 className="font-display text-xl sm:text-2xl text-text leading-tight mb-2">
+          <h2 id="donate-modal-title" className="font-display text-xl sm:text-2xl text-text leading-tight mb-2">
             {typograph(t('donateTitle'))}
           </h2>
           <p className="text-[13.5px] leading-relaxed text-muted">

@@ -1,15 +1,20 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { typograph } from '../lib/typograph'
 
 const FOCUS_RING = 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary'
+const FOCUSABLE_SELECTOR = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
 
+// Защита на случай, если компонент отрендерят без локализованных
+// title/description (Я4): нейтральный текст на английском — языке,
+// на который откатывается t() из lib/i18n.jsx, если ключ не нашёлся,
+// а не строка на одном конкретном языке интерфейса.
 /**
  * 1. EmptyState — Пустое состояние (Правило У1)
  * Объясняет, что это за экран, почему он пуст, и предлагает конкретное действие.
  */
 export function EmptyState({
-  title = 'Сортов не найдено',
-  description = 'В этом регионе или по выбранным фильтрам пока нет сортов чая. Попробуйте сбросить фильтры или выбрать другой регион.',
+  title = 'Nothing here yet',
+  description = 'Pass a localized title/description via props — these are English fallbacks only.',
   actionLabel,
   onAction,
   secondaryLabel,
@@ -111,10 +116,10 @@ export function LoadingSkeleton({ count = 3, className = '' }) {
  * Человеческим языком: что случилось, почему и кнопка «Повторить».
  */
 export function ErrorState({
-  title = 'Не удалось загрузить данные',
-  description = 'Проверьте соединение с интернетом и попробуйте обновить список сортов чая.',
+  title = 'Could not load data',
+  description = 'Check your connection and try again.',
   onRetry,
-  retryLabel = 'Повторить попытку',
+  retryLabel = 'Try again',
   className = '',
 }) {
   return (
@@ -156,8 +161,8 @@ export function ErrorState({
  * Подтверждение действия и следующий понятный шаг.
  */
 export function SuccessState({
-  title = 'Действие выполнено',
-  description = 'Сорт чая успешно добавлен в вашу личную коллекцию.',
+  title = 'Done',
+  description = 'Your change was saved.',
   actionLabel,
   onAction,
   className = '',
@@ -200,6 +205,35 @@ export function SuccessState({
  */
 export function StatesDemoViewer({ onClose }) {
   const [activeTab, setActiveTab] = React.useState('empty')
+  const dialogRef = useRef(null)
+  const closeButtonRef = useRef(null)
+
+  // Д3: модальные окна держат фокус внутри себя и закрываются по Esc.
+  // Этого демо-инспектора раньше не касалось ни одно из двух требований.
+  useEffect(() => {
+    closeButtonRef.current?.focus()
+
+    function handleKeyDown(e) {
+      if (e.key === 'Escape') {
+        onClose()
+        return
+      }
+      if (e.key !== 'Tab' || !dialogRef.current) return
+      const focusables = dialogRef.current.querySelectorAll(FOCUSABLE_SELECTOR)
+      if (!focusables.length) return
+      const first = focusables[0]
+      const last = focusables[focusables.length - 1]
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault()
+        last.focus()
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault()
+        first.focus()
+      }
+    }
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [onClose])
 
   return (
     <div
@@ -210,6 +244,7 @@ export function StatesDemoViewer({ onClose }) {
       onClick={onClose}
     >
       <div
+        ref={dialogRef}
         className="relative w-full max-w-md rounded-2xl bg-surface border border-border p-6 shadow-panel my-auto animate-modal-in"
         onClick={(e) => e.stopPropagation()}
       >
@@ -218,6 +253,7 @@ export function StatesDemoViewer({ onClose }) {
             <span>У1 · 4 состояния</span>
           </div>
           <button
+            ref={closeButtonRef}
             type="button"
             onClick={onClose}
             aria-label="Закрыть"

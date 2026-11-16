@@ -38,7 +38,7 @@ function Breadcrumb({ nav, onHome, onCountry }) {
   if (nav.region) crumbs.push({ label: nav.region, onClick: undefined })
 
   return (
-    <nav aria-label="Хлебные крошки" className="flex flex-wrap items-center gap-x-1.5 gap-y-1">
+    <nav aria-label={t('breadcrumbLabel')} className="flex flex-wrap items-center gap-x-1.5 gap-y-1">
       {crumbs.map((crumb, i) => (
         <span key={i} className="flex items-center gap-1.5">
           {i > 0 && <span className="text-muted/40 text-xs">/</span>}
@@ -156,7 +156,7 @@ function TeaListFlat({ teas, onPick }) {
     return (
       <EmptyState
         title={t('noTeasInRegion')}
-        description="В выбранном регионе пока нет подробных описаний сортов чая."
+        description={t('noTeasInRegionDesc')}
       />
     )
   }
@@ -274,7 +274,7 @@ function ReferenceTab({ categories, teas, countries, hiddenCategories, onToggleC
               <button
                 type="button"
                 onClick={() => setQuery('')}
-                aria-label="Очистить поиск"
+                aria-label={t('clearSearch')}
                 className="absolute right-2.5 w-6 h-6 rounded-full text-muted hover:text-text grid place-items-center text-xs"
               >
                 ✕
@@ -306,8 +306,8 @@ function ReferenceTab({ categories, teas, countries, hiddenCategories, onToggleC
             {debouncedQuery && grouped.size === 0 && (
               <EmptyState
                 title={t('nothingFound')}
-                description="Попробуйте изменить поисковый запрос или выбрать другую категорию."
-                actionLabel="Очистить поиск"
+                description={t('nothingFoundDesc')}
+                actionLabel={t('clearSearch')}
                 onAction={() => setQuery('')}
               />
             )}
@@ -320,16 +320,17 @@ function ReferenceTab({ categories, teas, countries, hiddenCategories, onToggleC
 
 function ThemeToggle() {
   const { theme, setTheme } = useTheme()
+  const { t } = useI18n()
   const options = [
-    { id: 'light', icon: '☀️', label: 'Светлая тема' },
-    { id: 'system', icon: '💻', label: 'Системная тема' },
-    { id: 'dark', icon: '🌙', label: 'Тёмная тема' },
+    { id: 'light', icon: '☀️', label: t('themeLight') },
+    { id: 'system', icon: '💻', label: t('themeSystem') },
+    { id: 'dark', icon: '🌙', label: t('themeDark') },
   ]
 
   return (
     <div
       role="group"
-      aria-label="Выбор темы оформления"
+      aria-label={t('themeGroupLabel')}
       className="flex items-center rounded-full bg-surface-2 p-0.5 border border-border/60 shrink-0"
     >
       {options.map((opt) => (
@@ -353,11 +354,11 @@ function ThemeToggle() {
 }
 
 function LocaleToggle() {
-  const { locale, setLocale } = useI18n()
+  const { locale, setLocale, t } = useI18n()
   return (
     <div
       role="group"
-      aria-label="Выбор языка"
+      aria-label={t('localeGroupLabel')}
       className="flex rounded-full bg-surface-2 p-0.5 border border-border/60 shrink-0"
     >
       {['en', 'ru'].map((l) => (
@@ -388,7 +389,7 @@ function FavoritesTab({ teas, countries, onPick }) {
     return (
       <EmptyState
         title={t('noFavorites')}
-        description="Отмечайте понравившиеся сорта чая значком сердечка на карточке сорта, чтобы быстро возвращаться к ним в любое время."
+        description={t('noFavoritesDesc')}
         icon="❤️"
       />
     )
@@ -613,14 +614,20 @@ export default function Sidebar({
           )}
 
           <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={() => setShowStatesDemo(true)}
-              title="Открыть демонстрацию 4 состояний (Правило У1)"
-              className={`text-[10px] font-mono px-2 py-1 rounded-md bg-surface border border-border text-muted hover:text-text transition-colors ${FOCUS_RING}`}
-            >
-              У1 демо
-            </button>
+            {/* Демо-переключатель состояний (Н4) — инструмент ревью для
+                дизайнера/разработчика, а не часть продукта: показываем его
+                только в dev-сборке, чтобы не нагружать интерфейс конечного
+                пользователя служебной кнопкой. */}
+            {import.meta.env.DEV && (
+              <button
+                type="button"
+                onClick={() => setShowStatesDemo(true)}
+                title="Открыть демонстрацию 4 состояний (Правило У1) — только в dev-сборке"
+                className={`text-[10px] font-mono px-2 py-1 rounded-md bg-surface border border-border text-muted hover:text-text transition-colors ${FOCUS_RING}`}
+              >
+                У1 демо
+              </button>
+            )}
             <span className="font-mono text-[9px] uppercase tracking-wider text-muted/60">TeaMap</span>
           </div>
         </div>
