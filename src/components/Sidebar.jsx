@@ -3,6 +3,9 @@ import { categoryColor } from '../lib/categoryStyle'
 import { useI18n } from '../lib/i18n'
 import { useDebouncedValue } from '../lib/useDebouncedValue'
 import { PialaIcon } from './DonateModal'
+import { typograph } from '../lib/typograph'
+import TeaCeremonyHeroArt from './TeaCeremonyHeroArt'
+import { EmptyState } from './States'
 
 const FOCUS_RING = 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold'
 
@@ -66,7 +69,7 @@ function CountryList({ countries, current, onPick }) {
   const { t } = useI18n()
   const sorted = [...countries].sort((a, b) => b.teaCount - a.teaCount)
   return (
-    <div className="flex flex-col gap-1">
+    <div className="flex flex-col gap-1.5">
       {sorted.map((c) => {
         const active = c.teaCount > 0
         const isCurrent = current?.id === c.id
@@ -76,18 +79,18 @@ function CountryList({ countries, current, onPick }) {
             type="button"
             onClick={() => onPick(c.id)}
             className={[
-              'flex items-center gap-2 rounded-xl px-2 py-1.5 text-left transition-colors',
+              'flex items-center gap-2.5 rounded-xl px-2.5 py-2 min-h-[44px] text-left transition-colors cursor-pointer',
               FOCUS_RING,
               isCurrent ? 'bg-gold/25' : 'hover:bg-ink/5',
               !active && 'opacity-55',
             ].join(' ')}
           >
-            <span className="grid place-items-center w-6 h-6 rounded-full bg-ink/5 text-[13px] shrink-0">
+            <span className="grid place-items-center w-7 h-7 rounded-full bg-ink/5 text-[14px] shrink-0">
               {c.icon}
             </span>
-            <span className="text-[13px] text-ink flex-1 truncate">{c.name}</span>
+            <span className="text-[13.5px] font-medium text-ink flex-1 truncate">{typograph(c.name)}</span>
             {active ? (
-              <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${isCurrent ? 'bg-gold' : 'bg-jade'}`} />
+              <span className={`w-2 h-2 rounded-full shrink-0 ${isCurrent ? 'bg-gold' : 'bg-jade'}`} />
             ) : (
               <span className="text-[9px] uppercase tracking-wide text-ink-soft/50 shrink-0">{t('soon')}</span>
             )}
@@ -306,7 +309,13 @@ function FavoritesTab({ teas, countries, onPick }) {
   const showCountryIcon = new Set(teas.map((tea) => tea.countryId)).size > 1
 
   if (!teas.length) {
-    return <p className="text-[13px] text-ink-soft/60 px-2">{t('noFavorites')}</p>
+    return (
+      <EmptyState
+        title={t('noFavorites')}
+        description="Отмечайте понравившиеся сорта чая значком звезды, чтобы быстро возвращаться к ним в любое время."
+        icon="⭐"
+      />
+    )
   }
 
   return (
@@ -403,14 +412,14 @@ export default function Sidebar({
         )}
       </div>
 
-      <div className="flex gap-1 px-4 shrink-0">
+      <div className="flex gap-1.5 px-4 shrink-0">
         <button
           type="button"
           onClick={() => setView('nav')}
           className={[
-            'flex-1 text-[12px] font-medium py-1.5 rounded-lg transition-colors',
+            'flex-1 text-[12.5px] font-semibold py-2.5 min-h-[44px] rounded-xl transition-all',
             FOCUS_RING,
-            view === 'nav' ? 'bg-ink text-porcelain' : 'text-ink-soft/60 hover:bg-ink/5',
+            view === 'nav' ? 'bg-ink text-porcelain shadow-sm' : 'text-ink-soft/70 hover:bg-ink/5',
           ].join(' ')}
         >
           {t('tabNav')}
@@ -419,9 +428,9 @@ export default function Sidebar({
           type="button"
           onClick={() => setView('reference')}
           className={[
-            'flex-1 text-[12px] font-medium py-1.5 rounded-lg transition-colors',
+            'flex-1 text-[12.5px] font-semibold py-2.5 min-h-[44px] rounded-xl transition-all',
             FOCUS_RING,
-            view === 'reference' ? 'bg-ink text-porcelain' : 'text-ink-soft/60 hover:bg-ink/5',
+            view === 'reference' ? 'bg-ink text-porcelain shadow-sm' : 'text-ink-soft/70 hover:bg-ink/5',
           ].join(' ')}
         >
           {t('tabReference')}
@@ -430,9 +439,9 @@ export default function Sidebar({
           type="button"
           onClick={() => setView('favorites')}
           className={[
-            'flex-1 text-[12px] font-medium py-1.5 rounded-lg transition-colors',
+            'flex-1 text-[12.5px] font-semibold py-2.5 min-h-[44px] rounded-xl transition-all',
             FOCUS_RING,
-            view === 'favorites' ? 'bg-ink text-porcelain' : 'text-ink-soft/60 hover:bg-ink/5',
+            view === 'favorites' ? 'bg-ink text-porcelain shadow-sm' : 'text-ink-soft/70 hover:bg-ink/5',
           ].join(' ')}
         >
           {t('tabFavorites')}
@@ -445,7 +454,10 @@ export default function Sidebar({
         {view === 'nav' ? (
           <>
             {!nav.country ? (
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-3">
+                <div className="rounded-2xl bg-porcelain/60 border border-ink/10 p-2 flex justify-center shadow-sm">
+                  <TeaCeremonyHeroArt width={280} height={155} className="w-full h-auto max-w-[280px]" />
+                </div>
                 <SectionLabel>{t('countries')}</SectionLabel>
                 <CountryList countries={countries} current={nav.country} onPick={onPickCountry} />
               </div>
