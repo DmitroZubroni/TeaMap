@@ -1,16 +1,18 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useCallback } from 'react'
 import { getTeaDetail, getCategories } from '../lib/api'
 import { categoryColor } from '../lib/categoryStyle'
 import { useI18n } from '../lib/i18n'
+import { typograph } from '../lib/typograph'
+import { LoadingSkeleton, ErrorState } from './States'
 
-const FOCUS_RING = 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold'
+const FOCUS_RING = 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary'
 
 function Field({ label, value }) {
   if (!value) return null
   return (
     <div>
-      <p className="font-mono text-[10px] uppercase tracking-wide text-ink-soft/60">{label}</p>
-      <p className="text-[13px] text-ink/85 leading-snug mt-0.5">{value}</p>
+      <p className="font-mono text-[10px] uppercase tracking-wider text-muted">{typograph(label)}</p>
+      <p className="text-[13px] font-medium text-text leading-snug mt-0.5">{typograph(String(value))}</p>
     </div>
   )
 }
@@ -18,9 +20,11 @@ function Field({ label, value }) {
 function Section({ label, children }) {
   if (!children) return null
   return (
-    <div className="border-t border-ink/10 pt-3">
-      <p className="font-mono text-[10px] uppercase tracking-wide text-ink-soft/60 mb-1">{label}</p>
-      <p className="text-[13.5px] text-ink/85 leading-relaxed">{children}</p>
+    <div className="border-t border-border/70 pt-3.5">
+      <p className="font-mono text-[10px] uppercase tracking-wider text-muted mb-1.5">{typograph(label)}</p>
+      <div className="text-[13.5px] text-text/90 leading-relaxed space-y-2">
+        {typeof children === 'string' ? typograph(children) : children}
+      </div>
     </div>
   )
 }
@@ -30,6 +34,7 @@ const FOCUSABLE_SELECTOR = 'button, [href], input, select, textarea, [tabindex]:
 export default function TeaPanel({ countryId, teaId, isFavorite, onToggleFavorite, onClose }) {
   const { t } = useI18n()
   const [tea, setTea] = useState(null)
+  const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [categories, setCategories] = useState([])
   const [tab, setTab] = useState('overview')
@@ -41,27 +46,37 @@ export default function TeaPanel({ countryId, teaId, isFavorite, onToggleFavorit
     { id: 'history', label: t('tabHistory') },
   ]
 
-  useEffect(() => {
+  const loadData = useCallback(() => {
     let cancelled = false
-    setTea(null)
+    setLoading(true)
     setError(null)
     setTab('overview')
+
     Promise.all([getTeaDetail(countryId, teaId), getCategories()])
       .then(([detail, cats]) => {
         if (cancelled) return
         setTea(detail)
         setCategories(cats)
+        setLoading(false)
       })
-      .catch((e) => !cancelled && setError(e.message))
+      .catch((e) => {
+        if (!cancelled) {
+          setError(e.message || 'Ошибка загрузки карточки сорта')
+          setLoading(false)
+        }
+      })
+
     return () => {
       cancelled = true
     }
   }, [countryId, teaId])
 
-  // Переносим фокус внутрь панели при открытии (стандартное поведение
-  // диалогового окна) и удерживаем Tab внутри неё, пока она открыта, чтобы
-  // пользователь с клавиатуры не улетал незаметно в карту/сайдбар позади.
-  // Esc закрывает в любом случае.
+  useEffect(() => {
+    const cleanup = loadData()
+    return cleanup
+  }, [loadData])
+
+  // Удержание фокуса внутри модального окна и закрытие по Esc (Правила Д2, Д3)
   useEffect(() => {
     closeButtonRef.current?.focus()
 
@@ -88,7 +103,7 @@ export default function TeaPanel({ countryId, teaId, isFavorite, onToggleFavorit
   }, [onClose])
 
   const categoryLabel = categories.find((c) => c.id === tea?.category)?.name
-  const color = tea ? categoryColor(tea.category) : '#8A8372'
+  const color = tea ? categoryColor(tea.category) : '#059669'
 
   return (
     <div
@@ -97,90 +112,143 @@ export default function TeaPanel({ countryId, teaId, isFavorite, onToggleFavorit
       aria-modal="true"
       aria-label={tea?.name || t('loadingCard')}
       className={[
-        'fixed z-30 bg-porcelain shadow-panel animate-panel-in overflow-hidden',
-        'inset-x-0 bottom-0 h-[82vh] rounded-t-3xl',
-        'md:inset-y-0 md:right-0 md:left-auto md:h-auto md:w-[440px] md:rounded-none md:rounded-l-3xl',
+        'fixed z-40 bg-surface text-text shadow-panel animate-panel-in overflow-hidden border border-border',
+        'inset-x-0 bottom-0 h-[84vh] rounded-t-3xl',
+        'md:inset-y-0 md:right-0 md:left-auto md:h-auto md:w-[460px] md:rounded-none md:rounded-l-3xl md:border-y-0 md:border-r-0 md:border-l',
       ].join(' ')}
     >
-      {/* Hard-pinned to the parent's actual box via inset-0, rather than
-          relying on the fixed-position parent's own flex sizing — this is
-          what makes the scroll area below reliably bounded. */}
       <div className="absolute inset-0 flex flex-col">
-        <button
-          ref={closeButtonRef}
-          type="button"
-          onClick={onClose}
-          aria-label={t('closeCard')}
-          className={`absolute top-3 right-3 z-10 grid place-items-center w-8 h-8 rounded-full bg-ink/80 text-porcelain hover:bg-ink transition-colors ${FOCUS_RING}`}
-        >
-          ✕
-        </button>
-        {tea && (
+        {/* Панель верхних кнопок управления */}
+        <div className="absolute top-4 right-4 z-20 flex items-center gap-2">
+          {tea && (
+            <button
+              type="button"
+              onClick={onToggleFavorite}
+              aria-label={isFavorite ? t('removeFavorite') : t('addFavorite')}
+              aria-pressed={isFavorite}
+              className={`grid place-items-center w-10 h-10 min-w-[44px] min-h-[44px] rounded-full bg-surface/90 hover:bg-surface-2 border border-border shadow-sm transition-all duration-150 ${FOCUS_RING} ${
+                isFavorite ? 'text-danger scale-105' : 'text-muted hover:text-text'
+              }`}
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill={isFavorite ? 'currentColor' : 'none'}
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path d="M12 21s-6.7-4.3-9.3-8.2C1 10 1.5 6.6 4.1 4.9 6.4 3.4 9.3 4 11 6.1c.4.5.6.7 1 .7s.6-.2 1-.7c1.7-2.1 4.6-2.7 6.9-1.2 2.6 1.7 3.1 5.1 1.4 7.9C18.7 16.7 12 21 12 21Z" />
+              </svg>
+            </button>
+          )}
+
           <button
+            ref={closeButtonRef}
             type="button"
-            onClick={onToggleFavorite}
-            aria-label={isFavorite ? t('removeFavorite') : t('addFavorite')}
-            aria-pressed={isFavorite}
-            className={`absolute top-3 right-14 z-10 grid place-items-center w-8 h-8 rounded-full bg-ink/80 hover:bg-ink transition-colors ${FOCUS_RING} ${
-              isFavorite ? 'text-red-400' : 'text-porcelain'
-            }`}
+            onClick={onClose}
+            aria-label={t('closeCard')}
+            className={`grid place-items-center w-10 h-10 min-w-[44px] min-h-[44px] rounded-full bg-surface/90 hover:bg-surface-2 text-text border border-border shadow-sm transition-colors ${FOCUS_RING}`}
           >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill={isFavorite ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="2">
-              <path d="M12 21s-6.7-4.3-9.3-8.2C1 10 1.5 6.6 4.1 4.9 6.4 3.4 9.3 4 11 6.1c.4.5.6.7 1 .7s.6-.2 1-.7c1.7-2.1 4.6-2.7 6.9-1.2 2.6 1.7 3.1 5.1 1.4 7.9C18.7 16.7 12 21 12 21Z" />
-            </svg>
+            ✕
           </button>
+        </div>
+
+        {/* Загрузка карточки (У1) */}
+        {loading && (
+          <div className="p-8 flex-1 flex flex-col justify-center">
+            <LoadingSkeleton count={6} />
+          </div>
         )}
 
-        {!tea && !error && <div className="p-8 text-center text-ink-soft/60 text-sm">{t('loadingCard')}</div>}
-        {error && <div className="p-8 text-center text-red-800 text-sm">{error}</div>}
+        {/* Ошибка загрузки (У1, У4) */}
+        {!loading && error && (
+          <div className="p-8 flex-1 flex flex-col justify-center">
+            <ErrorState
+              title={error}
+              description="Не удалось загрузить подробные сведения о данном чае."
+              onRetry={loadData}
+              retryLabel="Попробовать снова"
+            />
+          </div>
+        )}
 
-        {tea && (
+        {/* Содержимое карточки чая */}
+        {!loading && tea && (
           <>
             <div
-              className="px-6 pt-7 pb-4 shrink-0"
-              style={{ background: `linear-gradient(180deg, ${color}33, transparent)` }}
+              className="px-6 pt-8 pb-5 shrink-0 border-b border-border/50 relative overflow-hidden"
+              style={{
+                background: `linear-gradient(180deg, ${color}20, transparent)`,
+              }}
             >
-              <span
-                className="inline-block text-[10px] font-mono uppercase tracking-widest px-2 py-0.5 rounded-full mb-2"
-                style={{ backgroundColor: `${color}30`, color: '#1C2A22' }}
-              >
-                {categoryLabel}
-              </span>
-              <h2 className="font-display text-3xl text-ink leading-tight">{tea.name}</h2>
+              <div className="flex items-center gap-2 mb-2.5">
+                <span
+                  className="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-wider px-2.5 py-1 rounded-full font-semibold border border-border"
+                  style={{
+                    backgroundColor: `${color}25`,
+                    color: 'var(--text)',
+                  }}
+                >
+                  <span
+                    className="w-2 h-2 rounded-full"
+                    style={{ backgroundColor: color }}
+                  />
+                  {categoryLabel}
+                </span>
+              </div>
+
+              <h2 className="font-display text-2xl sm:text-3xl text-text font-semibold leading-tight pr-24">
+                {typograph(tea.name)}
+              </h2>
+
               {tea.aliases?.length > 0 && (
-                <p className="text-[12.5px] text-ink-soft/70 mt-1">{tea.aliases.join(' · ')}</p>
+                <p className="text-[13px] text-muted mt-1 leading-snug">
+                  {tea.aliases.map(typograph).join(' · ')}
+                </p>
               )}
-              <p className="text-[13px] text-ink/70 mt-2">
-                {[tea.location?.region, tea.location?.province].filter(Boolean).join(', ')}
-                {tea.location?.altitude ? ` · ${tea.location.altitude}` : ''}
+
+              <p className="text-[13px] text-muted/90 mt-2 flex items-center gap-1.5">
+                <span>📍</span>
+                <span>
+                  {[tea.location?.region, tea.location?.province].filter(Boolean).map(typograph).join(', ')}
+                  {tea.location?.altitude ? ` · ${tea.location.altitude}` : ''}
+                </span>
               </p>
+
               {tea.description?.short && (
-                <p className="mt-3 text-[14px] text-ink/90 leading-relaxed italic">«{tea.description.short}»</p>
+                <p className="mt-3 text-[13.5px] text-text/90 leading-relaxed italic bg-surface-2/60 p-3 rounded-xl border border-border/40">
+                  {typograph(tea.description.short)}
+                </p>
               )}
             </div>
 
-            <div className="flex gap-1 px-6 border-b border-ink/10 shrink-0">
+            {/* Вкладки переключения: Обзор / История */}
+            <div className="flex gap-2 px-6 border-b border-border shrink-0 bg-surface">
               {TABS.map((tabItem) => (
                 <button
                   key={tabItem.id}
                   type="button"
                   onClick={() => setTab(tabItem.id)}
                   className={[
-                    'px-3 py-2 text-[13px] font-medium border-b-2 -mb-px transition-colors',
+                    'px-4 py-3 min-h-[44px] text-[13.5px] font-semibold border-b-2 -mb-px transition-colors cursor-pointer',
                     FOCUS_RING,
-                    tab === tabItem.id ? 'border-gold text-ink' : 'border-transparent text-ink-soft/60 hover:text-ink',
+                    tab === tabItem.id
+                      ? 'border-primary text-primary'
+                      : 'border-transparent text-muted hover:text-text',
                   ].join(' ')}
                 >
-                  {tabItem.label}
+                  {typograph(tabItem.label)}
                 </button>
               ))}
             </div>
 
+            {/* Прокручиваемое содержимое */}
             <div className="overflow-y-auto overscroll-contain scrollbar-thin flex-1 min-h-0">
               <div className="px-6 py-5 flex flex-col gap-4">
                 {tab === 'overview' && (
                   <>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3 bg-ink/[0.03] rounded-xl p-3.5">
+                    <div className="grid grid-cols-2 gap-x-4 gap-y-3.5 bg-surface-2/60 rounded-2xl p-4 border border-border/60">
                       <Field label={t('cultivar')} value={tea.characteristics?.cultivar} />
                       <Field label={t('oxidation')} value={tea.characteristics?.oxidation} />
                       <Field label={t('roast')} value={tea.characteristics?.roast} />
@@ -207,22 +275,22 @@ export default function TeaPanel({ countryId, teaId, isFavorite, onToggleFavorit
                     <Section label={t('history')}>{tea.history?.development}</Section>
                     <Section label={t('modernDay')}>{tea.history?.modern}</Section>
                     {tea.history?.interestingFacts?.length > 0 && (
-                      <div className="border-t border-ink/10 pt-3">
-                        <p className="font-mono text-[10px] uppercase tracking-wide text-ink-soft/60 mb-1.5">
-                          {t('facts')}
+                      <div className="border-t border-border/70 pt-3.5">
+                        <p className="font-mono text-[10px] uppercase tracking-wider text-muted mb-2">
+                          {typograph(t('facts'))}
                         </p>
-                        <ul className="flex flex-col gap-1.5">
+                        <ul className="flex flex-col gap-2">
                           {tea.history.interestingFacts.map((fact, i) => (
-                            <li key={i} className="text-[13px] text-ink/85 leading-snug flex gap-2">
-                              <span className="text-gold">·</span>
-                              <span>{fact}</span>
+                            <li key={i} className="text-[13px] text-text/90 leading-snug flex items-start gap-2.5">
+                              <span className="text-accent-text font-bold text-base leading-none">·</span>
+                              <span>{typograph(fact)}</span>
                             </li>
                           ))}
                         </ul>
                       </div>
                     )}
                     {!tea.history?.origin && !tea.history?.development && !tea.history?.modern && (
-                      <p className="text-[13px] text-ink-soft/60">{t('noHistory')}</p>
+                      <p className="text-[13px] text-muted">{typograph(t('noHistory'))}</p>
                     )}
                   </>
                 )}

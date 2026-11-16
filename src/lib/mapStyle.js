@@ -3,20 +3,36 @@
 export const STYLE_URL = '/map/style.json'
 export const FALLBACK_STYLE_URL = 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json'
 
-const PALETTE = {
-  background: '#EEE6D3',
-  landcover: '#E4DCC5',
-  park: '#DCE0C9',
-  water: '#26445A',
-  waterLine: '#1D3546',
-  boundary: '#B98A46',
+export const LIGHT_TEA_PALETTE = {
+  background: '#EFECE2',
+  landcover: '#E5DFCE',
+  park: '#D7DFCE',
+  water: '#30546C',
+  waterLine: '#224053',
+  boundary: '#B45309',
   boundaryDisputed: '#C79A5E',
-  road: '#DCD2B4',
-  roadMinor: '#E4DBC2',
-  building: '#E2D8BC',
-  text: '#1C2A22',
-  textHalo: '#F3EEE0',
-  textMuted: '#5A6B5C',
+  road: '#DDD3BA',
+  roadMinor: '#E6DEC9',
+  building: '#E2D7BE',
+  text: '#142018',
+  textHalo: '#F6F4ED',
+  textMuted: '#495B4F',
+}
+
+export const DARK_TEA_PALETTE = {
+  background: '#0C1410',
+  landcover: '#131D17',
+  park: '#18271F',
+  water: '#142733',
+  waterLine: '#1C3647',
+  boundary: '#8A6225',
+  boundaryDisputed: '#B48439',
+  road: '#1B2921',
+  roadMinor: '#16221B',
+  building: '#17241D',
+  text: '#E2E8E4',
+  textHalo: '#0C1410',
+  textMuted: '#7E9585',
 }
 
 function includesAny(str, needles) {
@@ -25,12 +41,11 @@ function includesAny(str, needles) {
   return needles.some((n) => s.includes(n))
 }
 
-// Перекрашивает слои уже загруженного стиля через setPaintProperty. Можно
-// вызывать повторно (например, ещё раз после setStyle). Ошибка в отдельном
-// слое перехватывается и пропускается, чтобы один неожиданный слой не
-// ломал применение палитры целиком.
-export function applyTeaPalette(map) {
+// Перекрашивает слои карты под текущую тему (светлая/тёмная чайная палитра).
+export function applyTeaPalette(map, isDark = false) {
+  if (!map || !map.getStyle) return
   const layers = map.getStyle()?.layers || []
+  const palette = isDark ? DARK_TEA_PALETTE : LIGHT_TEA_PALETTE
 
   for (const layer of layers) {
     try {
@@ -39,43 +54,42 @@ export function applyTeaPalette(map) {
       const key = `${id} ${sourceLayer}`
 
       if (layer.type === 'background') {
-        map.setPaintProperty(layer.id, 'background-color', PALETTE.background)
+        map.setPaintProperty(layer.id, 'background-color', palette.background)
       } else if (layer.type === 'fill') {
         if (includesAny(key, ['water'])) {
-          map.setPaintProperty(layer.id, 'fill-color', PALETTE.water)
+          map.setPaintProperty(layer.id, 'fill-color', palette.water)
         } else if (includesAny(key, ['park', 'wood', 'forest', 'landcover', 'vegetation'])) {
-          map.setPaintProperty(layer.id, 'fill-color', PALETTE.park)
+          map.setPaintProperty(layer.id, 'fill-color', palette.park)
         } else if (includesAny(key, ['building'])) {
-          map.setPaintProperty(layer.id, 'fill-color', PALETTE.building)
-          map.setPaintProperty(layer.id, 'fill-opacity', 0.6)
+          map.setPaintProperty(layer.id, 'fill-color', palette.building)
+          map.setPaintProperty(layer.id, 'fill-opacity', isDark ? 0.4 : 0.6)
         } else {
-          map.setPaintProperty(layer.id, 'fill-color', PALETTE.landcover)
+          map.setPaintProperty(layer.id, 'fill-color', palette.landcover)
         }
       } else if (layer.type === 'line') {
         if (includesAny(key, ['water', 'river', 'stream', 'waterway'])) {
-          map.setPaintProperty(layer.id, 'line-color', PALETTE.waterLine)
+          map.setPaintProperty(layer.id, 'line-color', palette.waterLine)
         } else if (includesAny(key, ['boundary', 'admin'])) {
           const disputed = includesAny(key, ['disputed'])
-          map.setPaintProperty(layer.id, 'line-color', disputed ? PALETTE.boundaryDisputed : PALETTE.boundary)
+          map.setPaintProperty(layer.id, 'line-color', disputed ? palette.boundaryDisputed : palette.boundary)
           if (!disputed) map.setPaintProperty(layer.id, 'line-dasharray', [2, 1.5])
         } else if (includesAny(key, ['building'])) {
-          map.setPaintProperty(layer.id, 'line-color', PALETTE.building)
+          map.setPaintProperty(layer.id, 'line-color', palette.building)
         } else if (includesAny(key, ['highway', 'road', 'street', 'motorway', 'trunk', 'primary'])) {
-          map.setPaintProperty(layer.id, 'line-color', PALETTE.road)
+          map.setPaintProperty(layer.id, 'line-color', palette.road)
         } else {
-          map.setPaintProperty(layer.id, 'line-color', PALETTE.roadMinor)
+          map.setPaintProperty(layer.id, 'line-color', palette.roadMinor)
         }
       } else if (layer.type === 'symbol') {
         const hasText = layer.layout && layer.layout['text-field']
         if (hasText) {
-          map.setPaintProperty(layer.id, 'text-color', includesAny(key, ['country']) ? PALETTE.text : PALETTE.textMuted)
-          map.setPaintProperty(layer.id, 'text-halo-color', PALETTE.textHalo)
+          map.setPaintProperty(layer.id, 'text-color', includesAny(key, ['country']) ? palette.text : palette.textMuted)
+          map.setPaintProperty(layer.id, 'text-halo-color', palette.textHalo)
           map.setPaintProperty(layer.id, 'text-halo-width', 1.2)
         }
       }
     } catch {
-      // Пропускаем слои, чьи paint-свойства не совпадают с ожидаемыми —
-      // никогда не даём одному нестандартному слою сломать весь проход перекраски.
+      // Игнорируем несовместимые слои
     }
   }
 }

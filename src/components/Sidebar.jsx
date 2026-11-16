@@ -5,14 +5,11 @@ import { useDebouncedValue } from '../lib/useDebouncedValue'
 import { PialaIcon } from './DonateModal'
 import { typograph } from '../lib/typograph'
 import TeaCeremonyHeroArt from './TeaCeremonyHeroArt'
-import { EmptyState } from './States'
+import { EmptyState, LoadingSkeleton, StatesDemoViewer } from './States'
+import { useTheme } from '../lib/theme'
 
-const FOCUS_RING = 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold'
+const FOCUS_RING = 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary'
 
-// tea.region (например, «Сиху, Ханчжоу») и region.name (например,
-// «Сиху (Ханчжоу)») не всегда совпадают дословно в исходных данных — разная
-// пунктуация, лишние уточнения местности и т.д. Нормализуем обе строки и
-// проверяем вхождение в любую сторону, а не требуем точного совпадения.
 function normalizeRegion(s) {
   return s
     .toLowerCase()
@@ -32,37 +29,43 @@ function Breadcrumb({ nav, onHome, onCountry }) {
   const { t } = useI18n()
   const crumbs = [{ label: t('home'), onClick: onHome }]
   if (nav.country) {
-    // Кликабелен, только если это не последняя (текущая) крошка — то есть
-    // когда после страны ещё есть регион, и клик по стране означает «вернуться
-    // к обзору страны», а не «остаться на месте».
     const isCurrent = !nav.region
-    crumbs.push({ label: nav.country.name, onClick: isCurrent ? undefined : () => onCountry(nav.country.id) })
+    crumbs.push({
+      label: nav.country.name,
+      onClick: isCurrent ? undefined : () => onCountry(nav.country.id),
+    })
   }
   if (nav.region) crumbs.push({ label: nav.region, onClick: undefined })
 
   return (
-    <div className="flex flex-wrap items-center gap-x-1.5 gap-y-1">
+    <nav aria-label="Хлебные крошки" className="flex flex-wrap items-center gap-x-1.5 gap-y-1">
       {crumbs.map((crumb, i) => (
         <span key={i} className="flex items-center gap-1.5">
-          {i > 0 && <span className="text-ink/25 text-xs">/</span>}
+          {i > 0 && <span className="text-muted/40 text-xs">/</span>}
           <button
             type="button"
             onClick={crumb.onClick}
             disabled={!crumb.onClick}
-            className={`text-[12.5px] font-medium whitespace-nowrap rounded ${FOCUS_RING} ${
-              i === crumbs.length - 1 ? 'text-gold' : 'text-ink/55 hover:text-ink transition-colors'
+            className={`text-[12.5px] font-medium whitespace-nowrap rounded px-1 py-0.5 ${FOCUS_RING} ${
+              i === crumbs.length - 1
+                ? 'text-accent-text font-semibold'
+                : 'text-muted hover:text-text transition-colors'
             } ${crumb.onClick ? 'cursor-pointer' : 'cursor-default'}`}
           >
-            {crumb.label}
+            {typograph(crumb.label)}
           </button>
         </span>
       ))}
-    </div>
+    </nav>
   )
 }
 
 function SectionLabel({ children }) {
-  return <p className="font-mono text-[10px] uppercase tracking-widest text-ink-soft/50">{children}</p>
+  return (
+    <p className="font-mono text-[10px] uppercase tracking-wider text-muted">
+      {typograph(String(children))}
+    </p>
+  )
 }
 
 function CountryList({ countries, current, onPick }) {
@@ -79,40 +82,32 @@ function CountryList({ countries, current, onPick }) {
             type="button"
             onClick={() => onPick(c.id)}
             className={[
-              'flex items-center gap-2.5 rounded-xl px-2.5 py-2 min-h-[44px] text-left transition-colors cursor-pointer',
+              'flex items-center gap-3 rounded-2xl px-3 py-2.5 min-h-[44px] text-left transition-all cursor-pointer border',
               FOCUS_RING,
-              isCurrent ? 'bg-gold/25' : 'hover:bg-ink/5',
-              !active && 'opacity-55',
+              isCurrent
+                ? 'bg-primary-soft text-primary border-primary/30 shadow-sm font-semibold'
+                : 'bg-surface hover:bg-surface-2 text-text border-transparent',
+              !active && 'opacity-60 grayscale',
             ].join(' ')}
           >
-            <span className="grid place-items-center w-7 h-7 rounded-full bg-ink/5 text-[14px] shrink-0">
+            <span className="grid place-items-center w-8 h-8 rounded-full bg-surface-2 text-[15px] shrink-0 border border-border/60">
               {c.icon}
             </span>
-            <span className="text-[13.5px] font-medium text-ink flex-1 truncate">{typograph(c.name)}</span>
+            <span className="text-[13.5px] font-medium flex-1 truncate">{typograph(c.name)}</span>
             {active ? (
-              <span className={`w-2 h-2 rounded-full shrink-0 ${isCurrent ? 'bg-gold' : 'bg-jade'}`} />
+              <span
+                className={`w-2.5 h-2.5 rounded-full shrink-0 ring-2 ring-surface ${
+                  isCurrent ? 'bg-accent' : 'bg-primary'
+                }`}
+              />
             ) : (
-              <span className="text-[9px] uppercase tracking-wide text-ink-soft/50 shrink-0">{t('soon')}</span>
+              <span className="font-mono text-[9px] uppercase tracking-wider text-muted shrink-0">
+                {typograph(t('soon'))}
+              </span>
             )}
           </button>
         )
       })}
-    </div>
-  )
-}
-
-function ListSkeleton({ rows = 4 }) {
-  return (
-    <div className="flex flex-col gap-1">
-      {Array.from({ length: rows }).map((_, i) => (
-        <div key={i} className="flex items-center gap-2 px-2 py-1.5">
-          <span className="w-3 h-3 rounded-full bg-ink/10 shrink-0 animate-pulse" />
-          <span
-            className="h-3 rounded bg-ink/10 animate-pulse"
-            style={{ width: `${55 + ((i * 17) % 35)}%` }}
-          />
-        </div>
-      ))}
     </div>
   )
 }
@@ -126,12 +121,12 @@ function RegionList({ regions, onPick }) {
           key={r.id}
           type="button"
           onClick={() => onPick(r)}
-          className={`flex items-center gap-2 rounded-xl px-2 py-1.5 text-left hover:bg-ink/5 transition-colors ${FOCUS_RING}`}
+          className={`flex items-center gap-2.5 rounded-xl px-3 py-2 min-h-[44px] text-left bg-surface hover:bg-surface-2 transition-colors border border-border/40 ${FOCUS_RING}`}
         >
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" className="shrink-0 text-jade">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="shrink-0 text-primary">
             <path d="M3 20L9 8L13 15L16 10L21 20H3Z" fill="currentColor" />
           </svg>
-          <span className="text-[13px] text-ink flex-1 truncate">{r.name}</span>
+          <span className="text-[13px] font-medium text-text flex-1 truncate">{typograph(r.name)}</span>
         </button>
       ))}
     </div>
@@ -143,21 +138,28 @@ function TeaRow({ tea, onPick, countryIcon }) {
     <button
       type="button"
       onClick={() => onPick(tea)}
-      className={`flex items-center gap-2 rounded-xl px-2 py-1.5 text-left hover:bg-ink/5 transition-colors w-full ${FOCUS_RING}`}
+      className={`flex items-center gap-2.5 rounded-xl px-3 py-2 min-h-[44px] text-left hover:bg-surface-2 transition-colors w-full border border-transparent hover:border-border/60 ${FOCUS_RING}`}
     >
       <span
-        className="w-2 h-2 rounded-full border border-ink/10 shrink-0"
+        className="w-2.5 h-2.5 rounded-full border border-surface shadow-sm shrink-0"
         style={{ backgroundColor: categoryColor(tea.category) }}
       />
-      <span className="text-[13px] text-ink flex-1 truncate">{tea.name}</span>
-      {countryIcon && <span className="text-[12px] shrink-0 opacity-70">{countryIcon}</span>}
+      <span className="text-[13px] text-text font-medium flex-1 truncate">{typograph(tea.name)}</span>
+      {countryIcon && <span className="text-[13px] shrink-0 opacity-80">{countryIcon}</span>}
     </button>
   )
 }
 
 function TeaListFlat({ teas, onPick }) {
   const { t } = useI18n()
-  if (!teas.length) return <p className="text-[13px] text-ink-soft/60 px-2">{t('noTeasInRegion')}</p>
+  if (!teas.length) {
+    return (
+      <EmptyState
+        title={t('noTeasInRegion')}
+        description="В выбранном регионе пока нет подробных описаний сортов чая."
+      />
+    )
+  }
   return (
     <div className="flex flex-col gap-0.5">
       {teas.map((tea) => (
@@ -183,12 +185,13 @@ function CategoryFilter({ categories, hiddenCategories, onToggleCategory }) {
               if (allHidden ? isHidden : !isHidden) onToggleCategory(cat.id)
             })
           }
-          className={`text-[10px] text-gold hover:underline shrink-0 rounded ${FOCUS_RING}`}
+          className={`text-[11px] font-medium text-accent-text hover:underline shrink-0 rounded px-1.5 py-0.5 ${FOCUS_RING}`}
         >
-          {allHidden ? t('filterAll') : t('filterNone')}
+          {typograph(allHidden ? t('filterAll') : t('filterNone'))}
         </button>
       </div>
-      <div className="grid grid-cols-1 gap-0.5 mt-2">
+
+      <div className="grid grid-cols-1 gap-1 mt-2">
         {categories.map((cat) => {
           const visible = !hiddenCategories.has(cat.id)
           return (
@@ -197,21 +200,23 @@ function CategoryFilter({ categories, hiddenCategories, onToggleCategory }) {
               type="button"
               onClick={() => onToggleCategory(cat.id)}
               aria-pressed={visible}
-              className={`flex items-center gap-2 rounded-lg px-1.5 py-1 hover:bg-ink/5 transition-colors ${FOCUS_RING} ${
-                visible ? '' : 'opacity-40'
-              }`}
+              className={`flex items-center gap-2.5 rounded-xl px-2.5 py-1.5 min-h-[40px] hover:bg-surface-2 transition-colors border ${
+                visible ? 'border-border/50 bg-surface' : 'border-transparent opacity-50'
+              } ${FOCUS_RING}`}
             >
               <span
-                className="w-3 h-3 rounded-md border border-ink/15 shrink-0 grid place-items-center"
+                className="w-3.5 h-3.5 rounded-md border border-border shrink-0 grid place-items-center shadow-sm"
                 style={{ backgroundColor: visible ? categoryColor(cat.id) : 'transparent' }}
               >
                 {visible && (
                   <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
-                    <path d="M1 4L3 6L7 1.5" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
+                    <path d="M1 4L3 6L7 1.5" stroke="white" strokeWidth="1.3" strokeLinecap="round" />
                   </svg>
                 )}
               </span>
-              <span className="text-[12px] text-ink/80 leading-tight text-left flex-1 truncate">{cat.name}</span>
+              <span className="text-[12.5px] text-text font-medium leading-tight text-left flex-1 truncate">
+                {typograph(cat.name)}
+              </span>
             </button>
           )
         })}
@@ -230,7 +235,11 @@ function ReferenceTab({ categories, teas, countries, hiddenCategories, onToggleC
   const grouped = useMemo(() => {
     const q = debouncedQuery.trim().toLowerCase()
     const filtered = q
-      ? teas.filter((tea) => tea.name.toLowerCase().includes(q) || (tea.region || '').toLowerCase().includes(q))
+      ? teas.filter(
+          (tea) =>
+            tea.name.toLowerCase().includes(q) ||
+            (tea.region || '').toLowerCase().includes(q)
+        )
       : teas
     const byCategory = new Map()
     filtered.forEach((tea) => {
@@ -242,25 +251,45 @@ function ReferenceTab({ categories, teas, countries, hiddenCategories, onToggleC
 
   return (
     <div className="flex flex-col gap-4">
-      <CategoryFilter categories={categories} hiddenCategories={hiddenCategories} onToggleCategory={onToggleCategory} />
+      <CategoryFilter
+        categories={categories}
+        hiddenCategories={hiddenCategories}
+        onToggleCategory={onToggleCategory}
+      />
 
       {teas.length > 0 && (
-        <div className="flex flex-col gap-2">
-          <div className="h-px bg-ink/10" />
+        <div className="flex flex-col gap-2.5">
+          <div className="h-px bg-border/60" />
           <SectionLabel>{t('allTeasSearch')}</SectionLabel>
-          <input
-            type="text"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder={t('searchPlaceholder')}
-            className={`w-full text-[13px] bg-ink/5 rounded-lg px-3 py-1.5 placeholder:text-ink-soft/40 text-ink outline-none focus:bg-ink/10 transition-colors ${FOCUS_RING}`}
-          />
+
+          <div className="relative flex items-center">
+            <input
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder={t('searchPlaceholder')}
+              className={`w-full text-[13px] bg-surface-2 rounded-xl pl-3.5 pr-8 py-2.5 min-h-[44px] placeholder:text-muted/60 text-text outline-none border border-border focus:border-primary transition-colors ${FOCUS_RING}`}
+            />
+            {query && (
+              <button
+                type="button"
+                onClick={() => setQuery('')}
+                aria-label="Очистить поиск"
+                className="absolute right-2.5 w-6 h-6 rounded-full text-muted hover:text-text grid place-items-center text-xs"
+              >
+                ✕
+              </button>
+            )}
+          </div>
+
           <div className="flex flex-col gap-3 mt-1">
             {categories
               .filter((cat) => grouped.has(cat.id))
               .map((cat) => (
                 <div key={cat.id}>
-                  <p className="text-[10px] text-ink-soft/50 uppercase tracking-wide mb-1 px-2">{cat.name}</p>
+                  <p className="text-[10.5px] font-mono text-muted uppercase tracking-wider mb-1.5 px-2">
+                    {typograph(cat.name)}
+                  </p>
                   <div className="flex flex-col gap-0.5">
                     {grouped.get(cat.id).map((tea) => (
                       <TeaRow
@@ -273,8 +302,14 @@ function ReferenceTab({ categories, teas, countries, hiddenCategories, onToggleC
                   </div>
                 </div>
               ))}
+
             {debouncedQuery && grouped.size === 0 && (
-              <p className="text-[13px] text-ink-soft/60 px-2">{t('nothingFound')}</p>
+              <EmptyState
+                title={t('nothingFound')}
+                description="Попробуйте изменить поисковый запрос или выбрать другую категорию."
+                actionLabel="Очистить поиск"
+                onAction={() => setQuery('')}
+              />
             )}
           </div>
         </div>
@@ -283,17 +318,58 @@ function ReferenceTab({ categories, teas, countries, hiddenCategories, onToggleC
   )
 }
 
+function ThemeToggle() {
+  const { theme, setTheme } = useTheme()
+  const options = [
+    { id: 'light', icon: '☀️', label: 'Светлая тема' },
+    { id: 'system', icon: '💻', label: 'Системная тема' },
+    { id: 'dark', icon: '🌙', label: 'Тёмная тема' },
+  ]
+
+  return (
+    <div
+      role="group"
+      aria-label="Выбор темы оформления"
+      className="flex items-center rounded-full bg-surface-2 p-0.5 border border-border/60 shrink-0"
+    >
+      {options.map((opt) => (
+        <button
+          key={opt.id}
+          type="button"
+          onClick={() => setTheme(opt.id)}
+          aria-label={opt.label}
+          title={opt.label}
+          className={`w-7 h-7 min-w-[28px] min-h-[28px] rounded-full text-[11px] grid place-items-center transition-all ${FOCUS_RING} ${
+            theme === opt.id
+              ? 'bg-surface text-text shadow-sm font-bold'
+              : 'text-muted hover:text-text'
+          }`}
+        >
+          <span aria-hidden="true">{opt.icon}</span>
+        </button>
+      ))}
+    </div>
+  )
+}
+
 function LocaleToggle() {
   const { locale, setLocale } = useI18n()
   return (
-    <div className={`flex rounded-full bg-ink/5 p-0.5 shrink-0 ${FOCUS_RING}`}>
+    <div
+      role="group"
+      aria-label="Выбор языка"
+      className="flex rounded-full bg-surface-2 p-0.5 border border-border/60 shrink-0"
+    >
       {['en', 'ru'].map((l) => (
         <button
           key={l}
           type="button"
           onClick={() => setLocale(l)}
-          className={`px-2 py-0.5 rounded-full text-[10px] font-mono uppercase transition-colors ${FOCUS_RING} ${
-            locale === l ? 'bg-ink text-porcelain' : 'text-ink-soft/60 hover:text-ink'
+          aria-label={l.toUpperCase()}
+          className={`px-2.5 py-1 min-h-[28px] rounded-full text-[10px] font-mono uppercase transition-all ${FOCUS_RING} ${
+            locale === l
+              ? 'bg-surface text-text shadow-sm font-bold'
+              : 'text-muted hover:text-text'
           }`}
         >
           {l}
@@ -312,8 +388,8 @@ function FavoritesTab({ teas, countries, onPick }) {
     return (
       <EmptyState
         title={t('noFavorites')}
-        description="Отмечайте понравившиеся сорта чая значком звезды, чтобы быстро возвращаться к ним в любое время."
-        icon="⭐"
+        description="Отмечайте понравившиеся сорта чая значком сердечка на карточке сорта, чтобы быстро возвращаться к ним в любое время."
+        icon="❤️"
       />
     )
   }
@@ -351,15 +427,16 @@ export default function Sidebar({
   const { t } = useI18n()
   const [expanded, setExpanded] = useState(() => typeof window === 'undefined' || window.innerWidth >= 640)
   const [view, setView] = useState('nav') // 'nav' | 'reference' | 'favorites'
+  const [showStatesDemo, setShowStatesDemo] = useState(false)
 
   if (!expanded) {
     return (
-      <div className="absolute top-2 left-2 sm:top-4 sm:left-4 z-20 flex flex-col gap-2">
+      <div className="absolute top-3 left-3 sm:top-5 sm:left-5 z-20 flex flex-col gap-2.5">
         <button
           type="button"
           onClick={() => setExpanded(true)}
           aria-label={t('openMenu')}
-          className={`grid place-items-center w-11 h-11 rounded-full bg-porcelain/80 backdrop-blur-md border border-ink/10 shadow-panel text-ink font-display text-lg ${FOCUS_RING}`}
+          className={`grid place-items-center w-12 h-12 rounded-2xl bg-surface/90 backdrop-blur-md border border-border shadow-panel text-text font-display text-xl transition-all hover:scale-105 ${FOCUS_RING}`}
         >
           茶
         </button>
@@ -369,7 +446,7 @@ export default function Sidebar({
             onClick={onOpenDonate}
             title={t('donateBtn')}
             aria-label={t('donateBtn')}
-            className={`grid place-items-center w-11 h-11 rounded-full bg-porcelain/80 backdrop-blur-md border border-ink/10 shadow-panel text-gold hover:text-gold-soft transition-colors ${FOCUS_RING}`}
+            className={`grid place-items-center w-12 h-12 rounded-2xl bg-surface/90 backdrop-blur-md border border-border shadow-panel text-accent-text hover:text-accent transition-all hover:scale-105 ${FOCUS_RING}`}
           >
             <PialaIcon className="w-5 h-5" />
           </button>
@@ -382,142 +459,175 @@ export default function Sidebar({
   const pickTea = (tea) => onSelectTea(nav.country.id, tea)
 
   return (
-    <aside className="absolute top-2 left-2 right-2 bottom-2 sm:right-auto sm:bottom-4 sm:top-4 sm:left-4 sm:w-72 z-20 flex flex-col bg-porcelain/75 backdrop-blur-md border border-ink/10 rounded-2xl shadow-panel overflow-hidden">
-      <div className="flex items-start justify-between px-4 pt-4 pb-3 shrink-0 gap-2">
-        <div className="min-w-0">
-          <p className="font-display text-lg text-ink leading-none truncate">{t('appTitle')}</p>
-          <p className="font-mono text-[9px] uppercase tracking-widest text-ink-soft/60 mt-1 truncate">
-            {t('appTagline')}
-          </p>
+    <>
+      <aside className="absolute top-2 left-2 right-2 bottom-2 sm:right-auto sm:bottom-4 sm:top-4 sm:left-4 sm:w-80 z-20 flex flex-col bg-surface/90 backdrop-blur-lg border border-border rounded-3xl shadow-panel overflow-hidden transition-colors">
+        {/* Шапка сайдбара с названием и переключателями */}
+        <div className="flex items-center justify-between px-4 pt-4 pb-3 shrink-0 gap-2 border-b border-border/50">
+          <div className="min-w-0">
+            <h1 className="font-display text-xl text-text font-semibold leading-none truncate">
+              {typograph(t('appTitle'))}
+            </h1>
+            <p className="font-mono text-[9.5px] uppercase tracking-wider text-muted mt-1 truncate">
+              {typograph(t('appTagline'))}
+            </p>
+          </div>
+
+          <div className="flex items-center gap-1.5 shrink-0">
+            <ThemeToggle />
+            <LocaleToggle />
+            <button
+              type="button"
+              onClick={() => setExpanded(false)}
+              aria-label={t('collapseMenu')}
+              className={`w-8 h-8 rounded-full grid place-items-center text-muted hover:text-text hover:bg-surface-2 transition-colors ${FOCUS_RING}`}
+            >
+              ✕
+            </button>
+          </div>
         </div>
-        <div className="flex items-center gap-2 shrink-0">
-          <LocaleToggle />
-          <button
-            type="button"
-            onClick={() => setExpanded(false)}
-            aria-label={t('collapseMenu')}
-            className={`text-ink/40 hover:text-ink transition-colors text-sm leading-none rounded ${FOCUS_RING}`}
-          >
-            ✕
-          </button>
+
+        {/* Хлебные крошки и статистика */}
+        <div className="px-4 py-2.5 shrink-0 bg-surface-2/40 border-b border-border/40">
+          <Breadcrumb nav={nav} onHome={onHome} onCountry={onPickCountry} />
+          {nav.country && (
+            <p className="font-mono text-[10px] text-muted mt-1">
+              {typograph(t('teaCountLine', nav.teas.length, nav.regions.length))}
+            </p>
+          )}
         </div>
-      </div>
 
-      <div className="px-4 pb-3 shrink-0">
-        <Breadcrumb nav={nav} onHome={onHome} onCountry={onPickCountry} />
-        {nav.country && (
-          <p className="font-mono text-[10px] text-ink-soft/50 mt-1">
-            {t('teaCountLine', nav.teas.length, nav.regions.length)}
-          </p>
-        )}
-      </div>
+        {/* Основные вкладки (Навигация / Справочник / Избранное) */}
+        <div className="flex gap-1.5 p-2 shrink-0 bg-surface">
+          {[
+            { id: 'nav', label: t('tabNav') },
+            { id: 'reference', label: t('tabReference') },
+            { id: 'favorites', label: t('tabFavorites'), count: favoriteTeas.length },
+          ].map((tabItem) => (
+            <button
+              key={tabItem.id}
+              type="button"
+              onClick={() => setView(tabItem.id)}
+              className={[
+                'flex-1 text-[12.5px] font-semibold py-2.5 min-h-[44px] rounded-xl transition-all cursor-pointer flex items-center justify-center gap-1.5',
+                FOCUS_RING,
+                view === tabItem.id
+                  ? 'bg-primary text-on-primary shadow-sm'
+                  : 'text-muted hover:text-text hover:bg-surface-2',
+              ].join(' ')}
+            >
+              <span>{typograph(tabItem.label)}</span>
+              {tabItem.count !== undefined && tabItem.count > 0 && (
+                <span
+                  className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono ${
+                    view === tabItem.id
+                      ? 'bg-on-primary text-primary font-bold'
+                      : 'bg-surface-2 text-muted'
+                  }`}
+                >
+                  {tabItem.count}
+                </span>
+              )}
+            </button>
+          ))}
+        </div>
 
-      <div className="flex gap-1.5 px-4 shrink-0">
-        <button
-          type="button"
-          onClick={() => setView('nav')}
-          className={[
-            'flex-1 text-[12.5px] font-semibold py-2.5 min-h-[44px] rounded-xl transition-all',
-            FOCUS_RING,
-            view === 'nav' ? 'bg-ink text-porcelain shadow-sm' : 'text-ink-soft/70 hover:bg-ink/5',
-          ].join(' ')}
-        >
-          {t('tabNav')}
-        </button>
-        <button
-          type="button"
-          onClick={() => setView('reference')}
-          className={[
-            'flex-1 text-[12.5px] font-semibold py-2.5 min-h-[44px] rounded-xl transition-all',
-            FOCUS_RING,
-            view === 'reference' ? 'bg-ink text-porcelain shadow-sm' : 'text-ink-soft/70 hover:bg-ink/5',
-          ].join(' ')}
-        >
-          {t('tabReference')}
-        </button>
-        <button
-          type="button"
-          onClick={() => setView('favorites')}
-          className={[
-            'flex-1 text-[12.5px] font-semibold py-2.5 min-h-[44px] rounded-xl transition-all',
-            FOCUS_RING,
-            view === 'favorites' ? 'bg-ink text-porcelain shadow-sm' : 'text-ink-soft/70 hover:bg-ink/5',
-          ].join(' ')}
-        >
-          {t('tabFavorites')}
-        </button>
-      </div>
+        <div className="h-px bg-border/60 shrink-0" />
 
-      <div className="h-px bg-ink/10 shrink-0 mt-3" />
-
-      <div className="flex-1 overflow-y-auto scrollbar-thin px-4 py-3 flex flex-col gap-4">
-        {view === 'nav' ? (
-          <>
-            {!nav.country ? (
-              <div className="flex flex-col gap-3">
-                <div className="rounded-2xl bg-porcelain/60 border border-ink/10 p-2 flex justify-center shadow-sm">
-                  <TeaCeremonyHeroArt width={280} height={155} className="w-full h-auto max-w-[280px]" />
+        {/* Основная прокручиваемая область контента */}
+        <div className="flex-1 overflow-y-auto scrollbar-thin px-4 py-3.5 flex flex-col gap-4">
+          {view === 'nav' ? (
+            <>
+              {!nav.country ? (
+                <div className="flex flex-col gap-3.5">
+                  <div className="rounded-2xl bg-surface-2/70 border border-border/70 p-2 flex justify-center shadow-sm overflow-hidden">
+                    <TeaCeremonyHeroArt width={280} height={155} className="w-full h-auto max-w-[280px]" />
+                  </div>
+                  <SectionLabel>{t('countries')}</SectionLabel>
+                  <CountryList countries={countries} current={nav.country} onPick={onPickCountry} />
                 </div>
-                <SectionLabel>{t('countries')}</SectionLabel>
-                <CountryList countries={countries} current={nav.country} onPick={onPickCountry} />
-              </div>
-            ) : !nav.region ? (
-              <div className="flex flex-col gap-2">
-                <button
-                  type="button"
-                  onClick={onHome}
-                  className={`flex items-center gap-1.5 text-[12px] text-ink-soft/60 hover:text-ink transition-colors w-fit rounded ${FOCUS_RING}`}
-                >
-                  <span>{t('allCountries')}</span>
-                </button>
-                <SectionLabel>
-                  {nav.country.name} · {t('regionsHintClick')}
-                </SectionLabel>
-                {nav.loading ? <ListSkeleton /> : <RegionList regions={nav.regions} onPick={onPickRegion} />}
-              </div>
-            ) : (
-              <div className="flex flex-col gap-2">
-                <button
-                  type="button"
-                  onClick={onBackToRegions}
-                  className={`flex items-center gap-1.5 text-[12px] text-ink-soft/60 hover:text-ink transition-colors w-fit rounded ${FOCUS_RING}`}
-                >
-                  <span>{t('allRegions')}</span>
-                </button>
-                <SectionLabel>
-                  {nav.region} · {t('teaHintClick')}
-                </SectionLabel>
-                {nav.loading ? <ListSkeleton /> : <TeaListFlat teas={regionTeas} onPick={pickTea} />}
-              </div>
-            )}
-          </>
-        ) : view === 'reference' ? (
-          <ReferenceTab
-            categories={categories}
-            teas={allTeas}
-            countries={countries}
-            hiddenCategories={hiddenCategories}
-            onToggleCategory={onToggleCategory}
-            onPick={onPickGlobalTea}
-          />
-        ) : (
-          <FavoritesTab teas={favoriteTeas} countries={countries} onPick={onPickGlobalTea} />
-        )}
-      </div>
-
-      {onOpenDonate && (
-        <div className="px-4 py-2.5 shrink-0 border-t border-ink/10 flex items-center justify-between bg-porcelain/40">
-          <button
-            type="button"
-            onClick={onOpenDonate}
-            className={`flex items-center gap-2 text-[12px] font-medium text-gold hover:text-gold-soft transition-colors rounded py-0.5 ${FOCUS_RING}`}
-          >
-            <PialaIcon className="w-4 h-4 text-gold shrink-0" />
-            <span>{t('donateBtn')}</span>
-          </button>
-          <span className="font-mono text-[9px] uppercase tracking-wider text-ink-soft/40">TeaMap</span>
+              ) : !nav.region ? (
+                <div className="flex flex-col gap-2.5">
+                  <button
+                    type="button"
+                    onClick={onHome}
+                    className={`flex items-center gap-1.5 text-[12.5px] text-muted hover:text-text transition-colors w-fit rounded py-1 px-2 hover:bg-surface-2 ${FOCUS_RING}`}
+                  >
+                    <span>{typograph(t('allCountries'))}</span>
+                  </button>
+                  <SectionLabel>
+                    {nav.country.name} · {t('regionsHintClick')}
+                  </SectionLabel>
+                  {nav.loading ? (
+                    <LoadingSkeleton count={4} />
+                  ) : (
+                    <RegionList regions={nav.regions} onPick={onPickRegion} />
+                  )}
+                </div>
+              ) : (
+                <div className="flex flex-col gap-2.5">
+                  <button
+                    type="button"
+                    onClick={onBackToRegions}
+                    className={`flex items-center gap-1.5 text-[12.5px] text-muted hover:text-text transition-colors w-fit rounded py-1 px-2 hover:bg-surface-2 ${FOCUS_RING}`}
+                  >
+                    <span>{typograph(t('allRegions'))}</span>
+                  </button>
+                  <SectionLabel>
+                    {nav.region} · {t('teaHintClick')}
+                  </SectionLabel>
+                  {nav.loading ? (
+                    <LoadingSkeleton count={4} />
+                  ) : (
+                    <TeaListFlat teas={regionTeas} onPick={pickTea} />
+                  )}
+                </div>
+              )}
+            </>
+          ) : view === 'reference' ? (
+            <ReferenceTab
+              categories={categories}
+              teas={allTeas}
+              countries={countries}
+              hiddenCategories={hiddenCategories}
+              onToggleCategory={onToggleCategory}
+              onPick={onPickGlobalTea}
+            />
+          ) : (
+            <FavoritesTab teas={favoriteTeas} countries={countries} onPick={onPickGlobalTea} />
+          )}
         </div>
-      )}
-    </aside>
+
+        {/* Подвал сайдбара с кнопками У1-демо и поддержки */}
+        <div className="px-4 py-2.5 shrink-0 border-t border-border flex items-center justify-between bg-surface-2/40">
+          {onOpenDonate ? (
+            <button
+              type="button"
+              onClick={onOpenDonate}
+              className={`flex items-center gap-2 text-[12.5px] font-medium text-accent-text hover:text-accent transition-colors rounded-lg py-1 px-2 hover:bg-surface-2 ${FOCUS_RING}`}
+            >
+              <PialaIcon className="w-4 h-4 text-accent-text shrink-0" />
+              <span>{typograph(t('donateBtn'))}</span>
+            </button>
+          ) : (
+            <span />
+          )}
+
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setShowStatesDemo(true)}
+              title="Открыть демонстрацию 4 состояний (Правило У1)"
+              className={`text-[10px] font-mono px-2 py-1 rounded-md bg-surface border border-border text-muted hover:text-text transition-colors ${FOCUS_RING}`}
+            >
+              У1 демо
+            </button>
+            <span className="font-mono text-[9px] uppercase tracking-wider text-muted/60">TeaMap</span>
+          </div>
+        </div>
+      </aside>
+
+      {/* Модалка демонстрации 4 состояний */}
+      {showStatesDemo && <StatesDemoViewer onClose={() => setShowStatesDemo(false)} />}
+    </>
   )
 }

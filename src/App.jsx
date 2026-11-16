@@ -6,6 +6,7 @@ import DonateModal from './components/DonateModal'
 import { getCountries, getCategories, getTeaIndex } from './lib/api'
 import { I18nProvider, useI18n } from './lib/i18n'
 import { useFavorites } from './lib/favorites'
+import { ThemeProvider } from './lib/theme'
 
 // Начинаем загрузку чанка MapLibre сразу при чтении модуля,
 // чтобы браузер скачивал движок параллельно с рендерингом интерфейса,
@@ -16,10 +17,10 @@ const MapView = lazy(() => mapViewPromise)
 function MapLoading() {
   const { t } = useI18n()
   return (
-    <div className="absolute inset-0 grid place-items-center bg-ink">
-      <div className="flex flex-col items-center gap-3">
-        <div className="w-8 h-8 rounded-full border-2 border-porcelain/20 border-t-gold animate-spin" />
-        <p className="font-mono text-[11px] uppercase tracking-widest text-porcelain/50">{t('mapLoading')}</p>
+    <div className="absolute inset-0 grid place-items-center bg-bg">
+      <div className="flex flex-col items-center gap-3.5">
+        <div className="w-10 h-10 rounded-full border-2 border-border border-t-primary animate-spin" />
+        <p className="font-mono text-[11px] uppercase tracking-widest text-muted">{t('mapLoading')}</p>
       </div>
     </div>
   )
@@ -187,7 +188,7 @@ function AppInner() {
   )
 
   return (
-    <div className="relative w-full h-svh overflow-hidden bg-ink">
+    <div className="relative w-full h-svh overflow-hidden bg-bg text-text">
       <Suspense fallback={<MapLoading />}>
         <MapView
           ref={mapRef}
@@ -234,8 +235,10 @@ function AppInner() {
 
 export default function App() {
   return (
-    <I18nProvider>
-      <AppInner />
-    </I18nProvider>
+    <ThemeProvider>
+      <I18nProvider>
+        <AppInner />
+      </I18nProvider>
+    </ThemeProvider>
   )
 }

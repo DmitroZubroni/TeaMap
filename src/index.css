@@ -2,6 +2,113 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  color-scheme: light;
+  --bg: #F6F4ED;
+  --surface: #FFFFFF;
+  --surface-translucent: rgba(255, 255, 255, 0.88);
+  --surface-2: #EFECE2;
+  --text: #142018;
+  --text-muted: #495B4F;
+  --border: #DBD4C3;
+  --field-border: #6B7D70;
+  --primary: #047857;
+  --primary-hover: #065F46;
+  --primary-soft: #ECFDF5;
+  --on-primary: #FFFFFF;
+  --accent: #B45309;
+  --accent-hover: #92400E;
+  --accent-soft: #FEF3C7;
+  --on-accent: #FFFFFF;
+  --accent-text: #92400E;
+  --danger: #B91C1C;
+  --danger-soft: #FEF2F2;
+  --danger-text: #B91C1C;
+  --on-danger: #FFFFFF;
+  --success: #047857;
+  --success-soft: #ECFDF5;
+  --success-text: #047857;
+  --on-success: #FFFFFF;
+  --warning: #B45309;
+  --warning-soft: #FFFBEB;
+  --warning-text: #92400E;
+  --on-warning: #FFFFFF;
+  --shadow-panel: 0 20px 48px -12px rgba(20, 32, 24, 0.14), 0 4px 16px -2px rgba(20, 32, 24, 0.06), 0 0 0 1px rgba(20, 32, 24, 0.05);
+  --shadow-pin: 0 3px 10px rgba(20, 32, 24, 0.18);
+}
+
+html.dark {
+  color-scheme: dark;
+  --bg: #0C1410;
+  --surface: #141F18;
+  --surface-translucent: rgba(20, 31, 24, 0.88);
+  --surface-2: #1C2B22;
+  --text: #F2F5F2;
+  --text-muted: #9CB0A2;
+  --border: #283B2F;
+  --field-border: #7C9488;
+  --primary: #34D399;
+  --primary-hover: #6EE7B7;
+  --primary-soft: #133827;
+  --on-primary: #041F14;
+  --accent: #F59E0B;
+  --accent-hover: #FCD34D;
+  --accent-soft: #382A0E;
+  --on-accent: #181103;
+  --accent-text: #FBBF24;
+  --danger: #F87171;
+  --danger-soft: #381A1A;
+  --danger-text: #FCA5A5;
+  --on-danger: #2A0A0A;
+  --success: #34D399;
+  --success-soft: #133827;
+  --success-text: #6EE7B7;
+  --on-success: #041F14;
+  --warning: #FBBF24;
+  --warning-soft: #382A0E;
+  --warning-text: #FCD34D;
+  --on-warning: #1C1303;
+  --shadow-panel: 0 24px 56px -12px rgba(0, 0, 0, 0.8), 0 4px 20px -2px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  --shadow-pin: 0 4px 14px rgba(0, 0, 0, 0.65);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    color-scheme: dark;
+    --bg: #0C1410;
+    --surface: #141F18;
+    --surface-translucent: rgba(20, 31, 24, 0.88);
+    --surface-2: #1C2B22;
+    --text: #F2F5F2;
+    --text-muted: #9CB0A2;
+    --border: #283B2F;
+    --field-border: #7C9488;
+    --primary: #34D399;
+    --primary-hover: #6EE7B7;
+    --primary-soft: #133827;
+    --on-primary: #041F14;
+    --accent: #F59E0B;
+    --accent-hover: #FCD34D;
+    --accent-soft: #382A0E;
+    --on-accent: #181103;
+    --accent-text: #FBBF24;
+    --danger: #F87171;
+    --danger-soft: #381A1A;
+    --danger-text: #FCA5A5;
+    --on-danger: #2A0A0A;
+    --success: #34D399;
+    --success-soft: #133827;
+    --success-text: #6EE7B7;
+    --on-success: #041F14;
+    --warning: #FBBF24;
+    --warning-soft: #382A0E;
+    --warning-text: #FCD34D;
+    --on-warning: #1C1303;
+    --shadow-panel: 0 24px 56px -12px rgba(0, 0, 0, 0.8), 0 4px 20px -2px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08);
+    --shadow-pin: 0 4px 14px rgba(0, 0, 0, 0.65);
+  }
+}
+
 @layer base {
   html, body, #root {
     height: 100%;
@@ -9,14 +116,30 @@
   }
 
   body {
-    @apply font-body bg-ink text-porcelain antialiased;
+    @apply font-body bg-bg text-text antialiased transition-colors duration-200;
   }
 
   :focus-visible {
-    outline: 2px solid #C08A34;
+    outline: 2px solid var(--primary);
     outline-offset: 2px;
+    border-radius: 4px;
   }
 
+  ::selection {
+    background: var(--primary);
+    color: var(--on-primary);
+  }
+
+  /* Т10: длинные слова и адреса не вылезают за экран; переносы по словарю при lang="ru" */
+  :where(p, li, dd, td, th, blockquote, figcaption) {
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+  :where(h1, h2, h3, h4, h5, h6) {
+    overflow-wrap: break-word;
+  }
+
+  /* Д8: системная настройка «Уменьшить движение» */
   @media (prefers-reduced-motion: reduce) {
     *, ::before, ::after {
       animation-duration: 0.01ms !important;
@@ -26,17 +149,41 @@
     }
   }
 
-  ::selection {
-    background: #C08A34;
-    color: #1C2A22;
-  }
-
-  /* keep MapLibre's own attribution/controls legible against our custom style */
+  /* MapLibre controls adaptation */
   .maplibregl-ctrl-attrib {
-    @apply !bg-porcelain/80 !text-ink !text-[11px] !font-body;
+    background-color: var(--surface-translucent) !important;
+    color: var(--text) !important;
+    font-size: 11px !important;
+    font-family: inherit !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 8px !important;
+    backdrop-filter: blur(8px) !important;
+    padding: 2px 6px !important;
   }
   .maplibregl-ctrl-attrib a {
-    @apply !text-ink;
+    color: var(--text) !important;
+  }
+  .maplibregl-ctrl-group {
+    background: var(--surface-translucent) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 12px !important;
+    backdrop-filter: blur(8px) !important;
+    overflow: hidden !important;
+    box-shadow: var(--shadow-panel) !important;
+  }
+  .maplibregl-ctrl-group button {
+    width: 36px !important;
+    height: 36px !important;
+    border-bottom: 1px solid var(--border) !important;
+  }
+  .maplibregl-ctrl-group button:last-child {
+    border-bottom: none !important;
+  }
+  .maplibregl-ctrl-group button .maplibregl-ctrl-icon {
+    filter: invert(var(--map-ctrl-invert, 0));
+  }
+  html.dark .maplibregl-ctrl-group button .maplibregl-ctrl-icon {
+    filter: invert(1);
   }
   .maplibregl-ctrl-bottom-right,
   .maplibregl-ctrl-bottom-left {
@@ -52,7 +199,7 @@
     width: 6px;
   }
   .scrollbar-thin::-webkit-scrollbar-thumb {
-    background: #C08A34;
+    background: var(--accent);
     border-radius: 999px;
   }
   .scrollbar-thin::-webkit-scrollbar-track {
@@ -60,6 +207,7 @@
   }
 }
 
+/* Animations */
 @keyframes pin-in {
   from { transform: scale(0.4); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
@@ -74,4 +222,83 @@
 }
 .animate-panel-in {
   animation: panel-in 320ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes modal-in {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.animate-modal-in {
+  animation: modal-in 240ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Tea Ceremony SVG Keyframe Animations */
+@keyframes steamDriftOne {
+  0% {
+    transform: translateY(0) scaleX(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-8px) scaleX(1.15) rotate(2deg);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(-16px) scaleX(0.9) rotate(-2deg);
+    opacity: 0;
+  }
+}
+
+@keyframes steamDriftTwo {
+  0% {
+    transform: translateY(0) scaleX(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-10px) scaleX(1.2) rotate(-3deg);
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateY(-20px) scaleX(0.85) rotate(3deg);
+    opacity: 0;
+  }
+}
+
+@keyframes teaLiquorPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.95;
+  }
+  50% {
+    transform: scale(1.02);
+    opacity: 1;
+  }
+}
+
+@keyframes teaLeafBreath {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+.anim-steam-1 {
+  animation: steamDriftOne 3.6s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+.anim-steam-2 {
+  animation: steamDriftTwo 4.2s ease-in-out infinite 0.8s;
+  transform-origin: center bottom;
+}
+
+.anim-liquor {
+  animation: teaLiquorPulse 3s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+.anim-leaf {
+  animation: teaLeafBreath 4.5s ease-in-out infinite;
+  transform-origin: 20px 45px;
 }

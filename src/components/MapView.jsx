@@ -6,6 +6,8 @@ import { getRegions, getTeaIndex } from '../lib/api'
 import { COUNTRY_CENTROIDS } from '../lib/countryMeta'
 import { createCountryPin, createRegionPin, createTeaPin } from '../lib/markers'
 import { useI18n } from '../lib/i18n'
+import { useTheme } from '../lib/theme'
+import { ErrorState } from './States'
 
 const WORLD_MAX = 3.2
 const LABEL_ZOOM = 8
@@ -44,10 +46,17 @@ const ANIMATION = {
 
 const MapView = forwardRef(function MapView({ countries, hiddenCategories, onSelectTea, onNav, onToast }, ref) {
   const { t } = useI18n()
+  const { resolvedTheme } = useTheme()
   const tRef = useRef(t)
+  const themeRef = useRef(resolvedTheme)
+
   useEffect(() => {
     tRef.current = t
   }, [t])
+
+  useEffect(() => {
+    themeRef.current = resolvedTheme
+  }, [resolvedTheme])
   const containerRef = useRef(null)
   const mapRef = useRef(null)
   const worldMarkersRef = useRef([])
@@ -95,7 +104,7 @@ const MapView = forwardRef(function MapView({ countries, hiddenCategories, onSel
     map.on('load', () => {
       clearTimeout(timeout)
       try {
-        applyTeaPalette(map)
+        applyTeaPalette(map, themeRef.current === 'dark')
       } catch {
         // Если перекраска почему-то не удалась — используем стандартный вид
         // CARTO, лишь бы карта не блокировалась вовсе.
@@ -127,7 +136,15 @@ const MapView = forwardRef(function MapView({ countries, hiddenCategories, onSel
     }
   }, [])
 
-  // --- подстраховка: заново измеряем контейнер на случай, если MapLibre
+  // --- динамическое обновление чайной палитры при смене темы ---
+  useEffect(() => {
+    if (!ready || !mapRef.current) return
+    try {
+      applyTeaPalette(mapRef.current, resolvedTheme === 'dark')
+    } catch {
+      // ignore
+    }
+  }, [ready, resolvedTheme])
   // захватил устаревший размер до того, как вёрстка полностью устаканилась ---
   useEffect(() => {
     if (!ready || !mapRef.current) return
@@ -387,18 +404,22 @@ const MapView = forwardRef(function MapView({ countries, hiddenCategories, onSel
     <div className="absolute inset-0">
       <div ref={containerRef} className="w-full h-full" />
       {!ready && !loadError && (
-        <div className="absolute inset-0 z-10 grid place-items-center bg-ink pointer-events-none">
-          <div className="flex flex-col items-center gap-3">
-            <div className="w-8 h-8 rounded-full border-2 border-porcelain/20 border-t-gold animate-spin" />
-            <p className="font-mono text-[11px] uppercase tracking-widest text-porcelain/50">{t('mapLoading')}</p>
+        <div className="absolute inset-0 z-10 grid place-items-center bg-bg/85 pointer-events-none backdrop-blur-sm">
+          <div className="flex flex-col items-center gap-3.5">
+            <div className="w-10 h-10 rounded-full border-2 border-border border-t-primary animate-spin" />
+            <p className="font-mono text-[11px] uppercase tracking-widest text-muted">{t('mapLoading')}</p>
           </div>
         </div>
       )}
       {loadError && (
-        <div className="absolute inset-0 z-20 grid place-items-center bg-ink/90 px-6 text-center">
-          <div className="max-w-sm">
-            <p className="font-display text-xl text-porcelain mb-2">{t('mapLoadError')}</p>
-            <p className="text-porcelain/70 text-sm">{loadError}</p>
+        <div className="absolute inset-0 z-20 grid place-items-center bg-bg/95 px-6 text-center backdrop-blur-md">
+          <div className="max-w-md w-full">
+            <ErrorState
+              title={t('mapLoadError')}
+              description={loadError}
+              onRetry={() => window.location.reload()}
+              retryLabel="Перезагрузить страницу"
+            />
           </div>
         </div>
       )}
