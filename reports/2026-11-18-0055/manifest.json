@@ -1,0 +1,230 @@
+{
+  "run": "2026-11-18-0055",
+  "repo": "TeaMap",
+  "records": [
+    {
+      "view": "map",
+      "theme": "light",
+      "device": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "path": "/Users/atlant/Projects/myProjects/TeaMap/reports/2026-11-18-0055/teamap-map-light-desktop-1440x1000.png",
+      "capturedAt": "2026-11-17T21:55:35.124Z",
+      "mapReady": true,
+      "overflow": false
+    },
+    {
+      "view": "reference",
+      "theme": "light",
+      "device": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "path": "/Users/atlant/Projects/myProjects/TeaMap/reports/2026-11-18-0055/teamap-reference-light-desktop-1440x1000.png",
+      "capturedAt": "2026-11-17T21:55:35.258Z",
+      "mapReady": true,
+      "overflow": false
+    },
+    {
+      "view": "favorites",
+      "theme": "light",
+      "device": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "path": "/Users/atlant/Projects/myProjects/TeaMap/reports/2026-11-18-0055/teamap-favorites-light-desktop-1440x1000.png",
+      "capturedAt": "2026-11-17T21:55:35.358Z",
+      "mapReady": true,
+      "overflow": false
+    },
+    {
+      "view": "map",
+      "theme": "light",
+      "device": "mobile",
+      "width": 375,
+      "height": 1000,
+      "path": "/Users/atlant/Projects/myProjects/TeaMap/reports/2026-11-18-0055/teamap-map-light-mobile-375x1000.png",
+      "capturedAt": "2026-11-17T21:55:36.620Z",
+      "mapReady": true,
+      "overflow": false
+    },
+    {
+      "view": "sidebar",
+      "theme": "light",
+      "device": "mobile",
+      "width": 375,
+      "height": 1000,
+      "path": "/Users/atlant/Projects/myProjects/TeaMap/reports/2026-11-18-0055/teamap-sidebar-light-mobile-375x1000.png",
+      "capturedAt": "2026-11-17T21:55:36.689Z",
+      "mapReady": true,
+      "overflow": false
+    },
+    {
+      "view": "reference",
+      "theme": "light",
+      "device": "mobile",
+      "width": 375,
+      "height": 1000,
+      "path": "/Users/atlant/Projects/myProjects/TeaMap/reports/2026-11-18-0055/teamap-reference-light-mobile-375x1000.png",
+      "capturedAt": "2026-11-17T21:55:36.754Z",
+      "mapReady": true,
+      "overflow": false
+    },
+    {
+      "view": "favorites",
+      "theme": "light",
+      "device": "mobile",
+      "width": 375,
+      "height": 1000,
+      "path": "/Users/atlant/Projects/myProjects/TeaMap/reports/2026-11-18-0055/teamap-favorites-light-mobile-375x1000.png",
+      "capturedAt": "2026-11-17T21:55:36.802Z",
+      "mapReady": true,
+      "overflow": false
+    },
+    {
+      "view": "map",
+      "theme": "dark",
+      "device": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "path": "/Users/atlant/Projects/myProjects/TeaMap/reports/2026-11-18-0055/teamap-map-dark-desktop-1440x1000.png",
+      "capturedAt": "2026-11-17T21:55:38.258Z",
+      "mapReady": true,
+      "overflow": false
+    },
+    {
+      "view": "reference",
+      "theme": "dark",
+      "device": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "path": "/Users/atlant/Projects/myProjects/TeaMap/reports/2026-11-18-0055/teamap-reference-dark-desktop-1440x1000.png",
+      "capturedAt": "2026-11-17T21:55:38.371Z",
+      "mapReady": true,
+      "overflow": false
+    },
+    {
+      "view": "favorites",
+      "theme": "dark",
+      "device": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "path": "/Users/atlant/Projects/myProjects/TeaMap/reports/2026-11-18-0055/teamap-favorites-dark-desktop-1440x1000.png",
+      "capturedAt": "2026-11-17T21:55:38.467Z",
+      "mapReady": true,
+      "overflow": false
+    },
+    {
+      "view": "map",
+      "theme": "dark",
+      "device": "mobile",
+      "width": 375,
+      "height": 1000,
+      "path": "/Users/atlant/Projects/myProjects/TeaMap/reports/2026-11-18-0055/teamap-map-dark-mobile-375x1000.png",
+      "capturedAt": "2026-11-17T21:55:39.706Z",
+      "mapReady": true,
+      "overflow": false
+    },
+    {
+      "view": "sidebar",
+      "theme": "dark",
+      "device": "mobile",
+      "width": 375,
+      "height": 1000,
+      "path": "/Users/atlant/Projects/myProjects/TeaMap/reports/2026-11-18-0055/teamap-sidebar-dark-mobile-375x1000.png",
+      "capturedAt": "2026-11-17T21:55:39.773Z",
+      "mapReady": true,
+      "overflow": false
+    },
+    {
+      "view": "reference",
+      "theme": "dark",
+      "device": "mobile",
+      "width": 375,
+      "height": 1000,
+      "path": "/Users/atlant/Projects/myProjects/TeaMap/reports/2026-11-18-0055/teamap-reference-dark-mobile-375x1000.png",
+      "capturedAt": "2026-11-17T21:55:39.837Z",
+      "mapReady": true,
+      "overflow": false
+    },
+    {
+      "view": "favorites",
+      "theme": "dark",
+      "device": "mobile",
+      "width": 375,
+      "height": 1000,
+      "path": "/Users/atlant/Projects/myProjects/TeaMap/reports/2026-11-18-0055/teamap-favorites-dark-mobile-375x1000.png",
+      "capturedAt": "2026-11-17T21:55:39.885Z",
+      "mapReady": true,
+      "overflow": false
+    }
+  ],
+  "failedRequests": [
+    {
+      "url": "https://fonts.gstatic.com/s/ibmplexmono/v23/-F63fjptAgt5VM-kVkqdyU8n1i8q131nj-o.woff2",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/ibmplexmono/v23/-F6qfjptAgt5VM-kVkqdyU8n3twJwlBFgsAXHNk.woff2",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeP2Xz5c.woff2",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/DmitroZubroni/TeaMenuFoundation/main/en/countries.json",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/DmitroZubroni/TeaMenuFoundation/main/en/categories.json",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/DmitroZubroni/TeaMenuFoundation/main/en/countries.json",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/DmitroZubroni/TeaMenuFoundation/main/en/categories.json",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:5191/node_modules/.vite/deps/maplibre-gl.js?v=d6bfc0df",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/DmitroZubroni/TeaMenuFoundation/main/en/teas/china.json",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/DmitroZubroni/TeaMenuFoundation/main/en/teas/india.json",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/DmitroZubroni/TeaMenuFoundation/main/en/teas/sri_lanka.json",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/DmitroZubroni/TeaMenuFoundation/main/en/teas/vietnam.json",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/DmitroZubroni/TeaMenuFoundation/main/en/teas/thailand.json",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/DmitroZubroni/TeaMenuFoundation/main/en/teas/russia.json",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/DmitroZubroni/TeaMenuFoundation/main/en/teas/taiwan.json",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/DmitroZubroni/TeaMenuFoundation/main/en/teas/japan.json",
+      "error": "net::ERR_ABORTED"
+    }
+  ]
+}
