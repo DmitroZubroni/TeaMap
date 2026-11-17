@@ -4,6 +4,7 @@
 
 :root {
   color-scheme: light;
+  --overlay: rgba(12, 20, 16, 0.45);
   --bg: #F6F4ED;
   --surface: #FFFFFF;
   --surface-translucent: rgba(255, 255, 255, 0.88);
@@ -314,4 +315,12 @@ html.dark {
 .maplibregl-canvas:focus-visible { outline: 3px solid var(--primary); outline-offset: -3px; }
 @media (max-width: 639px) {
   .tea-sidebar { top: max(8px, env(safe-area-inset-top)); bottom: max(8px, env(safe-area-inset-bottom)); }
+}
+
+.tea-detail { box-shadow: var(--shadow-panel), 0 0 0 100vmax var(--overlay); }
+@media (max-width: 639px) {
+  .tea-sidebar > div:last-child { padding-inline: 12px; }
+}
+@media (pointer: coarse) {
+  .maplibregl-ctrl-group button { width: 44px !important; height: 44px !important; }
 }

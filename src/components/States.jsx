@@ -26,7 +26,7 @@ export function EmptyState({
     <div
       role="status"
       aria-live="polite"
-      className={`flex flex-col items-center justify-center p-6 text-center rounded-2xl border border-dashed border-border bg-surface-2/40 backdrop-blur-sm ${className}`}
+      className={`flex flex-col items-center justify-center p-6 text-center rounded-2xl border border-dashed border-border bg-surface-2 backdrop-blur-sm ${className}`}
     >
       <div className="w-14 h-14 rounded-2xl bg-primary-soft border border-primary/25 flex items-center justify-center text-primary mb-3.5 shadow-sm">
         {icon || (
@@ -43,7 +43,7 @@ export function EmptyState({
         {typograph(title)}
       </h3>
 
-      <p className="text-[13px] text-muted mt-1.5 max-w-xs leading-relaxed">
+      <p className="text-base text-muted mt-1.5 max-w-xs leading-relaxed">
         {typograph(description)}
       </p>
 
@@ -89,22 +89,22 @@ export function LoadingSkeleton({ count = 3, className = '' }) {
       {Array.from({ length: count }).map((_, idx) => (
         <div
           key={idx}
-          className="animate-pulse rounded-xl border border-border/60 bg-surface-2/60 p-3 flex items-center justify-between"
+          className="animate-pulse rounded-xl border border-border bg-surface-2 p-3 flex items-center justify-between"
         >
           <div className="flex items-center gap-3 flex-1">
-            <div className="w-6 h-6 rounded-full bg-border/70 shrink-0" />
+            <div className="w-6 h-6 rounded-full bg-border shrink-0" />
             <div className="space-y-1.5 flex-1">
               <div
-                className="h-3.5 rounded bg-border/80"
+                className="h-3.5 rounded bg-border"
                 style={{ width: `${55 + ((idx * 19) % 35)}%` }}
               />
               <div
-                className="h-2.5 rounded bg-border/50"
+                className="h-2.5 rounded bg-border"
                 style={{ width: `${35 + ((idx * 23) % 40)}%` }}
               />
             </div>
           </div>
-          <div className="w-2.5 h-2.5 rounded-full bg-border/60 shrink-0" />
+          <div className="w-2.5 h-2.5 rounded-full bg-border shrink-0" />
         </div>
       ))}
     </div>
@@ -125,7 +125,7 @@ export function ErrorState({
   return (
     <div
       role="alert"
-      className={`flex flex-col items-center justify-center p-6 text-center rounded-2xl border border-danger/30 bg-danger-soft/60 backdrop-blur-sm ${className}`}
+      className={`flex flex-col items-center justify-center p-6 text-center rounded-2xl border border-danger/30 bg-danger-soft backdrop-blur-sm ${className}`}
     >
       <div className="w-14 h-14 rounded-2xl bg-danger/15 border border-danger/30 flex items-center justify-center text-danger text-2xl font-bold mb-3.5 shadow-sm">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
@@ -139,7 +139,7 @@ export function ErrorState({
         {typograph(title)}
       </h3>
 
-      <p className="text-[13px] text-muted mt-1.5 max-w-xs leading-relaxed">
+      <p className="text-base text-muted mt-1.5 max-w-xs leading-relaxed">
         {typograph(description)}
       </p>
 
@@ -171,7 +171,7 @@ export function SuccessState({
     <div
       role="status"
       aria-live="polite"
-      className={`flex flex-col items-center justify-center p-6 text-center rounded-2xl border border-success/30 bg-success-soft/60 backdrop-blur-sm ${className}`}
+      className={`flex flex-col items-center justify-center p-6 text-center rounded-2xl border border-success/30 bg-success-soft backdrop-blur-sm ${className}`}
     >
       <div className="w-14 h-14 rounded-2xl bg-success/15 border border-success/30 flex items-center justify-center text-success mb-3.5 shadow-sm">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
@@ -183,7 +183,7 @@ export function SuccessState({
         {typograph(title)}
       </h3>
 
-      <p className="text-[13px] text-muted mt-1.5 max-w-xs leading-relaxed">
+      <p className="text-base text-muted mt-1.5 max-w-xs leading-relaxed">
         {typograph(description)}
       </p>
 
@@ -240,7 +240,7 @@ export function StatesDemoViewer({ onClose }) {
       role="dialog"
       aria-modal="true"
       aria-label="Демо 4 состояний экрана"
-      className="fixed inset-0 z-50 grid place-items-center bg-bg/80 backdrop-blur-sm p-4 overflow-y-auto"
+      className="fixed inset-0 z-50 grid place-items-center bg-[var(--overlay)] backdrop-blur-sm p-4 overflow-y-auto"
       onClick={onClose}
     >
       <div
@@ -257,7 +257,7 @@ export function StatesDemoViewer({ onClose }) {
             type="button"
             onClick={onClose}
             aria-label="Закрыть"
-            className={`w-8 h-8 rounded-lg grid place-items-center text-muted hover:text-text hover:bg-surface-2 transition-colors ${FOCUS_RING}`}
+            className={`w-11 h-11 rounded-lg grid place-items-center text-muted hover:text-text hover:bg-surface-2 transition-colors ${FOCUS_RING}`}
           >
             ✕
           </button>

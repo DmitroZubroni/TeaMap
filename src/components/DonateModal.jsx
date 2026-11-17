@@ -68,7 +68,7 @@ export default function DonateModal({ onClose }) {
 
   return (
     <div
-      className="fixed inset-0 z-50 grid place-items-center bg-bg/75 backdrop-blur-sm p-4 overflow-y-auto"
+      className="fixed inset-0 z-50 grid place-items-center bg-[var(--overlay)] backdrop-blur-sm p-4 overflow-y-auto"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
@@ -76,7 +76,7 @@ export default function DonateModal({ onClose }) {
     >
       <div
         ref={dialogRef}
-        className="relative w-full max-w-md rounded-3xl bg-surface border border-border p-6 shadow-panel my-auto animate-modal-in"
+        className="relative min-w-0 w-full max-w-md rounded-3xl bg-surface border border-border p-6 shadow-panel my-auto animate-modal-in"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Верхняя панель: бейдж и крестик закрытия */}
@@ -91,7 +91,7 @@ export default function DonateModal({ onClose }) {
             type="button"
             onClick={onClose}
             aria-label={t('close')}
-            className={`grid place-items-center w-10 h-10 rounded-xl text-muted hover:text-text hover:bg-surface-2 transition-colors ${FOCUS_RING}`}
+            className={`grid place-items-center w-11 h-11 shrink-0 rounded-xl text-muted hover:text-text hover:bg-surface-2 transition-colors ${FOCUS_RING}`}
           >
             ✕
           </button>
@@ -102,7 +102,7 @@ export default function DonateModal({ onClose }) {
           <h2 id="donate-modal-title" className="font-display text-xl sm:text-2xl text-text leading-tight mb-2">
             {typograph(t('donateTitle'))}
           </h2>
-          <p className="text-[13.5px] leading-relaxed text-muted">
+          <p className="text-base leading-relaxed text-muted">
             {typograph(t('donateDesc'))}
           </p>
         </div>
@@ -112,17 +112,17 @@ export default function DonateModal({ onClose }) {
           href="https://pay.cloudtips.ru/p/42656f86"
           target="_blank"
           rel="noopener noreferrer"
-          className={`group flex items-center justify-between gap-3 p-4 rounded-2xl bg-surface-2/60 border border-border hover:border-accent hover:bg-accent-soft/40 text-text transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5 ${FOCUS_RING}`}
+          className={`group flex items-center justify-between gap-3 p-4 rounded-2xl bg-surface-2 border border-border hover:border-accent hover:bg-accent-soft/40 text-text transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5 ${FOCUS_RING}`}
         >
           <div className="flex items-center gap-3.5 min-w-0">
             <div className="grid place-items-center w-11 h-11 rounded-xl bg-accent-soft text-accent-text shrink-0 group-hover:scale-105 transition-transform">
               <PialaIcon className="w-6 h-6 text-accent-text" />
             </div>
             <div className="flex flex-col min-w-0">
-              <span className="font-semibold text-[14px] text-text leading-snug truncate">
+              <span className="font-semibold text-[14px] text-text leading-snug">
                 {typograph(t('donateCtaLabel'))}
               </span>
-              <span className="font-mono text-[10.5px] text-muted mt-0.5 truncate">
+              <span className="font-mono text-[10.5px] text-muted mt-0.5">
                 {typograph(t('donateCtaSub'))}
               </span>
             </div>
@@ -150,7 +150,7 @@ export default function DonateModal({ onClose }) {
         </div>
 
         {/* Telegram контакт автора */}
-        <div className="mt-4 p-3 rounded-2xl bg-surface-2/50 border border-border flex items-center justify-between gap-3">
+        <div className="mt-4 p-3 rounded-2xl bg-surface-2 border border-border flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-3 min-w-0">
             <div className="grid place-items-center w-9 h-9 rounded-xl bg-primary-soft text-primary shrink-0">
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">

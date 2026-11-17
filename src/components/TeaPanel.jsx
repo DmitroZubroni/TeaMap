@@ -20,9 +20,9 @@ function Field({ label, value }) {
 function Section({ label, children }) {
   if (!children) return null
   return (
-    <div className="border-t border-border/70 pt-3.5">
+    <div className="border-t border-border pt-3.5">
       <p className="text-sm font-medium text-muted mb-1.5">{typograph(label)}</p>
-      <div className="text-base text-text/90 leading-relaxed space-y-2">
+      <div className="text-base text-text leading-relaxed space-y-2">
         {typeof children === 'string' ? typograph(children) : children}
       </div>
     </div>
@@ -78,6 +78,7 @@ export default function TeaPanel({ countryId, teaId, isFavorite, onToggleFavorit
 
   // Удержание фокуса внутри модального окна и закрытие по Esc (Правила Д2, Д3)
   useEffect(() => {
+    const previousFocus = document.activeElement
     closeButtonRef.current?.focus()
 
     function handleKeyDown(e) {
@@ -99,7 +100,10 @@ export default function TeaPanel({ countryId, teaId, isFavorite, onToggleFavorit
       }
     }
     document.addEventListener('keydown', handleKeyDown)
-    return () => document.removeEventListener('keydown', handleKeyDown)
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+      if (previousFocus?.isConnected) previousFocus.focus()
+    }
   }, [onClose])
 
   const categoryLabel = categories.find((c) => c.id === tea?.category)?.name
@@ -126,7 +130,7 @@ export default function TeaPanel({ countryId, teaId, isFavorite, onToggleFavorit
               onClick={onToggleFavorite}
               aria-label={isFavorite ? t('removeFavorite') : t('addFavorite')}
               aria-pressed={isFavorite}
-              className={`grid place-items-center w-10 h-10 min-w-[44px] min-h-[44px] rounded-full bg-surface/90 hover:bg-surface-2 border border-border shadow-sm transition-all duration-150 ${FOCUS_RING} ${
+              className={`grid place-items-center w-10 h-10 min-w-[44px] min-h-[44px] rounded-full bg-surface hover:bg-surface-2 border border-border shadow-sm transition-all duration-150 ${FOCUS_RING} ${
                 isFavorite ? 'text-danger scale-105' : 'text-muted hover:text-text'
               }`}
             >
@@ -148,7 +152,7 @@ export default function TeaPanel({ countryId, teaId, isFavorite, onToggleFavorit
             type="button"
             onClick={onClose}
             aria-label={t('closeCard')}
-            className={`grid place-items-center w-10 h-10 min-w-[44px] min-h-[44px] rounded-full bg-surface/90 hover:bg-surface-2 text-text border border-border shadow-sm transition-colors ${FOCUS_RING}`}
+            className={`grid place-items-center w-10 h-10 min-w-[44px] min-h-[44px] rounded-full bg-surface hover:bg-surface-2 text-text border border-border shadow-sm transition-colors ${FOCUS_RING}`}
           >
             ✕
           </button>
@@ -177,7 +181,7 @@ export default function TeaPanel({ countryId, teaId, isFavorite, onToggleFavorit
         {!loading && tea && (
           <>
             <div
-              className="px-6 pt-20 pb-5 shrink-0 border-b border-border/50 relative overflow-hidden"
+              className="px-6 pt-20 pb-5 shrink-0 border-b border-border relative overflow-hidden"
               style={{
                 background: `linear-gradient(180deg, ${color}20, transparent)`,
               }}
@@ -208,7 +212,7 @@ export default function TeaPanel({ countryId, teaId, isFavorite, onToggleFavorit
                 </p>
               )}
 
-              <p className="text-base text-muted/90 mt-2 flex items-center gap-1.5">
+              <p className="text-base text-muted mt-2 flex items-center gap-1.5">
                 <span>📍</span>
                 <span>
                   {[tea.location?.region, tea.location?.province].filter(Boolean).map(typograph).join(', ')}
@@ -217,7 +221,7 @@ export default function TeaPanel({ countryId, teaId, isFavorite, onToggleFavorit
               </p>
 
               {tea.description?.short && (
-                <p className="mt-3 text-base text-text/90 leading-relaxed italic bg-surface-2/60 p-3 rounded-xl border border-border/40">
+                <p className="mt-3 text-base text-text leading-relaxed italic bg-surface-2 p-3 rounded-xl border border-border">
                   {typograph(tea.description.short)}
                 </p>
               )}
@@ -249,7 +253,7 @@ export default function TeaPanel({ countryId, teaId, isFavorite, onToggleFavorit
               <div className="px-6 py-5 flex flex-col gap-4">
                 {tab === 'overview' && (
                   <>
-                    <div className="grid grid-cols-2 gap-x-4 gap-y-3.5 bg-surface-2/60 rounded-2xl p-4 border border-border/60">
+                    <div className="grid grid-cols-2 gap-x-4 gap-y-3.5 bg-surface-2 rounded-2xl p-4 border border-border">
                       <Field label={t('cultivar')} value={tea.characteristics?.cultivar} />
                       <Field label={t('oxidation')} value={tea.characteristics?.oxidation} />
                       <Field label={t('roast')} value={tea.characteristics?.roast} />
@@ -276,13 +280,13 @@ export default function TeaPanel({ countryId, teaId, isFavorite, onToggleFavorit
                     <Section label={t('history')}>{tea.history?.development}</Section>
                     <Section label={t('modernDay')}>{tea.history?.modern}</Section>
                     {tea.history?.interestingFacts?.length > 0 && (
-                      <div className="border-t border-border/70 pt-3.5">
+                      <div className="border-t border-border pt-3.5">
                         <p className="text-sm font-medium text-muted mb-2">
                           {typograph(t('facts'))}
                         </p>
                         <ul className="flex flex-col gap-2">
                           {tea.history.interestingFacts.map((fact, i) => (
-                            <li key={i} className="text-base text-text/90 leading-relaxed flex items-start gap-2.5">
+                            <li key={i} className="text-base text-text leading-relaxed flex items-start gap-2.5">
                               <span className="text-accent-text font-bold text-base leading-none">·</span>
                               <span>{typograph(fact)}</span>
                             </li>
