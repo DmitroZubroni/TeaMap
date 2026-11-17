@@ -1,3 +1,4 @@
+import TeaIcon from './TeaIcon'
 import { useEffect, useRef, useState, useCallback } from 'react'
 import { getTeaDetail, getCategories } from '../lib/api'
 import { categoryColor } from '../lib/categoryStyle'
@@ -154,7 +155,7 @@ export default function TeaPanel({ countryId, teaId, isFavorite, onToggleFavorit
             aria-label={t('closeCard')}
             className={`grid place-items-center w-10 h-10 min-w-[44px] min-h-[44px] rounded-full bg-surface hover:bg-surface-2 text-text border border-border shadow-sm transition-colors ${FOCUS_RING}`}
           >
-            ✕
+            <TeaIcon name="close" />
           </button>
         </div>
 
@@ -213,7 +214,7 @@ export default function TeaPanel({ countryId, teaId, isFavorite, onToggleFavorit
               )}
 
               <p className="text-base text-muted mt-2 flex items-center gap-1.5">
-                <span>📍</span>
+                <TeaIcon name="location" className="shrink-0" />
                 <span>
                   {[tea.location?.region, tea.location?.province].filter(Boolean).map(typograph).join(', ')}
                   {tea.location?.altitude ? ` · ${tea.location.altitude}` : ''}

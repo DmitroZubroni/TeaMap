@@ -1,3 +1,4 @@
+import TeaIcon from './TeaIcon'
 import React, { useEffect, useRef } from 'react'
 import { typograph } from '../lib/typograph'
 
@@ -29,14 +30,7 @@ export function EmptyState({
       className={`flex flex-col items-center justify-center p-6 text-center rounded-2xl border border-dashed border-border bg-surface-2 backdrop-blur-sm ${className}`}
     >
       <div className="w-14 h-14 rounded-2xl bg-primary-soft border border-primary/25 flex items-center justify-center text-primary mb-3.5 shadow-sm">
-        {icon || (
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
-            <path d="M12 2a10 10 0 0 0-7.07 17.07L12 22l7.07-2.93A10 10 0 0 0 12 2z" opacity="0.2" fill="currentColor" />
-            <path d="M8 14s1.5 2 4 2 4-2 4-2" strokeLinecap="round" />
-            <path d="M9 9h.01M15 9h.01" strokeWidth="2.5" strokeLinecap="round" />
-            <path d="M12 4v4m0 0l-2-2m2 2l2-2" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        )}
+        {icon || <TeaIcon name="leaf" />}
       </div>
 
       <h3 className="font-display font-semibold text-text text-base leading-snug">
@@ -259,7 +253,7 @@ export function StatesDemoViewer({ onClose }) {
             aria-label="Закрыть"
             className={`w-11 h-11 rounded-lg grid place-items-center text-muted hover:text-text hover:bg-surface-2 transition-colors ${FOCUS_RING}`}
           >
-            ✕
+            <TeaIcon name="close" />
           </button>
         </div>
 

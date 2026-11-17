@@ -1,3 +1,4 @@
+import TeaIcon from './TeaIcon'
 import { useEffect, useRef } from 'react'
 import { useI18n } from '../lib/i18n'
 import { typograph } from '../lib/typograph'
@@ -93,7 +94,7 @@ export default function DonateModal({ onClose }) {
             aria-label={t('close')}
             className={`grid place-items-center w-11 h-11 shrink-0 rounded-xl text-muted hover:text-text hover:bg-surface-2 transition-colors ${FOCUS_RING}`}
           >
-            ✕
+            <TeaIcon name="close" />
           </button>
         </div>
 

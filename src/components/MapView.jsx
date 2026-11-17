@@ -241,7 +241,7 @@ const MapView = forwardRef(function MapView({ countries, hiddenCategories, onSel
       if (!centroid) return
       const el = createCountryPin({
         name: country.name,
-        icon: country.icon,
+        icon: country.id,
         active: country.teaCount > 0,
         onClick: () => flyToCountry(country),
       })

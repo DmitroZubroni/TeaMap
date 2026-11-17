@@ -1,0 +1,23 @@
+/* Botanical field atlas. Preserve the map, panel geometry and existing motion. */
+.tea-sidebar { border-radius: 20px; box-shadow: 0 12px 36px color-mix(in srgb, var(--text) 12%, transparent); }
+.tea-sidebar > div:first-child { background: var(--surface); border-top: 3px solid var(--primary); }
+.tea-sidebar h1 { font-size: 24px; letter-spacing: -.035em; }
+.tea-sidebar > div:first-child p { line-height: 1.5; }
+.tea-sidebar [role="group"] { border-radius: 10px; background: var(--surface-2); }
+.tea-sidebar [role="group"] button { border-radius: 7px; }
+.tea-sidebar [role="group"] button[aria-pressed="true"] { color: var(--primary); box-shadow: inset 0 -2px var(--primary); }
+.tea-sidebar > div:nth-child(3) button { border-radius: 8px; }
+.tea-sidebar .tea-art-frame { position: relative; border-radius: 10px; box-shadow: none; background: var(--bg); }
+.tea-art-frame::after { content: ''; position: absolute; inset: 8px; border: 1px solid var(--border); border-radius: 4px; pointer-events: none; }
+.tea-sidebar button:has(> .tea-icon), .tea-icon { flex-shrink: 0; }
+.tea-sidebar button > span:has(> .tea-icon) { background: transparent; border: 0; border-radius: 0; color: var(--primary); }
+.tea-sidebar .overflow-y-auto button.text-left { border-radius: 6px; border-bottom: 1px solid var(--border); }
+.tea-sidebar .overflow-y-auto button.text-left:hover { border-color: var(--primary); }
+.tea-sidebar > div:last-child { background: var(--bg); }
+.tea-detail { border-color: var(--border); }
+.tea-detail h2 { letter-spacing: -.025em; }
+/* The existing reduced-motion declaration is in a Tailwind layer; these
+   unlayered animation classes need an equally unlayered preference override. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}

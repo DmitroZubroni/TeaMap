@@ -1,3 +1,4 @@
+import { teaIconMarkup } from './teaIcons'
 import { categoryColor } from './categoryStyle'
 
 function wrap(inner, onClick) {
@@ -25,7 +26,7 @@ export function createCountryPin({ name, icon, active, onClick }) {
   inner.innerHTML = `
     <span class="grid place-items-center w-6 h-6 rounded-full text-[15px] ${
       active ? 'bg-primary-soft text-primary' : 'bg-surface text-muted'
-    }">${icon}</span>
+    }">${teaIconMarkup(icon)}</span>
     <span class="text-text">${name}</span>
     ${
       active

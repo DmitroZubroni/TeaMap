@@ -1,3 +1,4 @@
+import TeaIcon from './TeaIcon'
 import { useMemo, useState } from 'react'
 import { categoryColor } from '../lib/categoryStyle'
 import { useI18n } from '../lib/i18n'
@@ -91,7 +92,7 @@ function CountryList({ countries, current, onPick }) {
             ].join(' ')}
           >
             <span className="grid place-items-center w-8 h-8 rounded-full bg-surface-2 text-[15px] shrink-0 border border-border">
-              {c.icon}
+              <TeaIcon name={c.id} />
             </span>
             <span className="text-base font-medium flex-1">{typograph(c.name)}</span>
             {active ? (
@@ -145,7 +146,7 @@ function TeaRow({ tea, onPick, countryIcon }) {
         style={{ backgroundColor: categoryColor(tea.category) }}
       />
       <span className="text-base text-text font-medium flex-1">{typograph(tea.name)}</span>
-      {countryIcon && <span className="text-[13px] shrink-0 opacity-80">{countryIcon}</span>}
+      {countryIcon && <span className="text-[13px] shrink-0 opacity-80"><TeaIcon name={countryIcon} /></span>}
     </button>
   )
 }
@@ -229,7 +230,7 @@ function ReferenceTab({ categories, teas, countries, hiddenCategories, onToggleC
   const { t } = useI18n()
   const [query, setQuery] = useState('')
   const debouncedQuery = useDebouncedValue(query, 200)
-  const iconByCountry = Object.fromEntries(countries.map((c) => [c.id, c.icon]))
+  const iconByCountry = Object.fromEntries(countries.map((c) => [c.id, c.id]))
   const showCountryIcon = new Set(teas.map((tea) => tea.countryId)).size > 1
 
   const grouped = useMemo(() => {
@@ -278,7 +279,7 @@ function ReferenceTab({ categories, teas, countries, hiddenCategories, onToggleC
                 aria-label={t('clearSearch')}
                 className="absolute right-0 w-11 h-11 rounded-full text-muted hover:text-text grid place-items-center text-xs"
               >
-                ✕
+                <TeaIcon name="close" />
               </button>
             )}
           </div>
@@ -323,9 +324,9 @@ function ThemeToggle() {
   const { theme, setTheme } = useTheme()
   const { t } = useI18n()
   const options = [
-    { id: 'light', icon: '☀️', label: t('themeLight') },
-    { id: 'system', icon: '💻', label: t('themeSystem') },
-    { id: 'dark', icon: '🌙', label: t('themeDark') },
+    { id: 'light', icon: 'light', label: t('themeLight') },
+    { id: 'system', icon: 'system', label: t('themeSystem') },
+    { id: 'dark', icon: 'dark', label: t('themeDark') },
   ]
 
   return (
@@ -348,7 +349,7 @@ function ThemeToggle() {
               : 'text-muted hover:text-text'
           }`}
         >
-          <span aria-hidden="true">{opt.icon}</span>
+          <TeaIcon name={opt.icon} />
         </button>
       ))}
     </div>
@@ -385,7 +386,7 @@ function LocaleToggle() {
 
 function FavoritesTab({ teas, countries, onPick }) {
   const { t } = useI18n()
-  const iconByCountry = Object.fromEntries(countries.map((c) => [c.id, c.icon]))
+  const iconByCountry = Object.fromEntries(countries.map((c) => [c.id, c.id]))
   const showCountryIcon = new Set(teas.map((tea) => tea.countryId)).size > 1
 
   if (!teas.length) {
@@ -393,7 +394,7 @@ function FavoritesTab({ teas, countries, onPick }) {
       <EmptyState
         title={t('noFavorites')}
         description={t('noFavoritesDesc')}
-        icon="❤️"
+        icon={<TeaIcon name="favorite" />}
       />
     )
   }
@@ -483,7 +484,7 @@ export default function Sidebar({
               aria-label={t('collapseMenu')}
               className={`w-11 h-11 rounded-full grid place-items-center text-muted hover:text-text hover:bg-surface-2 transition-colors shrink-0 ${FOCUS_RING}`}
             >
-              ✕
+              <TeaIcon name="close" />
             </button>
           </div>
 
@@ -547,7 +548,7 @@ export default function Sidebar({
             <>
               {!nav.country ? (
                 <div className="flex flex-col gap-3.5">
-                  <div className="rounded-2xl bg-surface-2 border border-border p-2 flex justify-center shadow-sm overflow-hidden">
+                  <div className="tea-art-frame rounded-2xl bg-surface-2 border border-border p-2 flex justify-center shadow-sm overflow-hidden">
                     <TeaCeremonyHeroArt width={280} height={155} className="w-full h-auto max-w-[280px]" />
                   </div>
                   <SectionLabel>{t('countries')}</SectionLabel>

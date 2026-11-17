@@ -205,6 +205,7 @@ export default function TeaCeremonyHeroArt({ className = '', width = 320, height
           strokeOpacity="0.6"
           fill="none"
         />
+        <path d="M40 36l4-3m0 7 5-2M17 51l-5 1m3 3-3 3" stroke="var(--surface)" strokeOpacity="0.55" strokeWidth="0.65" fill="none" />
         {/* Second Leaf */}
         <path
           d="M22 47 C 9 42, 5 54, 11 62 C 19 59, 21 50, 22 47 Z"
