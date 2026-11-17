@@ -432,6 +432,7 @@ export default function Sidebar({
   const [expanded, setExpanded] = useState(() => typeof window === 'undefined' || window.innerWidth >= 640)
   const [view, setView] = useState('nav') // 'nav' | 'reference' | 'favorites'
   const [showStatesDemo, setShowStatesDemo] = useState(false)
+  const [reviewMode] = useState(() => ["review", "dev"].some(key => new URLSearchParams(window.location.search).has(key)))
 
   if (!expanded) {
     return (
@@ -622,13 +623,13 @@ export default function Sidebar({
           <div className="flex items-center gap-2">
             {/* Демо-переключатель состояний (Н4) — инструмент ревью для
                 дизайнера/разработчика, а не часть продукта: показываем его
-                только в dev-сборке, чтобы не нагружать интерфейс конечного
+                по явному ?review или ?dev, чтобы не нагружать интерфейс конечного
                 пользователя служебной кнопкой. */}
-            {import.meta.env.DEV && (
+            {reviewMode && (
               <button
                 type="button"
                 onClick={() => setShowStatesDemo(true)}
-                title="Открыть демонстрацию 4 состояний (Правило У1) — только в dev-сборке"
+                title="Открыть демонстрацию 4 состояний (Правило У1) — режим проверки"
                 className={`text-[10px] font-mono px-2 py-1 rounded-md bg-surface border border-border text-muted hover:text-text transition-colors ${FOCUS_RING}`}
               >
                 У1 демо
