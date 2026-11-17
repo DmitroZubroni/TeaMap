@@ -11,8 +11,8 @@ function Field({ label, value }) {
   if (!value) return null
   return (
     <div>
-      <p className="font-mono text-[10px] uppercase tracking-wider text-muted">{typograph(label)}</p>
-      <p className="text-[13px] font-medium text-text leading-snug mt-0.5">{typograph(String(value))}</p>
+      <p className="text-sm font-medium text-muted">{typograph(label)}</p>
+      <p className="text-base font-medium text-text leading-relaxed mt-0.5">{typograph(String(value))}</p>
     </div>
   )
 }
@@ -21,8 +21,8 @@ function Section({ label, children }) {
   if (!children) return null
   return (
     <div className="border-t border-border/70 pt-3.5">
-      <p className="font-mono text-[10px] uppercase tracking-wider text-muted mb-1.5">{typograph(label)}</p>
-      <div className="text-[13.5px] text-text/90 leading-relaxed space-y-2">
+      <p className="text-sm font-medium text-muted mb-1.5">{typograph(label)}</p>
+      <div className="text-base text-text/90 leading-relaxed space-y-2">
         {typeof children === 'string' ? typograph(children) : children}
       </div>
     </div>
@@ -112,12 +112,12 @@ export default function TeaPanel({ countryId, teaId, isFavorite, onToggleFavorit
       aria-modal="true"
       aria-label={tea?.name || t('loadingCard')}
       className={[
-        'fixed z-40 bg-surface text-text shadow-panel animate-panel-in overflow-hidden border border-border',
-        'inset-x-0 bottom-0 h-[84vh] rounded-t-3xl',
+        'tea-detail fixed z-40 bg-surface text-text shadow-panel animate-panel-in overflow-hidden border border-border',
+        'inset-x-0 bottom-0 h-[84svh] rounded-t-3xl',
         'md:inset-y-0 md:right-0 md:left-auto md:h-auto md:w-[460px] md:rounded-none md:rounded-l-3xl md:border-y-0 md:border-r-0 md:border-l',
       ].join(' ')}
     >
-      <div className="absolute inset-0 flex flex-col">
+      <div className="absolute inset-0 flex flex-col overflow-y-auto overscroll-contain scrollbar-thin">
         {/* Панель верхних кнопок управления */}
         <div className="absolute top-4 right-4 z-20 flex items-center gap-2">
           {tea && (
@@ -177,7 +177,7 @@ export default function TeaPanel({ countryId, teaId, isFavorite, onToggleFavorit
         {!loading && tea && (
           <>
             <div
-              className="px-6 pt-8 pb-5 shrink-0 border-b border-border/50 relative overflow-hidden"
+              className="px-6 pt-20 pb-5 shrink-0 border-b border-border/50 relative overflow-hidden"
               style={{
                 background: `linear-gradient(180deg, ${color}20, transparent)`,
               }}
@@ -198,17 +198,17 @@ export default function TeaPanel({ countryId, teaId, isFavorite, onToggleFavorit
                 </span>
               </div>
 
-              <h2 className="font-display text-2xl sm:text-3xl text-text font-semibold leading-tight pr-24">
+              <h2 className="font-display text-2xl sm:text-3xl text-text font-semibold leading-tight">
                 {typograph(tea.name)}
               </h2>
 
               {tea.aliases?.length > 0 && (
-                <p className="text-[13px] text-muted mt-1 leading-snug">
+                <p className="text-base text-muted mt-1 leading-relaxed">
                   {tea.aliases.map(typograph).join(' · ')}
                 </p>
               )}
 
-              <p className="text-[13px] text-muted/90 mt-2 flex items-center gap-1.5">
+              <p className="text-base text-muted/90 mt-2 flex items-center gap-1.5">
                 <span>📍</span>
                 <span>
                   {[tea.location?.region, tea.location?.province].filter(Boolean).map(typograph).join(', ')}
@@ -217,7 +217,7 @@ export default function TeaPanel({ countryId, teaId, isFavorite, onToggleFavorit
               </p>
 
               {tea.description?.short && (
-                <p className="mt-3 text-[13.5px] text-text/90 leading-relaxed italic bg-surface-2/60 p-3 rounded-xl border border-border/40">
+                <p className="mt-3 text-base text-text/90 leading-relaxed italic bg-surface-2/60 p-3 rounded-xl border border-border/40">
                   {typograph(tea.description.short)}
                 </p>
               )}
@@ -230,8 +230,9 @@ export default function TeaPanel({ countryId, teaId, isFavorite, onToggleFavorit
                   key={tabItem.id}
                   type="button"
                   onClick={() => setTab(tabItem.id)}
+                  aria-pressed={tab === tabItem.id}
                   className={[
-                    'px-4 py-3 min-h-[44px] text-[13.5px] font-semibold border-b-2 -mb-px transition-colors cursor-pointer',
+                    'px-4 py-3 min-h-[44px] text-base font-semibold border-b-2 -mb-px transition-colors cursor-pointer',
                     FOCUS_RING,
                     tab === tabItem.id
                       ? 'border-primary text-primary'
@@ -244,7 +245,7 @@ export default function TeaPanel({ countryId, teaId, isFavorite, onToggleFavorit
             </div>
 
             {/* Прокручиваемое содержимое */}
-            <div className="overflow-y-auto overscroll-contain scrollbar-thin flex-1 min-h-0">
+            <div className="shrink-0">
               <div className="px-6 py-5 flex flex-col gap-4">
                 {tab === 'overview' && (
                   <>
@@ -276,12 +277,12 @@ export default function TeaPanel({ countryId, teaId, isFavorite, onToggleFavorit
                     <Section label={t('modernDay')}>{tea.history?.modern}</Section>
                     {tea.history?.interestingFacts?.length > 0 && (
                       <div className="border-t border-border/70 pt-3.5">
-                        <p className="font-mono text-[10px] uppercase tracking-wider text-muted mb-2">
+                        <p className="text-sm font-medium text-muted mb-2">
                           {typograph(t('facts'))}
                         </p>
                         <ul className="flex flex-col gap-2">
                           {tea.history.interestingFacts.map((fact, i) => (
-                            <li key={i} className="text-[13px] text-text/90 leading-snug flex items-start gap-2.5">
+                            <li key={i} className="text-base text-text/90 leading-relaxed flex items-start gap-2.5">
                               <span className="text-accent-text font-bold text-base leading-none">·</span>
                               <span>{typograph(fact)}</span>
                             </li>
@@ -290,7 +291,7 @@ export default function TeaPanel({ countryId, teaId, isFavorite, onToggleFavorit
                       </div>
                     )}
                     {!tea.history?.origin && !tea.history?.development && !tea.history?.modern && (
-                      <p className="text-[13px] text-muted">{typograph(t('noHistory'))}</p>
+                      <p className="text-base text-muted">{typograph(t('noHistory'))}</p>
                     )}
                   </>
                 )}

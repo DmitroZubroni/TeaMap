@@ -302,3 +302,16 @@ html.dark {
   animation: teaLeafBreath 4.5s ease-in-out infinite;
   transform-origin: 20px 45px;
 }
+
+/* The map is the canvas; reading surfaces stay opaque above its tiles. */
+.tea-sidebar { background: var(--surface); }
+.tea-sidebar button { min-height: 44px; }
+.tea-sidebar nav button { white-space: normal; text-align: left; }
+.tea-sidebar :where(button, input) { scroll-margin-block: 12px; }
+.tea-sidebar input { font-size: 16px; }
+.tea-sidebar > div:last-child { flex-wrap: wrap; gap: 8px; }
+.tea-detail { padding-bottom: env(safe-area-inset-bottom); }
+.maplibregl-canvas:focus-visible { outline: 3px solid var(--primary); outline-offset: -3px; }
+@media (max-width: 639px) {
+  .tea-sidebar { top: max(8px, env(safe-area-inset-top)); bottom: max(8px, env(safe-area-inset-bottom)); }
+}

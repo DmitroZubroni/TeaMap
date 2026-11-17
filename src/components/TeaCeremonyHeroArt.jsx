@@ -9,8 +9,8 @@ export default function TeaCeremonyHeroArt({ className = '', width = 320, height
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={`transition-all duration-300 ${className}`}
-      role="img"
-      aria-label="TeaMap Botanical Ceremony & Terraced Plantations Illustration"
+      aria-hidden="true"
+      focusable="false"
     >
       <defs>
         {/* Glow Filters */}

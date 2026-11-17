@@ -62,7 +62,7 @@ function Breadcrumb({ nav, onHome, onCountry }) {
 
 function SectionLabel({ children }) {
   return (
-    <p className="font-mono text-[10px] uppercase tracking-wider text-muted">
+    <p className="text-sm font-medium text-muted">
       {typograph(String(children))}
     </p>
   )
@@ -93,7 +93,7 @@ function CountryList({ countries, current, onPick }) {
             <span className="grid place-items-center w-8 h-8 rounded-full bg-surface-2 text-[15px] shrink-0 border border-border/60">
               {c.icon}
             </span>
-            <span className="text-[13.5px] font-medium flex-1 truncate">{typograph(c.name)}</span>
+            <span className="text-base font-medium flex-1">{typograph(c.name)}</span>
             {active ? (
               <span
                 className={`w-2.5 h-2.5 rounded-full shrink-0 ring-2 ring-surface ${
@@ -126,7 +126,7 @@ function RegionList({ regions, onPick }) {
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="shrink-0 text-primary">
             <path d="M3 20L9 8L13 15L16 10L21 20H3Z" fill="currentColor" />
           </svg>
-          <span className="text-[13px] font-medium text-text flex-1 truncate">{typograph(r.name)}</span>
+          <span className="text-base font-medium text-text flex-1">{typograph(r.name)}</span>
         </button>
       ))}
     </div>
@@ -144,7 +144,7 @@ function TeaRow({ tea, onPick, countryIcon }) {
         className="w-2.5 h-2.5 rounded-full border border-surface shadow-sm shrink-0"
         style={{ backgroundColor: categoryColor(tea.category) }}
       />
-      <span className="text-[13px] text-text font-medium flex-1 truncate">{typograph(tea.name)}</span>
+      <span className="text-base text-text font-medium flex-1">{typograph(tea.name)}</span>
       {countryIcon && <span className="text-[13px] shrink-0 opacity-80">{countryIcon}</span>}
     </button>
   )
@@ -260,22 +260,23 @@ function ReferenceTab({ categories, teas, countries, hiddenCategories, onToggleC
       {teas.length > 0 && (
         <div className="flex flex-col gap-2.5">
           <div className="h-px bg-border/60" />
-          <SectionLabel>{t('allTeasSearch')}</SectionLabel>
+          <label htmlFor="tea-search" className="text-sm font-medium text-muted">{typograph(t('allTeasSearch'))}</label>
 
           <div className="relative flex items-center">
             <input
-              type="text"
+              id="tea-search"
+              type="search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder={t('searchPlaceholder')}
-              className={`w-full text-[13px] bg-surface-2 rounded-xl pl-3.5 pr-8 py-2.5 min-h-[44px] placeholder:text-muted/60 text-text outline-none border border-border focus:border-primary transition-colors ${FOCUS_RING}`}
+              className={`w-full text-[13px] bg-surface-2 rounded-xl pl-3.5 pr-12 py-2.5 min-h-[44px] placeholder:text-muted/60 text-text outline-none border border-field focus:border-primary transition-colors ${FOCUS_RING}`}
             />
             {query && (
               <button
                 type="button"
                 onClick={() => setQuery('')}
                 aria-label={t('clearSearch')}
-                className="absolute right-2.5 w-6 h-6 rounded-full text-muted hover:text-text grid place-items-center text-xs"
+                className="absolute right-0 w-11 h-11 rounded-full text-muted hover:text-text grid place-items-center text-xs"
               >
                 ✕
               </button>
@@ -338,9 +339,10 @@ function ThemeToggle() {
           key={opt.id}
           type="button"
           onClick={() => setTheme(opt.id)}
+          aria-pressed={theme === opt.id}
           aria-label={opt.label}
           title={opt.label}
-          className={`w-7 h-7 min-w-[28px] min-h-[28px] rounded-full text-[11px] grid place-items-center transition-all ${FOCUS_RING} ${
+          className={`w-11 h-11 min-w-[44px] min-h-[44px] rounded-full text-[11px] grid place-items-center transition-all ${FOCUS_RING} ${
             theme === opt.id
               ? 'bg-surface text-text shadow-sm font-bold'
               : 'text-muted hover:text-text'
@@ -366,8 +368,9 @@ function LocaleToggle() {
           key={l}
           type="button"
           onClick={() => setLocale(l)}
+          aria-pressed={locale === l}
           aria-label={l.toUpperCase()}
-          className={`px-2.5 py-1 min-h-[28px] rounded-full text-[10px] font-mono uppercase transition-all ${FOCUS_RING} ${
+          className={`px-3 py-1 min-w-[44px] min-h-[44px] rounded-full text-[10px] font-mono uppercase transition-all ${FOCUS_RING} ${
             locale === l
               ? 'bg-surface text-text shadow-sm font-bold'
               : 'text-muted hover:text-text'
@@ -437,7 +440,7 @@ export default function Sidebar({
           type="button"
           onClick={() => setExpanded(true)}
           aria-label={t('openMenu')}
-          className={`grid place-items-center w-12 h-12 rounded-2xl bg-surface/90 backdrop-blur-md border border-border shadow-panel text-text font-display text-xl transition-all hover:scale-105 ${FOCUS_RING}`}
+          className={`grid place-items-center w-12 h-12 rounded-2xl bg-surface backdrop-blur-md border border-border shadow-panel text-text font-display text-xl transition-all hover:scale-105 ${FOCUS_RING}`}
         >
           茶
         </button>
@@ -447,7 +450,7 @@ export default function Sidebar({
             onClick={onOpenDonate}
             title={t('donateBtn')}
             aria-label={t('donateBtn')}
-            className={`grid place-items-center w-12 h-12 rounded-2xl bg-surface/90 backdrop-blur-md border border-border shadow-panel text-accent-text hover:text-accent transition-all hover:scale-105 ${FOCUS_RING}`}
+            className={`grid place-items-center w-12 h-12 rounded-2xl bg-surface backdrop-blur-md border border-border shadow-panel text-accent-text hover:text-accent transition-all hover:scale-105 ${FOCUS_RING}`}
           >
             <PialaIcon className="w-5 h-5" />
           </button>
@@ -461,29 +464,31 @@ export default function Sidebar({
 
   return (
     <>
-      <aside className="absolute top-2 left-2 right-2 bottom-2 sm:right-auto sm:bottom-4 sm:top-4 sm:left-4 sm:w-80 z-20 flex flex-col bg-surface/90 backdrop-blur-lg border border-border rounded-3xl shadow-panel overflow-hidden transition-colors">
-        {/* Шапка сайдбара с названием и переключателями */}
-        <div className="flex items-center justify-between px-4 pt-4 pb-3 shrink-0 gap-2 border-b border-border/50">
-          <div className="min-w-0">
-            <h1 className="font-display text-xl text-text font-semibold leading-none truncate">
-              {typograph(t('appTitle'))}
-            </h1>
-            <p className="font-mono text-[9.5px] uppercase tracking-wider text-muted mt-1 truncate">
-              {typograph(t('appTagline'))}
-            </p>
-          </div>
-
-          <div className="flex items-center gap-1.5 shrink-0">
-            <ThemeToggle />
-            <LocaleToggle />
+      <aside aria-label={t('appTitle')} className="tea-sidebar absolute top-2 left-2 right-2 bottom-2 sm:right-auto sm:bottom-4 sm:top-4 sm:left-4 sm:w-80 z-20 flex flex-col bg-surface backdrop-blur-lg border border-border rounded-3xl shadow-panel overflow-hidden transition-colors">
+        {/* Keep the title above the independent theme and language controls. */}
+        <div className="flex flex-col gap-2 px-4 pt-4 pb-3 shrink-0 border-b border-border/50">
+          <div className="flex items-start justify-between gap-2">
+            <div className="min-w-0">
+              <h1 className="font-display text-xl text-text font-semibold leading-tight truncate">
+                {typograph(t('appTitle'))}
+              </h1>
+              <p className="text-sm text-muted mt-1 truncate">
+                {typograph(t('appTagline'))}
+              </p>
+            </div>
             <button
               type="button"
               onClick={() => setExpanded(false)}
               aria-label={t('collapseMenu')}
-              className={`w-8 h-8 rounded-full grid place-items-center text-muted hover:text-text hover:bg-surface-2 transition-colors ${FOCUS_RING}`}
+              className={`w-11 h-11 rounded-full grid place-items-center text-muted hover:text-text hover:bg-surface-2 transition-colors shrink-0 ${FOCUS_RING}`}
             >
               ✕
             </button>
+          </div>
+
+          <div className="flex items-center gap-1.5">
+            <ThemeToggle />
+            <LocaleToggle />
           </div>
         </div>
 
@@ -508,6 +513,7 @@ export default function Sidebar({
               key={tabItem.id}
               type="button"
               onClick={() => setView(tabItem.id)}
+              aria-pressed={view === tabItem.id}
               className={[
                 'flex-1 text-[12.5px] font-semibold py-2.5 min-h-[44px] rounded-xl transition-all cursor-pointer flex items-center justify-center gap-1.5',
                 FOCUS_RING,
@@ -540,7 +546,7 @@ export default function Sidebar({
             <>
               {!nav.country ? (
                 <div className="flex flex-col gap-3.5">
-                  <div className="rounded-2xl bg-surface-2/70 border border-border/70 p-2 flex justify-center shadow-sm overflow-hidden">
+                  <div className="rounded-2xl bg-surface-2 border border-border/70 p-2 flex justify-center shadow-sm overflow-hidden">
                     <TeaCeremonyHeroArt width={280} height={155} className="w-full h-auto max-w-[280px]" />
                   </div>
                   <SectionLabel>{t('countries')}</SectionLabel>
@@ -628,7 +634,7 @@ export default function Sidebar({
                 У1 демо
               </button>
             )}
-            <span className="font-mono text-[9px] uppercase tracking-wider text-muted/60">TeaMap</span>
+            <span className="text-sm text-muted">TeaMap</span>
           </div>
         </div>
       </aside>
